@@ -18,6 +18,7 @@
     "src/elemental-main.js"
   ],
   "styles": [
+    "css/elemental-tailwind.css"
   ],
   "languages": [
     {

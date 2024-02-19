@@ -1,0 +1,35 @@
+.tw-w-full {
+  width: 100%
+}
+
+.tw-rounded-lg {
+  border-radius: 0.5rem
+}
+
+.tw-border {
+  border-width: 1px
+}
+
+.tw-border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity))
+}
+
+.tw-bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
+
+.tw-p-4 {
+  padding: 1rem
+}
+
+.tw-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem
+}
+
+.tw-text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity))
+}
