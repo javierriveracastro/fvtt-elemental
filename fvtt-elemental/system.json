@@ -1,0 +1,34 @@
+{
+  "id": "fvtt-elemental",
+  "title": "Elemental RPG (Unofficial)",
+  "description": "<p>An unofficial implementation of the Elemental RPG system from Gildor Games",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 11
+  },
+  "authors": [
+    {
+      "name": "Javier Rivera",
+      "url": "https://github.com/javierriveracastro/"
+    }
+  ],
+  "esmodules": [
+    "elemental-main.js"
+  ],
+  "styles": [
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "manifest": "",
+  "download": "",
+  "url": "",
+  "changelog": "",
+  "license": ""
+}
