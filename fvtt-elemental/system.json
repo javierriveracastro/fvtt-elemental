@@ -15,7 +15,7 @@
     }
   ],
   "esmodules": [
-    "elemental-main.js"
+    "src/elemental-main.js"
   ],
   "styles": [
   ],
