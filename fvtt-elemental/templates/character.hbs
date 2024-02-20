@@ -1,18 +1,32 @@
 <form class="elemental-css">
+    <!-- Header -->
     <div class="flex flex-row">
         <div>
             <input type="text" name="name" value="{{actor.name}}"
-                   class=" w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+                   class="{{theme.big_input}}"
                    placeholder="{{localize 'Elemental.CharName'}}">
             <input type="text" name="system.title" value="{{actor.system.title}}"
-                   class=" w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 mt-1"
+                   class="{{theme.big_input}} mt-1"
                    placeholder="{{localize 'Elemental.Race'}}">
             <input type="text" name="system.race" value="{{actor.system.race}}"
-                   class=" w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 mt-1"
+                   class="{{theme.big_input}} mt-1"
                    placeholder="{{localize 'Elemental.Title'}}">
         </div>
         <div class="max-w-32">
             <img src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" class="m-1 rounded border-none">
         </div>
     </div>
+    <!-- Tab header -->
+    <nav class="{{theme.tab_backgound}}">
+        <a href="#"
+           class="{{theme.tab_active}}">
+            Base
+        </a>
+        <a href="#" class="{{theme.tab_inactive}}">
+            Equipment
+        </a>
+        <a href="#" class="{{theme.tab_inactive}}">
+            Description
+        </a>
+    </nav>
 </form>

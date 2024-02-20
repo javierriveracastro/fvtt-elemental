@@ -1,16 +1,20 @@
 // Entry point for Elemental
-/* globals Actors, ActorSheet, CONFIG, Hooks */
+/* globals Actors, ActorSheet, CONFIG, Hooks, game */
 
 import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel } from "./character-actor.js";
+import { BASE_THEME } from "./theme.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.systemDataModels.character = CharacterDataModel;
-});
 
-Actors.unregisterSheet("core", ActorSheet);
-Actors.registerSheet("elemental", ElementaCharacterSheet, {
-  types: ["character"],
-  makeDefault: true,
-  label: "Elemental.ElementalSheet",
+  Actors.unregisterSheet("core", ActorSheet);
+  Actors.registerSheet("elemental", ElementaCharacterSheet, {
+    types: ["character"],
+    makeDefault: true,
+    label: "Elemental.ElementalSheet",
+  });
+
+  game.elemental = {};
+  game.elemental.current_theme = BASE_THEME;
 });

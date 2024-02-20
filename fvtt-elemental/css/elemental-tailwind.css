@@ -10,6 +10,10 @@
   margin-top: 0.25rem
 }
 
+.elemental-css :is(.inline-block) {
+  display: inline-block
+}
+
 .elemental-css :is(.flex) {
   display: flex
 }
@@ -26,6 +30,10 @@
   flex-direction: row
 }
 
+.elemental-css :is(.flex-wrap) {
+  flex-wrap: wrap
+}
+
 .elemental-css :is(.rounded) {
   border-radius: 0.25rem
 }
@@ -34,12 +42,43 @@
   border-radius: 0.5rem
 }
 
+.elemental-css :is(.rounded-t-lg) {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem
+}
+
 .elemental-css :is(.border) {
   border-width: 1px
 }
 
+.elemental-css :is(.border-0) {
+  border-width: 0px
+}
+
+.elemental-css :is(.border-b) {
+  border-bottom-width: 1px
+}
+
+.elemental-css :is(.border-b-2) {
+  border-bottom-width: 2px
+}
+
+.elemental-css :is(.border-solid) {
+  border-style: solid
+}
+
 .elemental-css :is(.border-none) {
   border-style: none
+}
+
+.elemental-css :is(.border-blue-600) {
+  --tw-border-opacity: 1;
+  border-color: rgb(37 99 235 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.border-gray-200) {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity))
 }
 
 .elemental-css :is(.border-gray-300) {
@@ -52,8 +91,16 @@
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
 }
 
+.elemental-css :is(.p-2) {
+  padding: 0.5rem
+}
+
 .elemental-css :is(.p-4) {
   padding: 1rem
+}
+
+.elemental-css :is(.text-center) {
+  text-align: center
 }
 
 .elemental-css :is(.text-base) {
@@ -61,9 +108,42 @@
   line-height: 1.5rem
 }
 
+.elemental-css :is(.text-sm) {
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
+.elemental-css :is(.font-medium) {
+  font-weight: 500
+}
+
+.elemental-css :is(.text-blue-600) {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.text-gray-500) {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity))
+}
+
 .elemental-css :is(.text-gray-900) {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.no-underline) {
+  text-decoration-line: none
+}
+
+.elemental-css :is(.hover\:border-gray-300:hover) {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.hover\:text-gray-600:hover) {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity))
 }
 
 .elemental-css :is(.focus\:border-blue-500:focus) {
