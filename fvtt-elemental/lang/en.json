@@ -1,6 +1,8 @@
 {
   "Elemental": {
     "CharName": "Character Name",
-    "ElementalSheet": "Elemental Character Sheet"
+    "ElementalSheet": "Elemental Character Sheet",
+    "Race": "Race",
+    "Title": "Title"
   }
 }

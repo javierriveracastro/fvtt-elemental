@@ -1,35 +1,77 @@
-.tw-w-full {
+.elemental-css :is(.static) {
+  position: static
+}
+
+.elemental-css :is(.m-1) {
+  margin: 0.25rem
+}
+
+.elemental-css :is(.mt-1) {
+  margin-top: 0.25rem
+}
+
+.elemental-css :is(.flex) {
+  display: flex
+}
+
+.elemental-css :is(.w-full) {
   width: 100%
 }
 
-.tw-rounded-lg {
+.elemental-css :is(.max-w-32) {
+  max-width: 8rem
+}
+
+.elemental-css :is(.flex-row) {
+  flex-direction: row
+}
+
+.elemental-css :is(.rounded) {
+  border-radius: 0.25rem
+}
+
+.elemental-css :is(.rounded-lg) {
   border-radius: 0.5rem
 }
 
-.tw-border {
+.elemental-css :is(.border) {
   border-width: 1px
 }
 
-.tw-border-gray-300 {
+.elemental-css :is(.border-none) {
+  border-style: none
+}
+
+.elemental-css :is(.border-gray-300) {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity))
 }
 
-.tw-bg-gray-50 {
+.elemental-css :is(.bg-gray-50) {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
 }
 
-.tw-p-4 {
+.elemental-css :is(.p-4) {
   padding: 1rem
 }
 
-.tw-text-base {
+.elemental-css :is(.text-base) {
   font-size: 1rem;
   line-height: 1.5rem
 }
 
-.tw-text-gray-900 {
+.elemental-css :is(.text-gray-900) {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.focus\:border-blue-500:focus) {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.focus\:ring-blue-500:focus) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity))
 }

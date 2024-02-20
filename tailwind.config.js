@@ -5,5 +5,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  prefix: "tw-",
+  important: '.elemental-css',
 };
