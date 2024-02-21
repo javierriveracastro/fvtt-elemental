@@ -3,6 +3,17 @@
     "CharName": "Character Name",
     "ElementalSheet": "Elemental Character Sheet",
     "Race": "Race",
-    "Title": "Title"
+    "Title": "Title",
+    "Attributes": {
+      "Agility": "Agility",
+      "Toughness": "Toughness",
+      "Awareness": "Awareness",
+      "Will": "Will"
+    },
+    "CharacterSheet": {
+      "Base": "Base",
+      "Equipment": "Equipment",
+      "Description": "Description"
+    }
   }
 }
