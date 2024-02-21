@@ -6,7 +6,7 @@ export const BASE_THEME = {
   tab_background:
     "flex flex-wrap text-sm font-medium text-center border-0 border-b border-gray-200 border-solid",
   tab_active:
-    "no-underline inline-block text-blue-600 border-blue-600 p-2 border-0 border-b-2 border-solid rounded-t-lg hover:text-gray-600 hover:border-gray-300",
+    "no-underline inline-block text-blue-600 border-blue-600 p-2 border-0 border-b-2 border-solid rounded-t-lg hover:text-blue-700 hover:border-blue-600",
   tab_inactive:
-    "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-300",
+    "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-500",
 };

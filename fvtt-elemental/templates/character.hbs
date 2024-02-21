@@ -18,15 +18,23 @@
     </div>
     <!-- Tab header -->
     <nav class="{{theme.tab_backgound}}">
-        <a href="#"
-           class="{{theme.tab_active}}">
+        <a class="elemental-tab-control {{theme.tab_active}}" data-tab="base-tab">
             Base
         </a>
-        <a href="#" class="{{theme.tab_inactive}}">
+        <a class="elemental-tab-control {{theme.tab_inactive}}" data-tab="equipment-tab">
             Equipment
         </a>
-        <a href="#" class="{{theme.tab_inactive}}">
+        <a class="elemental-tab-control {{theme.tab_inactive}}" data-tab="description-tab">
             Description
         </a>
     </nav>
+    <div id="base-tab" class="tab-content">
+        Base
+    </div>
+    <div id="equipment-tab" class="tab-content hidden">
+        Equipment
+    </div>
+    <div id="description-tab" class="tab-content hidden">
+        Description
+    </div>
 </form>

@@ -18,6 +18,10 @@
   display: flex
 }
 
+.elemental-css :is(.hidden) {
+  display: none
+}
+
 .elemental-css :is(.w-full) {
   width: 100%
 }
@@ -136,9 +140,19 @@
   text-decoration-line: none
 }
 
-.elemental-css :is(.hover\:border-gray-300:hover) {
+.elemental-css :is(.hover\:border-blue-600:hover) {
   --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity))
+  border-color: rgb(37 99 235 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.hover\:border-gray-500:hover) {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.hover\:text-blue-700:hover) {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity))
 }
 
 .elemental-css :is(.hover\:text-gray-600:hover) {
