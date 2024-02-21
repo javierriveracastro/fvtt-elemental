@@ -9,4 +9,5 @@ export const BASE_THEME = {
     "no-underline inline-block text-blue-600 border-blue-600 p-2 border-0 border-b-2 border-solid rounded-t-lg hover:text-blue-700 hover:border-blue-600",
   tab_inactive:
     "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-500",
+  text_attribute: "text-lg font-bold",
 };

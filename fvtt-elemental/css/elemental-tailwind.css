@@ -6,6 +6,10 @@
   margin: 0.25rem
 }
 
+.elemental-css :is(.mb-2) {
+  margin-bottom: 0.5rem
+}
+
 .elemental-css :is(.mt-1) {
   margin-top: 0.25rem
 }
@@ -16,6 +20,10 @@
 
 .elemental-css :is(.flex) {
   display: flex
+}
+
+.elemental-css :is(.grid) {
+  display: grid
 }
 
 .elemental-css :is(.hidden) {
@@ -30,12 +38,20 @@
   max-width: 8rem
 }
 
+.elemental-css :is(.grid-cols-2) {
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+
 .elemental-css :is(.flex-row) {
   flex-direction: row
 }
 
 .elemental-css :is(.flex-wrap) {
   flex-wrap: wrap
+}
+
+.elemental-css :is(.gap-4) {
+  gap: 1rem
 }
 
 .elemental-css :is(.rounded) {
@@ -112,9 +128,18 @@
   line-height: 1.5rem
 }
 
+.elemental-css :is(.text-lg) {
+  font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
 .elemental-css :is(.text-sm) {
   font-size: 0.875rem;
   line-height: 1.25rem
+}
+
+.elemental-css :is(.font-bold) {
+  font-weight: 700
 }
 
 .elemental-css :is(.font-medium) {
