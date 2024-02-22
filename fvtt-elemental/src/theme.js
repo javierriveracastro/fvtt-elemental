@@ -12,4 +12,6 @@ export const BASE_THEME = {
   tab_inactive:
     "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-500",
   text_attribute: "text-lg font-bold",
+  skill_box:
+    "mt-2 block p-6 bg-white border border-gray-200 rounded-lg shadow min-h-40",
 };

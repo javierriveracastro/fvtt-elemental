@@ -29,41 +29,64 @@
         </a>
     </nav>
     <div id="base-tab" class="tab-content grid grid-cols-2 gap-4 mb-2">
-        <div class="flex flex-row justify-between">
-            <span class="{{theme.text_attribute}}">
-                {{localize 'Elemental.Attributes.Agility'}}
-            </span>
-            <span>
-                <input type="text" name="system.agility" value="{{actor.system.agility}}" class="{{theme.small_input}}">
-                <label>{{actor.agility_xp}} XP</label>
-            </span>
+        <div class="flex flex-col">
+            <div class="flex flex-row justify-between">
+                <span class="{{theme.text_attribute}}">
+                    {{localize 'Elemental.Attributes.Agility'}}
+                </span>
+                <span>
+                    <input type="text" name="system.agility" value="{{actor.system.agility}}"
+                           class="{{theme.small_input}}">
+                    <label>{{actor.agility_xp}} XP</label>
+                </span>
+            </div>
+            <div class="{{theme.skill_box}}">
+                Skill list
+            </div>
         </div>
-        <div class="flex flex-row justify-between">
-            <span class="{{theme.text_attribute}}">
-                {{localize 'Elemental.Attributes.Toughness'}}
-            </span>
-            <span>
-                <input type="text" name="system.toughness" value="{{actor.system.toughness}}" class="{{theme.small_input}}">
-                <label>{{actor.toughness_xp}} XP</label>
-            </span>
+        <div class="flex flex-col">
+            <div class="flex flex-row justify-between">
+                <span class="{{theme.text_attribute}}">
+                    {{localize 'Elemental.Attributes.Toughness'}}
+                </span>
+                <span>
+                    <input type="text" name="system.toughness" value="{{actor.system.toughness}}"
+                           class="{{theme.small_input}}">
+                    <label>{{actor.toughness_xp}} XP</label>
+                </span>
+            </div>
+            <div class="{{theme.skill_box}}">
+                Skill list
+            </div>
         </div>
-        <div class="flex flex-row justify-between">
-            <span class="{{theme.text_attribute}}">
-                {{localize 'Elemental.Attributes.Awareness'}}
-            </span>
-            <span>
-                <input type="text" name="system.awareness" value="{{actor.system.awareness}}" class="{{theme.small_input}}">
-                <label>{{actor.awareness_xp}} XP</label>
-            </span>
+        <div class="flex flex-col">
+            <div class="flex flex-row justify-between">
+                <span class="{{theme.text_attribute}}">
+                    {{localize 'Elemental.Attributes.Awareness'}}
+                </span>
+                <span>
+                    <input type="text" name="system.awareness" value="{{actor.system.awareness}}"
+                           class="{{theme.small_input}}">
+                    <label>{{actor.awareness_xp}} XP</label>
+                </span>
+            </div>
+            <div class="{{theme.skill_box}}">
+                Skill list
+            </div>
         </div>
-        <div class="flex flex-row justify-between">
-            <span class="{{theme.text_attribute}}">
-                {{localize 'Elemental.Attributes.Will'}}
-            </span>
-            <span>
-                <input type="text" name="system.will" value="{{actor.system.will}}" class="{{theme.small_input}}">
-                <label>{{actor.will_xp}} XP</label>
-            </span>
+        <div class="flex flex-col">
+            <div class="flex flex-row justify-between">
+                <span class="{{theme.text_attribute}}">
+                    {{localize 'Elemental.Attributes.Will'}}
+                </span>
+                <span>
+                    <input type="text" name="system.will" value="{{actor.system.will}}" class="{{theme.small_input}}">
+                    <label>{{actor.will_xp}} XP</label>
+                </span>
+            </div>
+            <div class="{{theme.skill_box}}">
+                Skill list
+            </div>
         </div>
     </div>
     <div id="equipment-tab" class="tab-content hidden">
