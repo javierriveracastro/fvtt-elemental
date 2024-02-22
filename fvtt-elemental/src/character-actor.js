@@ -17,18 +17,22 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
 }
 
 export class ElementalActor extends Actor {
+  // noinspection JSUnusedGlobalSymbols
   get agility_xp() {
     return this.calculate_xp(this.system.agility);
   }
 
+  // noinspection JSUnusedGlobalSymbols
   get toughness_xp() {
     return this.calculate_xp(this.system.toughness);
   }
 
+  // noinspection JSUnusedGlobalSymbols
   get awareness_xp() {
     return this.calculate_xp(this.system.awareness);
   }
 
+  // noinspection JSUnusedGlobalSymbols
   get will_xp() {
     return this.calculate_xp(this.system.will);
   }
