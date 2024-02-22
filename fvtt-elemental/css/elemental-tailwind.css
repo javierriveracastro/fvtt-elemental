@@ -30,6 +30,10 @@
   display: none
 }
 
+.elemental-css :is(.w-12) {
+  width: 3rem
+}
+
 .elemental-css :is(.w-full) {
   width: 100%
 }
@@ -48,6 +52,10 @@
 
 .elemental-css :is(.flex-wrap) {
   flex-wrap: wrap
+}
+
+.elemental-css :is(.justify-between) {
+  justify-content: space-between
 }
 
 .elemental-css :is(.gap-4) {
