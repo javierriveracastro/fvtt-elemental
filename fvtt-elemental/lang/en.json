@@ -11,7 +11,10 @@
       "Will": "Will"
     },
     "Derived": {
-      "Move": "Move"
+      "Move": "Move",
+      "Health": "Health",
+      "Initiative": "Initiative",
+      "Spirit": "Spirit"
     },
     "CharacterSheet": {
       "Base": "Base",

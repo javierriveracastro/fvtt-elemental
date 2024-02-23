@@ -13,6 +13,9 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
       awareness: new fields.NumberField({ integer: true, initial: 0 }),
       will: new fields.NumberField({ integer: true, initial: 0 }),
       current_move: new fields.NumberField({ integer: true, initial: 0 }),
+      current_health: new fields.NumberField({ integer: true, initial: 0 }),
+      current_initiative: new fields.NumberField({ integer: true, initial: 0 }),
+      current_spirit: new fields.NumberField({ integer: true, initial: 0 }),
     };
   }
 }
@@ -40,6 +43,18 @@ export class ElementalActor extends Actor {
 
   get max_move() {
     return this.agility_xp + 9;
+  }
+
+  get max_health() {
+    return this.toughness_xp + 9;
+  }
+
+  get max_initiative() {
+    return this.awareness_xp + 9;
+  }
+
+  get max_spirit() {
+    return this.will_xp + 9;
   }
 
   calculate_xp(value) {

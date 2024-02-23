@@ -82,10 +82,6 @@
   flex-wrap: wrap
 }
 
-.elemental-css :is(.justify-between) {
-  justify-content: space-between
-}
-
 .elemental-css :is(.gap-2) {
   gap: 0.5rem
 }
