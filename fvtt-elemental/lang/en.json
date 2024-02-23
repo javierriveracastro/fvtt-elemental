@@ -13,7 +13,8 @@
     "CharacterSheet": {
       "Base": "Base",
       "Equipment": "Equipment",
-      "Description": "Description"
+      "Description": "Description",
+      "Rules": "Rules"
     }
   }
 }
