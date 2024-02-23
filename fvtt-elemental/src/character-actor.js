@@ -12,6 +12,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
       toughness: new fields.NumberField({ integer: true, initial: 0 }),
       awareness: new fields.NumberField({ integer: true, initial: 0 }),
       will: new fields.NumberField({ integer: true, initial: 0 }),
+      current_move: new fields.NumberField({ integer: true, initial: 0 }),
     };
   }
 }
@@ -35,6 +36,10 @@ export class ElementalActor extends Actor {
   // noinspection JSUnusedGlobalSymbols
   get will_xp() {
     return this.calculate_xp(this.system.will);
+  }
+
+  get max_move() {
+    return this.agility_xp + 9;
   }
 
   calculate_xp(value) {

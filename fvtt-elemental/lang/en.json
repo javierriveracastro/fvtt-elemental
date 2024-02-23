@@ -10,6 +10,9 @@
       "Awareness": "Awareness",
       "Will": "Will"
     },
+    "Derived": {
+      "Move": "Move"
+    },
     "CharacterSheet": {
       "Base": "Base",
       "Equipment": "Equipment",
