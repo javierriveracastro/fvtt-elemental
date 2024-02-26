@@ -16,6 +16,9 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
       current_health: new fields.NumberField({ integer: true, initial: 0 }),
       current_initiative: new fields.NumberField({ integer: true, initial: 0 }),
       current_spirit: new fields.NumberField({ integer: true, initial: 0 }),
+      character_description: new fields.HTMLField(),
+      other_characters: new fields.HTMLField(),
+      background_notes: new fields.HTMLField()
     };
   }
 }
