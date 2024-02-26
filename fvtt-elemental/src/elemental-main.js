@@ -1,5 +1,5 @@
 // Entry point for Elemental
-/* globals Actors, ActorSheet, CONFIG, Hooks, game */
+/* globals Actors, ActorSheet, CONFIG, Hooks, game, console, loadTemplates */
 
 import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel, ElementalActor } from "./character-actor.js";
@@ -14,6 +14,13 @@ Hooks.on("init", () => {
     types: ["character"],
     makeDefault: true,
     label: "Elemental.ElementalSheet",
+  });
+
+  const handlebars_templatePaths = [
+    "systems/fvtt-elemental/templates/character_base.hbs",
+  ];
+  loadTemplates(handlebars_templatePaths).then(() => {
+    console.info("Better Rolls templates preloaded");
   });
 
   game.elemental = {};
