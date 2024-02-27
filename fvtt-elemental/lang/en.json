@@ -20,7 +20,9 @@
       "Base": "Base",
       "Equipment": "Equipment",
       "Description": "Description",
-      "Rules": "Rules"
+      "Rules": "Rules",
+      "OtherCharacters": "Other characters",
+      "BackgroundNotes": "Background Notes"
     }
   }
 }

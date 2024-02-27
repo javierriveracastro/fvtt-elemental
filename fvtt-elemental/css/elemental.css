@@ -1,0 +1,3 @@
+.sheet .editor-content, .elemental-editor, .editor.prosemirror {
+    min-height: 120px;
+}

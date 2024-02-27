@@ -1,8 +1,30 @@
-<label for="decription" class="{{theme.text_description_label}} mt-2">{{localize "Elemental.CharacterSheet.Description"}}</label>
-{{editor
-    actor.system.character_description
-    target='system.character_description'
-    button=editable
-    editable=editable
-    engine='prosemirror'
-}}
+<label class="{{theme.text_description_label}} mt-2">{{localize "Elemental.CharacterSheet.Description"}}</label>
+<div class="elemental-editor">
+    {{editor
+        actor.system.character_description
+        target='system.character_description'
+        button=editable
+        editable=editable
+        engine="prosemirror"
+    }}
+</div>
+<label class="{{theme.text_description_label}} mt-2">{{localize "Elemental.CharacterSheet.BackgroundNotes"}}</label>
+<div class="elemental-editor">
+    {{editor
+        actor.system.background_notes
+        target='system.background_notes'
+        button=editable
+        editable=editable
+        engine="prosemirror"
+    }}
+</div>
+<label class="{{theme.text_description_label}} mt-2">{{localize "Elemental.CharacterSheet.OtherCharacters"}}</label>
+<div class="elemental-editor">
+    {{editor
+        actor.system.other_characters
+        target='system.other_characters'
+        button=editable
+        editable=editable
+        engine="prosemirror"
+    }}
+</div>
