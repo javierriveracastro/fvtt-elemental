@@ -1,0 +1,8 @@
+<label for="decription" class="{{theme.text_description_label}} mt-2">{{localize "Elemental.CharacterSheet.Description"}}</label>
+{{editor
+    actor.system.character_description
+    target='system.character_description'
+    button=editable
+    editable=editable
+    engine='prosemirror'
+}}

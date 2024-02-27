@@ -13,6 +13,7 @@ export const BASE_THEME = {
     "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-500",
   text_attribute: "text-lg font-bold",
   text_derived: "p-1 mr-2 text-right",
+  text_description_label: "block text-lg font-medium",
   info_label: "p-1",
   skill_box:
     "mt-2 block p-6 bg-white border border-gray-200 rounded-lg shadow min-h-40",

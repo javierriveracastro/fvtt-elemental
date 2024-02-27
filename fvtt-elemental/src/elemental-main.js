@@ -6,7 +6,7 @@ import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 
 Hooks.on("init", () => {
-  CONFIG.Actor.systemDataModels.character = CharacterDataModel;
+  CONFIG.Actor.dataModels.character = CharacterDataModel;
   CONFIG.Actor.documentClass = ElementalActor;
 
   Actors.unregisterSheet("core", ActorSheet);
@@ -18,6 +18,7 @@ Hooks.on("init", () => {
 
   const handlebars_templatePaths = [
     "systems/fvtt-elemental/templates/character_base.hbs",
+    "systems/fvtt-elemental/templates/character_description.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
     console.info("Better Rolls templates preloaded");
