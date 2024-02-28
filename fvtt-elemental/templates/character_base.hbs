@@ -9,7 +9,7 @@
         <span class="{{theme.text_derived}} col-span-6">
             {{localize "Elemental.Derived.Move"}}
         </span>
-        <button class="refresh-derived {{theme.refresh_button}}" data-derived="move">
+        <button class="elemental-refresh-derived {{theme.refresh_button}}" data-derived="move">
             <i class="fa-solid fa-arrows-rotate"></i>
         </button>
         <input type="text" name="system.current_move" value="{{actor.system.current_move}}"
@@ -28,9 +28,12 @@
         <input type="text" name="system.toughness" value="{{actor.system.toughness}}"
                class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.toughness_xp}} XP</label>
-        <span class="{{theme.text_derived}} col-span-7">
+        <span class="{{theme.text_derived}} col-span-6">
             {{localize "Elemental.Derived.Health"}}
         </span>
+        <button class="elemental-refresh-derived {{theme.refresh_button}}" data-derived="health">
+            <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
         <input type="text" name="system.current_health" value="{{actor.system.current_health}}"
             class="{{theme.small_input}}">
         <label class="{{theme.info_label}}"> / {{actor.max_health}}</label>
@@ -47,9 +50,12 @@
         <input type="text" name="system.awareness" value="{{actor.system.awareness}}"
                class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.awareness_xp}} XP</label>
-        <span class="{{theme.text_derived}} col-span-7">
+        <span class="{{theme.text_derived}} col-span-6">
             {{localize "Elemental.Derived.Initiative"}}
         </span>
+        <button class="elemental-refresh-derived {{theme.refresh_button}}" data-derived="initiative">
+            <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
         <input type="text" name="system.current_initiative" value="{{actor.system.current_initiative}}"
             class="{{theme.small_input}}">
         <label class="{{theme.info_label}}"> / {{actor.max_initiative}}</label>
@@ -65,9 +71,12 @@
         </span>
         <input type="text" name="system.will" value="{{actor.system.will}}" class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.will_xp}} XP</label>
-                        <span class="{{theme.text_derived}} col-span-7">
+                        <span class="{{theme.text_derived}} col-span-6">
             {{localize "Elemental.Derived.Spirit"}}
         </span>
+        <button class="elemental-refresh-derived {{theme.refresh_button}}" data-derived="spirit">
+            <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
         <input type="text" name="system.current_spirit" value="{{actor.system.current_spirit}}"
             class="{{theme.small_input}}">
         <label class="{{theme.info_label}}"> / {{actor.max_spirit}}</label>

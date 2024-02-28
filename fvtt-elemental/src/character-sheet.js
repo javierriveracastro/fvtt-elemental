@@ -16,6 +16,9 @@ export class ElementaCharacterSheet extends ActorSheet {
     jquery.find(".elemental-tab-control").on("click", (ev) => {
       this.manageTabs(ev, jquery);
     });
+    jquery.find(".elemental-refresh-derived").on("click", (ev) => {
+      this.refresh_derived(ev);
+    });
   }
 
   manageTabs(ev, jquery) {
@@ -33,5 +36,10 @@ export class ElementaCharacterSheet extends ActorSheet {
     }
     jquery.find(".tab-content").addClass("hidden");
     jquery.find(`#${visible_content_id}`).removeClass("hidden");
+  }
+
+  refresh_derived(ev) {
+    const actor_property = `max_${ev.currentTarget.dataset.derived}`;
+      ev.currentTarget.nextElementSibling.value = this.actor[actor_property];
   }
 }
