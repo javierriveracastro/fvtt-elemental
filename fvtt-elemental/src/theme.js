@@ -17,4 +17,6 @@ export const BASE_THEME = {
   info_label: "p-1",
   skill_box:
     "mt-2 block p-6 bg-white border border-gray-200 rounded-lg shadow min-h-40",
+  refresh_button:
+    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 me-2 mb-2",
 };
