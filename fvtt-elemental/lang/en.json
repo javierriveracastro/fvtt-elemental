@@ -22,7 +22,10 @@
       "Description": "Description",
       "Rules": "Rules",
       "OtherCharacters": "Other characters",
-      "BackgroundNotes": "Background Notes"
+      "BackgroundNotes": "Background Notes",
+      "ExperiencePoints": "Experience Points",
+      "XPReserve": "Reserve",
+      "XPSpent": "Spent"
     }
   }
 }

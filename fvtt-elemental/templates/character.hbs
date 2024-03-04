@@ -16,6 +16,22 @@
             <img src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" class="m-1 rounded border-none">
         </div>
     </div>
+    <div class="flex flex-row justify-end gap-3">
+        <span class="{{theme.text_attribute}}">
+            {{localize 'Elemental.CharacterSheet.ExperiencePoints'}}
+        </span>
+        <span>
+            <span class="{{text_derived}}">
+                {{localize 'Elemental.CharacterSheet.XPReserve'}}
+            </span>
+            <input type="text" name="system.experience_reserve" value="{{actor.system.experience_reserve}}"
+                   class="{{theme.small_input}}"
+                   placeholder="{{localize "Elemental.CharacterSheet.XPReserve"}}">
+            <span class="{{text_derived}}">
+                {{localize 'Elemental.CharacterSheet.XPSpent'}}: 0
+            </span>
+        </span>
+    </div>
     <!-- Tab header -->
     <nav class="{{theme.tab_backgound}}">
         <a class="elemental-tab-control {{theme.tab_active}}" data-tab="base-tab">

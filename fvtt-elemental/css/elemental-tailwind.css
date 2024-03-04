@@ -90,8 +90,16 @@
   flex-wrap: wrap
 }
 
+.elemental-css :is(.justify-end) {
+  justify-content: flex-end
+}
+
 .elemental-css :is(.gap-2) {
   gap: 0.5rem
+}
+
+.elemental-css :is(.gap-3) {
+  gap: 0.75rem
 }
 
 .elemental-css :is(.gap-4) {
