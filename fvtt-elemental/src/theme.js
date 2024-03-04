@@ -14,6 +14,7 @@ export const BASE_THEME = {
   text_attribute: "text-lg font-bold",
   text_derived: "p-1 mr-2 text-right",
   text_description_label: "block text-lg font-medium",
+  text_description: "text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
   info_label: "p-1",
   skill_box:
     "mt-2 block p-6 bg-white border border-gray-200 rounded-lg shadow min-h-40",
