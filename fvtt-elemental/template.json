@@ -3,5 +3,10 @@
     "types": [
       "character"
     ]
+  },
+  "Item": {
+    "types": [
+      "skill"
+    ]
   }
 }

@@ -4,10 +4,13 @@
 import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
+import { ElementalItem, SkillDataModel } from "./skill-item.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
   CONFIG.Actor.documentClass = ElementalActor;
+  CONFIG.Item.dataModels.skill = SkillDataModel;
+  CONFIG.Item.documentClass = ElementalItem;
 
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("elemental", ElementaCharacterSheet, {
