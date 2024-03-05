@@ -19,7 +19,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
       character_description: new fields.HTMLField(),
       other_characters: new fields.HTMLField(),
       background_notes: new fields.HTMLField(),
-      experience_reserve: new fields.NumberField({integer: true, initial: 0})
+      experience_reserve: new fields.NumberField({ integer: true, initial: 0 }),
     };
   }
 }
@@ -59,6 +59,16 @@ export class ElementalActor extends Actor {
 
   get max_spirit() {
     return this.will_xp + 9;
+  }
+
+  get attribute_xp() {
+    return (
+      this.toughness_xp + this.agility_xp + this.awareness_xp + this.will_xp
+    );
+  }
+
+  get total_xp() {
+    return this.attribute_xp;
   }
 
   calculate_xp(value) {
