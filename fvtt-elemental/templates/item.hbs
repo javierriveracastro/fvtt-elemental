@@ -1,0 +1,28 @@
+<form class="elemental-css">
+    <div class="flex flex-row justify-between">
+        <div>
+            <input type="text" name="name" value="{{item.name}}"
+                   class="{{theme.big_input}} mb-4"
+                   placeholder="{{localize 'Elemental.ItemName'}}">
+            <span class="text-end">
+                <label class="{{theme.text_attribute}}">
+                    {{localize "Elemental.ItemSheet.Value"}}
+                </label>
+                <input type="text" name="system.score" value="{{item.system.score}}"
+                    class="{{theme.small_input}}">
+            </span>
+        </div>
+        <div class="max-w-16">
+            <img src="{{item.img}}" data-edit="img" alt="{{item.name}}" class="m-1 rounded border-none">
+        </div>
+    </div>
+    <div class="elemental-editor {{theme.text_description}} mt-2">
+    {{editor
+        item.system.description
+        target='system.description'
+        button=editable
+        editable=editable
+        engine="prosemirror"
+    }}
+    </div>
+</form>

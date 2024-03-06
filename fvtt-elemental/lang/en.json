@@ -4,6 +4,7 @@
     "ElementalSheet": "Elemental Character Sheet",
     "Race": "Race",
     "Title": "Title",
+    "ItemName": "Item Name",
     "Attributes": {
       "Agility": "Agility",
       "Toughness": "Toughness",
@@ -26,6 +27,9 @@
       "ExperiencePoints": "Experience Points",
       "XPReserve": "Reserve",
       "XPSpent": "Spent"
+    },
+    "ItemSheet": {
+      "Value": "Score"
     }
   }
 }
