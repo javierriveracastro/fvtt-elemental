@@ -16,6 +16,16 @@ export class ElementaItemSheet extends ItemSheet {
 
   async getData(options) {
     const data = super.getData(options);
-    return { ...data, theme: game.elemental.current_theme };
+    const attributes_select = {
+      agility: game.i18n.localize("Elemental.Attributes.Agility"),
+      toughness: game.i18n.localize("Elemental.Attributes.Toughness"),
+      awareness: game.i18n.localize("Elemental.Attributes.Awareness"),
+      will: game.i18n.localize("Elemental.Attributes.Will"),
+    };
+    return {
+      ...data,
+      theme: game.elemental.current_theme,
+      attributes: attributes_select,
+    };
   }
 }
