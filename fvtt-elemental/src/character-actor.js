@@ -74,4 +74,26 @@ export class ElementalActor extends Actor {
   calculate_xp(value) {
     return (value * (value + 1)) / 2;
   }
+
+  get agility_skills() {
+    return this.skills("agility");
+  }
+
+  get toughness_skills() {
+    return this.skills("toughness");
+  }
+
+  get awareness_skills() {
+    return this.skills("awareness");
+  }
+
+  get will_skills() {
+    return this.skills("will");
+  }
+
+  skills(attribute) {
+    return this.items.filter((item) => {
+      return item.system.attribute === attribute;
+    });
+  }
 }

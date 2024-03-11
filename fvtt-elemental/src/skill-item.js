@@ -1,11 +1,12 @@
 // Skill document and DataModel classes
+/* globals foundry, Item */
 
 export class SkillDataModel extends foundry.abstract.TypeDataModel {
   // noinspection JSUnusedGlobalSymbols
   static defineSchema() {
     const { fields } = foundry.data;
     return {
-      attributes: new fields.StringField({ initial: "agility" }),
+      attribute: new fields.StringField({ initial: "agility" }),
       score: new fields.NumberField({ integer: true, initial: 1 }),
       description: new fields.HTMLField(),
     };

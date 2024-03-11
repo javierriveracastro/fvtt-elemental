@@ -271,6 +271,10 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
+.elemental-css :is(.filter) {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
+
 .elemental-css :is(.hover\:border-blue-600:hover) {
   --tw-border-opacity: 1;
   border-color: rgb(37 99 235 / var(--tw-border-opacity))
