@@ -29,7 +29,8 @@
       "XPSpent": "Spent"
     },
     "ItemSheet": {
-      "Value": "Score"
+      "Value": "Score",
+      "Attribute": "Attribute"
     }
   }
 }

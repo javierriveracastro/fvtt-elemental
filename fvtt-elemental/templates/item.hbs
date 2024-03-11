@@ -6,6 +6,11 @@
                    placeholder="{{localize 'Elemental.ItemName'}}">
             <span class="text-end">
                 <label class="{{theme.text_attribute}}">
+                    {{localize "Elemental.ItemSheet.Attribute"}}
+                </label>
+                <input type="text" name="system.attribute" value="{{item.system.attribute}}"
+                    class="{{theme.medium_input}}">
+                <label class="{{theme.text_attribute}}">
                     {{localize "Elemental.ItemSheet.Value"}}
                 </label>
                 <input type="text" name="system.score" value="{{item.system.score}}"

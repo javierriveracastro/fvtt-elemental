@@ -5,6 +5,8 @@ export const BASE_THEME = {
     "w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
   small_input:
     "w-10 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
+  medium_input:
+    "w-1/3 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
   tab_background:
     "flex flex-wrap text-sm font-medium text-center border-0 border-b border-gray-200 border-solid",
   tab_active:
@@ -14,7 +16,8 @@ export const BASE_THEME = {
   text_attribute: "text-lg font-bold",
   text_derived: "p-1 mr-2 text-right",
   text_description_label: "block text-lg font-medium",
-  text_description: "text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
+  text_description:
+    "text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
   info_label: "p-1",
   skill_box:
     "mt-2 block p-6 bg-white border border-gray-200 rounded-lg shadow min-h-40",
