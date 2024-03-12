@@ -1,21 +1,25 @@
 <form class="elemental-css">
     <div class="flex flex-row justify-between">
-        <div>
+        <div class="w-full">
             <input type="text" name="name" value="{{item.name}}"
                    class="{{theme.big_input}} mb-4"
                    placeholder="{{localize 'Elemental.ItemName'}}">
-            <span class="text-end">
-                <label class="{{theme.text_attribute}}">
-                    {{localize "Elemental.ItemSheet.Attribute"}}
-                </label>
-                <select name="system.attribute" class="{{theme.medium_input}}">
-                    {{selectOptions attributes selected=item.system.attribute}}
-                </select>
-                <label class="{{theme.text_attribute}}">
-                    {{localize "Elemental.ItemSheet.Value"}}
-                </label>
-                <input type="text" name="system.score" value="{{item.system.score}}"
-                    class="{{theme.small_input}}">
+            <span class="w-full flex justify-between">
+                <span class="w-1/2">
+                    <label class="{{theme.text_attribute}}">
+                        {{localize "Elemental.ItemSheet.Attribute"}}
+                    </label>
+                    <select name="system.attribute" class="{{theme.medium_select}}">
+                        {{selectOptions attributes selected=item.system.attribute}}
+                    </select>
+                </span>
+                <span>
+                    <label class="{{theme.text_attribute}}">
+                        {{localize "Elemental.ItemSheet.Value"}}
+                    </label>
+                    <input type="text" name="system.score" value="{{item.system.score}}"
+                        class="{{theme.small_input}}">
+                </span>
             </span>
         </div>
         <div class="max-w-16">

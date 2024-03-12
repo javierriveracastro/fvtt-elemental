@@ -5,8 +5,8 @@ export const BASE_THEME = {
     "w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
   small_input:
     "w-10 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
-  medium_input:
-    "w-1/3 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
+  medium_select:
+    "w-1/3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base text-sm focus:ring-blue-500 focus:border-blue-500",
   tab_background:
     "flex flex-wrap text-sm font-medium text-center border-0 border-b border-gray-200 border-solid",
   tab_active:
