@@ -30,6 +30,7 @@ Hooks.on("init", () => {
   const handlebars_templatePaths = [
     "systems/fvtt-elemental/templates/character_base.hbs",
     "systems/fvtt-elemental/templates/character_description.hbs",
+    "systems/fvtt-elemental/templates/skill_row.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
     console.info("Better Rolls templates preloaded");

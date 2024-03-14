@@ -2,6 +2,10 @@
   position: static
 }
 
+.elemental-css :is(.col-span-1) {
+  grid-column: span 1 / span 1
+}
+
 .elemental-css :is(.col-span-6) {
   grid-column: span 6 / span 6
 }
@@ -90,6 +94,10 @@
   grid-template-columns: repeat(2, minmax(0, 1fr))
 }
 
+.elemental-css :is(.grid-cols-8) {
+  grid-template-columns: repeat(8, minmax(0, 1fr))
+}
+
 .elemental-css :is(.grid-cols-9) {
   grid-template-columns: repeat(9, minmax(0, 1fr))
 }
@@ -168,6 +176,11 @@
   border-color: rgb(37 99 235 / var(--tw-border-opacity))
 }
 
+.elemental-css :is(.border-gray-100) {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity))
+}
+
 .elemental-css :is(.border-gray-200) {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity))
@@ -178,19 +191,24 @@
   border-color: rgb(209 213 219 / var(--tw-border-opacity))
 }
 
+.elemental-css :is(.border-white) {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity))
+}
+
 .elemental-css :is(.bg-blue-700) {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity))
 }
 
+.elemental-css :is(.bg-gray-200) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+}
+
 .elemental-css :is(.bg-gray-50) {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
-}
-
-.elemental-css :is(.bg-white) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
 .elemental-css :is(.p-1) {
@@ -203,10 +221,6 @@
 
 .elemental-css :is(.p-4) {
   padding: 1rem
-}
-
-.elemental-css :is(.p-6) {
-  padding: 1.5rem
 }
 
 .elemental-css :is(.px-2) {
