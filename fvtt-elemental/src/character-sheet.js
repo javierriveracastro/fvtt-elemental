@@ -1,7 +1,14 @@
 // Character Sheet
-/* globals ActorSheet, game */
+/* globals ActorSheet, game, foundry */
 
 export class ElementaCharacterSheet extends ActorSheet {
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      width: 800,
+      height: 760,
+    });
+  }
+
   get template() {
     return "/systems/fvtt-elemental/templates/character.hbs";
   }
@@ -40,6 +47,6 @@ export class ElementaCharacterSheet extends ActorSheet {
 
   refresh_derived(ev) {
     const actor_property = `max_${ev.currentTarget.dataset.derived}`;
-      ev.currentTarget.nextElementSibling.value = this.actor[actor_property];
+    ev.currentTarget.nextElementSibling.value = this.actor[actor_property];
   }
 }

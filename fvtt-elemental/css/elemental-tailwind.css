@@ -176,11 +176,6 @@
   border-color: rgb(37 99 235 / var(--tw-border-opacity))
 }
 
-.elemental-css :is(.border-gray-100) {
-  --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity))
-}
-
 .elemental-css :is(.border-gray-200) {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity))
@@ -191,9 +186,14 @@
   border-color: rgb(209 213 219 / var(--tw-border-opacity))
 }
 
-.elemental-css :is(.border-white) {
+.elemental-css :is(.border-stone-200) {
   --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity))
+  border-color: rgb(231 229 228 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.border-stone-400) {
+  --tw-border-opacity: 1;
+  border-color: rgb(168 162 158 / var(--tw-border-opacity))
 }
 
 .elemental-css :is(.bg-blue-700) {
@@ -201,14 +201,14 @@
   background-color: rgb(29 78 216 / var(--tw-bg-opacity))
 }
 
-.elemental-css :is(.bg-gray-200) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
-}
-
 .elemental-css :is(.bg-gray-50) {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
+
+.elemental-css :is(.bg-stone-300) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity))
 }
 
 .elemental-css :is(.p-1) {
