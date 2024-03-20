@@ -78,6 +78,10 @@
   width: 2.5rem
 }
 
+.elemental-css :is(.w-6) {
+  width: 1.5rem
+}
+
 .elemental-css :is(.w-full) {
   width: 100%
 }

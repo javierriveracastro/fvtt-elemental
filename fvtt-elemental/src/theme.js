@@ -23,5 +23,7 @@ export const BASE_THEME = {
     "mt-2 block p-2 bg-stone-300 border border-stone-400 rounded-lg shadow min-h-40",
   refresh_button:
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 me-2 mb-2",
+  skill_button:
+    "w-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm me-2",
   skill_name: "border-solid border-0 border-b-2 border-stone-200",
 };
