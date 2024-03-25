@@ -17,8 +17,8 @@
         <label class="{{theme.info_label}}"> / {{actor.max_move}}</label>
     </div>
     <div class="{{theme.skill_box}}">
-        {{#each actor.agility_skills}}
-            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme}}
+        {{#each actor.agility_skills as |skill index|}}
+            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme skill=skill}}
         {{/each}}
     </div>
 </div>
@@ -41,8 +41,8 @@
         <label class="{{theme.info_label}}"> / {{actor.max_health}}</label>
     </div>
     <div class="{{theme.skill_box}}">
-        {{#each actor.toughness_skills}}
-            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme}}
+        {{#each actor.toughness_skills as |skill index|}}
+            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme skill=skill}}
         {{/each}}
     </div></div>
 <div class="flex flex-col">
@@ -64,8 +64,8 @@
         <label class="{{theme.info_label}}"> / {{actor.max_initiative}}</label>
     </div>
     <div class="{{theme.skill_box}}">
-        {{#each actor.awareness_skills}}
-            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme}}
+        {{#each actor.awareness_skills as |skill index|}}
+            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme skill=skill}}
         {{/each}}
     </div>
 </div>
@@ -87,8 +87,8 @@
         <label class="{{theme.info_label}}"> / {{actor.max_spirit}}</label>
     </div>
     <div class="{{theme.skill_box}}">
-        {{#each actor.will_skills}}
-            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme}}
+        {{#each actor.will_skills as |skill index|}}
+            {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme skill=skill}}
         {{/each}}
     </div>
 </div>

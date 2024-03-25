@@ -26,6 +26,9 @@ export class ElementaCharacterSheet extends ActorSheet {
     jquery.find(".elemental-refresh-derived").on("click", (ev) => {
       this.refresh_derived(ev);
     });
+    jquery.find(".elemental-delete-skill").on("click", (ev) => {
+      this.delete_item(ev);
+    });
   }
 
   manageTabs(ev, jquery) {
@@ -48,5 +51,11 @@ export class ElementaCharacterSheet extends ActorSheet {
   refresh_derived(ev) {
     const actor_property = `max_${ev.currentTarget.dataset.derived}`;
     ev.currentTarget.nextElementSibling.value = this.actor[actor_property];
+  }
+
+  delete_item(ev) {
+    const item_id = ev.currentTarget.dataset.itemId;
+    const item = this.actor.items.get(item_id);
+    item.delete();
   }
 }
