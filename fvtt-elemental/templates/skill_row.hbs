@@ -1,11 +1,14 @@
 <div class="grid grid-cols-8">
-    <span class="col-span-6 {{theme.skill_name}}">
+    <span class="col-span-5 {{theme.skill_name}}">
         {{skill.name}}
     </span>
-    <span>
+    <div class="col-span-2 flex justify-end gap-0">
+        <button class="elemental-edit-skill {{theme.skill_button}}" data-item-id="{{skill.id}}">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </button>
         <button class="elemental-delete-skill {{theme.skill_button}}" data-item-id="{{skill.id}}">
             <i class="fa-solid fa-trash"></i>
         </button>
-    </span>
+    </div>
     <input type="text" name="skill_uuid" value="{{this.system.score}}" class="col-span-1 {{theme.small_input}}">
 </div>

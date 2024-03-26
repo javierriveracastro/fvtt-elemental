@@ -6,6 +6,14 @@
   grid-column: span 1 / span 1
 }
 
+.elemental-css :is(.col-span-2) {
+  grid-column: span 2 / span 2
+}
+
+.elemental-css :is(.col-span-5) {
+  grid-column: span 5 / span 5
+}
+
 .elemental-css :is(.col-span-6) {
   grid-column: span 6 / span 6
 }
@@ -124,6 +132,10 @@
 
 .elemental-css :is(.justify-between) {
   justify-content: space-between
+}
+
+.elemental-css :is(.gap-0) {
+  gap: 0px
 }
 
 .elemental-css :is(.gap-2) {

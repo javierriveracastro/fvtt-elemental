@@ -29,6 +29,9 @@ export class ElementaCharacterSheet extends ActorSheet {
     jquery.find(".elemental-delete-skill").on("click", (ev) => {
       this.delete_item(ev);
     });
+    jquery.find(".elemental-edit-skill").on("click", (ev) => {
+      this.edit_item(ev);
+    });
   }
 
   manageTabs(ev, jquery) {
@@ -57,5 +60,11 @@ export class ElementaCharacterSheet extends ActorSheet {
     const item_id = ev.currentTarget.dataset.itemId;
     const item = this.actor.items.get(item_id);
     item.delete();
+  }
+
+  edit_item(ev) {
+    const item_id = ev.currentTarget.dataset.itemId;
+    const item = this.actor.items.get(item_id);
+    item.sheet.render(true);
   }
 }
