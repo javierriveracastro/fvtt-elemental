@@ -67,4 +67,25 @@ export class ElementaCharacterSheet extends ActorSheet {
     const item = this.actor.items.get(item_id);
     item.sheet.render(true);
   }
+
+  async _updateObject(event, formData) {
+    if (
+      event.currentTarget &&
+      event.currentTarget.classList.contains("elemental-skill-value")
+    ) {
+      await this.update_skill_value(
+        event.currentTarget.name,
+        event.currentTarget.value,
+      );
+    }
+    return super._updateObject(event, formData);
+  }
+
+  async update_skill_value(skill_id, skill_value) {
+    let real_value = parseInt(skill_value);
+    real_value = Math.max(real_value, 1);
+    real_value = Math.min(real_value, 3);
+    const skill = this.actor.items.get(skill_id, { strict: true });
+    await skill.update({ "system.score": real_value });
+  }
 }
