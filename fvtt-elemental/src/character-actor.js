@@ -67,8 +67,16 @@ export class ElementalActor extends Actor {
     );
   }
 
+  get skill_xp() {
+    let skill_xp = 0;
+    for (let skill of this.skills()) {
+      skill_xp += this.calculate_xp(skill.system.score);
+    }
+    return skill_xp;
+  }
+
   get total_xp() {
-    return this.attribute_xp;
+    return this.attribute_xp + this.skill_xp;
   }
 
   calculate_xp(value) {
@@ -92,8 +100,13 @@ export class ElementalActor extends Actor {
   }
 
   skills(attribute) {
+    if (attribute) {
+      return this.items.filter((item) => {
+        return (item.system.attribute === attribute) && (item.type === "skill");
+      });
+    }
     return this.items.filter((item) => {
-      return item.system.attribute === attribute;
+      return item.type === "skill";
     });
   }
 }
