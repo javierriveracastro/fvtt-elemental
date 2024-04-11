@@ -1,6 +1,8 @@
 // Character Sheet
 /* globals ActorSheet, game, foundry */
 
+import { StatCheckDialog } from "./roll-dialog.js";
+
 export class ElementaCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -31,6 +33,10 @@ export class ElementaCharacterSheet extends ActorSheet {
     });
     jquery.find(".elemental-edit-skill").on("click", (ev) => {
       this.edit_item(ev);
+    });
+    jquery.find(".elemental-roll-derived").on("click", (ev) => {
+      const stat_roll_dialog = new StatCheckDialog();
+      stat_roll_dialog.render(true);
     });
   }
 
