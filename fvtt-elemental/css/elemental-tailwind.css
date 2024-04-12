@@ -26,6 +26,10 @@
   margin: 0.25rem
 }
 
+.elemental-css :is(.m-2) {
+  margin: 0.5rem
+}
+
 .elemental-css :is(.mb-2) {
   margin-bottom: 0.5rem
 }

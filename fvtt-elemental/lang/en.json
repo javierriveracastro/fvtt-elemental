@@ -5,6 +5,8 @@
     "Race": "Race",
     "Title": "Title",
     "ItemName": "Item Name",
+    "Difficult": "Difficult",
+    "Normal": "Normal",
     "Attributes": {
       "Agility": "Agility",
       "Toughness": "Toughness",
