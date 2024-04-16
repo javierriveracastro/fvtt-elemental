@@ -1,5 +1,7 @@
 // Classes for all the roll dialogs
-/* globals foundry, game, FormApplication */
+/* globals foundry, game, FormApplication, console */
+
+import { StatCheck } from "./stat-check.js";
 
 export class StatCheckDialog extends FormApplication {
   static get defaultOptions() {
@@ -18,6 +20,11 @@ export class StatCheckDialog extends FormApplication {
   }
 
   async _updateObject(ev, form_data) {
-    console.log(ev.submitter.value);
+    const roll_string = ev.submitter.value == "2d" ? "d6*d6" : "d6*d6*d6";
+    const roll = new StatCheck(roll_string);
+    roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
   }
 }
