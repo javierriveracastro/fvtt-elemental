@@ -14,10 +14,6 @@
   grid-column: span 5 / span 5
 }
 
-.elemental-css :is(.col-span-6) {
-  grid-column: span 6 / span 6
-}
-
 .elemental-css :is(.col-span-7) {
   grid-column: span 7 / span 7
 }
