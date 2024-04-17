@@ -22,7 +22,7 @@ export class StatCheckDialog extends FormApplication {
   async _updateObject(ev, form_data) {
     const roll_string = ev.submitter.value == "2d" ? "d6*d6" : "d6*d6*d6";
     const roll = new StatCheck(roll_string);
-    roll.evaluate();
+    await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
     });

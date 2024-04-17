@@ -33,6 +33,11 @@
     "ItemSheet": {
       "Value": "Score",
       "Attribute": "Attribute"
+    },
+    "Rolls": {
+      "Success": "Success",
+      "Tie": "Tie",
+      "Failure": "Failure"
     }
   }
 }
