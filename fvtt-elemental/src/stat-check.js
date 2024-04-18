@@ -5,13 +5,14 @@ export class StatCheck extends Roll {
   constructor(formula, data = {}, options = {}) {
     super(formula, data, options);
     this.target_number = options.target_number || 10;
+    this.stat = options.stat || "";
   }
 
   get result_div() {
     if (this.total <= this.target_number) {
-      return `<div>${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
+      return `<div class="${game.elemental.current_theme.result_success}">${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
     }
-    return `<div>${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
+    return `<div class="${game.elemental.current_theme.result_failure}">${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
   }
 
   async render({
@@ -29,8 +30,9 @@ export class StatCheck extends Roll {
       tooltip: isPrivate ? "" : await this.getTooltip(),
       total: isPrivate ? "?" : Math.round(this.total * 100) / 100,
       result_div: this.result_div,
+      title: `${game.i18n.localize("Elemental.StatCheck")} - ${this.stat}`,
+      theme: game.elemental.current_theme,
     };
-    console.log(this.result_div);
     return renderTemplate(template, chatData);
   }
 }

@@ -222,6 +222,16 @@
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
 }
 
+.elemental-css :is(.bg-green-50) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 253 244 / var(--tw-bg-opacity))
+}
+
+.elemental-css :is(.bg-red-50) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity))
+}
+
 .elemental-css :is(.bg-stone-300) {
   --tw-bg-opacity: 1;
   background-color: rgb(214 211 209 / var(--tw-bg-opacity))
@@ -288,6 +298,16 @@
 .elemental-css :is(.text-gray-900) {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.text-green-800) {
+  --tw-text-opacity: 1;
+  color: rgb(22 101 52 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.text-red-800) {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity))
 }
 
 .elemental-css :is(.text-white) {

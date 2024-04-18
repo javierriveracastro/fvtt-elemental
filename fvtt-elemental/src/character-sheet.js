@@ -35,7 +35,8 @@ export class ElementaCharacterSheet extends ActorSheet {
       this.edit_item(ev);
     });
     jquery.find(".elemental-roll-derived").on("click", (ev) => {
-      const stat_roll_dialog = new StatCheckDialog();
+      const derived_stat = ev.currentTarget.dataset.derived;
+      const stat_roll_dialog = new StatCheckDialog(this.actor, derived_stat);
       stat_roll_dialog.render(true);
     });
   }

@@ -28,4 +28,10 @@ export const BASE_THEME = {
   skill_name: "border-solid border-0 border-b-2 border-stone-200",
   roll_button:
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-2 m-2",
+  result_success:
+    "text-green-800 bg-green-50 font-medium rounded-lg text-center mt-2 p-1",
+  result_failure:
+    "text-red-800 bg-red-50 font-medium rounded-lg text-center mt-2 p-1",
+  roll_title:
+    "mb-2 text-gray-900 text-lg font-bold",
 };
