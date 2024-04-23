@@ -40,4 +40,5 @@ Hooks.on("init", () => {
 
   game.elemental = {};
   game.elemental.current_theme = BASE_THEME;
+  game.elemental.attributes = ['Agility', 'Toughness', 'Awareness', 'Will'];
 });

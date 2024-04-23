@@ -1,7 +1,7 @@
 // Character Sheet
 /* globals ActorSheet, game, foundry */
 
-import {AttributeRollDialog, StatCheckDialog} from "./roll-dialog.js";
+import { AttributeRollDialog, StatCheckDialog } from "./roll-dialog.js";
 
 export class ElementaCharacterSheet extends ActorSheet {
   static get defaultOptions() {
@@ -41,7 +41,10 @@ export class ElementaCharacterSheet extends ActorSheet {
     });
     jquery.find(".elemental-roll-attribute").on("click", (ev) => {
       const attribute = ev.currentTarget.dataset.attribute;
-      const attribute_roll_dialog = new AttributeRollDialog(attribute);
+      const attribute_roll_dialog = new AttributeRollDialog(
+        this.actor,
+        attribute,
+      );
       attribute_roll_dialog.render(true);
     });
   }

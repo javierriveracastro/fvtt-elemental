@@ -8,6 +8,8 @@
     "Difficult": "Difficult",
     "Normal": "Normal",
     "StatCheck": "Stat Check",
+    "AttributeRoll": "Attribute Roll",
+    "Attribute": "Attribute",
     "Attributes": {
       "Agility": "Agility",
       "Toughness": "Toughness",

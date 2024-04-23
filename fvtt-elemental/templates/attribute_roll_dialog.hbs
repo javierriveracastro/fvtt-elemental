@@ -1,1 +1,13 @@
-<p>Attribute roll</p>
+<form class="elemental-css">
+    <div class="{{theme.text_attribute}}">
+        {{ localize "Elemental.AttributeRoll" }} - {{actor.name}}
+    </div>
+    <div class="{{theme.roll_options_card}}">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Attribute" }}</span>
+        <div>
+            {{#each attribute_names}}
+                <span class="{{../theme.roll_option_unselected}}">{{this}}</span>
+            {{/each}}
+        </div>
+    </div>
+</form>

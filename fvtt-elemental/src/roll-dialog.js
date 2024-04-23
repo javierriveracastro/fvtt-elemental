@@ -16,7 +16,7 @@ export class StatCheckDialog extends FormApplication {
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,
-      width: 250,
+      width: 300,
     });
   }
 
@@ -57,7 +57,7 @@ export class AttributeRollDialog extends FormApplication {
   constructor(actor, attribute) {
     super();
     this.actor = actor;
-    this.derived_stat = attribute;
+    this.default_attribute = attribute;
   }
 
   static get defaultOptions() {
@@ -66,6 +66,23 @@ export class AttributeRollDialog extends FormApplication {
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,
+      width: 500,
     });
+  }
+
+  async getData(options) {
+    const data = super.getData(options);
+    const attribute_names = [];
+    for (let attribute of game.elemental.attributes) {
+      attribute_names.push(
+        game.i18n.localize(`Elemental.Attributes.${attribute}`),
+      );
+    }
+    return {
+      ...data,
+      theme: game.elemental.current_theme,
+      actor: this.actor,
+      attribute_names: attribute_names,
+    };
   }
 }

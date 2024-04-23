@@ -202,6 +202,11 @@
   border-color: rgb(209 213 219 / var(--tw-border-opacity))
 }
 
+.elemental-css :is(.border-gray-500) {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity))
+}
+
 .elemental-css :is(.border-stone-200) {
   --tw-border-opacity: 1;
   border-color: rgb(231 229 228 / var(--tw-border-opacity))
@@ -215,6 +220,11 @@
 .elemental-css :is(.bg-blue-700) {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity))
+}
+
+.elemental-css :is(.bg-gray-100) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity))
 }
 
 .elemental-css :is(.bg-gray-50) {
@@ -237,6 +247,11 @@
   background-color: rgb(214 211 209 / var(--tw-bg-opacity))
 }
 
+.elemental-css :is(.bg-white) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
 .elemental-css :is(.p-1) {
   padding: 0.25rem
 }
@@ -252,6 +267,21 @@
 .elemental-css :is(.px-2) {
   padding-left: 0.5rem;
   padding-right: 0.5rem
+}
+
+.elemental-css :is(.px-2\.5) {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem
+}
+
+.elemental-css :is(.py-0) {
+  padding-top: 0px;
+  padding-bottom: 0px
+}
+
+.elemental-css :is(.py-0\.5) {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem
 }
 
 .elemental-css :is(.text-center) {
@@ -277,12 +307,21 @@
   line-height: 1.25rem
 }
 
+.elemental-css :is(.text-xs) {
+  font-size: 0.75rem;
+  line-height: 1rem
+}
+
 .elemental-css :is(.font-bold) {
   font-weight: 700
 }
 
 .elemental-css :is(.font-medium) {
   font-weight: 500
+}
+
+.elemental-css :is(.tracking-tight) {
+  letter-spacing: -0.025em
 }
 
 .elemental-css :is(.text-blue-600) {
@@ -293,6 +332,11 @@
 .elemental-css :is(.text-gray-500) {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.text-gray-800) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
 }
 
 .elemental-css :is(.text-gray-900) {
