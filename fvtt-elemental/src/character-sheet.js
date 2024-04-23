@@ -1,7 +1,7 @@
 // Character Sheet
 /* globals ActorSheet, game, foundry */
 
-import { StatCheckDialog } from "./roll-dialog.js";
+import {AttributeRollDialog, StatCheckDialog} from "./roll-dialog.js";
 
 export class ElementaCharacterSheet extends ActorSheet {
   static get defaultOptions() {
@@ -38,6 +38,11 @@ export class ElementaCharacterSheet extends ActorSheet {
       const derived_stat = ev.currentTarget.dataset.derived;
       const stat_roll_dialog = new StatCheckDialog(this.actor, derived_stat);
       stat_roll_dialog.render(true);
+    });
+    jquery.find(".elemental-roll-attribute").on("click", (ev) => {
+      const attribute = ev.currentTarget.dataset.attribute;
+      const attribute_roll_dialog = new AttributeRollDialog(attribute);
+      attribute_roll_dialog.render(true);
     });
   }
 

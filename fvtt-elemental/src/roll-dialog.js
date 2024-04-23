@@ -52,3 +52,20 @@ export class StatCheckDialog extends FormApplication {
     });
   }
 }
+
+export class AttributeRollDialog extends FormApplication {
+  constructor(actor, attribute) {
+    super();
+    this.actor = actor;
+    this.derived_stat = attribute;
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+    });
+  }
+}
