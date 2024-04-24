@@ -10,6 +10,7 @@
     "StatCheck": "Stat Check",
     "AttributeRoll": "Attribute Roll",
     "Attribute": "Attribute",
+    "Roll": "Roll",
     "Attributes": {
       "Agility": "Agility",
       "Toughness": "Toughness",

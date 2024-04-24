@@ -2,6 +2,7 @@
 /* globals foundry, game, FormApplication, console */
 
 import { StatCheck } from "./stat-check.js";
+import { AttributeCheck } from "./attribute-check.js";
 
 export class StatCheckDialog extends FormApplication {
   constructor(actor, derived_stat) {
@@ -84,5 +85,13 @@ export class AttributeRollDialog extends FormApplication {
       actor: this.actor,
       attribute_names: attribute_names,
     };
+  }
+
+  async _updateObject(ev, form_data) {
+    const roll = new AttributeCheck("d6x1+2");
+    await roll.original_roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
   }
 }

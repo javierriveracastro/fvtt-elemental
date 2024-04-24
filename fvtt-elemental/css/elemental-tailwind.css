@@ -130,6 +130,10 @@
   justify-content: flex-end
 }
 
+.elemental-css :is(.justify-center) {
+  justify-content: center
+}
+
 .elemental-css :is(.justify-between) {
   justify-content: space-between
 }
