@@ -1,16 +1,5 @@
 // Class that represents an attribute check
-/* global Roll */
-
-export class AttributeCheck {
-  constructor(original_formula) {
-    this.original_roll = new AttributeRoll(original_formula);
-    this.resist_roll = null;
-  }
-
-  async toMessage() {
-    await this.original_roll.toMessage();
-  }
-}
+/* global Roll, game, CONST, CONFIG, ChatMessage */
 
 export class AttributeRoll extends Roll {
   constructor(formula, data = {}, options = {}) {
