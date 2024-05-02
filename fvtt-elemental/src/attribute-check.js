@@ -2,7 +2,7 @@
 /* global Roll, game, CONST, CONFIG, ChatMessage */
 
 export class AttributeRoll extends Roll {
-  constructor(formula, data = {}, options = {}) {
-    super(formula, data, options);
+  constructor(attribute, data = {}, options = {}) {
+    super(`1d6 + ${options.attribute}`, data, options);
   }
 }

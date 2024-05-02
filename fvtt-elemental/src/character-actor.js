@@ -102,11 +102,16 @@ export class ElementalActor extends Actor {
   skills(attribute) {
     if (attribute) {
       return this.items.filter((item) => {
-        return (item.system.attribute === attribute) && (item.type === "skill");
+        return item.system.attribute === attribute && item.type === "skill";
       });
     }
     return this.items.filter((item) => {
       return item.type === "skill";
     });
+  }
+
+  attribute_value_from_string(string) {
+    const lowercase_string = string.toLowerCase();
+    return this.system[lowercase_string];
   }
 }

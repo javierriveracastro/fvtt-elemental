@@ -58,7 +58,7 @@ export class AttributeRollDialog extends FormApplication {
   constructor(actor, attribute) {
     super();
     this.actor = actor;
-    this.default_attribute = attribute;
+    this.selected_attribute = attribute;
   }
 
   static get defaultOptions() {
@@ -88,10 +88,39 @@ export class AttributeRollDialog extends FormApplication {
   }
 
   async _updateObject(ev, form_data) {
-    const roll = new AttributeRoll("d6xo+2");
+    const roll = new AttributeRoll(
+      "1d6",
+      {},
+      {
+        attribute: this.actor.attribute_value_from_string(
+          this.selected_attribute,
+        ),
+      },
+    );
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
     });
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-attribute-selection").click((ev) => {
+      this.select_attribute(ev.currentTarget, html);
+    });
+  }
+
+  select_attribute(element, html) {
+    for (let current_element of html.find(".elemental-attribute-selection")) {
+      if (current_element === element) {
+        current_element.className =
+          game.elemental.current_theme.roll_option_selected;
+        this.selected_attribute = current_element.dataset.attribute;
+      } else {
+        current_element.className =
+          game.elemental.current_theme.roll_option_unselected;
+      }
+      current_element.classList.add("elemental-attribute-selection");
+    }
   }
 }

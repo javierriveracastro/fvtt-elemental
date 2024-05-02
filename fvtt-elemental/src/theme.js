@@ -37,4 +37,6 @@ export const BASE_THEME = {
   roll_options_title: "mb-4 text-lg font-bold tracking-tight text-gray-900",
   roll_option_unselected:
     "bg-gray-100 text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded border border-gray-500 border-solid",
+  roll_option_selected:
+    "bg-blue-100 text-blue-800 text-xs me-2 px-2.5 py-0.5 rounded border border-blue-500 border-solid",
 };
