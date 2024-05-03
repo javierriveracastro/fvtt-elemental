@@ -57,6 +57,7 @@ export class StatCheckDialog extends FormApplication {
 export class AttributeRollDialog extends FormApplication {
   constructor(actor, attribute) {
     super();
+    console.log("CREANDO", attribute);
     this.actor = actor;
     this.selected_attribute = attribute;
   }
@@ -75,9 +76,12 @@ export class AttributeRollDialog extends FormApplication {
     const data = super.getData(options);
     const attribute_names = [];
     for (let attribute of game.elemental.attributes) {
-      attribute_names.push(
-        game.i18n.localize(`Elemental.Attributes.${attribute}`),
-      );
+      console.log(attribute, this.selected_attribute);
+      attribute_names.push({
+        english_name: attribute,
+        name: game.i18n.localize(`Elemental.Attributes.${attribute}`),
+        selected: attribute.toLowerCase() === this.selected_attribute,
+      });
     }
     return {
       ...data,

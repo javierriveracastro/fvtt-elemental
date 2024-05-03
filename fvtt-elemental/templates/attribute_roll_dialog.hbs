@@ -6,7 +6,8 @@
         <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Attribute" }}</span>
         <div>
             {{#each attribute_names}}
-                <span class="{{../theme.roll_option_unselected}} elemental-attribute-selection" data-attribute="{{this}}">{{this}}</span>
+                <span class="{{# if this.selected }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }} elemental-attribute-selection"
+                    data-attribute="{{this.english_name}}">{{this.name}}</span>
             {{/each}}
         </div>
     </div>
