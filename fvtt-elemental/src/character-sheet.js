@@ -41,7 +41,6 @@ export class ElementaCharacterSheet extends ActorSheet {
     });
     jquery.find(".elemental-roll-attribute").on("click", (ev) => {
       const attribute = ev.currentTarget.dataset.attribute;
-      console.log("PULSAN", attribute);
       const attribute_roll_dialog = new AttributeRollDialog(
         this.actor,
         attribute,
