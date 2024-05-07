@@ -89,18 +89,22 @@ export class AttributeRollDialog extends FormApplication {
       actor: this.actor,
       attribute_names: attribute_names,
       resist_roll: this.resist_roll,
-      dif_roll: this.dif_roll
+      dif_roll: this.dif_roll,
     };
   }
 
   async _updateObject(ev, form_data) {
+    let attribute_modifier = 0;
+    if (this.actor && this.selected_attribute) {
+      attribute_modifier = this.actor.attribute_value_from_string(
+        this.selected_attribute,
+      );
+    }
     const roll = new AttributeRoll(
       "1d6xo",
       {},
       {
-        attribute: this.actor.attribute_value_from_string(
-          this.selected_attribute,
-        ),
+        attribute: attribute_modifier,
       },
     );
     await roll.evaluate();

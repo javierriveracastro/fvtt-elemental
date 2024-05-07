@@ -11,6 +11,7 @@
     "AttributeRoll": "Attribute Roll",
     "Attribute": "Attribute",
     "Roll": "Roll",
+    "DIFRoll": "DIF Roll",
     "Attributes": {
       "Agility": "Agility",
       "Toughness": "Toughness",
