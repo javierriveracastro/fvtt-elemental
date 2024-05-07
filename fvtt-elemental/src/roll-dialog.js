@@ -91,7 +91,7 @@ export class AttributeRollDialog extends FormApplication {
 
   async _updateObject(ev, form_data) {
     const roll = new AttributeRoll(
-      "1d6",
+      "1d6xo",
       {},
       {
         attribute: this.actor.attribute_value_from_string(

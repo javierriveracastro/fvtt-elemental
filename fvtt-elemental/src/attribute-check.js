@@ -3,6 +3,6 @@
 
 export class AttributeRoll extends Roll {
   constructor(attribute, data = {}, options = {}) {
-    super(`1d6 + ${options.attribute}`, data, options);
+    super(`1d6xo + ${options.attribute}`, data, options);
   }
 }
