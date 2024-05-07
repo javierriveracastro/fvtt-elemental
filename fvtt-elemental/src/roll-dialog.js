@@ -59,6 +59,8 @@ export class AttributeRollDialog extends FormApplication {
     super();
     this.actor = actor;
     this.selected_attribute = attribute;
+    this.resist_roll = false;
+    this.dif_roll = false;
   }
 
   static get defaultOptions() {
@@ -86,6 +88,8 @@ export class AttributeRollDialog extends FormApplication {
       theme: game.elemental.current_theme,
       actor: this.actor,
       attribute_names: attribute_names,
+      resist_roll: this.resist_roll,
+      dif_roll: this.dif_roll
     };
   }
 

@@ -1,3 +1,8 @@
 .sheet .editor-content, .elemental-editor, .editor.prosemirror {
     min-height: 120px;
 }
+
+#chat-controls .control-buttons {
+    max-width: 75px;
+    flex: 1 0 !important;
+}

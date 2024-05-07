@@ -44,3 +44,11 @@ Hooks.on("init", () => {
   game.elemental.current_theme = BASE_THEME;
   game.elemental.attributes = ["Agility", "Toughness", "Awareness", "Will"];
 });
+
+Hooks.on("ready", () => {
+  const chat_control = document.getElementsByClassName("control-buttons");
+  const container = document.createElement("a");
+  container.innerHTML =
+    "<a id='elemental-dif-roll' role='button' data-tooltip='Dif Roll'><i class='fa-solid fa-dice'></i></a>";
+  chat_control[0].appendChild(container.firstChild);
+});
