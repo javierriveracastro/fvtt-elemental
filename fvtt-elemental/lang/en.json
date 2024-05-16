@@ -12,6 +12,8 @@
     "Attribute": "Attribute",
     "Roll": "Roll",
     "DIFRoll": "DIF Roll",
+    "Modifiers": "Modifiers",
+    "Difficulty": "Difficulty",
     "Attributes": {
       "Agility": "Agility",
       "Toughness": "Toughness",

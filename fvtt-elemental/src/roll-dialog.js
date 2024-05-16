@@ -59,6 +59,7 @@ export class AttributeRollDialog extends FormApplication {
     super();
     this.actor = actor;
     this.selected_attribute = attribute;
+    this.selected_difficulty = 0;
     this.resist_roll = false;
     this.dif_roll = false;
   }
@@ -105,6 +106,7 @@ export class AttributeRollDialog extends FormApplication {
       {},
       {
         attribute: attribute_modifier,
+        difficulty: this.selected_difficulty,
       },
     );
     await roll.evaluate();
@@ -118,14 +120,35 @@ export class AttributeRollDialog extends FormApplication {
     html.find(".elemental-attribute-selection").click((ev) => {
       this.select_attribute(ev.currentTarget, html);
     });
+    html.find(".elemental-difficulty-selection").click((ev) => {
+      this.select_difficulty(ev.currentTarget, html);
+    });
   }
 
   select_attribute(element, html) {
-    for (let current_element of html.find(".elemental-attribute-selection")) {
+    this.select_one(
+      html,
+      element,
+      "elemental-attribute-selection",
+      "selected_attribute",
+    );
+  }
+
+  select_difficulty(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-difficulty-selection",
+      "selected_difficulty",
+    );
+  }
+
+  select_one(html, element, class_name, property) {
+    for (let current_element of html.find(`.${class_name}`)) {
       if (current_element === element) {
         current_element.className =
           game.elemental.current_theme.roll_option_selected;
-        this.selected_attribute = current_element.dataset.attribute;
+        this[property] = current_element.dataset.value;
       } else {
         current_element.className =
           game.elemental.current_theme.roll_option_unselected;
@@ -133,4 +156,5 @@ export class AttributeRollDialog extends FormApplication {
       current_element.classList.add("elemental-attribute-selection");
     }
   }
+
 }

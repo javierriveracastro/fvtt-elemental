@@ -54,6 +54,7 @@ Hooks.on("ready", () => {
   container.firstChild.addEventListener("click", () => {
     const dif_roll = new AttributeRollDialog();
     dif_roll.dif_roll = true;
+    dif_roll.selected_difficulty = 3;
     dif_roll.render(true);
   });
   chat_control[0].appendChild(container.firstChild);

@@ -3,6 +3,13 @@
 
 export class AttributeRoll extends Roll {
   constructor(attribute, data = {}, options = {}) {
-    super(`1d6xo + ${options.attribute}`, data, options);
+    let base_formula = "1d6xo";
+    if (options.attribute) {
+      base_formula += ` + ${options.attribute}`;
+    }
+    if (options.difficulty) {
+      base_formula += ` + ${options.difficulty}`;
+    }
+    super(base_formula, data, options);
   }
 }
