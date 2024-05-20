@@ -72,6 +72,10 @@
   margin-inline-end: 0.5rem
 }
 
+.elemental-css :is(.ml-1) {
+  margin-left: 0.25rem
+}
+
 .elemental-css :is(.mr-2) {
   margin-right: 0.5rem
 }
@@ -104,6 +108,10 @@
   display: none
 }
 
+.elemental-css :is(.h-4) {
+  height: 1rem
+}
+
 .elemental-css :is(.min-h-40) {
   min-height: 10rem
 }
@@ -118,6 +126,10 @@
 
 .elemental-css :is(.w-10) {
   width: 2.5rem
+}
+
+.elemental-css :is(.w-4) {
+  width: 1rem
 }
 
 .elemental-css :is(.w-6) {
@@ -158,6 +170,10 @@
 
 .elemental-css :is(.flex-wrap) {
   flex-wrap: wrap
+}
+
+.elemental-css :is(.items-center) {
+  align-items: center
 }
 
 .elemental-css :is(.justify-end) {
@@ -372,6 +388,11 @@
   letter-spacing: -0.025em
 }
 
+.elemental-css :is(.text-blue-500) {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+
 .elemental-css :is(.text-blue-600) {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity))
@@ -380,6 +401,11 @@
 .elemental-css :is(.text-blue-800) {
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity))
+}
+
+.elemental-css :is(.text-gray-400) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity))
 }
 
 .elemental-css :is(.text-gray-500) {
@@ -441,6 +467,11 @@
   background-color: rgb(30 64 175 / var(--tw-bg-opacity))
 }
 
+.elemental-css :is(.hover\:bg-gray-100:hover) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
+
 .elemental-css :is(.hover\:text-blue-700:hover) {
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity))
@@ -451,9 +482,20 @@
   color: rgb(75 85 99 / var(--tw-text-opacity))
 }
 
+.elemental-css :is(.hover\:text-gray-900:hover) {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity))
+}
+
 .elemental-css :is(.focus\:border-blue-500:focus) {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity))
+}
+
+.elemental-css :is(.focus\:ring-2:focus) {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
 }
 
 .elemental-css :is(.focus\:ring-4:focus) {
@@ -470,4 +512,9 @@
 .elemental-css :is(.focus\:ring-blue-500:focus) {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity))
+}
+
+.elemental-css :is(.focus\:ring-gray-300:focus) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity))
 }

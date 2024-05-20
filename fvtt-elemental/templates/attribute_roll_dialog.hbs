@@ -7,29 +7,53 @@
         {{/if}}
     </div>
     {{#unless dif_roll }}
-    <div class="{{theme.roll_options_card}}">
-        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Attribute" }}</span>
-        <div>
-            {{#each attribute_names}}
-                <span class="{{# if this.selected }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }} elemental-attribute-selection"
-                    data-value="{{this.english_name}}">{{this.name}}</span>
-            {{/each}}
+        <div class="{{theme.roll_options_card}}">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Attribute" }}</span>
+            <div>
+                {{#each attribute_names}}
+                    <span class="{{# if
+                            this.selected }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }} elemental-attribute-selection"
+                          data-value="{{this.english_name}}">{{this.name}}</span>
+                {{/each}}
+            </div>
         </div>
-    </div>
     {{/unless}}
     {{#if dif_roll }}
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Difficulty" }}</span>
+            <div>
+                <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="1">1</span>
+                <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="2">2</span>
+                <span class="{{theme.roll_option_selected}} elemental-difficulty-selection" data-value="3">3</span>
+                <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="4">4</span>
+                <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="5">5</span>
+                <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="6">6</span>
+            </div>
+        </div>
+    {{/if}}
     <div class="{{theme.roll_options_card}} mt-2">
-        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Difficulty" }}</span>
-        <div>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="1">1</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="2">2</span>
-            <span class="{{theme.roll_option_selected}} elemental-difficulty-selection" data-value="3">3</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="4">4</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="5">5</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="6">6</span>
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Modifiers" }}</span>
+        <div id="elemental-active-modifiers" class="flex">
+            <div class="{{theme.modifier_toast}}">
+                <span>+1</span>
+                <button type="button" class="{{theme.close_icon}}">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M0 0l14 14M14 0l-14 14"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mt-2">
+            <span class="{{theme.roll_option_unselected}} elemental-add-modifier" data-value="-3">-3</span>
+            <span class="{{theme.roll_option_unselected}} elemental-add-modifier" data-value="-2">-2</span>
+            <span class="{{theme.roll_option_unselected}} elemental-add-modifier" data-value="-1">-1</span>
+            <span class="{{theme.roll_option_unselected}} elemental-add-modifier" data-value="1">1</span>
+            <span class="{{theme.roll_option_unselected}} elemental-add-modifier" data-value="2">-2</span>
+            <span class="{{theme.roll_option_unselected}} elemental-add-modifier" data-value="3">-3</span>
         </div>
     </div>
-    {{/if}}
     <div class="flex justify-center">
         <button type="submit" name="submit" class="w-1/3 {{ theme.roll_button }}">
             <i class="fas fa-dice"></i> {{localize "Elemental.Roll"}}

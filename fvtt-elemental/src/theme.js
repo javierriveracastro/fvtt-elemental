@@ -39,4 +39,8 @@ export const BASE_THEME = {
     "bg-gray-100 text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded border border-gray-500 border-solid",
   roll_option_selected:
     "bg-blue-100 text-blue-800 text-xs me-2 px-2.5 py-0.5 rounded border border-blue-500 border-solid",
+  modifier_toast:
+    "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
+  close_icon:
+    "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 hover:bg-gray-100 w-4 h-4 flex",
 };
