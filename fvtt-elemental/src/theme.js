@@ -42,5 +42,5 @@ export const BASE_THEME = {
   modifier_toast:
     "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
   close_icon:
-    "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 hover:bg-gray-100 w-4 h-4 flex",
+    "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 w-4 h-4 flex p-0",
 };

@@ -123,6 +123,9 @@ export class AttributeRollDialog extends FormApplication {
     html.find(".elemental-difficulty-selection").click((ev) => {
       this.select_difficulty(ev.currentTarget, html);
     });
+    html.find(".elemental-add-modifier").click((ev) => {
+      this.add_modifier_toast(ev.currentTarget.dataset.value, html);
+    });
   }
 
   select_attribute(element, html) {
@@ -157,4 +160,18 @@ export class AttributeRollDialog extends FormApplication {
     }
   }
 
+  add_modifier_toast(value, html) {
+    const id = window.crypto.getRandomValues(new Uint32Array(1))[0];
+    const sign = value > 0 ? "+" : "";
+    const new_modifier_toast = `<div class="${game.elemental.current_theme.modifier_toast} id${id}" data-value="${value}">
+      <span>${sign}${value}</span>
+      <button id="id${id}" type="button" class="${game.elemental.current_theme.close_icon}">
+        <i class="fas fa-xmark" style="margin-top: -1px; margin-left: 0.5px;"></i>
+      </button>
+    </div>`;
+    html.find("#elemental-active-modifiers").append(new_modifier_toast);
+    html.find("#id" + id).click((ev) => {
+      ev.currentTarget.parentElement.remove();
+    });
+  }
 }
