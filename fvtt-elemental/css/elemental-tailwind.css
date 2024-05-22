@@ -116,6 +116,10 @@
   min-height: 10rem
 }
 
+.elemental-css :is(.min-h-5) {
+  min-height: 1.25rem
+}
+
 .elemental-css :is(.w-1\/2) {
   width: 50%
 }
