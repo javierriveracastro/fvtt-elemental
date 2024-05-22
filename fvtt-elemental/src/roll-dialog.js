@@ -62,6 +62,7 @@ export class AttributeRollDialog extends FormApplication {
     this.selected_difficulty = 0;
     this.resist_roll = false;
     this.dif_roll = false;
+    this.modfiers = [];
   }
 
   static get defaultOptions() {
@@ -107,6 +108,7 @@ export class AttributeRollDialog extends FormApplication {
       {
         attribute: attribute_modifier,
         difficulty: this.selected_difficulty,
+        modifiers: this.modfiers,
       },
     );
     await roll.evaluate();
@@ -124,6 +126,7 @@ export class AttributeRollDialog extends FormApplication {
       this.select_difficulty(ev.currentTarget, html);
     });
     html.find(".elemental-add-modifier").click((ev) => {
+      this.modfiers.push(ev.currentTarget.dataset.value);
       this.add_modifier_toast(ev.currentTarget.dataset.value, html);
     });
   }
@@ -165,12 +168,15 @@ export class AttributeRollDialog extends FormApplication {
     const sign = value > 0 ? "+" : "";
     const new_modifier_toast = `<div class="${game.elemental.current_theme.modifier_toast} id${id}" data-value="${value}">
       <span>${sign}${value}</span>
-      <button id="id${id}" type="button" class="${game.elemental.current_theme.close_icon}">
+      <button id="id${id}" type="button" class="${game.elemental.current_theme.close_icon}" >
         <i class="fas fa-xmark" style="margin-top: -1px; margin-left: 0.5px;"></i>
       </button>
     </div>`;
     html.find("#elemental-active-modifiers").append(new_modifier_toast);
     html.find("#id" + id).click((ev) => {
+      const value = ev.currentTarget.parentElement.dataset.value;
+      const index = this.modfiers.indexOf(value);
+      this.modfiers.splice(index, 1);
       ev.currentTarget.parentElement.remove();
     });
   }

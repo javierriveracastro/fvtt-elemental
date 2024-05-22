@@ -10,6 +10,10 @@ export class AttributeRoll extends Roll {
     if (options.difficulty) {
       base_formula += ` + ${options.difficulty}`;
     }
+    for (let modifier of options.modifiers) {
+      const sign = modifier > 0 ? "+" : "";
+      base_formula += `${sign}${modifier}`;
+    }
     super(base_formula, data, options);
   }
 }
