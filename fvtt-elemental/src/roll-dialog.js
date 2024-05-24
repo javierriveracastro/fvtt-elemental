@@ -107,6 +107,8 @@ export class AttributeRollDialog extends FormApplication {
       {},
       {
         attribute: attribute_modifier,
+        attribute_name: this.selected_attribute,
+        actor_name: this.actor ? this.actor.name : "",
         difficulty: this.selected_difficulty,
         modifiers: this.modfiers,
       },

@@ -43,4 +43,6 @@ export const BASE_THEME = {
     "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
   close_icon:
     "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 w-4 h-4 flex p-0",
+  modifier_badge:
+    "justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
 };
