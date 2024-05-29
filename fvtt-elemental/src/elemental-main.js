@@ -6,9 +6,9 @@ import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
 import { ElementaItemSheet } from "./item-sheet.js";
-import { StatCheck } from "./stat-check.js";
-import { AttributeRoll } from "./attribute-check.js";
-import { AttributeRollDialog } from "./roll-dialog.js";
+import {StatCheck} from "./stat-check.js";
+import {AttributeRoll, start_new_diff_roll} from "./attribute-check.js";
+import { addChatMessageListeners } from "./chat_messages_listeners.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
@@ -51,11 +51,12 @@ Hooks.on("ready", () => {
   const container = document.createElement("a");
   container.innerHTML =
     "<a id='elemental-dif-roll' role='button' data-tooltip='Dif Roll'><i class='fa-solid fa-dice'></i></a>";
-  container.firstChild.addEventListener("click", () => {
-    const dif_roll = new AttributeRollDialog();
-    dif_roll.dif_roll = true;
-    dif_roll.selected_difficulty = 3;
-    dif_roll.render(true);
-  });
+  container.firstChild.addEventListener("click", start_new_diff_roll);
   chat_control[0].appendChild(container.firstChild);
+});
+
+Hooks.on("renderChatMessage", (message, html) => {
+  if (message.rolls.length > 0) {
+    addChatMessageListeners(html);
+  }
 });

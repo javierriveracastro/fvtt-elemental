@@ -1,6 +1,8 @@
 // Class that represents an attribute check
 /* global Roll, game, CONST, CONFIG, ChatMessage, renderTemplate */
 
+import {AttributeRollDialog} from "./roll-dialog.js";
+
 export class AttributeRoll extends Roll {
   constructor(attribute, data = {}, options = {}) {
     let is_difficulty_roll = false;
@@ -51,7 +53,15 @@ export class AttributeRoll extends Roll {
       title: this.title,
       theme: game.elemental.current_theme,
       badges: this.badges,
+      is_difficulty_roll: this.is_difficulty_roll
     };
     return renderTemplate(template, chatData);
   }
+}
+
+export function start_new_diff_roll() {
+  const dif_roll = new AttributeRollDialog();
+  dif_roll.dif_roll = true;
+  dif_roll.selected_difficulty = 3;
+  dif_roll.render(true);
 }
