@@ -57,6 +57,6 @@ Hooks.on("ready", () => {
 
 Hooks.on("renderChatMessage", (message, html) => {
   if (message.rolls.length > 0) {
-    addChatMessageListeners(html);
+    addChatMessageListeners(message, html);
   }
 });

@@ -62,6 +62,7 @@ export class AttributeRollDialog extends FormApplication {
     this.selected_difficulty = 0;
     this.resist_roll = false;
     this.dif_roll = false;
+    this.originating_roll = "";
     this.modfiers = [];
   }
 
@@ -111,6 +112,7 @@ export class AttributeRollDialog extends FormApplication {
         actor_name: this.actor ? this.actor.name : "",
         difficulty: this.selected_difficulty,
         modifiers: this.modfiers,
+        originating_roll: this.originating_roll,
       },
     );
     await roll.evaluate();

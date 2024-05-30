@@ -1,7 +1,7 @@
 // Class that represents an attribute check
 /* global Roll, game, CONST, CONFIG, ChatMessage, renderTemplate */
 
-import {AttributeRollDialog} from "./roll-dialog.js";
+import { AttributeRollDialog } from "./roll-dialog.js";
 
 export class AttributeRoll extends Roll {
   constructor(attribute, data = {}, options = {}) {
@@ -25,6 +25,7 @@ export class AttributeRoll extends Roll {
       badges.push(`${sign}${modifier}`);
     }
     super(base_formula, data, options);
+    this.originating_roll = options.originating_roll || "";
     this.is_difficulty_roll = is_difficulty_roll;
     this.actor_name = options.actor_name;
     this.badges = badges;
@@ -53,15 +54,17 @@ export class AttributeRoll extends Roll {
       title: this.title,
       theme: game.elemental.current_theme,
       badges: this.badges,
-      is_difficulty_roll: this.is_difficulty_roll
+      is_difficulty_roll: this.is_difficulty_roll,
+      originating_roll: this.originating_roll
     };
     return renderTemplate(template, chatData);
   }
 }
 
-export function start_new_diff_roll() {
+export function start_new_diff_roll(origin = '') {
   const dif_roll = new AttributeRollDialog();
   dif_roll.dif_roll = true;
   dif_roll.selected_difficulty = 3;
+  dif_roll.originating_roll = origin;
   dif_roll.render(true);
 }
