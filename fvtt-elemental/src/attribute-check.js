@@ -25,18 +25,17 @@ export class AttributeRoll extends Roll {
       badges.push(`${sign}${modifier}`);
     }
     super(base_formula, data, options);
-    this.originating_roll = options.originating_roll || "";
+    this.originating_roll = undefined;
+    if (options.originating_roll) {
+      fromUuid(options.originating_roll).then((message) => {
+        this.originating_roll = message.rolls[0];
+        console.log(this.originating_roll);
+      });
+    }
     this.is_difficulty_roll = is_difficulty_roll;
     this.actor_name = options.actor_name;
     this.badges = badges;
   }
-
-  get title() {
-    return this.is_difficulty_roll
-      ? `${game.i18n.localize("Elemental.Difficulty")} ${game.i18n.localize("Elemental.Roll")}`
-      : `${this.actor_name} ${game.i18n.localize("Elemental.AttributeRoll")}`;
-  }
-
   async render({
     flavor,
     template = "systems/fvtt-elemental/templates/attribute_roll.hbs",
@@ -55,13 +54,37 @@ export class AttributeRoll extends Roll {
       theme: game.elemental.current_theme,
       badges: this.badges,
       is_difficulty_roll: this.is_difficulty_roll,
-      originating_roll: this.originating_roll
+      originating_roll: this.originating_roll,
+      result_div: this.result_div,
     };
     return renderTemplate(template, chatData);
   }
+
+  get title() {
+    if (this.is_difficulty_roll) {
+      let title = game.i18n.localize("Elemental.Difficulty");
+      if (this.originating_roll) {
+        title += ` vs (${this.originating_roll.total})`;
+      }
+      return title;
+    }
+    return `${this.actor_name} ${game.i18n.localize("Elemental.AttributeRoll")}`;
+  }
+
+  get result_div() {
+    if (!this.originating_roll) {
+      return "";
+    }
+    if (this.total < this.originating_roll.total) {
+      return `<div class="${game.elemental.current_theme.result_success}">${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
+    } else if (this.total > this.originating_roll.total) {
+      return `<div class="${game.elemental.current_theme.result_failure}">${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
+    }
+    return `<div class="${game.elemental.current_theme.result_draw}">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
+  }
 }
 
-export function start_new_diff_roll(origin = '') {
+export function start_new_diff_roll(origin = "") {
   const dif_roll = new AttributeRollDialog();
   dif_roll.dif_roll = true;
   dif_roll.selected_difficulty = 3;

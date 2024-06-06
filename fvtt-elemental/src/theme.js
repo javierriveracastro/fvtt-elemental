@@ -32,6 +32,8 @@ export const BASE_THEME = {
     "text-green-800 bg-green-50 font-medium rounded-lg text-center mt-2 p-1",
   result_failure:
     "text-red-800 bg-red-50 font-medium rounded-lg text-center mt-2 p-1",
+  result_draw:
+    "text-gray-800 bg-gray-50 font-medium rounded-lg text-center mt-2 p-1",
   roll_title: "mb-2 text-gray-900 text-lg font-bold",
   roll_options_card: "p-2 bg-white border border-gray-200 rounded-lg shadow",
   roll_options_title: "mb-4 text-lg font-bold tracking-tight text-gray-900",
