@@ -1,5 +1,5 @@
 // Class that represents an attribute check
-/* global Roll, game, CONST, CONFIG, ChatMessage, renderTemplate */
+/* global Roll, game, CONST, CONFIG, ChatMessage, renderTemplate, fromUuid */
 
 import { AttributeRollDialog } from "./roll-dialog.js";
 
@@ -29,7 +29,6 @@ export class AttributeRoll extends Roll {
     if (options.originating_roll) {
       fromUuid(options.originating_roll).then((message) => {
         this.originating_roll = message.rolls[0];
-        console.log(this.originating_roll);
       });
     }
     this.is_difficulty_roll = is_difficulty_roll;
@@ -75,12 +74,32 @@ export class AttributeRoll extends Roll {
     if (!this.originating_roll) {
       return "";
     }
+    const critical = this.is_critical
+      ? game.i18n.localize("Elemental.Rolls.Critical")
+      : "";
     if (this.total < this.originating_roll.total) {
-      return `<div class="${game.elemental.current_theme.result_success}">${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
+      return `<div class="${game.elemental.current_theme.result_success}">${critical} ${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
     } else if (this.total > this.originating_roll.total) {
-      return `<div class="${game.elemental.current_theme.result_failure}">${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
+      return `<div class="${game.elemental.current_theme.result_failure}">${critical} ${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
     }
     return `<div class="${game.elemental.current_theme.result_draw}">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
+  }
+
+  get is_critical() {
+    let is_critical = true;
+    for (const term of this.terms) {
+      if (term.hasOwnProperty("_faces") && term.results.length === 1) {
+        is_critical = false;
+        break;
+      }
+    }
+    for (const term of this.originating_roll.terms) {
+      if (term.hasOwnProperty("_faces") && term.results.length === 1) {
+        is_critical = false;
+        break;
+      }
+    }
+    return is_critical;
   }
 }
 

@@ -44,7 +44,8 @@
     "Rolls": {
       "Success": "Success",
       "Tie": "Tie",
-      "Failure": "Failure"
+      "Failure": "Failure",
+      "Critical": "Critical"
     }
   }
 }
