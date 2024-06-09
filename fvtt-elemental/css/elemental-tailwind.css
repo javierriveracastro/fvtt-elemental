@@ -80,10 +80,6 @@
   margin-right: 0.5rem
 }
 
-.elemental-css :is(.mr-4) {
-  margin-right: 1rem
-}
-
 .elemental-css :is(.mt-1) {
   margin-top: 0.25rem
 }

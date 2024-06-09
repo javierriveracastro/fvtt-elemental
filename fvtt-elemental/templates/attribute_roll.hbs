@@ -17,10 +17,17 @@
             <h4 class="dice-total">{{total}}</h4>
         </div>
     </div>
-    {{#unless is_difficulty_roll}}<div class="mr-4 mt-2">
-        <button class="elemental-roll-difficulty {{theme.roll_button}}">
-            <i class="fas fa-dice"></i> {{localize "Elemental.DIFRoll"}}
-        </button>
-    </div>{{/unless}}
+    <div class="mt-2 flex justify-between">
+        {{#unless is_difficulty_roll}}
+            <button class="elemental-roll-difficulty {{theme.roll_button}}">
+                <i class="fas fa-dice"></i> {{localize "Elemental.DIFRoll"}}
+            </button>
+        {{/unless}}
+        {{#unless originating_roll }}
+            <button class="elemental-roll-opposed {{theme.roll_button}}">
+                <i class="fas fa-dice"></i> {{localize "Elemental.OpposingRoll"}}
+            </button>
+    {{/unless}}
+    </div>
     {{{result_div}}}
 </div>

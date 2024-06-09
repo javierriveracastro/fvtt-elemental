@@ -12,6 +12,7 @@
     "Attribute": "Attribute",
     "Roll": "Roll",
     "DIFRoll": "DIF Roll",
+    "OpposingRoll": "Opposing",
     "Modifiers": "Modifiers",
     "Difficulty": "Difficulty",
     "Attributes": {
