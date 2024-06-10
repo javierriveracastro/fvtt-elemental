@@ -110,3 +110,10 @@ export function start_new_diff_roll(origin = "") {
   dif_roll.originating_roll = origin;
   dif_roll.render(true);
 }
+
+export function start_new_opposite_roll(actor, origin = "") {
+  const oppositing_roll = new AttributeRollDialog(actor);
+  oppositing_roll.originating_roll = origin;
+  oppositing_roll.resist_roll = true;
+  oppositing_roll.render(true);
+}
