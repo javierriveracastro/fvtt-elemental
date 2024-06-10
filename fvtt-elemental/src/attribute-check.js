@@ -106,7 +106,7 @@ export class AttributeRoll extends Roll {
 export function start_new_diff_roll(origin = "") {
   const dif_roll = new AttributeRollDialog();
   dif_roll.dif_roll = true;
-  dif_roll.selected_difficulty = 3;
+  dif_roll.selected_difficulty = 2;
   dif_roll.originating_roll = origin;
   dif_roll.render(true);
 }
