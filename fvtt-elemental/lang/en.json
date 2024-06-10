@@ -16,10 +16,10 @@
     "Modifiers": "Modifiers",
     "Difficulty": "Difficulty",
     "Attributes": {
-      "Agility": "Agility",
-      "Toughness": "Toughness",
-      "Awareness": "Awareness",
-      "Will": "Will"
+      "Agility": "AGILITY",
+      "Toughness": "TOUGHNESS",
+      "Awareness": "AWARENESS",
+      "Will": "WILL"
     },
     "Derived": {
       "Move": "Move",
