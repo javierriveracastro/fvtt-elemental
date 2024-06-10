@@ -14,7 +14,7 @@ export const BASE_THEME = {
   tab_inactive:
     "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-500",
   text_attribute: "text-lg font-bold",
-  text_derived: "p-1 mr-2 text-right",
+  text_derived: "p-1 mr-2 text-right text-lg",
   text_description_label: "block text-lg font-medium",
   text_description:
     "text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
