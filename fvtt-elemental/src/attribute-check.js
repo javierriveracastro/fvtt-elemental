@@ -35,6 +35,7 @@ export class AttributeRoll extends Roll {
     this.actor_name = options.actor_name;
     this.badges = badges;
   }
+
   async render({
     flavor,
     template = "systems/fvtt-elemental/templates/attribute_roll.hbs",
@@ -74,12 +75,18 @@ export class AttributeRoll extends Roll {
     if (!this.originating_roll) {
       return "";
     }
+    let positive_total = this.originating_roll.total;
+    let oposing_total = this.total;
+    if (this.originating_roll.is_difficulty_roll) {
+      positive_total = this.total;
+      oposing_total = this.originating_roll.total;
+    }
     const critical = this.is_critical
       ? game.i18n.localize("Elemental.Rolls.Critical")
       : "";
-    if (this.total < this.originating_roll.total) {
+    if (positive_total > oposing_total) {
       return `<div class="${game.elemental.current_theme.result_success}">${critical} ${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
-    } else if (this.total > this.originating_roll.total) {
+    } else if (positive_total < oposing_total) {
       return `<div class="${game.elemental.current_theme.result_failure}">${critical} ${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
     }
     return `<div class="${game.elemental.current_theme.result_draw}">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
