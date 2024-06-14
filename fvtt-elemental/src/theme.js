@@ -47,4 +47,6 @@ export const BASE_THEME = {
     "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 w-4 h-4 flex p-0",
   modifier_badge:
     "justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
+  checkbox:
+    "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2",
 };

@@ -4,8 +4,8 @@
             <input type="text" name="name" value="{{item.name}}"
                    class="{{theme.big_input}} mb-4"
                    placeholder="{{localize 'Elemental.ItemName'}}">
-            <span class="w-full flex justify-between">
-                <span class="w-1/2">
+            <span class="w-full grid grid-cols-2 gap-2">
+                <span>
                     <label class="{{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.Attribute"}}
                     </label>
@@ -19,6 +19,14 @@
                     </label>
                     <input type="text" name="system.score" value="{{item.system.score}}"
                         class="{{theme.small_input}}">
+                </span>
+                <span>
+                    <label class="{{theme.text_attribute}}">
+                        {{localize "Elemental.ItemSheet.DontModifyRoll"}}
+                    </label>
+                    <input type="checkbox" name="system.dont_modify_rolls"
+                        {{# if item.system.dont_modify_rolls }}checked{{/ if }}
+                        class="{{theme.checkbox}}">
                 </span>
             </span>
         </div>

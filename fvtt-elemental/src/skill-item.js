@@ -9,6 +9,7 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
       attribute: new fields.StringField({ initial: "agility" }),
       score: new fields.NumberField({ integer: true, initial: 1 }),
       description: new fields.HTMLField(),
+      dont_modify_rolls: new fields.BooleanField({ initial: false }),
     };
   }
 }

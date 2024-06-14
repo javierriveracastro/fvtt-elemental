@@ -40,7 +40,8 @@
     },
     "ItemSheet": {
       "Value": "Score",
-      "Attribute": "Attribute"
+      "Attribute": "Attribute",
+      "DontModifyRoll": "Don't modify rolls"
     },
     "Rolls": {
       "Success": "Success",
