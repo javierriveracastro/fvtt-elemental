@@ -31,6 +31,16 @@
             </div>
         </div>
     {{/if}}
+    {{# if skills }}
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Skills" }}</span>
+            <div>
+                {{#each skills}}
+                    <span class="{{../theme.roll_option_unselected}}">{{this.name}}</span>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
     <div class="{{theme.roll_options_card}} mt-2">
         <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Modifiers" }}</span>
         <div id="elemental-active-modifiers" class="flex min-h-5">

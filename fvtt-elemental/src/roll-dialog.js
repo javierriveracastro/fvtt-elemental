@@ -93,7 +93,17 @@ export class AttributeRollDialog extends FormApplication {
       attribute_names: attribute_names,
       resist_roll: this.resist_roll,
       dif_roll: this.dif_roll,
+      skills: this.skills,
     };
+  }
+
+  get skills() {
+    if (this.dif_roll) {
+      return [];
+    }
+    return this.actor.skills().filter((skill) => {
+      return !skill.system.dont_modify_rolls;
+    });
   }
 
   async _updateObject(ev, form_data) {
