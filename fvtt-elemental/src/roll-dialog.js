@@ -59,6 +59,7 @@ export class AttributeRollDialog extends FormApplication {
     super();
     this.actor = actor;
     this.selected_attribute = attribute;
+    this.selected_skill = null;
     this.selected_difficulty = 0;
     this.resist_roll = false;
     this.dif_roll = false;
@@ -136,6 +137,9 @@ export class AttributeRollDialog extends FormApplication {
     html.find(".elemental-attribute-selection").click((ev) => {
       this.select_attribute(ev.currentTarget, html);
     });
+    html.find(".elemental-skill-selection").click((ev) => {
+      this.select_skill(ev.currentTarget, html);
+    });
     html.find(".elemental-difficulty-selection").click((ev) => {
       this.select_difficulty(ev.currentTarget, html);
     });
@@ -151,6 +155,15 @@ export class AttributeRollDialog extends FormApplication {
       element,
       "elemental-attribute-selection",
       "selected_attribute",
+    );
+  }
+
+  select_skill(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-skill-selection",
+      "selected_skill",
     );
   }
 
@@ -173,7 +186,7 @@ export class AttributeRollDialog extends FormApplication {
         current_element.className =
           game.elemental.current_theme.roll_option_unselected;
       }
-      current_element.classList.add("elemental-attribute-selection");
+      current_element.classList.add(class_name);
     }
   }
 
