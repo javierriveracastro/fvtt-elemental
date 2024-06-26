@@ -47,6 +47,14 @@ export class ElementaCharacterSheet extends ActorSheet {
       );
       attribute_roll_dialog.render(true);
     });
+    jquery.find(".elemental-roll-skill").on("click", (ev) => {
+      const skill = this.actor.items.get(ev.currentTarget.dataset.itemId);
+      const skill_roll_dialog = new AttributeRollDialog(
+        this.actor,
+        skill.system.attribute,
+      );
+      skill_roll_dialog.render(true);
+    });
   }
 
   manageTabs(ev, jquery) {
