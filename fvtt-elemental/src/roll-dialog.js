@@ -108,23 +108,27 @@ export class AttributeRollDialog extends FormApplication {
   }
 
   async _updateObject(ev, form_data) {
-    let attribute_modifier = 0;
-    if (this.actor && this.selected_attribute) {
-      attribute_modifier = this.actor.attribute_value_from_string(
-        this.selected_attribute,
-      );
-    }
-    const roll = new AttributeRoll(
-      "1d6xo",
-      {},
-      {
-        attribute: attribute_modifier,
-        attribute_name: this.selected_attribute,
+    const options = {
         actor_name: this.actor ? this.actor.name : "",
         difficulty: this.selected_difficulty,
         modifiers: this.modfiers,
         originating_roll: this.originating_roll,
-      },
+    };
+    if (this.actor && this.selected_attribute) {
+      options.attribute = this.actor.attribute_value_from_string(
+        this.selected_attribute,
+      );
+      options.attribute_name = this.selected_attribute;
+    }
+    if (this.selected_skill) {
+      const skill = this.actor.items.get(this.selected_skill);
+      options.skill = skill.system.score;
+      options.skill_name = skill.name;
+    }
+    const roll = new AttributeRoll(
+      "1d6xo",
+      {},
+      options
     );
     await roll.evaluate();
     roll.toMessage().catch((err) => {

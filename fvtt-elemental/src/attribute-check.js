@@ -12,6 +12,10 @@ export class AttributeRoll extends Roll {
       base_formula += ` + ${options.attribute}`;
       badges.push(`+${options.attribute} ${options.attribute_name}`);
     }
+    if (options.skill) {
+      base_formula += ` + ${options.skill}`;
+      badges.push(`+${options.skill} ${options.skill_name}`);
+    }
     if (options.difficulty) {
       base_formula += ` + ${options.difficulty}`;
       badges.push(
