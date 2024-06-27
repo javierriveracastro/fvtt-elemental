@@ -36,7 +36,8 @@
             <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Skills" }}</span>
             <div>
                 {{#each skills}}
-                    <span class="{{../theme.roll_option_unselected}} elemental-skill-selection" data-value="{{this.id}}">
+                    <span class="{{#if (eq this.id ../selected_skill) }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }}
+                            elemental-skill-selection" data-value="{{this.id}}">
                         {{this.name}}
                     </span>
                 {{/each}}

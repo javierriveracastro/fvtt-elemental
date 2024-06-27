@@ -51,7 +51,7 @@ export class ElementaCharacterSheet extends ActorSheet {
       const skill = this.actor.items.get(ev.currentTarget.dataset.itemId);
       const skill_roll_dialog = new AttributeRollDialog(
         this.actor,
-        skill.system.attribute,
+        skill.system.attribute, {skill_id: skill.id}
       );
       skill_roll_dialog.render(true);
     });

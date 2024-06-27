@@ -55,11 +55,11 @@ export class StatCheckDialog extends FormApplication {
 }
 
 export class AttributeRollDialog extends FormApplication {
-  constructor(actor, attribute) {
+  constructor(actor, attribute, options = {}) {
     super();
     this.actor = actor;
     this.selected_attribute = attribute;
-    this.selected_skill = null;
+    this.selected_skill = options.skill_id ? options.skill_id : null;
     this.selected_difficulty = 0;
     this.resist_roll = false;
     this.dif_roll = false;
@@ -87,6 +87,7 @@ export class AttributeRollDialog extends FormApplication {
         selected: attribute.toLowerCase() === this.selected_attribute,
       });
     }
+    console.log(this.selected_skill);
     return {
       ...data,
       theme: game.elemental.current_theme,
@@ -95,6 +96,7 @@ export class AttributeRollDialog extends FormApplication {
       resist_roll: this.resist_roll,
       dif_roll: this.dif_roll,
       skills: this.skills,
+      selected_skill: this.selected_skill,
     };
   }
 
@@ -109,10 +111,10 @@ export class AttributeRollDialog extends FormApplication {
 
   async _updateObject(ev, form_data) {
     const options = {
-        actor_name: this.actor ? this.actor.name : "",
-        difficulty: this.selected_difficulty,
-        modifiers: this.modfiers,
-        originating_roll: this.originating_roll,
+      actor_name: this.actor ? this.actor.name : "",
+      difficulty: this.selected_difficulty,
+      modifiers: this.modfiers,
+      originating_roll: this.originating_roll,
     };
     if (this.actor && this.selected_attribute) {
       options.attribute = this.actor.attribute_value_from_string(
@@ -125,11 +127,7 @@ export class AttributeRollDialog extends FormApplication {
       options.skill = skill.system.score;
       options.skill_name = skill.name;
     }
-    const roll = new AttributeRoll(
-      "1d6xo",
-      {},
-      options
-    );
+    const roll = new AttributeRoll("1d6xo", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
