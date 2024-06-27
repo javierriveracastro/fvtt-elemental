@@ -4,10 +4,13 @@
 import { AttributeRollDialog } from "./roll-dialog.js";
 
 export class AttributeRoll extends Roll {
-  constructor(attribute, data = {}, options = {}) {
+  constructor(formula, data = {}, options = {}) {
     let is_difficulty_roll = false;
-    let base_formula = "1d6xo";
+    let base_formula = "1d6";
     let badges = [];
+    if (!options.hasOwnProperty("attribute") || options.attribute !== 0) {
+      base_formula += "xo";
+    }
     if (options.attribute) {
       base_formula += ` + ${options.attribute}`;
       badges.push(`+${options.attribute} ${options.attribute_name}`);

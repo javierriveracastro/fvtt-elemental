@@ -127,7 +127,7 @@ export class AttributeRollDialog extends FormApplication {
       options.skill = skill.system.score;
       options.skill_name = skill.name;
     }
-    const roll = new AttributeRoll("1d6xo", {}, options);
+    const roll = new AttributeRoll("", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
