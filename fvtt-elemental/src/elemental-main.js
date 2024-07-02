@@ -6,8 +6,8 @@ import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
 import { ElementaItemSheet } from "./item-sheet.js";
-import {StatCheck} from "./stat-check.js";
-import {AttributeRoll, start_new_diff_roll} from "./attribute-check.js";
+import { StatCheck } from "./stat-check.js";
+import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
 
 Hooks.on("init", () => {
@@ -17,6 +17,34 @@ Hooks.on("init", () => {
   CONFIG.Item.documentClass = ElementalItem;
   CONFIG.Dice.rolls.push(StatCheck);
   CONFIG.Dice.rolls.push(AttributeRoll);
+
+  CONFIG.statusEffects = [
+    {
+      icon: "/icons/svg/skull.svg",
+      id: "dead",
+      label: "COMBAT.CombatantDefeated",
+    },
+    {
+      icon: "/icons/svg/net.svg",
+      id: "slightly_impaired",
+      label: "Elemental.Status.SlightlyImpaired",
+    },
+    {
+      icon: "/icons/svg/frozen.svg",
+      id: "impaired",
+      label: "Elemental.Status.Impaired",
+    },
+    {
+      icon: "/icons/svg/down.svg",
+      id: "severely_impaired",
+      label: "Elemental.Status.SeverelyImpaired",
+    },
+    {
+      icon: "/icons/svg/paralysis.svg",
+      id: "paralyzed",
+      label: "Elemental.Status.Paralyzed",
+    },
+  ];
 
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("elemental", ElementaCharacterSheet, {

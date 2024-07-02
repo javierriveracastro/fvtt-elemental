@@ -52,6 +52,12 @@
     },
     "Errors": {
       "NoTokenSelected": "You need to select a token first!"
+    },
+    "Status": {
+      "SlightlyImpaired": "Slightly impaired",
+      "Impaired": "Impaired",
+      "SeverelyImpaired": "Severely impaired",
+      "Paralyzed": "Paralyzed"
     }
   }
 }
