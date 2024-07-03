@@ -87,7 +87,6 @@ export class AttributeRollDialog extends FormApplication {
         selected: attribute.toLowerCase() === this.selected_attribute,
       });
     }
-    console.log(this.selected_skill);
     return {
       ...data,
       theme: game.elemental.current_theme,

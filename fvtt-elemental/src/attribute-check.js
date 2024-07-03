@@ -5,37 +5,12 @@ import { AttributeRollDialog } from "./roll-dialog.js";
 
 export class AttributeRoll extends Roll {
   constructor(formula, data = {}, options = {}) {
-    let is_difficulty_roll = false;
-    let base_formula = "1d6";
+    let is_difficulty_roll = !!options.difficulty;
     let badges = [];
-    if (!options.hasOwnProperty("attribute") || options.attribute !== 0) {
-      base_formula += "xo";
-    }
-    if (options.attribute) {
-      base_formula += ` + ${options.attribute}`;
-      badges.push(`+${options.attribute} ${options.attribute_name}`);
-    }
-    if (options.skill) {
-      base_formula += ` + ${options.skill}`;
-      badges.push(`+${options.skill} ${options.skill_name}`);
-    }
-    if (options.difficulty) {
-      base_formula += ` + ${options.difficulty}`;
-      badges.push(
-        `+${options.difficulty} ${game.i18n.localize("Elemental.Difficulty")}`,
-      );
-      is_difficulty_roll = true;
-    }
-    for (let modifier of options.modifiers) {
-      const sign = modifier > 0 ? "+" : "";
-      base_formula += `${sign}${modifier}`;
-      badges.push(`${sign}${modifier}`);
-    }
-    for (const status of options.status_modifiers) {
-      const sign = status.value > 0 ? "+" : "";
-        base_formula += `${sign}${status.value}`;
-        badges.push(`${sign}${status.value} ${status.name}`);
-    }
+    let base_formula = generate_roll_formula(
+      options,
+      badges,
+    );
     super(base_formula, data, options);
     this.originating_roll = undefined;
     if (options.originating_roll) {
@@ -136,3 +111,37 @@ export function start_new_opposite_roll(actor, origin = "") {
   oppositing_roll.resist_roll = true;
   oppositing_roll.render(true);
 }
+
+function   generate_roll_formula(options, badges) {
+    let base_formula = "1d6";
+    if (!options.hasOwnProperty("attribute") || options.attribute !== 0) {
+      base_formula += "xo";
+    }
+    if (options.attribute) {
+      base_formula += ` + ${options.attribute}`;
+      badges.push(`+${options.attribute} ${options.attribute_name}`);
+    }
+    if (options.skill) {
+      base_formula += ` + ${options.skill}`;
+      badges.push(`+${options.skill} ${options.skill_name}`);
+    }
+    if (options.difficulty) {
+      base_formula += ` + ${options.difficulty}`;
+      badges.push(
+        `+${options.difficulty} ${game.i18n.localize("Elemental.Difficulty")}`,
+      );
+    }
+    for (let modifier of options.modifiers) {
+      const sign = modifier > 0 ? "+" : "";
+      base_formula += `${sign}${modifier}`;
+      badges.push(`${sign}${modifier}`);
+    }
+    if (options.status_modifiers) {
+      for (const status of options.status_modifiers) {
+        const sign = status.value > 0 ? "+" : "";
+        base_formula += `${sign}${status.value}`;
+        badges.push(`${sign}${status.value} ${status.name}`);
+      }
+    }
+    return base_formula;
+  }
