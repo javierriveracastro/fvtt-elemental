@@ -127,11 +127,29 @@ export class AttributeRollDialog extends FormApplication {
       options.skill = skill.system.score;
       options.skill_name = skill.name;
     }
+    if (this.actor) {
+      this.get_status_modifiers(options);
+    }
     const roll = new AttributeRoll("", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
     });
+  }
+
+  get_status_modifiers(options) {
+    const status_modifiers = [];
+    for (const effect of this.actor.effects) {
+      if (effect.flags.elemental.attribute_mod) {
+        status_modifiers.push({
+          name: effect.name,
+          value: effect.flags.elemental.attribute_mod,
+        });
+      }
+    }
+    if (status_modifiers.length > 0) {
+      options.status_modifiers = status_modifiers;
+    }
   }
 
   activateListeners(html) {

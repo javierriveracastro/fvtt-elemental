@@ -31,6 +31,11 @@ export class AttributeRoll extends Roll {
       base_formula += `${sign}${modifier}`;
       badges.push(`${sign}${modifier}`);
     }
+    for (const status of options.status_modifiers) {
+      const sign = status.value > 0 ? "+" : "";
+        base_formula += `${sign}${status.value}`;
+        badges.push(`${sign}${status.value} ${status.name}`);
+    }
     super(base_formula, data, options);
     this.originating_roll = undefined;
     if (options.originating_roll) {

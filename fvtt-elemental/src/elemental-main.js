@@ -28,16 +28,19 @@ Hooks.on("init", () => {
       icon: "/icons/svg/net.svg",
       id: "slightly_impaired",
       label: "Elemental.Status.SlightlyImpaired",
+      flags: {elemental: {attribute_mod: -1}},
     },
     {
       icon: "/icons/svg/frozen.svg",
       id: "impaired",
       label: "Elemental.Status.Impaired",
+      flags: {elemental: {attribute_mod: -2}},
     },
     {
       icon: "/icons/svg/down.svg",
       id: "severely_impaired",
       label: "Elemental.Status.SeverelyImpaired",
+      flags: {elemental: {attribute_mod: -3}},
     },
     {
       icon: "/icons/svg/paralysis.svg",
