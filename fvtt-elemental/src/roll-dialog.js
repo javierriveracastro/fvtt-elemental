@@ -80,12 +80,26 @@ export class AttributeRollDialog extends FormApplication {
   async getData(options) {
     const data = super.getData(options);
     const attribute_names = [];
+    const conditionals = [];
     for (let attribute of game.elemental.attributes) {
       attribute_names.push({
         english_name: attribute,
         name: game.i18n.localize(`Elemental.Attributes.${attribute}`),
         selected: attribute.toLowerCase() === this.selected_attribute,
       });
+    }
+    if (this.actor) {
+      for (const effect of this.actor.effects) {
+        if (
+          effect.flags.elemental &&
+          effect.flags.elemental.hasOwnProperty("conditional_mod")
+        ) {
+          conditionals.push({
+            name: effect.name,
+            value: effect.flags.elemental.conditional_mod,
+          });
+        }
+      }
     }
     return {
       ...data,
@@ -96,6 +110,7 @@ export class AttributeRollDialog extends FormApplication {
       dif_roll: this.dif_roll,
       skills: this.skills,
       selected_skill: this.selected_skill,
+      conditionals: conditionals,
     };
   }
 
@@ -162,10 +177,26 @@ export class AttributeRollDialog extends FormApplication {
     html.find(".elemental-difficulty-selection").click((ev) => {
       this.select_difficulty(ev.currentTarget, html);
     });
+    html.find(".elemental-conditional-selection").click((ev) => {
+      this.select_conditional(ev.currentTarget);
+    });
     html.find(".elemental-add-modifier").click((ev) => {
       this.modfiers.push(ev.currentTarget.dataset.value);
       this.add_modifier_toast(ev.currentTarget.dataset.value, html);
     });
+  }
+
+  select_conditional(element) {
+    if (
+      element.className.indexOf(
+        game.elemental.current_theme.roll_option_selected,
+      ) !== -1
+    ) {
+      element.className = game.elemental.current_theme.roll_option_unselected;
+    } else {
+      element.className = game.elemental.current_theme.roll_option_selected;
+    }
+    element.className += "elemental-conditional-selection";
   }
 
   select_attribute(element, html) {

@@ -44,6 +44,19 @@
             </div>
         </div>
     {{/if}}
+    {{# if conditionals }}
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Conditionals" }}</span>
+            <div>
+                {{#each conditionals}}
+                    <span class="{{../theme.roll_option_unselected}}
+                            elemental-conditional-selection" data-value="{{this.value}}">
+                        {{this.name}}
+                    </span>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
     <div class="{{theme.roll_options_card}} mt-2">
         <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Modifiers" }}</span>
         <div id="elemental-active-modifiers" class="flex min-h-5">
