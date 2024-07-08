@@ -65,6 +65,7 @@ export class AttributeRollDialog extends FormApplication {
     this.dif_roll = false;
     this.originating_roll = "";
     this.modfiers = [];
+    this.conditional_modifiers_active = {};
   }
 
   static get defaultOptions() {
@@ -144,6 +145,7 @@ export class AttributeRollDialog extends FormApplication {
     if (this.actor) {
       this.get_status_modifiers(options);
     }
+    options.conditional_modifiers_active = this.conditional_modifiers_active;
     const roll = new AttributeRoll("", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
@@ -193,8 +195,13 @@ export class AttributeRollDialog extends FormApplication {
       ) !== -1
     ) {
       element.className = game.elemental.current_theme.roll_option_unselected;
+      delete this.conditional_modifiers_active[element.dataset.name];
     } else {
       element.className = game.elemental.current_theme.roll_option_selected;
+      this.conditional_modifiers_active[element.dataset.name] = {
+        name: element.dataset.name,
+        value: element.dataset.value,
+      };
     }
     element.className += "elemental-conditional-selection";
   }
