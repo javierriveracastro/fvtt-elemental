@@ -9,6 +9,7 @@ import { ElementaItemSheet } from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
 import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
+import {change_condition_menu} from "./tokenHud.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
@@ -92,3 +93,5 @@ Hooks.on("renderChatMessage", (message, html) => {
     addChatMessageListeners(message, html);
   }
 });
+
+Hooks.on("renderTokenHUD", change_condition_menu);
