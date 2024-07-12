@@ -9,7 +9,7 @@ import { ElementaItemSheet } from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
 import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
-import {change_condition_menu} from "./tokenHud.js";
+import { change_condition_menu } from "./tokenHud.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
@@ -29,19 +29,19 @@ Hooks.on("init", () => {
       icon: "/icons/svg/net.svg",
       id: "slightly_impaired",
       label: "Elemental.Status.SlightlyImpaired",
-      flags: { elemental: { attribute_mod: -1 } },
+      flags: { elemental: { conditional_mod: -1 } },
     },
     {
       icon: "/icons/svg/frozen.svg",
       id: "impaired",
       label: "Elemental.Status.Impaired",
-      flags: { elemental: { attribute_mod: -2 } },
+      flags: { elemental: { conditional_mod: -2 } },
     },
     {
       icon: "/icons/svg/down.svg",
       id: "severely_impaired",
       label: "Elemental.Status.SeverelyImpaired",
-      flags: { elemental: { attribute_mod: -3 } },
+      flags: { elemental: { conditional_mod: -3 } },
     },
     {
       icon: "/icons/svg/paralysis.svg",
