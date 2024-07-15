@@ -7,6 +7,7 @@ export function change_condition_menu(_, html) {
   let new_html = "";
   for (const image of status_div.children()) {
     const status_name = image.dataset.tooltip;
+    image.className += " self-center";
     new_html += `<div class="flex m-1 w-1/2">${image.outerHTML}<span class="ml-1 text-gray-200 text-lg self-center">${status_name}</span></div>`;
   }
   new_html = `<div class='grid grid-cols-2 gap-2 w-80'>${new_html}</div>`;
