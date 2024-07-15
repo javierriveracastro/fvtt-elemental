@@ -33,5 +33,19 @@
   "url": "",
   "changelog": "",
   "license": "",
-  "initiative": "@current_initiative"
+  "initiative": "@current_initiative",
+  "packs": [
+    {
+      "name": "Skills",
+      "label": "Skills",
+      "path": "packs/Skills",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
+    }
+  ]
 }
