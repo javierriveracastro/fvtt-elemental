@@ -26,19 +26,19 @@ Hooks.on("init", () => {
       label: "COMBAT.CombatantDefeated",
     },
     {
-      icon: "/icons/svg/net.svg",
+      icon: "/systems/fvtt-elemental/assets/Impaired-1.svg",
       id: "slightly_impaired",
       label: "Elemental.Status.SlightlyImpaired",
       flags: { elemental: { conditional_mod: -1 } },
     },
     {
-      icon: "/icons/svg/frozen.svg",
+      icon: "/systems/fvtt-elemental/assets/Impaired-2.svg",
       id: "impaired",
       label: "Elemental.Status.Impaired",
       flags: { elemental: { conditional_mod: -2 } },
     },
     {
-      icon: "/icons/svg/down.svg",
+      icon: "/systems/fvtt-elemental/assets/Impaired-3.svg",
       id: "severely_impaired",
       label: "Elemental.Status.SeverelyImpaired",
       flags: { elemental: { conditional_mod: -3 } },
