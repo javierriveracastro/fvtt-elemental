@@ -19,5 +19,5 @@ Lots of things are missing, mainly:
 
 Content from Elemental RPG game is property of Gildor Games and used with permission. **All rights reserved by Gildor Games**
 
-The code is licensed under GPLv3, check the LICENCE.MD file.
+The code is licensed under GPLv3, check the LICENSE file.
 
