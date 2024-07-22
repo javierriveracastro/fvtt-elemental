@@ -2,7 +2,7 @@
   "id": "fvtt-elemental",
   "title": "Elemental RPG (Unofficial)",
   "description": "<p>An unofficial implementation of the Elemental RPG system from Gildor Games",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "compatibility": {
     "minimum": 12,
     "verified": 12.327,
@@ -28,8 +28,8 @@
       "path": "lang/en.json"
     }
   ],
-  "manifest": "",
-  "download": "",
+  "manifest": "https://github.com/javierriveracastro/fvtt-elemental/releases/download/latest/system.json",
+  "download": "https://github.com/javierriveracastro/fvtt-elemental/releases/download/latest/fvtt-elemental.zip",
   "url": "",
   "changelog": "",
   "license": "",

@@ -15,6 +15,15 @@ Lots of things are missing, mainly:
 - Archetypes
 - Superpowers
 
+# Contributing
+
+Any kind of contribution is accepted and wellcome.
+
+This project uses [tailwindcss](https://tailwindcss.com/) as a css framework. If you want to change anything related to it, please familiarize yourself with it before.
+As a result there are 3 css files, please add your own styles to `elemental.css` as the other two are used to generate the tailwind output.
+
+This projects also uses github actions for release. Any change to CHANGELOG.MD will trigger a release. So no need to add your changes to that file, just use clear, descriptive commit messages.
+
 # Licenses
 
 Content from Elemental RPG game is property of Gildor Games and used with permission. **All rights reserved by Gildor Games**
