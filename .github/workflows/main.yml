@@ -3,7 +3,7 @@ name: Release CI
 on:
   push:
     paths:
-      - CHANGELOG.MD
+      - 'CHANGELOG.md'
 
 jobs:
   build:
