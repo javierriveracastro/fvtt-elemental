@@ -17,5 +17,5 @@ jobs:
           draft: true
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: 'fvtt-elemental/system.json'
+          artifacts: 'fvtt-elemental/system.json, fvtt-elemental.zip'
           tag: latest
