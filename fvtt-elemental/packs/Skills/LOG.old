@@ -1,23 +1,2 @@
-2024/07/17-15:05:47.836692 7e1d8be006c0 Recovering log #9
-2024/07/17-15:05:47.837035 7e1d8be006c0 Level-0 table #11: started
-2024/07/17-15:05:47.837862 7e1d8be006c0 Level-0 table #11: 11586 bytes OK
-2024/07/17-15:05:47.839997 7e1d8be006c0 Delete type=3 #8
-2024/07/17-15:05:47.840026 7e1d8be006c0 Delete type=0 #9
-2024/07/17-15:06:23.607598 7e1d8a4006c0 Level-0 table #14: started
-2024/07/17-15:06:23.607606 7e1d8a4006c0 Level-0 table #14: 0 bytes OK
-2024/07/17-15:06:23.608463 7e1d8a4006c0 Delete type=0 #12
-2024/07/17-15:06:23.608505 7e1d8a4006c0 Manual compaction at level-0 from '!items!0hCEVHzkGyomVqf4' @ 72057594037927935 : 1 .. '!items!zROtvXv1yuDaUL2s' @ 0 : 0; will stop at '!items!zROtvXv1yuDaUL2s' @ 24 : 1
-2024/07/17-15:06:23.608508 7e1d8a4006c0 Compacting 1@0 + 0@1 files
-2024/07/17-15:06:23.609211 7e1d8a4006c0 Generated table #15@0: 55 keys, 7611 bytes
-2024/07/17-15:06:23.609216 7e1d8a4006c0 Compacted 1@0 + 0@1 files => 7611 bytes
-2024/07/17-15:06:23.609903 7e1d8a4006c0 compacted to: files[ 0 1 1 0 0 0 0 ]
-2024/07/17-15:06:23.609930 7e1d8a4006c0 Delete type=2 #11
-2024/07/17-15:06:23.612498 7e1d8a4006c0 Manual compaction at level-0 from '!items!zROtvXv1yuDaUL2s' @ 24 : 1 .. '!items!zROtvXv1yuDaUL2s' @ 0 : 0; will stop at (end)
-2024/07/17-15:06:23.613367 7e1d8a4006c0 Manual compaction at level-1 from '!items!0hCEVHzkGyomVqf4' @ 72057594037927935 : 1 .. '!items!zROtvXv1yuDaUL2s' @ 0 : 0; will stop at '!items!zROtvXv1yuDaUL2s' @ 24 : 1
-2024/07/17-15:06:23.613370 7e1d8a4006c0 Compacting 1@1 + 1@2 files
-2024/07/17-15:06:23.614501 7e1d8a4006c0 Generated table #16@1: 63 keys, 8765 bytes
-2024/07/17-15:06:23.614515 7e1d8a4006c0 Compacted 1@1 + 1@2 files => 8765 bytes
-2024/07/17-15:06:23.615278 7e1d8a4006c0 compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/07/17-15:06:23.615314 7e1d8a4006c0 Delete type=2 #15
-2024/07/17-15:06:23.615364 7e1d8a4006c0 Delete type=2 #5
-2024/07/17-15:06:23.616224 7e1d8a4006c0 Manual compaction at level-1 from '!items!zROtvXv1yuDaUL2s' @ 24 : 1 .. '!items!zROtvXv1yuDaUL2s' @ 0 : 0; will stop at (end)
+2024/07/23-16:18:38.278796 7e68ae0006c0 Table #16: 63 entries OK
+2024/07/23-16:18:38.279658 7e68ae0006c0 **** Repaired leveldb /home/javier/Descargas/foundry-10/Data/systems/fvtt-elemental/packs/Skills; recovered 1 files; 8765 bytes. Some data may have been lost. ****
