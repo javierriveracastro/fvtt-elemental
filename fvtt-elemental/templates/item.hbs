@@ -28,6 +28,15 @@
                         {{# if item.system.dont_modify_rolls }}checked{{/ if }}
                         class="{{theme.checkbox}}">
                 </span>
+                <span>
+                    <label class="{{theme.text_attribute}}">
+                        {{localize "Elemental.ItemSheet.ModifyDamage"}}
+                    </label>
+                    <input type="checkbox" name="system.modify_damage"
+                        {{# if item.system.modify_damage }}checked{{/ if }}
+                        class="{{theme.checkbox}}">
+                </span>
+
             </span>
         </div>
         <div class="max-w-16">
