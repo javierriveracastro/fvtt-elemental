@@ -1,0 +1,15 @@
+_id: D0mLt7rIx0Df5DSa
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Unlife
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: toughness
+  description: ''
+  dont_modify_rolls: true
+  score: 1
+type: skill

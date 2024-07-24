@@ -1,0 +1,15 @@
+_id: F2FS3jifsWH4CDuh
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Grappling
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: agility
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill

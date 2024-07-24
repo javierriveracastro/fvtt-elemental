@@ -1,0 +1,15 @@
+_id: eSXBoMsv7WPGXr8U
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Fixing
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: awareness
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill

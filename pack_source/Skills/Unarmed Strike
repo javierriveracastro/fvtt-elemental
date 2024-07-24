@@ -1,0 +1,15 @@
+_id: ZT68IZFkq39wQNLX
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Unarmed Strike
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: agility
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill

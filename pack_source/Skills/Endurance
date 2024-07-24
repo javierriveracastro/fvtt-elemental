@@ -1,0 +1,15 @@
+_id: EMp33an586TeL3Wt
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Endurance
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: toughness
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill

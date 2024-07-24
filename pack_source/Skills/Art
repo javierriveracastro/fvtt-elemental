@@ -1,0 +1,15 @@
+_id: 0hCEVHzkGyomVqf4
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Art
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: will
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill

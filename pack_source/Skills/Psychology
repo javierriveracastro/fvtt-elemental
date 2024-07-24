@@ -1,0 +1,15 @@
+_id: 0v4rv4q91iSnm9S5
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Psychology
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: awareness
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill
