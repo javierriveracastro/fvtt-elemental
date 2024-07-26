@@ -1,2 +1,6 @@
-2024/07/23-16:18:38.278796 7e68ae0006c0 Table #16: 63 entries OK
-2024/07/23-16:18:38.279658 7e68ae0006c0 **** Repaired leveldb /home/javier/Descargas/foundry-10/Data/systems/fvtt-elemental/packs/Skills; recovered 1 files; 8765 bytes. Some data may have been lost. ****
+2024/07/26-15:22:54.883222 129710045390656 Recovering log #19
+2024/07/26-15:22:54.883246 129710045390656 Recovering log #54
+2024/07/26-15:22:54.886057 129710045390656 Delete type=0 #54
+2024/07/26-15:22:54.886070 129710045390656 Delete type=2 #47
+2024/07/26-15:22:54.886074 129710045390656 Delete type=3 #17
+2024/07/26-15:22:54.886078 129710045390656 Delete type=0 #19
