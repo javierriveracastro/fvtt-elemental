@@ -3,6 +3,7 @@ A utility to convert LevelDb files to YAML
 """
 
 import os
+import shutil
 import sys
 
 import plyvel
@@ -46,7 +47,9 @@ def unpack():
 def pack():
     for pack_dir in os.listdir(PACK_SRC):
         if os.path.isdir(os.path.join(PACK_SRC, pack_dir)):
-            print("Find pack", pack_dir)
+            if os.path.exists(os.path.join(PACK_DIST, pack_dir)):
+                shutil.rmtree(os.path.join(PACK_DIST, pack_dir))
+            os.makedirs(os.path.join(PACK_DIST, pack_dir))
             db = plyvel.DB(os.path.join(PACK_DIST, pack_dir), create_if_missing=True)
             for file in os.listdir(os.path.join(PACK_SRC, pack_dir)):
                 with open(os.path.join(PACK_SRC, pack_dir, file)) as f:
@@ -54,7 +57,7 @@ def pack():
                     print(current_object)
                     clean(current_object)
                     db.put(
-                        f"!items!{current_object._id}",
+                        f"!items!{current_object["_id"]}".encode(),
                         json.dumps(current_object).encode()
                     )
 
