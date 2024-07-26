@@ -3,8 +3,6 @@ A utility to convert LevelDb files to YAML
 """
 
 import os
-import sys
-
 import plyvel
 import yaml
 import json
@@ -35,7 +33,6 @@ def unpack():
             with plyvel.DB(os.path.join(PACK_DIST, possible_db)) as db:
                 for key, value in db:
                     current_object = json.loads(value)
-                    print(key, current_object)
                     name = current_object["name"]
                     clean(current_object)
                     current_object["ownership"] = {"default": 0}
@@ -43,24 +40,5 @@ def unpack():
                         file.write(yaml.dump(current_object, Dumper=Dumper))
 
 
-def pack():
-    for pack_dir in os.listdir(PACK_SRC):
-        if os.path.isdir(os.path.join(PACK_SRC, pack_dir)):
-            print("Find pack", pack_dir)
-            db = plyvel.DB(os.path.join(PACK_DIST, pack_dir), create_if_missing=True)
-            for file in os.listdir(os.path.join(PACK_SRC, pack_dir)):
-                with open(os.path.join(PACK_SRC, pack_dir, file)) as f:
-                    current_object = yaml.load(f, Loader=yaml.Loader)
-                    print(current_object)
-                    clean(current_object)
-                    db.put(
-                        f"!items!{current_object._id}",
-                        json.dumps(current_object).encode()
-                    )
-
-
 if __name__ == "__main__":
-    if sys.argv[1] == "pack":
-        pack()
-    else:
-        unpack()
+    unpack()
