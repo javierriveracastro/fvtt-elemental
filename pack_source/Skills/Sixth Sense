@@ -1,0 +1,15 @@
+_id: Vzs6V6hGFBPmLYhk
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Sixth Sense
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: awareness
+  description: ''
+  dont_modify_rolls: true
+  score: 1
+type: skill
