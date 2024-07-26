@@ -1,0 +1,15 @@
+_id: gqAlESQt9B2wA4Sm
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Nightvision
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: awareness
+  description: ''
+  dont_modify_rolls: true
+  score: 1
+type: skill

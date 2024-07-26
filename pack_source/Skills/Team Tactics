@@ -1,0 +1,15 @@
+_id: 1Ff2w5PHpqvK2ijA
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Team Tactics
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: agility
+  description: ''
+  dont_modify_rolls: true
+  score: 1
+type: skill

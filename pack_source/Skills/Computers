@@ -1,0 +1,15 @@
+_id: Xb6iubBp3k0oua38
+effects: []
+flags: {}
+folder: null
+img: /icons/svg/explosion.svg
+name: Computers
+ownership:
+  default: 0
+sort: 0
+system:
+  attribute: awareness
+  description: ''
+  dont_modify_rolls: false
+  score: 1
+type: skill
