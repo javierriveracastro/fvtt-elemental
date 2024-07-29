@@ -11,6 +11,7 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
       description: new fields.HTMLField(),
       dont_modify_rolls: new fields.BooleanField({ initial: false }),
       modify_damage: new fields.BooleanField({ initial: false }),
+      fixed_modifier: new fields.NumberField({ integer: true, initial: 0 }),
     };
   }
 }

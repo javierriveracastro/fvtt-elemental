@@ -44,7 +44,8 @@
       "Value": "Score",
       "Attribute": "Attribute",
       "DontModifyRoll": "Don't modify rolls",
-      "ModifyDamage": "Modify damage"
+      "ModifyDamage": "Modify damage",
+      "FixedModifier": "Fixed modifier"
     },
     "Rolls": {
       "Success": "Success",
