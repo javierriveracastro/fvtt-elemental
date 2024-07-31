@@ -141,7 +141,9 @@ export class AttributeRollDialog extends FormApplication {
     }
     if (this.selected_skill) {
       const skill = this.actor.items.get(this.selected_skill);
-      options.skill = skill.system.score;
+      options.skill = skill.system.fixed_modifier
+        ? skill.system.fixed_modifier
+        : skill.system.score;
       options.skill_name = skill.name;
     }
     options.conditional_modifiers_active = this.conditional_modifiers_active;

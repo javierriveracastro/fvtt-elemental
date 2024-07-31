@@ -120,7 +120,8 @@ function generate_roll_formula(options, badges) {
   }
   if (options.skill) {
     base_formula += ` + ${options.skill}`;
-    badges.push(`+${options.skill} ${options.skill_name}`);
+    const sign = options.skill > 0 ? "+" : "";
+    badges.push(`${sign}${options.skill} ${options.skill_name}`);
   }
   if (options.difficulty) {
     base_formula += ` + ${options.difficulty}`;
