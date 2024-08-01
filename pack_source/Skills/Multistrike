@@ -10,6 +10,7 @@ sort: 0
 system:
   attribute: agility
   description: ''
-  dont_modify_rolls: true
+  dont_modify_rolls: false
+  fixed_modifier: -2
   score: 1
 type: skill

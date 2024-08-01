@@ -11,5 +11,7 @@ system:
   attribute: toughness
   description: ''
   dont_modify_rolls: true
+  fixed_modifier: 3
+  modify_damage: true
   score: 1
 type: skill

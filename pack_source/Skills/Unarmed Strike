@@ -11,5 +11,6 @@ system:
   attribute: agility
   description: ''
   dont_modify_rolls: false
+  modify_damage: true
   score: 1
 type: skill
