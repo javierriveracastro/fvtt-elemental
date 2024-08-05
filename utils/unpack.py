@@ -57,7 +57,7 @@ def pack():
                     print(current_object)
                     clean(current_object)
                     db.put(
-                        f"!items!{current_object["_id"]}".encode(),
+                        f"!items!{current_object['_id']}".encode(),
                         json.dumps(current_object).encode()
                     )
 
