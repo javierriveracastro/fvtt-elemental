@@ -1,8 +1,9 @@
 name: Release CI
 
 on:
-  workflow_dispatch:
-
+  push:
+    paths:
+      - 'CHANGELOG.md'
 
 jobs:
   build:
