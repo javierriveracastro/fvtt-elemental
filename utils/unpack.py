@@ -63,7 +63,7 @@ def pack():
 
 
 if __name__ == "__main__":
-    if sys.argv[1] == "pack":
-        pack()
-    else:
+    if sys.argv[1] == "unpack":
         unpack()
+    else:
+        pack()
