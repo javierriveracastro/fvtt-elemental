@@ -12,6 +12,7 @@ jobs:
       - name: Install python dependencies
         run: pip install plyvel yalm
       - name: Create packs
+        working-directory: ./utils
         run: python3 utils/unpack.py pack
       - name: Create zip file
         run: zip -r ./fvtt-elemental.zip fvtt-elemental
