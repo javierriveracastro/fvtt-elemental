@@ -45,7 +45,8 @@
       "Attribute": "Attribute",
       "DontModifyRoll": "Don't modify rolls",
       "ModifyDamage": "Modify damage",
-      "FixedModifier": "Fixed modifier"
+      "FixedModifier": "Fixed modifier",
+      "IsFlaw": "This is a flaw"
     },
     "Rolls": {
       "Success": "Success",
