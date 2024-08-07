@@ -47,7 +47,8 @@
                     <label class="{{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.IsFlaw" }}
                     </label>
-                    <input type="checkbox" name="system.is_flaw" value="{{item.system.is_flaw}}"
+                    <input type="checkbox" name="system.is_flaw"
+                       {{# if item.system.is_flaw }}checked{{/ if }}
                         class="{{theme.checkbox}}">
                 </span>
             </span>
