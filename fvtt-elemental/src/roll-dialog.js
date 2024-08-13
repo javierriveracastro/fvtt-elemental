@@ -112,6 +112,7 @@ export class AttributeRollDialog extends FormApplication {
       resist_roll: this.resist_roll,
       dif_roll: this.dif_roll,
       skills: this.skills,
+      flaws: this.flaws,
       selected_skill: this.selected_skill,
       conditionals: conditionals,
     };
@@ -122,7 +123,16 @@ export class AttributeRollDialog extends FormApplication {
       return [];
     }
     return this.actor.skills().filter((skill) => {
-      return !skill.system.dont_modify_rolls;
+      return !(skill.system.dont_modify_rolls || skill.system.is_flaw);
+    });
+  }
+
+  get flaws() {
+    if (this.dif_roll) {
+      return [];
+    }
+    return this.actor.skills().filter((skill) => {
+      return skill.system.is_flaw;
     });
   }
 
