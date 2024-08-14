@@ -66,6 +66,7 @@ export class AttributeRollDialog extends FormApplication {
     this.originating_roll = "";
     this.modfiers = [];
     this.conditional_modifiers_active = {};
+    this.flaws_active = {};
   }
 
   static get defaultOptions() {
@@ -178,6 +179,9 @@ export class AttributeRollDialog extends FormApplication {
     html.find(".elemental-conditional-selection").click((ev) => {
       this.select_conditional(ev.currentTarget);
     });
+    html.find(".elemental-flaw-selection").click((ev) => {
+      this.select_flaw(ev.currentTarget);
+    });
     html.find(".elemental-add-modifier").click((ev) => {
       this.modfiers.push(ev.currentTarget.dataset.value);
       this.add_modifier_toast(ev.currentTarget.dataset.value, html);
@@ -185,21 +189,37 @@ export class AttributeRollDialog extends FormApplication {
   }
 
   select_conditional(element) {
+    this.multiple_select(
+      element,
+      "elemental-conditional-selection",
+      this.conditional_modifiers_active,
+    );
+  }
+
+  select_flaw(element) {
+    this.multiple_select(
+      element,
+      "elemental-flaw-selection",
+      this.flaws_active,
+    );
+  }
+
+  multiple_select(element, className, modifier_array) {
     if (
       element.className.indexOf(
         game.elemental.current_theme.roll_option_selected,
       ) !== -1
     ) {
       element.className = game.elemental.current_theme.roll_option_unselected;
-      delete this.conditional_modifiers_active[element.dataset.name];
+      delete modifier_array[element.dataset.name];
     } else {
       element.className = game.elemental.current_theme.roll_option_selected;
-      this.conditional_modifiers_active[element.dataset.name] = {
+      modifier_array[element.dataset.name] = {
         name: element.dataset.name,
         value: element.dataset.value,
       };
     }
-    element.className += "elemental-conditional-selection";
+    element.className += ` ${className}`;
   }
 
   select_attribute(element, html) {
