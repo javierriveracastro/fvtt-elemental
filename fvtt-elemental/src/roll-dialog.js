@@ -157,7 +157,7 @@ export class AttributeRollDialog extends FormApplication {
         : skill.system.score;
       options.skill_name = skill.name;
     }
-    options.flaws_active = this.flaws_active
+    options.flaws_active = this.flaws_active;
     options.conditional_modifiers_active = this.conditional_modifiers_active;
     const roll = new AttributeRoll("", {}, options);
     await roll.evaluate();
