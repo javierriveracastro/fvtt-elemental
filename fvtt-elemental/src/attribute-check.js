@@ -109,6 +109,45 @@ export function start_new_opposite_roll(actor, origin = "") {
   oppositing_roll.render(true);
 }
 
+function get_conditional_options(options, base_formula, badges) {
+  for (const key in options.conditional_modifiers_active) {
+    if (!options.conditional_modifiers_active.hasOwnProperty(key)) {
+      continue;
+    }
+    const modifier = options.conditional_modifiers_active[key];
+    const sign = modifier.value > 0 ? "+" : "";
+    base_formula += `${sign}${modifier.value}`;
+    badges.push(`${sign}${modifier.value} ${modifier.name}`);
+  }
+  return base_formula;
+}
+
+function get_status_modifiers(options, base_formula, badges) {
+  if (options.status_modifiers) {
+    for (const status of options.status_modifiers) {
+      const sign = status.value > 0 ? "+" : "";
+      base_formula += `${sign}${status.value}`;
+      badges.push(`${sign}${status.value} ${status.name}`);
+    }
+  }
+  return base_formula;
+}
+
+function get_flaw_modifiers(options, base_formula, badges) {
+  if (options.flaws_active) {
+    for (const flaw in options.flaws_active) {
+      if (!options.flaws_active.hasOwnProperty(flaw)) {
+        continue;
+      }
+      base_formula += `-${options.flaws_active[flaw].value}`;
+      badges.push(
+        `-${options.flaws_active[flaw].value} ${options.flaws_active[flaw].name}`,
+      );
+    }
+  }
+  return base_formula;
+}
+
 function generate_roll_formula(options, badges) {
   let base_formula = "1d6";
   if (!options.hasOwnProperty("attribute") || options.attribute !== 0) {
@@ -134,18 +173,8 @@ function generate_roll_formula(options, badges) {
     base_formula += `${sign}${modifier}`;
     badges.push(`${sign}${modifier}`);
   }
-  for (const key in options.conditional_modifiers_active) {
-    const modifier = options.conditional_modifiers_active[key];
-    const sign = modifier.value > 0 ? "+" : "";
-    base_formula += `${sign}${modifier.value}`;
-    badges.push(`${sign}${modifier.value} ${modifier.name}`);
-  }
-  if (options.status_modifiers) {
-    for (const status of options.status_modifiers) {
-      const sign = status.value > 0 ? "+" : "";
-      base_formula += `${sign}${status.value}`;
-      badges.push(`${sign}${status.value} ${status.name}`);
-    }
-  }
+  base_formula = get_conditional_options(options, base_formula, badges);
+  base_formula = get_status_modifiers(options, base_formula, badges);
+  base_formula = get_flaw_modifiers(options, base_formula, badges);
   return base_formula;
 }
