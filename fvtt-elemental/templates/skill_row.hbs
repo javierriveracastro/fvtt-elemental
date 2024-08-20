@@ -1,5 +1,5 @@
 <div class="grid grid-cols-8">
-    <span class="col-span-5 {{theme.skill_name}}">
+    <span class="col-span-5 {{# if skill.system.is_flaw}}{{theme.flaw_name}}{{else}}{{theme.skill_name}}{{/if}}">
         {{skill.name}}
     </span>
     <div class="col-span-2 flex justify-end gap-0">
