@@ -1,0 +1,8 @@
+_id: C3pDmoV234clumsy
+img: /icons/svg/explosion.svg
+name: Clumsiness
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+type: skill

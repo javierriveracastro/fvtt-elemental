@@ -1,0 +1,8 @@
+_id: flawbreathless12
+img: /icons/svg/explosion.svg
+name: Breathless
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+type: skill

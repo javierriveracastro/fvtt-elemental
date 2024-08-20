@@ -1,0 +1,8 @@
+_id: flaw5sunlight324
+img: /icons/svg/explosion.svg
+name: Sunlight Sensitivity
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+type: skill

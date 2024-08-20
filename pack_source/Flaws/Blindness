@@ -1,0 +1,8 @@
+_id: C3pblindssad2452
+img: /icons/svg/explosion.svg
+name: Blindness
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+type: skill

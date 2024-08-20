@@ -1,0 +1,9 @@
+_id: flaw22fobia12354
+img: /icons/svg/explosion.svg
+name: Phobia
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+  dont_modify_rolls: true
+type: skill

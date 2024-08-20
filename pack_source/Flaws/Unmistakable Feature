@@ -1,0 +1,9 @@
+_id: flawunmistakable
+img: /icons/svg/explosion.svg
+name: Unmistakable Feature
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+  dont_modify_rolls: true
+type: skill

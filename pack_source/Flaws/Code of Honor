@@ -1,0 +1,9 @@
+_id: 123codehonorde22
+img: /icons/svg/explosion.svg
+name: Code of Honor
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+  dont_modify_rolls: true
+type: skill

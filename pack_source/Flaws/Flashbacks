@@ -1,0 +1,9 @@
+_id: flaw2flashbacks1
+img: /icons/svg/explosion.svg
+name: Flashbacks
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+  dont_modify_rolls: true
+type: skill

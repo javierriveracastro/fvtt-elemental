@@ -1,0 +1,9 @@
+_id: flaw22frail23456
+img: /icons/svg/explosion.svg
+name: Frailty
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+  dont_modify_rolls: true
+type: skill

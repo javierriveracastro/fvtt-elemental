@@ -1,0 +1,9 @@
+_id: 3psf234addiction
+img: /icons/svg/explosion.svg
+name: Addiction
+system:
+  description: ''
+  score: 1
+  is_flaw: true
+  fixed_modifier: 1
+type: skill
