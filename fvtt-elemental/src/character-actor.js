@@ -70,7 +70,11 @@ export class ElementalActor extends Actor {
   get skill_xp() {
     let skill_xp = 0;
     for (let skill of this.skills()) {
-      skill_xp += this.calculate_xp(skill.system.score);
+      if (skill.system.is_flaw) {
+        skill_xp -= skill.system.score;
+      } else {
+        skill_xp += this.calculate_xp(skill.system.score);
+      }
     }
     return skill_xp;
   }
