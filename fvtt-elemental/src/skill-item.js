@@ -24,4 +24,17 @@ export class ElementalItem extends Item {
       img: "/icons/svg/explosion.svg",
     });
   }
+
+  get roll_modifier() {
+    console.log(this.system.fixed_modifier);
+    console.log(this.system);
+    console.log(
+      this.system.fixed_modifier
+        ? this.system.fixed_modifier
+        : this.system.score,
+    );
+    return this.system.fixed_modifier
+      ? this.system.fixed_modifier
+      : this.system.score;
+  }
 }
