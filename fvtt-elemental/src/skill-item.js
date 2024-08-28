@@ -24,8 +24,10 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
 export class ElementalItem extends Item {
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
-    this.updateSource({
-      img: "/icons/svg/explosion.svg",
-    });
+    if (this.type === "skill") {
+      this.updateSource({
+        img: "/icons/svg/explosion.svg",
+      });
+    }
   }
 }
