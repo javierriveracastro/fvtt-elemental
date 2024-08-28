@@ -1,4 +1,4 @@
-// Equiment datamodel
+// Equipment DataModel
 /* globals foundry */
 
 export class EquipmentDataModel extends foundry.abstract.TypeDataModel {

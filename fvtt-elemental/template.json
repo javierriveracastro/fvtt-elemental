@@ -6,7 +6,8 @@
   },
   "Item": {
     "types": [
-      "skill"
+      "skill",
+      "equipment"
     ]
   }
 }

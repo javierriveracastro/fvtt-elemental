@@ -10,11 +10,13 @@ import { StatCheck } from "./stat-check.js";
 import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
 import { change_condition_menu } from "./tokenHud.js";
+import {EquipmentDataModel} from "./equipment-item.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
   CONFIG.Actor.documentClass = ElementalActor;
   CONFIG.Item.dataModels.skill = SkillDataModel;
+  CONFIG.Item.dataModels.equipment = EquipmentDataModel;
   CONFIG.Item.documentClass = ElementalItem;
   CONFIG.Dice.rolls.push(StatCheck);
   CONFIG.Dice.rolls.push(AttributeRoll);
