@@ -15,6 +15,10 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
       is_flaw: new fields.BooleanField({ initial: false }),
     };
   }
+
+  get roll_modifier() {
+    return this.fixed_modifier ? this.fixed_modifier : this.score;
+  }
 }
 
 export class ElementalItem extends Item {
@@ -23,18 +27,5 @@ export class ElementalItem extends Item {
     this.updateSource({
       img: "/icons/svg/explosion.svg",
     });
-  }
-
-  get roll_modifier() {
-    console.log(this.system.fixed_modifier);
-    console.log(this.system);
-    console.log(
-      this.system.fixed_modifier
-        ? this.system.fixed_modifier
-        : this.system.score,
-    );
-    return this.system.fixed_modifier
-      ? this.system.fixed_modifier
-      : this.system.score;
   }
 }

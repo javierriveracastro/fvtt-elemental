@@ -49,7 +49,7 @@
             <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Flaws"}}</span>
             <div>
                 {{#each flaws}}
-                    <span class="{{../theme.roll_option_unselected}} elemental-flaw-selection" data-name="{{this.name}}" data-value="{{this.roll_modifier}}">
+                    <span class="{{../theme.roll_option_unselected}} elemental-flaw-selection" data-name="{{this.name}}" data-value="{{this.system.roll_modifier}}">
                         {{this.name}}
                     </span>
                 {{/each}}
