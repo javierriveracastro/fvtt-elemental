@@ -5,7 +5,7 @@ import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
-import { ElementaItemSheet } from "./item-sheet.js";
+import {ElementaItemSheet, ElementalEquipmentSheet} from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
 import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
@@ -66,6 +66,12 @@ Hooks.on("init", () => {
     makeDefault: true,
     label: "Elemental.ElementalSheet",
   });
+  Items.registerSheet("elemental", ElementalEquipmentSheet, {
+    types: ["equipment"],
+    makeDefault: true,
+    label: "Elemental.ElementalSheet",
+  });
+
 
   const handlebars_templatePaths = [
     "systems/fvtt-elemental/templates/character_base.hbs",
