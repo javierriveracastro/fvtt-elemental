@@ -41,4 +41,12 @@ export class ElementalEquipmentSheet extends ItemSheet {
   get template() {
     return "/systems/fvtt-elemental/templates/equipment.hbs";
   }
+
+  async getData(options) {
+    const data = super.getData(options);
+    return {
+      ...data,
+      theme: game.elemental.current_theme,
+    };
+  }
 }

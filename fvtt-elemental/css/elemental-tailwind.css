@@ -108,6 +108,10 @@
   display: none
 }
 
+.elemental-css .h-10 {
+  height: 2.5rem
+}
+
 .elemental-css .h-4 {
   height: 1rem
 }
