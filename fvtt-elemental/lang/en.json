@@ -2,6 +2,8 @@
   "Elemental": {
     "CharName": "Character Name",
     "ElementalSheet": "Elemental Character Sheet",
+    "EquipmentElementalSheet": "Elementar Equipment Sheet",
+    "ItemElementalSheet": "Elemental Item Sheet",
     "Race": "Race",
     "Title": "Title",
     "ItemName": "Item Name",
@@ -63,6 +65,22 @@
       "Impaired": "Impaired",
       "SeverelyImpaired": "Severely impaired",
       "Paralyzed": "Paralyzed"
+    },
+    "EquipmentTypes": {
+      "Weapon": "Weapon",
+      "Armor": "Armor",
+      "Vehicle": "Vehicle",
+      "Miscellaneous": "Miscellaneous"
+    },
+    "EquipmentSheet": {
+      "Type": "Type",
+      "Ammo": "Ammo",
+      "Reload": "Reload",
+      "Damage": "Damage",
+      "AOE": "Area of Effect",
+      "Lbs": "Pounds",
+      "Notes": "Notes",
+      "Armor": "Armor"
     }
   }
 }

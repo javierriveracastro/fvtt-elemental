@@ -33,8 +33,8 @@ export class ElementaItemSheet extends ItemSheet {
 export class ElementalEquipmentSheet extends ItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      width: 600,
-      height: 300,
+      width: 800,
+      height: 430,
     });
   }
 
@@ -44,8 +44,17 @@ export class ElementalEquipmentSheet extends ItemSheet {
 
   async getData(options) {
     const data = super.getData(options);
+    const equipment_types_select = {
+      weapon: game.i18n.localize("Elemental.EquipmentTypes.Weapon"),
+      armor: game.i18n.localize("Elemental.EquipmentTypes.Armor"),
+      vehicle: game.i18n.localize("Elemental.EquipmentTypes.Vehicle"),
+      miscellaneous: game.i18n.localize(
+        "Elemental.EquipmentTypes.Miscellaneous",
+      ),
+    };
     return {
       ...data,
+      equipment_types_select,
       theme: game.elemental.current_theme,
     };
   }

@@ -64,12 +64,12 @@ Hooks.on("init", () => {
   Items.registerSheet("elemental", ElementaItemSheet, {
     types: ["skill"],
     makeDefault: true,
-    label: "Elemental.ElementalSheet",
+    label: "Elemental.ItemElementalSheet",
   });
   Items.registerSheet("elemental", ElementalEquipmentSheet, {
     types: ["equipment"],
     makeDefault: true,
-    label: "Elemental.ElementalSheet",
+    label: "Elemental.EquipmentElementalSheet",
   });
 
 

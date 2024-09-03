@@ -1,8 +1,76 @@
 <form class="elemental-css">
     <div class="flex flex-row justify-between gap-2">
-        <img class="w-10 h-10 rounded" src="{{item.img}}" data-edit="img">
+        <img class="w-10 h-10 rounded" src="{{item.img}}" data-edit="img" alt="Equipment picture">
         <input type="text" name="name" value="{{item.name}}"
            class="{{theme.big_input}} mb-4 self-center"
            placeholder="{{localize 'Elemental.ItemName'}}">
+    </div>
+    <div class="flex gap-2 m-2">
+        <label class="{{theme.text_attribute}}">
+            {{localize "Elemental.EquipmentSheet.Type"}}
+        </label>
+        <select name="system.elemental_type" class="{{theme.medium_select}}">
+            {{selectOptions equipment_types_select selected=item.system.elemental_type}}
+        </select>
+    </div>
+    <div class="grid grid-cols-2 gap-2 m-2">
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Ammo"}}
+            </label>
+            <input type="text" name="system.ammo" value="{{item.system.ammo}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Reload"}}
+            </label>
+            <input type="text" name="system.reload" value="{{item.system.reload}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Damage"}}
+            </label>
+            <input type="text" name="system.damage" value="{{item.system.damage}}"
+                class="{{theme.big_input}}">
+        </div>
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.AOE"}}
+            </label>
+            <input type="text" name="system.aoe" value="{{item.system.aoe}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Lbs"}}
+            </label>
+            <input type="text" name="system.lbs" value="{{item.system.lbs}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Notes"}}
+            </label>
+            <input type="text" name="system.notes" value="{{item.system.notes}}"
+                class="{{theme.big_input}}">
+        </div>
+        <div class="flex gap-2">
+            <label class="{{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Armor"}}
+            </label>
+            <input type="text" name="system.armor" value="{{item.system.armor}}"
+                class="{{theme.small_input}}">
+        </div>
+    </div>
+    <div class="elemental-editor {{theme.text_description}} mt-2">
+    {{editor
+        item.system.description
+        target='system.description'
+        button=editable
+        editable=editable
+        engine="prosemirror"
+    }}
     </div>
 </form>
