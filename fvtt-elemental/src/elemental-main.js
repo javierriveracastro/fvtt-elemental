@@ -5,12 +5,12 @@ import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
-import {ElementaItemSheet, ElementalEquipmentSheet} from "./item-sheet.js";
+import { ElementaItemSheet, ElementalEquipmentSheet } from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
 import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
 import { change_condition_menu } from "./tokenHud.js";
-import {EquipmentDataModel} from "./equipment-item.js";
+import { EquipmentDataModel } from "./equipment-item.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
@@ -72,10 +72,10 @@ Hooks.on("init", () => {
     label: "Elemental.EquipmentElementalSheet",
   });
 
-
   const handlebars_templatePaths = [
     "systems/fvtt-elemental/templates/character_base.hbs",
     "systems/fvtt-elemental/templates/character_description.hbs",
+    "systems/fvtt-elemental/templates/character_equipment.hbs",
     "systems/fvtt-elemental/templates/skill_row.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {

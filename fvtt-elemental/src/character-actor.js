@@ -103,6 +103,12 @@ export class ElementalActor extends Actor {
     return this.skills("will");
   }
 
+  get equipment() {
+    return this.items.filter((item) => {
+      return item.type === "equipment";
+    });
+  }
+
   skills(attribute) {
     if (attribute) {
       return this.items.filter((item) => {
