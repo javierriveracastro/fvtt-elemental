@@ -1,5 +1,5 @@
 <div class="{{theme.skill_box}}">
     {{#each actor.equipment}}
-        {{ this.name }}
+        {{>"systems/fvtt-elemental/templates/equipment_row.hbs" theme=../theme item=this}}
     {{/each}}
 </div>
