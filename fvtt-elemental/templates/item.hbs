@@ -5,46 +5,46 @@
                    class="{{theme.big_input}} mb-4"
                    placeholder="{{localize 'Elemental.ItemName'}}">
             <span class="w-full grid grid-cols-2 gap-2">
-                <span class="flex gap-2">
-                    <label class="{{theme.text_attribute}}">
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.Attribute"}}
                     </label>
                     <select name="system.attribute" class="{{theme.medium_select}}">
                         {{selectOptions attributes selected=item.system.attribute}}
                     </select>
                 </span>
-                <span class="flex gap-2">
-                    <label class="{{theme.text_attribute}}">
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.Value"}}
                     </label>
                     <input type="text" name="system.score" value="{{item.system.score}}"
                         class="{{theme.small_input}}">
                 </span>
-                <span class="flex gap-2">
-                    <label class="{{theme.text_attribute}}">
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.DontModifyRoll"}}
                     </label>
                     <input type="checkbox" name="system.dont_modify_rolls"
                         {{# if item.system.dont_modify_rolls }}checked{{/ if }}
                         class="{{theme.checkbox}}">
                 </span>
-                <span class="flex gap-2">
-                    <label class="{{theme.text_attribute}}">
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.ModifyDamage"}}
                     </label>
                     <input type="checkbox" name="system.modify_damage"
                         {{# if item.system.modify_damage }}checked{{/ if }}
                         class="{{theme.checkbox}}">
                 </span>
-                <span class="flex gap-2">
-                    <label class="{{theme.text_attribute}}">
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.FixedModifier"}}
                     </label>
                     <input type="text" name="system.fixed_modifier" value="{{item.system.fixed_modifier}}"
                         class="{{theme.small_input}}">
                 </span>
-                <span class="flex gap-2">
-                    <label class="{{theme.text_attribute}}">
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.ItemSheet.IsFlaw" }}
                     </label>
                     <input type="checkbox" name="system.is_flaw"
