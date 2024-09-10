@@ -80,7 +80,8 @@
       "AOE": "Area of Effect",
       "Lbs": "Pounds",
       "Notes": "Notes",
-      "Armor": "Armor"
+      "Armor": "Armor",
+      "Quantity": "Quantity"
     }
   }
 }

@@ -15,6 +15,7 @@ export class EquipmentDataModel extends foundry.abstract.TypeDataModel {
       notes: new fields.StringField({ initial: "" }),
       description: new fields.HTMLField(),
       armor: new fields.NumberField({ integer: true, initial: 0 }),
+      quantity: new fields.NumberField({ integer: true, initial: 1 }),
     };
   }
 }
