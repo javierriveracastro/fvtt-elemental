@@ -26,7 +26,7 @@ export const BASE_THEME = {
   refresh_button:
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 me-2 mb-2",
   skill_button:
-    "w-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm",
+    "w-6 h-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm self-center",
   skill_name: "border-solid border-0 border-b-2 border-stone-200",
   flaw_name: "border-solid border-0 border-b-2 border-stone-200 text-red-700",
   roll_button:
@@ -55,4 +55,6 @@ export const BASE_THEME = {
   item_picture: "w-10 h-10 rounded",
   item_name:
     "self-center border-solid border-0 border-b-2 border-stone-200 grow",
+  quantity_name:
+    "self-center",
 };
