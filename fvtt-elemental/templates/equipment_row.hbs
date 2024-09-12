@@ -1,18 +1,18 @@
 <div class="flex m-2 gap-2">
     <img class="{{theme.item_picture}}" src="{{this.img}}" alt="item image">
-    <div class="{{theme.item_name}}">{{ this.name }}</div>
+    <div class="{{theme.item_name}}">{{ item.name }}</div>
     <div class="flex justify-end gap-0">
-        <button class="{{theme.skill_button}}" data-item-id="{{this.id}}">
+        <button class="elemental-item-action {{theme.skill_button}}" data-item-id="{{item.id}}" data-action="add">
             <i class="fa-solid fa-plus"></i>
         </button>
         <p class="{{theme.quantity_name}}">{{ this.system.quantity }}</p>
-        <button class="{{theme.skill_button}}" data-item-id="{{this.id}}">
+        <button class="elemental-item-action {{theme.skill_button}}" data-item-id="{{item.id}}" data-action="subtract">
             <i class="fa-solid fa-minus"></i>
         </button>
-        <button class="{{theme.skill_button}}" data-item-id="{{this.id}}">
+        <button class="elemental-edit-skill {{theme.skill_button}}" data-item-id="{{item.id}}">
             <i class="fa-solid fa-pen-to-square"></i>
         </button>
-        <button class="{{theme.skill_button}}" data-item-id="{{this.id}}">
+        <button class="elemental-delete-skill {{theme.skill_button}}" data-item-id="{{item.id}}">
             <i class="fa-solid fa-trash"></i>
         </button>
     </div>
