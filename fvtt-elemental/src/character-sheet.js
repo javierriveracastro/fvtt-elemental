@@ -1,5 +1,5 @@
 // Character Sheet
-/* globals ActorSheet, game, foundry */
+/* globals ActorSheet, game, foundry, console */
 
 import { AttributeRollDialog, StatCheckDialog } from "./roll-dialog.js";
 
@@ -34,6 +34,11 @@ export class ElementaCharacterSheet extends ActorSheet {
     jquery.find(".elemental-edit-skill").on("click", (ev) => {
       this.edit_item(ev);
     });
+    jquery.find(".elemental-item-change-quantity").on("click", (ev) => {
+      this.change_item_quantity(ev).catch(() => {
+        console.error("Can't update item quantity");
+      });
+    });
     jquery.find(".elemental-roll-derived").on("click", (ev) => {
       const derived_stat = ev.currentTarget.dataset.derived;
       const stat_roll_dialog = new StatCheckDialog(this.actor, derived_stat);
@@ -51,7 +56,8 @@ export class ElementaCharacterSheet extends ActorSheet {
       const skill = this.actor.items.get(ev.currentTarget.dataset.itemId);
       const skill_roll_dialog = new AttributeRollDialog(
         this.actor,
-        skill.system.attribute, {skill_id: skill.id}
+        skill.system.attribute,
+        { skill_id: skill.id },
       );
       skill_roll_dialog.render(true);
     });
@@ -89,6 +95,19 @@ export class ElementaCharacterSheet extends ActorSheet {
     const item_id = ev.currentTarget.dataset.itemId;
     const item = this.actor.items.get(item_id);
     item.sheet.render(true);
+  }
+
+  async change_item_quantity(ev) {
+    const item_id = ev.currentTarget.dataset.itemId;
+    const item = this.actor.items.get(item_id);
+    const action = ev.currentTarget.dataset.action;
+    let quantity = item.system.quantity;
+    if (action === "add") {
+      quantity += 1;
+    } else {
+      quantity = Math.max(quantity - 1, 0);
+    }
+    await item.update({ "system.quantity": quantity });
   }
 
   async _updateObject(event, formData) {
