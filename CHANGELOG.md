@@ -1,3 +1,6 @@
+# Version 0.0.7 aka Equipment, still very early
+* Basic support for equipment.
+
 # Version 0.0.6 aka Flaws, cause no PC is perfect.
 * Added support for Flaws.
 
