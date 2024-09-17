@@ -2,12 +2,14 @@
 /* globals ActorSheet, game, foundry, console */
 
 import { AttributeRollDialog, StatCheckDialog } from "./roll-dialog.js";
+import {BASE_THEME as current_theme} from "./theme.js";
 
 export class ElementaCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 800,
       height: 760,
+      current_tab: "base-tab",
     });
   }
 
@@ -17,7 +19,7 @@ export class ElementaCharacterSheet extends ActorSheet {
 
   async getData(options) {
     const data = super.getData(options);
-    return { ...data, theme: game.elemental.current_theme };
+    return { ...data, theme: game.elemental.current_theme, current_tab: this.options.current_tab };
   }
 
   activateListeners(jquery) {
@@ -61,6 +63,7 @@ export class ElementaCharacterSheet extends ActorSheet {
       );
       skill_roll_dialog.render(true);
     });
+    this.render_active_tab(jquery);
   }
 
   manageTabs(ev, jquery) {
@@ -78,6 +81,16 @@ export class ElementaCharacterSheet extends ActorSheet {
     }
     jquery.find(".tab-content").addClass("hidden");
     jquery.find(`#${visible_content_id}`).removeClass("hidden");
+    this.options.current_tab = visible_content_id;
+  }
+
+  render_active_tab(jquery) {
+    jquery.find(`#${this.options.current_tab}`).removeClass("hidden");
+    for (let tab of jquery.find(".elemental-tab-control")) {
+      if (tab.dataset.tab === this.options.current_tab) {
+        tab.classList = `elemental-tab-control ${current_theme.tab_active}`.split();
+      }
+    }
   }
 
   refresh_derived(ev) {

@@ -34,7 +34,7 @@
     </div>
     <!-- Tab header -->
     <nav class="{{theme.tab_backgound}}">
-        <a class="elemental-tab-control {{theme.tab_active}}" data-tab="base-tab">
+        <a class="elemental-tab-control {{theme.tab_inactive}}" data-tab="base-tab">
             {{localize 'Elemental.CharacterSheet.Base'}}
         </a>
         <a class="elemental-tab-control {{theme.tab_inactive}}" data-tab="equipment-tab">
@@ -47,7 +47,7 @@
             {{localize 'Elemental.CharacterSheet.Rules'}}
         </a>
     </nav>
-    <div id="base-tab" class="tab-content grid grid-cols-2 gap-4 mb-2">
+    <div id="base-tab" class="tab-content grid grid-cols-2 gap-4 mb-2 hidden">
         {{>"systems/fvtt-elemental/templates/character_base.hbs"}}
     </div>
     <div id="equipment-tab" class="tab-content hidden">
