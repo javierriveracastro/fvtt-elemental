@@ -1,5 +1,5 @@
 // Character document and DataModel classes
-/* global foundry, Actor */
+/* global foundry, Actor, game */
 
 export class CharacterDataModel extends foundry.abstract.TypeDataModel {
   // noinspection JSUnusedGlobalSymbols
@@ -24,6 +24,8 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel {
   }
 }
 
+// Some getters are only used on template, we suppress errors
+// noinspection JSUnusedGlobalSymbols
 export class ElementalActor extends Actor {
   // noinspection JSUnusedGlobalSymbols
   get agility_xp() {
@@ -40,7 +42,6 @@ export class ElementalActor extends Actor {
     return this.calculate_xp(this.system.awareness);
   }
 
-  // noinspection JSUnusedGlobalSymbols
   get will_xp() {
     return this.calculate_xp(this.system.will);
   }
@@ -110,8 +111,11 @@ export class ElementalActor extends Actor {
     });
     for (let equipment of equipment_list) {
       if (!equipment_groups.hasOwnProperty(equipment.system.elemental_type)) {
+        const formated_mane =
+          equipment.system.elemental_type.charAt(0).toUpperCase() +
+          equipment.system.elemental_type.slice(1).toLowerCase();
         equipment_groups[equipment.system.elemental_type] = {
-          Name: equipment.system.elemental_type,
+          Name: game.i18n.localize(`Elemental.EquipmentTypes.${formated_mane}`),
           Equipment: [],
         };
       }
