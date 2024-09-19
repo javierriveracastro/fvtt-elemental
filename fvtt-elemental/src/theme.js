@@ -52,9 +52,8 @@ export const BASE_THEME = {
     "justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
   checkbox:
     "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2",
-  item_picture: "w-10 h-10 rounded",
+  item_picture: "w-7 h-7 rounded",
   item_name:
     "self-center border-solid border-0 border-b-2 border-stone-200 grow",
-  quantity_name:
-    "self-center",
+  quantity_name: "self-center",
 };

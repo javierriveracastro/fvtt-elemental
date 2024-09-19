@@ -104,9 +104,22 @@ export class ElementalActor extends Actor {
   }
 
   get equipment() {
-    return this.items.filter((item) => {
+    const equipment_groups = {};
+    const equipment_list = this.items.filter((item) => {
       return item.type === "equipment";
     });
+    for (let equipment of equipment_list) {
+      if (!equipment_groups.hasOwnProperty(equipment.system.elemental_type)) {
+        equipment_groups[equipment.system.elemental_type] = {
+          Name: equipment.system.elemental_type,
+          Equipment: [],
+        };
+      }
+      equipment_groups[equipment.system.elemental_type].Equipment.push(
+        equipment,
+      );
+    }
+    return Object.values(equipment_groups);
   }
 
   skills(attribute) {
