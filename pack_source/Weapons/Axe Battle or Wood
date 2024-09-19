@@ -1,0 +1,8 @@
+_id: AxeBattle123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Axe, Battle or Wood
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 7
+type: skill

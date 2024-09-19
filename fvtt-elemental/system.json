@@ -57,6 +57,18 @@
       },
       "system": "fvtt-elemental",
       "flags": {}
+    },
+    {
+      "name": "Weapons",
+      "label": "Weapons",
+      "path": "packs/Weapons",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
     }
   ]
 }
