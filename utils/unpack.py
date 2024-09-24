@@ -54,12 +54,13 @@ def pack():
             for file in os.listdir(os.path.join(PACK_SRC, pack_dir)):
                 with open(os.path.join(PACK_SRC, pack_dir, file)) as f:
                     current_object = yaml.load(f, Loader=yaml.Loader)
-                    print(current_object)
-                    clean(current_object)
-                    db.put(
-                        f"!items!{current_object['_id']}".encode(),
-                        json.dumps(current_object).encode()
-                    )
+                    if current_object:
+                        print(current_object)
+                        clean(current_object)
+                        db.put(
+                            f"!items!{current_object['_id']}".encode(),
+                            json.dumps(current_object).encode()
+                        )
 
 
 if __name__ == "__main__":
