@@ -1,0 +1,9 @@
+_id: Ballista12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Ballista
+type: equipment
+system:
+      damage: "7"
+      lbs: 0
+      range: 50
+      notes: "Crew: 2"

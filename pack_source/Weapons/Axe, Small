@@ -1,0 +1,9 @@
+_id: AxeSmall12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Axe, Small
+type: equipment
+system:
+      damage: "@TOU - 1"
+      lbs: 2
+      range: 8
+      notes: "hatchet, Tomahawk, etc"

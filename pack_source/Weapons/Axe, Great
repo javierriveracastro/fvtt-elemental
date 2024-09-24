@@ -1,0 +1,7 @@
+_id: AxeGreat12344567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Axe, Great (two-handed)
+type: equipment
+system:
+      damage: "@TOU + 1"
+      lbs: 11
