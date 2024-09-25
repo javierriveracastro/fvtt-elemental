@@ -1,0 +1,9 @@
+_id: Shortbow12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Bow, Short
+type: equipment
+system:
+      damage: "1"
+      lbs: 2
+      range: 40
+      notes: "Add 2lb for 20 arrows"

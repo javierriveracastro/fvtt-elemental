@@ -1,0 +1,9 @@
+_id: Dagger1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Dagger or Knife
+type: equipment
+system:
+      damage: "@TOU-1"
+      lbs: 2
+      range: 8
+      notes: "Range is for throwing knife only"

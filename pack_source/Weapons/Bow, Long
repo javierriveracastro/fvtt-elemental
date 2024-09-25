@@ -1,0 +1,9 @@
+_id: Longbow123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Bow, Long
+type: equipment
+system:
+      damage: "1"
+      lbs: 4
+      range: 50
+      notes: "Add 2lb for 20 arrows"

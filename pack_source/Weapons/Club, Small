@@ -1,0 +1,8 @@
+_id: Clubsmall1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Club, Small
+type: equipment
+system:
+      damage: "@TOU-1"
+      lbs: 2
+      notes: "Includes baton, nunchaku, etc."

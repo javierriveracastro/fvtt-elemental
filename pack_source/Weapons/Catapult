@@ -1,0 +1,12 @@
+_id: Catapult12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Catapult
+type: equipment
+system:
+      damage: "8"
+      ammo: 1
+      reload: 2
+      lbs: 0
+      range: 100
+      notes: "Crew 6"
+      aoe: 4

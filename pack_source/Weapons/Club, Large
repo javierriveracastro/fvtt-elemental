@@ -1,0 +1,7 @@
+_id: Clublarge1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Club, Large
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 10

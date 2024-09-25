@@ -1,0 +1,11 @@
+_id: CrossbowLight123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Crossbow, Light
+type: equipment
+system:
+      damage: "2"
+      lbs: 5
+      range: 45
+      notes: "Add 2lb for 20 bolts"
+      ammo: 1
+      reload: 1
