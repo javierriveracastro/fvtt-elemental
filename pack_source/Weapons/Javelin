@@ -1,0 +1,8 @@
+_id: Javelin123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Javelin
+type: equipment
+system:
+      damage: "@TOU-1"
+      lbs: 2
+      range: 10

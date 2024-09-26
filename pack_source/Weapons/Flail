@@ -1,0 +1,7 @@
+_id: Flail12345678901
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Flail
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 5

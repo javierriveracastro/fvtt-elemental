@@ -1,0 +1,9 @@
+_id: Sling12345678909
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Sling
+type: equipment
+system:
+      damage: "0"
+      lbs: 1
+      range: 40
+      notes: "Add 2 lbs. for 20 stones"

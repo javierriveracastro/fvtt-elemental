@@ -1,0 +1,7 @@
+_id: PoleArm123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Polearm (Halberd, Pike...)
+type: equipment
+system:
+      damage: "@TOU+1"
+      lbs: 16

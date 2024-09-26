@@ -1,0 +1,7 @@
+_id: MorningStar12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Morningstar
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 4

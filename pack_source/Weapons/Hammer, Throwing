@@ -1,0 +1,8 @@
+_id: Hammer1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Hammer, Throwing
+type: equipment
+system:
+      damage: "@TOU-1"
+      lbs: 2
+      range: 8

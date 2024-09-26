@@ -1,0 +1,7 @@
+_id: Mace123456789098
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Mace
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 4

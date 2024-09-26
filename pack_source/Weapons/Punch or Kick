@@ -1,0 +1,7 @@
+_id: PunchKick1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Punch or Kick
+type: equipment
+system:
+      damage: "@TOU-3"
+      lbs: 0

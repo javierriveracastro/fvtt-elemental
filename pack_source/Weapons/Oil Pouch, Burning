@@ -1,0 +1,8 @@
+_id: BurningOil123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Oil, Burning
+type: equipment
+system:
+      damage: "1"
+      lbs: 1
+      range: 12

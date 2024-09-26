@@ -1,0 +1,8 @@
+_id: HardObject123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Object, Hard
+type: equipment
+system:
+      damage: "@TOU-2"
+      lbs: 1
+      notes: "Rock, chair, mailed fist, torch"

@@ -1,0 +1,7 @@
+_id: Lance12345678901
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Lance
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 8

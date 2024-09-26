@@ -1,0 +1,8 @@
+_id: Net1234567890456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Net
+type: equipment
+system:
+      damage: "0"
+      lbs: 3
+      notes: "Target is Severely Impaired; can try to escape each round with a 2d Health check"

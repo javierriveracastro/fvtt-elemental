@@ -1,0 +1,7 @@
+_id: HammerWar1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Hammer, War
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 5
