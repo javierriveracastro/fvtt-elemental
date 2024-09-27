@@ -69,6 +69,18 @@
       },
       "system": "fvtt-elemental",
       "flags": {}
+    },
+    {
+      "name": "Antique Firearms",
+      "label": "Antique Firearms",
+      "path": "packs/AntiqueFirearms",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
     }
   ]
 }
