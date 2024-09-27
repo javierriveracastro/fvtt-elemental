@@ -1,0 +1,11 @@
+_id: RifleMusket12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Rifle, Musket
+type: equipment
+system:
+      ammo: 1
+      reload: 2
+      damage: "3"
+      lbs: 15
+      range: 25
+      notes: "Bayonet DAM = TOU-1"

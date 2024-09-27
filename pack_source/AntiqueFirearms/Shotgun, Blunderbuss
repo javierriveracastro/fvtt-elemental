@@ -1,0 +1,11 @@
+_id: Blunderbuss1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Shotgun, Blunderbuss
+type: equipment
+system:
+      ammo: 1
+      reload: 2
+      damage: "4"
+      lbs: 12
+      range: 20
+      notes: "Apply range penalty to DAM"

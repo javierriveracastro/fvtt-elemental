@@ -1,0 +1,10 @@
+_id: PistolRevolver12
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Pistol, Revolver
+type: equipment
+system:
+      ammo: 6
+      reload: 1
+      damage: "2"
+      lbs: 4
+      range: 50

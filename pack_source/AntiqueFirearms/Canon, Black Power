@@ -1,0 +1,11 @@
+_id: CanonBlackPower1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Canon, Black Power
+type: equipment
+system:
+    damage: "6"
+    aoe: 2
+    reload: 1
+    lbs: 0
+    range: 100
+    notes: "Solid Shot / Shrapnel * If less than 4 crew, Rel: 2"

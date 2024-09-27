@@ -1,0 +1,10 @@
+_id: PistolFlintlock1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Pistol, Flintlock
+type: equipment
+system:
+      ammo: 1
+      reload: 2
+      damage: "2"
+      lbs: 3
+      range: 10

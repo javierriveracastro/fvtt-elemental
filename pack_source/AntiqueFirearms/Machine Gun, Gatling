@@ -1,0 +1,12 @@
+_id: MachineGunGatlin
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Machine Gun, Gatling
+type: equipment
+system:
+    ammo: 10
+    reload: 1
+    damage: "3"
+    lbs: 40
+    range: 50
+    aoe: 2
+    notes: "May not move"
