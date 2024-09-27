@@ -1,0 +1,8 @@
+_id: Staff12345678909
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Staff
+type: equipment
+system:
+      damage: "@TOU-1"
+      lbs: 6
+      notes: "Can split Weapon Mastery skill"

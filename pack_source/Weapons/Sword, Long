@@ -1,0 +1,7 @@
+_id: LongSword1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Sword, Long
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 5

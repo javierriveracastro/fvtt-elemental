@@ -1,0 +1,9 @@
+_id: Whip123456789092
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Whip
+type: equipment
+system:
+      damage: "0"
+      lbs: 3
+      range: 4
+      notes: " Target rolls TOU vs. TOU or is prone (Impaired) or disarmed"

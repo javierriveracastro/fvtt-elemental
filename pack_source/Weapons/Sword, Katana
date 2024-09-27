@@ -1,0 +1,7 @@
+_id: Katana1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Katana
+type: equipment
+system:
+      damage: "@TOU+1"
+      lbs: 4

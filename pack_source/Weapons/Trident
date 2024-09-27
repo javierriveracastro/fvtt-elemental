@@ -1,0 +1,9 @@
+_id: Trident123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Trident
+type: equipment
+system:
+      damage: "@TOU"
+      lbs: 5
+      range: 8
+      notes: "Add 2 lbs. for 20 stones"

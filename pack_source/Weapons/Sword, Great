@@ -1,0 +1,7 @@
+_id: GreatSword123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Sword, Great (Two handed)
+type: equipment
+system:
+      damage: "@TOU+1"
+      lbs: 9

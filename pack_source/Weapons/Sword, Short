@@ -1,0 +1,8 @@
+_id: ShortSword123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Sword, Short
+type: equipment
+system:
+      damage: "@TOU-1"
+      lbs: 3
+      notes: " Includes Rapier, Sabre, Scimitar, Machete, Sword Cane, Sickle, etc."
