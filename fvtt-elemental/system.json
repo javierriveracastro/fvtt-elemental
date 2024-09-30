@@ -81,6 +81,18 @@
       },
       "system": "fvtt-elemental",
       "flags": {}
+    },
+    {
+      "name": "Modern Weapons",
+      "label": "Modern Weapons",
+      "path": "packs/ModernWeapons",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
     }
   ]
 }
