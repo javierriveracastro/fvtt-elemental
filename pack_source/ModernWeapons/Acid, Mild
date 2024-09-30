@@ -1,0 +1,8 @@
+_id: Acidmild12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Acid, Mild
+type: equipment
+system:
+      damage: "1"
+      lbs: 1
+      range: 4
