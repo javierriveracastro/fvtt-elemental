@@ -1,0 +1,8 @@
+_id: Mine123456789012
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Mine
+type: equipment
+system:
+      damage: "5"
+      aoe: 4
+      lbs: 10

@@ -1,0 +1,9 @@
+_id: FragmentationGre
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Grenade, Fragmentation
+type: equipment
+system:
+      range: 10
+      damage: "5"
+      aoe: 4
+      lbs: 2

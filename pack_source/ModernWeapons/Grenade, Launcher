@@ -1,12 +1,12 @@
-_id: Flamethrower1234
+_id: GrenadeLauncher1
 img: /icons/equipment/back/cape-layered-blue-accent.webp
-name: Flamethrower
+name: Grenade, Launcher
 type: equipment
 system:
-      ammo: 10
+      ammo: 1
       reload: 1
-      range: 5
+      range: 50
       damage: "5"
       aoe: 4
-      lbs: 70
-      notes: "Ignores partial body armor"
+      lbs: 8
+      notes: "Same effect as grenade"

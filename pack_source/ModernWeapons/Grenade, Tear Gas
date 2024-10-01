@@ -1,0 +1,10 @@
+_id: GrenadeTearGas12
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Grenade, Tear Gas
+type: equipment
+system:
+      range: 10
+      damage: "-99"
+      aoe: 4
+      lbs: 2
+      notes: "Target rolls TOU vs. DIF 3 or is Impaired; can try to shake off with a 2d Health checkr"

@@ -1,0 +1,7 @@
+_id: BrassKnuckles123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Brass Knuckles
+type: equipment
+system:
+      damage: "@TOU-2"
+      lbs: 1

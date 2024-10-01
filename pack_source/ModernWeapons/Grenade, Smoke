@@ -1,0 +1,10 @@
+_id: SmokeGrenade1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Grenade, Smoke
+type: equipment
+system:
+      range: 10
+      damage: "-99"
+      aoe: 4
+      lbs: 2
+      notes: " Obscures area for 1d6 rounds, all within the area are Impaired"

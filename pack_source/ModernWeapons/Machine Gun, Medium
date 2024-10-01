@@ -1,0 +1,12 @@
+_id: MachineGunMedium
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Machine Gun, Medium
+type: equipment
+system:
+      ammo: 25
+      reload: 1
+      range: 60
+      damage: "4"
+      aoe: 2
+      lbs: 30
+      notes: "M60, MG34, MG42, etc."

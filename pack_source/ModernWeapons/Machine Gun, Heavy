@@ -1,0 +1,12 @@
+_id: HeavyMachineGun1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Flamethrower
+type: equipment
+system:
+      ammo: 20
+      reload: 1
+      range: 100
+      damage: "5"
+      aoe: 2
+      lbs: 84
+      notes: "May not move"

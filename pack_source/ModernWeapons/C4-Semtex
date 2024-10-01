@@ -1,0 +1,8 @@
+_id: Semtex1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: C4 - Semtex
+type: equipment
+system:
+      damage: "9"
+      aoe: 4
+      lbs: 2

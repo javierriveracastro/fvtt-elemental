@@ -1,0 +1,10 @@
+_id: Dynamite12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Dynamite
+type: equipment
+system:
+      damage: "2"
+      lbs: 2
+      aoe: 2
+      range: 4
+      notes: "1 stick"

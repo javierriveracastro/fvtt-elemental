@@ -1,0 +1,8 @@
+_id: Chainsaw12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Chainsaw
+type: equipment
+system:
+      damage: "5"
+      lbs: 20
+      notes: "On a critical failure: hist user"

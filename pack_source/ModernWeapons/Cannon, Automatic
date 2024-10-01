@@ -1,0 +1,9 @@
+_id: CannonAutomatic1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Cannon, Automatic
+type: equipment
+system:
+      damage: "8"
+      lbs: 0
+      range: 100
+      aoe: 4

@@ -1,0 +1,9 @@
+_id: MissileLauncher1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Missile Launcher
+type: equipment
+system:
+      range: 200
+      damage: "14"
+      aoe: 4
+      notes: "1 round aim grants +1 to attack"
