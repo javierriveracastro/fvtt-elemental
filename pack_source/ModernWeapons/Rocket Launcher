@@ -1,0 +1,12 @@
+_id: RocketLauncher12
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Rocket Launcher
+type: equipment
+system:
+      ammo: 1
+      reload: 1
+      range: 50
+      damage: "13"
+      aoe: 4
+      lbs: 10
+      notes: "RPG, light anti-tank weapons"

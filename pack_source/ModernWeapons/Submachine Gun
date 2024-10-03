@@ -1,0 +1,12 @@
+_id: SubMachineGun123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Submachine Gun
+type: equipment
+system:
+      ammo: 30
+      reload: 1
+      range: 25
+      damage: "2"
+      aoe: 2
+      lbs: 10
+      notes: "Single Shot/Burst"

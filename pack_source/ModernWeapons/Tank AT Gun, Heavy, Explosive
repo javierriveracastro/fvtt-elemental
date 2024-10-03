@@ -1,11 +1,11 @@
-_id: ATGunMedium12345
+_id: ATGunHeavyEX3456
 img: /icons/equipment/back/cape-layered-blue-accent.webp
-name: Tank/AT Gun, Medium, Armor Piercing
+name: Tank/AT Gun, Heavy, Explosive
 type: equipment
 system:
       ammo: 0
       reload: 0
-      range: 150
-      damage: "16"
-      lbs: 0
+      range: 200
+      damage: "5"
+      lbs: 4
       notes: ""

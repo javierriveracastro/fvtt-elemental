@@ -1,0 +1,11 @@
+_id: HuntingRifle1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Rifle, Hunting
+type: equipment
+system:
+      ammo: 6
+      reload: 1
+      range: 50
+      damage: "3"
+      lbs: 10
+      notes: "Telescopic sight: Range x2"

@@ -1,0 +1,11 @@
+_id: AutomaticPistol1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Pistol, Automatic
+type: equipment
+system:
+      ammo: 8
+      reload: 1
+      range: 25
+      damage: "2"
+      lbs: 3
+      notes: "Silencer: Range reduced 50%"

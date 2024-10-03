@@ -1,0 +1,11 @@
+_id: ATGunLight123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Tank/AT Gun, Light, Armor Piercing
+type: equipment
+system:
+      ammo: 0
+      reload: 0
+      range: 2150
+      damage: "12"
+      lbs: 0
+      notes: ""

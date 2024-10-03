@@ -1,0 +1,11 @@
+_id: SniperRifle12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Rifle, Sniper
+type: equipment
+system:
+      ammo: 11
+      reload: 1
+      range: 100
+      damage: "5"
+      lbs: 35
+      notes: "Fires once per round"

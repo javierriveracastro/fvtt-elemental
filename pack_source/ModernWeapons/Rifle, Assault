@@ -1,0 +1,12 @@
+_id: AssaultRiffle123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Rifle, Assault
+type: equipment
+system:
+      ammo: 30
+      reload: 1
+      range: 50
+      damage: "3"
+      aoe: 2
+      lbs: 9
+      notes: "Laser sight: Marksmanship 1"

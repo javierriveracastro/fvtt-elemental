@@ -1,0 +1,11 @@
+_id: Shotgun123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Shotgun
+type: equipment
+system:
+      ammo: 6
+      reload: 1
+      range: 25
+      damage: "4"
+      lbs: 10
+      notes: "Apply range penalty to DAM"
