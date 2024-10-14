@@ -1,0 +1,8 @@
+_id: ShieldArmor12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Shield
+type: equipment
+system:
+    elemental_type: "armor"
+    lbs: 10
+    notes: "+1 to defense rolls"

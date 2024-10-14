@@ -1,0 +1,9 @@
+_id: LightArmor123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Light Armor (Leather, etc.)
+type: equipment
+system:
+    elemental_type: "armor"
+    armor: 1
+    lbs: 20
+    notes: "Includes appropriate clothing, footwear, headgear (e.g. leather cap)"

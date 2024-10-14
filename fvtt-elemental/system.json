@@ -93,6 +93,18 @@
       },
       "system": "fvtt-elemental",
       "flags": {}
+    },
+    {
+      "name": "Armor",
+      "label": "Armor",
+      "path": "packs/Armor",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
     }
   ]
 }

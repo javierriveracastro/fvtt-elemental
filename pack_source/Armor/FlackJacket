@@ -1,0 +1,9 @@
+_id: FlackJacket12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Flack Jacket, Kevlar Vest
+type: equipment
+system:
+    elemental_type: "armor"
+    armor: 2
+    lbs: 12
+    notes: "ARM 4 against bullets"

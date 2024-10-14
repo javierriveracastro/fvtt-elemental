@@ -1,0 +1,9 @@
+_id: MediumArmor12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Medium Armor (Chain, etc.)
+type: equipment
+system:
+    elemental_type: "armor"
+    armor: 2
+    lbs: 40
+    notes: "Includes appropriate clothing, footwear, headgear (e.g. helmet)"
