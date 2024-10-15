@@ -81,7 +81,11 @@
       "Lbs": "Pounds",
       "Notes": "Notes",
       "Armor": "Armor",
-      "Quantity": "Quantity"
+      "Quantity": "Quantity",
+      "Crew": "Crew",
+      "AGI": "AGI",
+      "Move": "Move",
+      "Health": "Health"
     }
   }
 }

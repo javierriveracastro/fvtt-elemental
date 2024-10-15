@@ -34,7 +34,7 @@ export class ElementalEquipmentSheet extends ItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 800,
-      height: 430,
+      height: 480,
     });
   }
 

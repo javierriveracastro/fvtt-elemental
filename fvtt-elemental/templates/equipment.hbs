@@ -70,6 +70,34 @@
             <input type="text" name="system.quantity" value="{{item.system.quantity}}"
                 class="{{theme.small_input}}">
         </div>
+        <div class="flex">
+            <label class="w-1/4 {{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Crew"}}
+            </label>
+            <input type="text" name="system.crew" value="{{item.system.crew}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex">
+        <label class="w-1/4 {{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.AGI"}}
+            </label>
+            <input type="text" name="system.agi" value="{{item.system.agi}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex">
+            <label class="w-1/4 {{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Move"}}
+            </label>
+            <input type="text" name="system.move" value="{{item.system.move}}"
+                class="{{theme.three_quarters_input}}">
+        </div>
+        <div class="flex">
+            <label class="w-1/4 {{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Health"}}
+            </label>
+            <input type="text" name="system.health" value="{{item.system.health}}"
+                class="{{theme.small_input}}">
+        </div>
     </div>
     <div class="elemental-editor {{theme.text_description}} mt-2">
     {{editor
