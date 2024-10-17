@@ -1,0 +1,12 @@
+_id: SUV1234567890123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: SUV
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 3
+      crew: 1
+      passengers: 7
+      move: "40/80"
+      health: 11
+      agi: 3

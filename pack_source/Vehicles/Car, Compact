@@ -1,0 +1,13 @@
+_id: CarCompact123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Car, Compact
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Neon, Prius, Mini Cooper, etc."
+      armor: 3
+      crew: 1
+      passengers: 3
+      move: "20/72"
+      health: 7
+      agi: 3

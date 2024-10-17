@@ -1,0 +1,13 @@
+_id: SemiTrailer12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Semi / Tractor Trailer
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Mack, Peterbilt, etc."
+      armor: 4
+      crew: 1
+      passengers: 1
+      move: "10/60"
+      health: 12
+      agi: 1

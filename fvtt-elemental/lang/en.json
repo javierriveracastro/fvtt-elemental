@@ -85,7 +85,8 @@
       "Crew": "Crew",
       "AGI": "AGI",
       "Move": "Move",
-      "Health": "Health"
+      "Health": "Health",
+      "Passengers": "Passengers"
     }
   }
 }

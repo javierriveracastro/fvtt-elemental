@@ -18,6 +18,7 @@ export class EquipmentDataModel extends foundry.abstract.TypeDataModel {
       quantity: new fields.NumberField({ integer: true, initial: 1 }),
       range: new fields.NumberField({ integer: true, initial: 0 }),
       crew: new fields.NumberField({ integer: true, initial: 0 }),
+      passengers: new fields.NumberField({ integer: true, initial: 0 }),
       agi: new fields.NumberField({ integer: true, initial: 0 }),
       move: new fields.StringField({ initial: "" }),
       health: new fields.NumberField({ integer: true, initial: 0 }),

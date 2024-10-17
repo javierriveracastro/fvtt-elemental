@@ -1,0 +1,13 @@
+_id: CarSports1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Car, Sports
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Mustang, Corvette, Ferrari, etc."
+      armor: 3
+      crew: 1
+      passengers: 3
+      move: "60/112"
+      health: 7
+      agi: 3

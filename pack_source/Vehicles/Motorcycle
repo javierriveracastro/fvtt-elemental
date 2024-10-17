@@ -1,0 +1,13 @@
+_id: Motorcycle123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Motorcycle
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Street bike"
+      armor: 2
+      crew: 1
+      passengers: 1
+      move: "40/72"
+      health: 6
+      agi: 4

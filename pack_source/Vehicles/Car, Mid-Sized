@@ -1,0 +1,12 @@
+_id: CarMidSized12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Car, Mid-Sized
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 3
+      crew: 1
+      passengers: 4
+      move: "40/80"
+      health: 8
+      agi: 3

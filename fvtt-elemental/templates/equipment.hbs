@@ -78,7 +78,14 @@
                 class="{{theme.small_input}}">
         </div>
         <div class="flex">
-        <label class="w-1/4 {{theme.text_attribute}}">
+            <label class="w-1/4 {{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.Passengers"}}
+            </label>
+            <input type="text" name="system.passengers" value="{{item.system.passengers}}"
+                class="{{theme.small_input}}">
+        </div>
+        <div class="flex">
+            <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.AGI"}}
             </label>
             <input type="text" name="system.agi" value="{{item.system.agi}}"

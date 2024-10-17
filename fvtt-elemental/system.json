@@ -105,6 +105,18 @@
       },
       "system": "fvtt-elemental",
       "flags": {}
+    },
+    {
+      "name": "Vehicles",
+      "label": "Vehicles",
+      "path": "packs/Vehicles",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
     }
   ]
 }

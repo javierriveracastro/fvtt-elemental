@@ -1,0 +1,13 @@
+_id: HorseCarriage123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Horse & Carriage
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "* or other animal Move"
+      armor: 2
+      crew: 1
+      passengers: 3
+      move: "20*"
+      health: 8
+      agi: 2

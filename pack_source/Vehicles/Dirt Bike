@@ -1,0 +1,12 @@
+_id: DirtBike12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Dirt Bike
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 2
+      crew: 1
+      passengers: 0
+      move: "30/64"
+      health: 6
+      agi: 4
