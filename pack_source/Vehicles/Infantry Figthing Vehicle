@@ -1,0 +1,13 @@
+_id: InfantryFighting
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Infantry Fighting Vehicle
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Auto Canon, Missile Launcher"
+      armor: 12
+      crew: 3
+      passengers: 7
+      move: "10/28"
+      health: 12
+      agi: 1

@@ -1,0 +1,13 @@
+_id: ArmoredCarWWII12
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Armored Car, WWII
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Light Tank Gun, 1 Medium MG"
+      armor: 4
+      crew: 2
+      passengers: 3
+      move: "10/30"
+      health: 11
+      agi: 2

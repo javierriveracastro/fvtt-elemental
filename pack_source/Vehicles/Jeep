@@ -1,0 +1,13 @@
+_id: Jeep123456789021
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Jeep
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "1 Heavy Machine Gun (MG)"
+      armor: 1
+      crew: 2
+      passengers: 3
+      move: "20/80"
+      health: 6
+      agi: 3

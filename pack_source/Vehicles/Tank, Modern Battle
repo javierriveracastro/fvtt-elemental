@@ -1,0 +1,13 @@
+_id: TankModernBattle
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Tank, Modern Battle
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Hvy Tank Gun, 2 Med & 1 Hvy MG"
+      armor: 12
+      crew: 4
+      passengers: 0
+      move: "10/48"
+      health: 17
+      agi: 1

@@ -1,0 +1,13 @@
+_id: APCModern1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: APC, Modern
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "1 Medium MG, 1 Heavy MG"
+      armor: 3
+      crew: 2
+      passengers: 8
+      move: "24/40"
+      health: 12
+      agi: 2

@@ -1,0 +1,13 @@
+_id: TankWWII12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Tank, WWII
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Med Tank Gun, 2 Medium MG"
+      armor: 5
+      crew: 4
+      passengers: 0
+      move: "10/20"
+      health: 12
+      agi: 1
