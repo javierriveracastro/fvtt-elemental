@@ -1,0 +1,12 @@
+_id: CommercialHelico
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Helicopter, Commercial
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 2
+      crew: 1
+      passengers: 3
+      move: "40/100"
+      health: 9
+      agi: 3

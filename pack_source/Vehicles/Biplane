@@ -1,0 +1,12 @@
+_id: Biplane123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Biplane
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 1
+      crew: 1
+      passengers: 0
+      move: "20/60"
+      health: 10
+      agi: 3

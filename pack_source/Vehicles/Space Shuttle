@@ -1,0 +1,12 @@
+_id: SpaceShuttle1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Space Shuttle
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 4
+      crew: 1
+      passengers: 40
+      move: "140/600"
+      health: 12
+      agi: 3

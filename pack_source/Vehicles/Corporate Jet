@@ -1,0 +1,13 @@
+_id: CorporateJet1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Corporate Jet
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Learjet, etc."
+      armor: 2
+      crew: 2
+      passengers: 10
+      move: "50/400"
+      health: 12
+      agi: 3

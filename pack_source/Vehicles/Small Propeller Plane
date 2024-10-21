@@ -1,0 +1,13 @@
+_id: SmallPropeller12
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Small Propeller Plane
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Cessna Skyhawk, etc."
+      armor: 2
+      crew: 1
+      passengers: 3
+      move: "40/96"
+      health: 10
+      agi: 3
