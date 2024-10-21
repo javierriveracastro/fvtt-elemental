@@ -1,0 +1,13 @@
+_id: FighterModernJet
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Fighter, Modern Jet
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Auto Cannon, 8 Missiles, Bombs"
+      armor: 4
+      crew: 1
+      passengers: 0
+      move: "100/1400"
+      health: 12
+      agi: 4

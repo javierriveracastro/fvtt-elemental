@@ -1,0 +1,13 @@
+_id: HelicopterVietna
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Helicopter, Vietnam Era
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "2 Medium Machine Guns"
+      armor: 2
+      crew: 4
+      passengers: 12
+      move: "30/96"
+      health: 12
+      agi: 3

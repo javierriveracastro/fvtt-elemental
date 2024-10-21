@@ -1,0 +1,13 @@
+_id: FighterWWII12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Fighter, WWII
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "6 Heavy Machine Guns"
+      armor: 2
+      crew: 1
+      passengers: 0
+      move: "40/300"
+      health: 10
+      agi: 3

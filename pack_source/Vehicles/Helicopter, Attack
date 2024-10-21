@@ -1,0 +1,13 @@
+_id: HelicopterAttack
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Helicopter, Attack
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Auto Canon, 16 Missiles"
+      armor: 4
+      crew: 2
+      passengers: 0
+      move: "40/120"
+      health: 12
+      agi: 3

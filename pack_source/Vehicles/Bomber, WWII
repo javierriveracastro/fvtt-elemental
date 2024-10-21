@@ -1,0 +1,13 @@
+_id: BomberWWII123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Bomber, WWII
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "8 Heavy Machine Guns, Bombs"
+      armor: 2
+      crew: 10
+      passengers: 0
+      move: "20/252"
+      health: 15
+      agi: 2
