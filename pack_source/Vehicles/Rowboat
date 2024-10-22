@@ -1,0 +1,12 @@
+_id: RowBoat123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Row Boat
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 2
+      crew: 1
+      passengers: 3
+      move: "2/4"
+      health: 6
+      agi: 1

@@ -1,0 +1,12 @@
+_id: SmallYacht123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Small Yacht
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 2
+      crew: 1
+      passengers: 9
+      move: "4/20"
+      health: 11
+      agi: 2

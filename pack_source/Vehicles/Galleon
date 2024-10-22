@@ -1,0 +1,13 @@
+_id: Galleon123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Galleon
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "46 Black Powder Cannons"
+      armor: 4
+      crew: 20
+      passengers: 80
+      move: "4/12"
+      health: 16
+      agi: 1

@@ -1,0 +1,13 @@
+_id: Galley1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Galley
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Catapult"
+      armor: 4
+      crew: 20
+      passengers: 100
+      move: "4/16"
+      health: 15
+      agi: 1

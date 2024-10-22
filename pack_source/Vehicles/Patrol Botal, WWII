@@ -1,0 +1,13 @@
+_id: PatrolBoatWWII12
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Patrol Boat, WWII
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "2 Heavy MG, 4 Torpedo Tubes"
+      armor: 2
+      crew: 10
+      passengers: 0
+      move: "6/20"
+      health: 11
+      agi: 2

@@ -1,0 +1,13 @@
+_id: Hydrofoil1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Hydrofoil
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "Can sport various weapons"
+      armor: 3
+      crew: 1
+      passengers: 9
+      move: "8/26"
+      health: 12
+      agi: 2

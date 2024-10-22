@@ -1,0 +1,12 @@
+_id: CigaretteBoat123
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Cigarette Boat
+type: equipment
+system:
+      elemental_type: "vehicle"
+      armor: 2
+      crew: 1
+      passengers: 3
+      move: "40/80"
+      health: 8
+      agi: 3

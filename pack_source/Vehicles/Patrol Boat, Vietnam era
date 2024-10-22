@@ -1,0 +1,13 @@
+_id: PatrolBoatVietna
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Patrol Boat, Vietnam Era
+type: equipment
+system:
+      elemental_type: "vehicle"
+      notes: "3 Heavy MG, 2 Medium MG"
+      armor: 4
+      crew: 4
+      passengers: 0
+      move: "6/24"
+      health: 11
+      agi: 2
