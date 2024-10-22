@@ -1,3 +1,8 @@
+# Version 0.0.8 aka Much more equipment
+* Bugfix: Current tab is remembered in the character sheet.
+* Character Sheet: Equipment is now grouped by type
+* Content: Added Weapons, Armors and Equipment from the Elemental Complete Guide to compendiums.
+
 # Version 0.0.7 aka Equipment, still very early
 * Basic support for equipment.
 
