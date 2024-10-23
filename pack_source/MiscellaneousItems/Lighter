@@ -1,0 +1,6 @@
+_id: Lighter123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Lighter
+type: equipment
+system:
+      elemental_type: "miscellaneous"

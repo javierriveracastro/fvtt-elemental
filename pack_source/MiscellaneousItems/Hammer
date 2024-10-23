@@ -1,0 +1,7 @@
+_id: Hammer1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Hammer
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 2

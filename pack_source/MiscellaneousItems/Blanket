@@ -1,0 +1,7 @@
+_id: Blanket123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Barrel
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 4

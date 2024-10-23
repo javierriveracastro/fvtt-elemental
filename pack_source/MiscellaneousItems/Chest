@@ -1,0 +1,8 @@
+_id: Chest12345678909
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Chest (Empty)
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      notes: "300 lbs full"
+      lbs: 25

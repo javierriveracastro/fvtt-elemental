@@ -1,0 +1,6 @@
+_id: Cellphone1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Cellphone
+type: equipment
+system:
+      elemental_type: "miscellaneous"

@@ -1,0 +1,7 @@
+_id: Crowbar123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Crowbar
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 3

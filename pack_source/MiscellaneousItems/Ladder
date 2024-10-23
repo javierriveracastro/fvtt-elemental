@@ -1,0 +1,7 @@
+_id: Ladder1012345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Ladder (10 feet)
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 25

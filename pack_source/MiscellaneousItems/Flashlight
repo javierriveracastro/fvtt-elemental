@@ -1,0 +1,8 @@
+_id: Flashlight123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Flashlight
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      notes: "20-yd. beam"
+      lbs: 3

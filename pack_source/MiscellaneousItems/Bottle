@@ -1,0 +1,7 @@
+_id: Bottle1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Bottle
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 2

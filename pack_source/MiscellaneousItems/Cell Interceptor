@@ -1,0 +1,7 @@
+_id: CellInterceptor1
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Cell Interceptor
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 5

@@ -1,0 +1,7 @@
+_id: Chain12345678901
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Chain, 4 yards
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 10

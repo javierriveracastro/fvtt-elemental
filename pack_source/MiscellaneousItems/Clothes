@@ -1,0 +1,8 @@
+_id: Clothes123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Clothes (inc footwear)
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      notes: "Winter: 8 lbs"
+      lbs: 4

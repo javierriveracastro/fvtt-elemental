@@ -1,0 +1,7 @@
+_id: Handcuffs1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Handcuffs
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      lbs: 2

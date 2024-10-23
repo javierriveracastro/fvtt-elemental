@@ -1,0 +1,8 @@
+_id: Candle1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Candle
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      notes: "4 yd for 1 hour"
+      lbs: 1

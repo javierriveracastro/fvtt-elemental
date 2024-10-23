@@ -71,7 +71,7 @@
       "flags": {}
     },
     {
-      "name": "Antique Firearms",
+      "name": "AntiqueFirearms",
       "label": "Antique Firearms",
       "path": "packs/AntiqueFirearms",
       "type": "Item",
@@ -83,7 +83,7 @@
       "flags": {}
     },
     {
-      "name": "Modern Weapons",
+      "name": "ModernWeapons",
       "label": "Modern Weapons",
       "path": "packs/ModernWeapons",
       "type": "Item",
@@ -110,6 +110,18 @@
       "name": "Vehicles",
       "label": "Vehicles",
       "path": "packs/Vehicles",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "fvtt-elemental",
+      "flags": {}
+    },
+    {
+      "name": "MiscellaneousItems",
+      "label": "Miscellaneous Items",
+      "path": "packs/MiscellaneousItems",
       "type": "Item",
       "ownership": {
         "PLAYER": "OBSERVER",

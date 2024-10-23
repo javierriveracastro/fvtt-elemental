@@ -1,0 +1,8 @@
+_id: Backpack12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Backpack
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      notes: "23 lbs full"
+      lbs: 2

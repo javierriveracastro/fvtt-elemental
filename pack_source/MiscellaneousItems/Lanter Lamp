@@ -1,0 +1,8 @@
+_id: LanternLamp12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Lantern/Lamp
+type: equipment
+system:
+      elemental_type: "miscellaneous"
+      notes: "12 yds for 6 hrs"
+      lbs: 2
