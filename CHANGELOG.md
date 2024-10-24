@@ -1,3 +1,7 @@
+# Version 0.0.9 aka This round of data entry is over... back to programming
+* Compendiums: Add a Miscellaneous item compendium with all the items in the complete guide
+* Compendiums: Change the default icons, so each compendium has a different one.
+
 # Version 0.0.8 aka Much more equipment
 * Bugfix: Current tab is remembered in the character sheet.
 * Character Sheet: Equipment is now grouped by type
