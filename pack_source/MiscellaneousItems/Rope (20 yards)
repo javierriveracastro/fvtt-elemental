@@ -1,0 +1,7 @@
+_id: Rope20Yards12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Rope (20 yards)
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 10

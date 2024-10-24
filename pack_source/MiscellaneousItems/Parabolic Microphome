@@ -1,0 +1,8 @@
+_id: ParabolicMic1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Parabolic Microphone
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 4
+    notes: "Range: 200 yd"

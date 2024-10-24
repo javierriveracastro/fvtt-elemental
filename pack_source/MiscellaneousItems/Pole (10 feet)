@@ -1,0 +1,7 @@
+_id: Pole10feet123456
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Pole (10 feet)
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 7

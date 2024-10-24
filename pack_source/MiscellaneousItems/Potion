@@ -1,0 +1,7 @@
+_id: Potion1234567890
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Potion
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 1

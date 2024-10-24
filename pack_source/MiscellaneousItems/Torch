@@ -1,0 +1,8 @@
+_id: Torch12345678909
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Torch
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 1
+    notes: "10 yd for 1 hour"

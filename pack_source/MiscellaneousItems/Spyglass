@@ -1,0 +1,7 @@
+_id: Spyglass12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Spyglass
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 1

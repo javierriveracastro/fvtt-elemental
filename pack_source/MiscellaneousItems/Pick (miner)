@@ -1,0 +1,7 @@
+_id: PickMiner1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Pick (miner's)
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 10

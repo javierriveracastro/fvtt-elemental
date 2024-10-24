@@ -1,0 +1,7 @@
+_id: Lock123456789012
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Lock
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 1

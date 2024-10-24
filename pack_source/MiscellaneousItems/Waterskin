@@ -1,0 +1,8 @@
+_id: Waterskin1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Waterskin / Canteen (full)
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 5
+    notes: "1 lb. empty"

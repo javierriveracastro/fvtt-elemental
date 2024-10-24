@@ -1,0 +1,8 @@
+_id: MusicalInstrumen
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Musical Instrument
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 2
+    notes: "10 lbs if bulky"

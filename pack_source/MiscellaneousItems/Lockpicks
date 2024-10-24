@@ -1,0 +1,7 @@
+_id: Lockpicks1234567
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Lock-picks
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 1

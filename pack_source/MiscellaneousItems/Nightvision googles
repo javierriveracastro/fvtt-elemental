@@ -1,0 +1,8 @@
+_id: NightVision12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Night Vision Googles
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 3
+    notes: "Skill @ level 2"

@@ -1,0 +1,6 @@
+_id: Soap123456789012
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Soap
+type: equipment
+system:
+    elemental_type: "miscellaneous"

@@ -1,0 +1,6 @@
+_id: Whistle123456789
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Whistle
+type: equipment
+system:
+    elemental_type: "miscellaneous"

@@ -1,0 +1,7 @@
+_id: TrapHunting12345
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Trap (hunting)
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 25

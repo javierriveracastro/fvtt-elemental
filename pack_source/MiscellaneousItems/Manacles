@@ -1,0 +1,7 @@
+_id: Manacles12345678
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Manacles
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 6

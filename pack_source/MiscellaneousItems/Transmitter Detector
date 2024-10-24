@@ -1,0 +1,7 @@
+_id: TransmitterD1234
+img: /icons/equipment/back/cape-layered-blue-accent.webp
+name: Transmitter Detector
+type: equipment
+system:
+    elemental_type: "miscellaneous"
+    lbs: 1
