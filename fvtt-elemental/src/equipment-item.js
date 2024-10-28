@@ -24,4 +24,24 @@ export class EquipmentDataModel extends foundry.abstract.TypeDataModel {
       health: new fields.NumberField({ integer: true, initial: 0 }),
     };
   }
+
+  get is_weapon() {
+    return this.elemental_type === "weapon";
+  }
+
+  get is_armor() {
+    return this.elemental_type === "armor";
+  }
+
+  get is_vehicle() {
+    return this.elemental_type === "vehicle";
+  }
+
+  get is_miscellaneous(){
+    return this.elemental_type === "miscellaneous";
+  }
+
+  get has_armor() {
+    return this.is_vehicle || this.is_armor;
+  }
 }

@@ -14,7 +14,7 @@
         </select>
     </div>
     <div class="grid grid-cols-2 gap-2 m-2">
-        <div class="flex">
+        {{#if item.system.is_weapon }}<div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Ammo"}}
             </label>
@@ -41,14 +41,14 @@
             </label>
             <input type="text" name="system.aoe" value="{{item.system.aoe}}"
                 class="{{theme.small_input}}">
-        </div>
-        <div class="flex">
+        </div>{{/if}}
+        {{# unless item.system.is_vehicle}}<div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Lbs"}}
             </label>
             <input type="text" name="system.lbs" value="{{item.system.lbs}}"
                 class="{{theme.small_input}}">
-        </div>
+        </div>{{/unless}}
         <div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Notes"}}
@@ -56,13 +56,13 @@
             <input type="text" name="system.notes" value="{{item.system.notes}}"
                 class="{{theme.three_quarters_input}}">
         </div>
-        <div class="flex">
+        {{#if item.system.has_armor}}<div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Armor"}}
             </label>
             <input type="text" name="system.armor" value="{{item.system.armor}}"
                 class="{{theme.small_input}}">
-        </div>
+        </div>{{/if}}
         <div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Quantity"}}
@@ -70,7 +70,7 @@
             <input type="text" name="system.quantity" value="{{item.system.quantity}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
+        {{# if item.system.is_vehicle}}<div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Crew"}}
             </label>
@@ -104,7 +104,7 @@
             </label>
             <input type="text" name="system.health" value="{{item.system.health}}"
                 class="{{theme.small_input}}">
-        </div>
+        </div>{{/if}}
     </div>
     <div class="elemental-editor {{theme.text_description}} mt-2">
     {{editor
