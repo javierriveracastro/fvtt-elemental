@@ -2,6 +2,11 @@
     <img class="{{theme.item_picture}}" src="{{this.img}}" alt="item image">
     <div class="{{theme.item_name}}">{{ item.name }}</div>
     <div class="flex justify-end gap-0">
+        {{# if item.system.has_damage}}
+            <button class="elemental-roll-damage {{theme.skill_button}}" data-item-id="{{item.id}}">
+                <i class="fa-solid fa-burst"></i>
+            </button>
+        {{/if}}
         <button class="elemental-item-change-quantity {{theme.skill_button}}" data-item-id="{{item.id}}" data-action="add">
             <i class="fa-solid fa-plus"></i>
         </button>

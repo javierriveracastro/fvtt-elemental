@@ -37,11 +37,15 @@ export class EquipmentDataModel extends foundry.abstract.TypeDataModel {
     return this.elemental_type === "vehicle";
   }
 
-  get is_miscellaneous(){
+  get is_miscellaneous() {
     return this.elemental_type === "miscellaneous";
   }
 
   get has_armor() {
     return this.is_vehicle || this.is_armor;
+  }
+
+  get has_damage() {
+    return Boolean(this.damage);
   }
 }
