@@ -67,6 +67,7 @@ export class AttributeRollDialog extends FormApplication {
     this.modfiers = [];
     this.conditional_modifiers_active = {};
     this.flaws_active = {};
+    this.damage_mod = options.damage_mod ? options.damage_mod : 0;
   }
 
   static get defaultOptions() {
@@ -116,6 +117,8 @@ export class AttributeRollDialog extends FormApplication {
       flaws: this.flaws,
       selected_skill: this.selected_skill,
       conditionals: conditionals,
+      damage_roll: this.damage_mod !== 0,
+      damage_mod: this.damage_mod,
     };
   }
 

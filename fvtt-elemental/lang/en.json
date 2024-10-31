@@ -11,6 +11,8 @@
     "Normal": "Normal",
     "StatCheck": "Stat Check",
     "AttributeRoll": "Attribute Roll",
+    "DamageRoll": "Damage Roll",
+    "DamageValue": "Damage Value",
     "Attribute": "Attribute",
     "Roll": "Roll",
     "DIFRoll": "DIF Roll",

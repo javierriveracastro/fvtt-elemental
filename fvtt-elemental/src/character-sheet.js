@@ -2,7 +2,7 @@
 /* globals ActorSheet, game, foundry, console */
 
 import { AttributeRollDialog, StatCheckDialog } from "./roll-dialog.js";
-import {BASE_THEME as current_theme} from "./theme.js";
+import { BASE_THEME as current_theme } from "./theme.js";
 
 export class ElementaCharacterSheet extends ActorSheet {
   static get defaultOptions() {
@@ -19,7 +19,11 @@ export class ElementaCharacterSheet extends ActorSheet {
 
   async getData(options) {
     const data = super.getData(options);
-    return { ...data, theme: game.elemental.current_theme, current_tab: this.options.current_tab };
+    return {
+      ...data,
+      theme: game.elemental.current_theme,
+      current_tab: this.options.current_tab,
+    };
   }
 
   activateListeners(jquery) {
@@ -41,6 +45,11 @@ export class ElementaCharacterSheet extends ActorSheet {
         console.error("Can't update item quantity");
       });
     });
+    this.activate_roll_listeners(jquery);
+    this.render_active_tab(jquery);
+  }
+
+  activate_roll_listeners(jquery) {
     jquery.find(".elemental-roll-derived").on("click", (ev) => {
       const derived_stat = ev.currentTarget.dataset.derived;
       const stat_roll_dialog = new StatCheckDialog(this.actor, derived_stat);
@@ -63,7 +72,20 @@ export class ElementaCharacterSheet extends ActorSheet {
       );
       skill_roll_dialog.render(true);
     });
-    this.render_active_tab(jquery);
+    jquery.find(".elemental-roll-damage").on("click", (ev) => {
+      const item = this.actor.items.get(ev.currentTarget.dataset.itemId);
+      const attribute_id =
+        item.system.damage.indexOf("TOU") > 0 ? "toughness" : null;
+      const damage_mod = parseInt(
+        item.system.damage.replace("@TOU", "").replace("+", ""),
+      );
+      const damage_roll_dialog = new AttributeRollDialog(
+        this.actor,
+        attribute_id,
+        { damage_mod: damage_mod },
+      );
+      damage_roll_dialog.render(true);
+    });
   }
 
   manageTabs(ev, jquery) {
@@ -88,7 +110,8 @@ export class ElementaCharacterSheet extends ActorSheet {
     jquery.find(`#${this.options.current_tab}`).removeClass("hidden");
     for (let tab of jquery.find(".elemental-tab-control")) {
       if (tab.dataset.tab === this.options.current_tab) {
-        tab.classList = `elemental-tab-control ${current_theme.tab_active}`.split();
+        tab.classList =
+          `elemental-tab-control ${current_theme.tab_active}`.split();
       }
     }
   }
