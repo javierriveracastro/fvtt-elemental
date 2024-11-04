@@ -168,6 +168,10 @@ function generate_roll_formula(options, badges) {
       `+${options.difficulty} ${game.i18n.localize("Elemental.Difficulty")}`,
     );
   }
+  if (options.damage) {
+    base_formula += ` + ${options.damage}`;
+    badges.push(`+${options.damage} ${game.i18n.localize("Elemental.Damage")}`);
+  }
   for (let modifier of options.modifiers) {
     const sign = modifier > 0 ? "+" : "";
     base_formula += `${sign}${modifier}`;

@@ -146,6 +146,7 @@ export class AttributeRollDialog extends FormApplication {
       difficulty: this.selected_difficulty,
       modifiers: this.modfiers,
       originating_roll: this.originating_roll,
+      damage: this.damage_mod,
     };
     if (this.actor && this.selected_attribute) {
       options.attribute = this.actor.attribute_value_from_string(
