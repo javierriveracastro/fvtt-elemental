@@ -16,6 +16,7 @@ export class AttributeRoll extends Roll {
       });
     }
     this.is_difficulty_roll = is_difficulty_roll;
+    this.is_damage_roll = !!options.damage;
     this.actor_name = options.actor_name;
     this.badges = badges;
   }
@@ -38,6 +39,7 @@ export class AttributeRoll extends Roll {
       theme: game.elemental.current_theme,
       badges: this.badges,
       is_difficulty_roll: this.is_difficulty_roll,
+      is_damage_roll: this.is_damage_roll,
       originating_roll: this.originating_roll,
       result_div: this.result_div,
     };

@@ -18,16 +18,20 @@
         </div>
     </div>
     <div class="mt-2 flex justify-between">
-        {{#unless originating_roll }}
-            {{#unless is_difficulty_roll}}
-                <button class="elemental-roll-difficulty {{theme.roll_button}}">
-                    <i class="fas fa-dice"></i> {{localize "Elemental.DIFRoll"}}
+        {{# if is_damage_roll }}
+            Damage roll
+        {{else}}
+            {{#unless originating_roll }}
+                {{#unless is_difficulty_roll}}
+                    <button class="elemental-roll-difficulty {{theme.roll_button}}">
+                        <i class="fas fa-dice"></i> {{localize "Elemental.DIFRoll"}}
+                    </button>
+                {{/unless}}
+                <button class="elemental-roll-opposed {{theme.roll_button}}">
+                    <i class="fas fa-dice"></i> {{localize "Elemental.OpposingRoll"}}
                 </button>
             {{/unless}}
-            <button class="elemental-roll-opposed {{theme.roll_button}}">
-                <i class="fas fa-dice"></i> {{localize "Elemental.OpposingRoll"}}
-            </button>
-    {{/unless}}
+        {{/if}}
     </div>
     {{{result_div}}}
 </div>
