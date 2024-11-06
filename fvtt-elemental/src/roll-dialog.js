@@ -126,6 +126,11 @@ export class AttributeRollDialog extends FormApplication {
     if (this.dif_roll) {
       return [];
     }
+    if (this.damage_mod !== 0) {
+      return this.actor.skills().filter((skill) => {
+        return skill.system.modify_damage;
+      });
+    }
     return this.actor.skills().filter((skill) => {
       return !(skill.system.dont_modify_rolls || skill.system.is_flaw);
     });
@@ -134,6 +139,11 @@ export class AttributeRollDialog extends FormApplication {
   get flaws() {
     if (this.dif_roll) {
       return [];
+    }
+    if (this.damage_mod !== 0) {
+      return this.actor.skills().filter((skill) => {
+        return skill.system.modify_damage;
+      });
     }
     return this.actor.skills().filter((skill) => {
       return skill.system.is_flaw;
