@@ -142,7 +142,7 @@ export class AttributeRollDialog extends FormApplication {
     }
     if (this.damage_mod !== 0) {
       return this.actor.skills().filter((skill) => {
-        return skill.system.modify_damage;
+        return skill.system.modify_damage && skill.system.is_flaw;
       });
     }
     return this.actor.skills().filter((skill) => {
