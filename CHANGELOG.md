@@ -1,3 +1,7 @@
+# Version 0.0.10 aka Auuch!!!
+* Equipment sheet: The sheet now only shows fields relevant to the type of equipment (no damage for armors)
+* Damage rolls!!!. Now you can roll for damage in the equipment tab.
+
 # Version 0.0.9 aka This round of data entry is over... back to programming
 * Compendiums: Add a Miscellaneous item compendium with all the items in the complete guide
 * Compendiums: Change the default icons, so each compendium has a different one.
