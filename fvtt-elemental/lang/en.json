@@ -24,6 +24,7 @@
     "Skills": "Skills",
     "Flaws": "Flaws",
     "Conditions": "Conditions",
+    "DamageTargetNotAllowed": "You don't have permission to damage this target",
     "Attributes": {
       "Agility": "AGILITY",
       "Toughness": "TOUGHNESS",

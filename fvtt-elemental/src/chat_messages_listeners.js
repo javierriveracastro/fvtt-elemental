@@ -5,6 +5,7 @@ import {
   start_new_diff_roll,
   start_new_opposite_roll,
 } from "./attribute-check.js";
+import { apply_damage } from "./damage_application.js";
 
 export function addChatMessageListeners(message, html) {
   html.find(".elemental-roll-difficulty").on("click", () => {
@@ -20,5 +21,8 @@ export function addChatMessageListeners(message, html) {
     for (let controlled_token of canvas.tokens.controlled) {
       start_new_opposite_roll(controlled_token.actor, message.uuid);
     }
+  });
+  html.find(".elemental-roll-damage").on("click", () => {
+    apply_damage(message.rolls[0].total);
   });
 }
