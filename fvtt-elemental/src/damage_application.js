@@ -35,6 +35,16 @@ function get_damage_target() {
 function damage_actor(damage, actor) {
   const previous_health = actor.system.current_health;
   const new_health = Math.max(previous_health - damage, 0);
+  if (new_health <= 0) {
+    actor.toggleStatusEffect('dead', {active: true, overlay: true});
+  }
+  actor.update(
+    {
+      "data.attributes.hp.value": new_health,
+      "data.attributes.hp.max": new_health,
+    },
+    { diff: false },
+  )
   actor.update({ "system.current_health": new_health });
   console.log(previous_health, damage, new_health);
 }

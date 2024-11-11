@@ -23,32 +23,32 @@ Hooks.on("init", () => {
 
   CONFIG.statusEffects = [
     {
-      icon: "/icons/svg/skull.svg",
+      img: "/icons/svg/skull.svg",
       id: "dead",
-      label: "COMBAT.CombatantDefeated",
+      name: "COMBAT.CombatantDefeated",
     },
     {
-      icon: "/systems/fvtt-elemental/assets/Impaired-1.svg",
+      img: "/systems/fvtt-elemental/assets/Impaired-1.svg",
       id: "slightly_impaired",
-      label: "Elemental.Status.SlightlyImpaired",
+      name: "Elemental.Status.SlightlyImpaired",
       flags: { elemental: { conditional_mod: -1 } },
     },
     {
-      icon: "/systems/fvtt-elemental/assets/Impaired-2.svg",
+      img: "/systems/fvtt-elemental/assets/Impaired-2.svg",
       id: "impaired",
-      label: "Elemental.Status.Impaired",
+      name: "Elemental.Status.Impaired",
       flags: { elemental: { conditional_mod: -2 } },
     },
     {
-      icon: "/systems/fvtt-elemental/assets/Impaired-3.svg",
+      img: "/systems/fvtt-elemental/assets/Impaired-3.svg",
       id: "severely_impaired",
-      label: "Elemental.Status.SeverelyImpaired",
+      name: "Elemental.Status.SeverelyImpaired",
       flags: { elemental: { conditional_mod: -3 } },
     },
     {
-      icon: "/icons/svg/paralysis.svg",
+      img: "/icons/svg/paralysis.svg",
       id: "paralyzed",
-      label: "Elemental.Status.Paralyzed",
+      name: "Elemental.Status.Paralyzed",
       flags: { elemental: { conditional_mod: -3 } },
     },
   ];
