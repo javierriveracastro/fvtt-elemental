@@ -111,11 +111,15 @@ export class ElementalActor extends Actor {
     });
     for (let equipment of equipment_list) {
       if (!equipment_groups.hasOwnProperty(equipment.system.elemental_type)) {
-        const formated_mane =
+        const extra_name =
+          equipment.system.elemental_type === "armor"
+            ? `  (${this.armor})`
+            : "";
+        let formated_mane =
           equipment.system.elemental_type.charAt(0).toUpperCase() +
           equipment.system.elemental_type.slice(1).toLowerCase();
         equipment_groups[equipment.system.elemental_type] = {
-          Name: game.i18n.localize(`Elemental.EquipmentTypes.${formated_mane}`),
+          Name: game.i18n.localize(`Elemental.EquipmentTypes.${formated_mane}`) + extra_name,
           Equipment: [],
         };
       }
@@ -140,5 +144,15 @@ export class ElementalActor extends Actor {
   attribute_value_from_string(string) {
     const lowercase_string = string.toLowerCase();
     return this.system[lowercase_string];
+  }
+
+  get armor() {
+    let armor = 0;
+    for (let item of this.items.filter((item) => {
+      return item.type === "equipment";
+    })) {
+      armor += item.system.armor;
+    }
+    return armor;
   }
 }
