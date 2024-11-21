@@ -1,0 +1,25 @@
+<div class="elemental-css">
+    <p class="text-center font-bold">Damage log</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Character</th>
+                <th>Initial</th>
+                <th>Damage</th>
+                <th>Armor</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{# each log }}
+                <tr>
+                    <th>{{ this.name }}</th>
+                    <th class="text-right">{{ this.initial }}</th>
+                    <th class="text-right">{{ this.damage }}</th>
+                    <th class="text-right">{{ this.armor }}</th>
+                    <th class="text-right">{{ this.final }}</th>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -78,6 +78,7 @@ Hooks.on("init", () => {
     "systems/fvtt-elemental/templates/character_equipment.hbs",
     "systems/fvtt-elemental/templates/skill_row.hbs",
     "systems/fvtt-elemental/templates/equipment_row.hbs",
+    "systems/fvtt-elemental/templates/damage_log.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
     console.info("Better Rolls templates preloaded");
