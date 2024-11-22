@@ -86,8 +86,12 @@ export function add_damage_log_listeners(html) {
 async function undo_damage(ev) {
   const actor = await fromUuid(ev.currentTarget.dataset.actor);
   const initial_health = ev.currentTarget.dataset.initial;
-  console.log(`Undoing damage to ${initial_health}`);
   actor.update({ "system.current_health": initial_health });
-  // Remove defeated
-  // Mark card as undone.
+  if (initial_health > 0) {
+    actor.toggleStatusEffect("dead", { active: false });
+  }
+  // Mark card as undone, but in a correct way that survives reloads.
+  ev.currentTarget.disabled = true;
+  ev.currentTarget.classList.add("hidden");
+  ev.currentTarget.parentElement.parentElement.classList.add("line-through");
 }
