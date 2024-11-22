@@ -1,5 +1,5 @@
 // Damage application to actors.
-/* global game, ui, canvas, renderTemplate, ChatMessage, console */
+/* global game, ui, canvas, renderTemplate, ChatMessage, console, fromUuid */
 
 export function apply_damage(damage) {
   const targets = get_damage_target();
@@ -61,6 +61,7 @@ function damage_actor(damage, actor) {
     damage: damage,
     armor: actor.armor,
     final: new_health,
+    actor_uuid: actor.uuid,
   };
 }
 
@@ -74,11 +75,19 @@ async function show_damage_log(damage_log) {
   );
   ChatMessage.create({
     content: html,
+    flags: { "fvtt-elemental": { damage_log: true } },
   });
 }
 
-function undo_damage(initial) {
-  // Modify actor to initial damage
+export function add_damage_log_listeners(html) {
+  html.find(".elemental-undo-damage").click(undo_damage);
+}
+
+async function undo_damage(ev) {
+  const actor = await fromUuid(ev.currentTarget.dataset.actor);
+  const initial_health = ev.currentTarget.dataset.initial;
+  console.log(`Undoing damage to ${initial_health}`);
+  actor.update({ "system.current_health": initial_health });
   // Remove defeated
   // Mark card as undone.
 }

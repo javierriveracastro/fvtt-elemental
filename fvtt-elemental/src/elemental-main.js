@@ -11,6 +11,7 @@ import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
 import { change_condition_menu } from "./tokenHud.js";
 import { EquipmentDataModel } from "./equipment-item.js";
+import { add_damage_log_listeners } from "./damage_application.js";
 
 Hooks.on("init", () => {
   CONFIG.Actor.dataModels.character = CharacterDataModel;
@@ -101,6 +102,8 @@ Hooks.on("ready", () => {
 Hooks.on("renderChatMessage", (message, html) => {
   if (message.rolls.length > 0) {
     addChatMessageListeners(message, html);
+  } else if (message.getFlag("fvtt-elemental", "damage_log")) {
+    add_damage_log_listeners(html);
   }
 });
 
