@@ -4,10 +4,11 @@
         <thead>
             <tr>
                 <th>Character</th>
-                <th>Initial</th>
-                <th>Damage</th>
-                <th>Armor</th>
+                <th>Init</th>
+                <th>Dmg</th>
+                <th>Arm</th>
                 <th>Final</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -17,7 +18,14 @@
                     <th class="text-right">{{ this.initial }}</th>
                     <th class="text-right">{{ this.damage }}</th>
                     <th class="text-right">{{ this.armor }}</th>
-                    <th class="text-right">{{ this.final }}</th>
+                    <th class="text-right">
+                        {{ this.final }}
+                    </th>
+                    <th>
+                        <button class="{{ ../theme.undo_chat_button }}">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                    </th>
                 </tr>
             {{/each}}
         </tbody>

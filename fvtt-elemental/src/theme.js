@@ -56,4 +56,6 @@ export const BASE_THEME = {
   item_name:
     "self-center border-solid border-0 border-b-2 border-stone-200 grow",
   quantity_name: "self-center",
+  undo_chat_button:
+    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded-lg text-sm w-6 ml-2",
 };

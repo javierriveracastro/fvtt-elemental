@@ -70,9 +70,15 @@ function damage_actor(damage, actor) {
 async function show_damage_log(damage_log) {
   const html = await renderTemplate(
     "systems/fvtt-elemental/templates/damage_log.hbs",
-    { log: damage_log },
+    { log: damage_log, theme: game.elemental.current_theme },
   );
   ChatMessage.create({
     content: html,
   });
+}
+
+function undo_damage(initial) {
+  // Modify actor to initial damage
+  // Remove defeated
+  // Mark card as undone.
 }
