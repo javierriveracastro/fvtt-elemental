@@ -1,3 +1,6 @@
+# Version 0.0.11 aka Applying damage.
+* Add a button to apply damage and a log chat message to undo it.
+
 # Version 0.0.10 aka Auuch!!!
 * Equipment sheet: The sheet now only shows fields relevant to the type of equipment (no damage for armors)
 * Damage rolls!!!. Now you can roll for damage in the equipment tab.
