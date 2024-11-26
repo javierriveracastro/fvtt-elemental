@@ -103,7 +103,7 @@ Hooks.on("renderChatMessage", (message, html) => {
   if (message.rolls.length > 0) {
     addChatMessageListeners(message, html);
   } else if (message.getFlag("fvtt-elemental", "damage_log")) {
-    add_damage_log_listeners(html);
+    add_damage_log_listeners(html, message);
   }
 });
 

@@ -79,19 +79,26 @@ async function show_damage_log(damage_log) {
   });
 }
 
-export function add_damage_log_listeners(html) {
-  html.find(".elemental-undo-damage").click(undo_damage);
+export function add_damage_log_listeners(html, message) {
+  html.find(".elemental-undo-damage").click((ev) => {
+    undo_damage(ev, message).catch((err) => {
+      console.error(`Error while undoing damage: ${err}`);
+    });
+  });
 }
 
-async function undo_damage(ev) {
+async function undo_damage(ev, message) {
   const actor = await fromUuid(ev.currentTarget.dataset.actor);
   const initial_health = ev.currentTarget.dataset.initial;
   actor.update({ "system.current_health": initial_health });
   if (initial_health > 0) {
     actor.toggleStatusEffect("dead", { active: false });
   }
-  // Mark card as undone, but in a correct way that survives reloads.
   ev.currentTarget.disabled = true;
   ev.currentTarget.classList.add("hidden");
   ev.currentTarget.parentElement.parentElement.classList.add("line-through");
+  await message.update({
+    id: message.id,
+    content: ev.currentTarget.closest(".message-content").innerHTML,
+  });
 }
