@@ -92,6 +92,13 @@
       "Move": "Move",
       "Health": "Health",
       "Passengers": "Passengers"
+    },
+    "DamageLog": {
+      "Initial": "Health before applying damage",
+      "Damage": "Raw damage applied, before armor",
+      "Armor": "Armor value subtracted",
+      "Final": "Health after damage application",
+      "Undo": "Undo"
     }
   }
 }

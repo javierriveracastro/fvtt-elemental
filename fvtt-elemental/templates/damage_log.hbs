@@ -1,31 +1,32 @@
 <div class="elemental-css">
-    <p class="text-center font-bold">Damage log</p>
+    <p class="text-center font-bold">Health/Damage log</p>
     <table>
         <thead>
             <tr>
                 <th>Character</th>
-                <th>Init</th>
-                <th>Dmg</th>
-                <th>Arm</th>
-                <th>Final</th>
+                <th title="{{ localize "Elemental.DamageLog.Initial" }}" class="text-end">Init</th>
+                <th title="{{ localize "Elemental.DamageLog.Damage" }}" class="text-end">Dmg</th>
+                <th title="{{ localize "Elemental.DamageLog.Armor" }}"class="text-end">Arm</th>
+                <th title="{{ localize "Elemental.DamageLog.Final" }}" class="text-end">Final</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             {{# each log }}
                 <tr>
-                    <th>{{ this.name }}</th>
-                    <th class="text-right">{{ this.initial }}</th>
-                    <th class="text-right">{{ this.damage }}</th>
-                    <th class="text-right">{{ this.armor }}</th>
-                    <th class="text-right">
+                    <td>{{ this.name }}</td>
+                    <td title="{{ localize "Elemental.DamageLog.Initial" }}" class="text-end">{{ this.initial }}</td>
+                    <td title="{{ localize "Elemental.DamageLog.Damage" }}" class="text-end">{{ this.damage }}</td>
+                    <td title="{{ localize "Elemental.DamageLog.Armor" }}" class="text-end">{{ this.armor }}</td>
+                    <td title="{{ localize "Elemental.DamageLog.Final" }}" class="text-end">
                         {{ this.final }}
-                    </th>
-                    <th>
-                        <button class="{{ ../theme.undo_chat_button }} elemental-undo-damage" data-initial="{{ this.initial }}" data-actor="{{ this.actor_uuid}}">
+                    </td>
+                    <td>
+                        <button class="{{ ../theme.undo_chat_button }} elemental-undo-damage" data-initial="{{ this.initial }}"
+                                data-actor="{{ this.actor_uuid}}" title="{{ localize "Elemental.DamageLog.Undo" }}">
                             <i class="fa-solid fa-rotate-left"></i>
                         </button>
-                    </th>
+                    </td>
                 </tr>
             {{/each}}
         </tbody>
