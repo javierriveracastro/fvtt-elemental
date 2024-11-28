@@ -5,7 +5,7 @@ import {
   start_new_diff_roll,
   start_new_opposite_roll,
 } from "./attribute-check.js";
-import { apply_damage } from "./damage_application.js";
+import { apply_damage, modify_damage_dialog } from "./damage_application.js";
 
 export function addChatMessageListeners(message, html) {
   html.find(".elemental-roll-difficulty").on("click", () => {
@@ -24,5 +24,8 @@ export function addChatMessageListeners(message, html) {
   });
   html.find(".elemental-roll-damage").on("click", () => {
     apply_damage(message.rolls[0].total);
+  });
+  html.find(".elemental-roll-damage-mod").on("click", () => {
+    modify_damage_dialog(message.rolls[0].total);
   });
 }

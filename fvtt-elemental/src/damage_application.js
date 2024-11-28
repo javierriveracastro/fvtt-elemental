@@ -1,5 +1,5 @@
 // Damage application to actors.
-/* global game, ui, canvas, renderTemplate, ChatMessage, console, fromUuid */
+/* global game, ui, canvas, renderTemplate, ChatMessage, console, fromUuid, Dialog */
 
 export function apply_damage(damage) {
   const targets = get_damage_target();
@@ -101,4 +101,33 @@ async function undo_damage(ev, message) {
     id: message.id,
     content: ev.currentTarget.closest(".message-content").innerHTML,
   });
+}
+
+export function modify_damage_dialog(base_damage) {
+  let content = "<div class='elemental-css'><div class='flex m-2 gap-2'>";
+  content += `<label for="damage-input" class="self-center w-3/4">${game.i18n.localize("Elemental.DamageDialog.Prompt")}</label>`;
+  content += `<input id='damage-input' value="0" class="w-1/4">`;
+  content += "</div></div>";
+  new Dialog({
+    title: game.i18n.localize("Elemental.DamageDialog.Title"),
+    content: content,
+    buttons: {
+      one: {
+        label: game.i18n.localize("Elemental.DamageDialog.Apply"),
+        callback: (html) => {
+          const modifier = parseInt(html.find("#damage-input")[0].value);
+          if (modifier) {
+            apply_damage(base_damage + modifier);
+          } else {
+            ui.notifications.error(
+              game.i18n.localize("Elemental.DamageDialog.Invalid"),
+            );
+          }
+        },
+      },
+      two: {
+        label: game.i18n.localize("Elemental.DamageDialog.Cancel"),
+      },
+    },
+  }).render(true);
 }

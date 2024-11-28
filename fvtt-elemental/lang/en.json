@@ -99,6 +99,13 @@
       "Armor": "Armor value subtracted",
       "Final": "Health after damage application",
       "Undo": "Undo"
+    },
+    "DamageDialog": {
+      "Title": "Modify damage",
+      "Prompt": "Enter the damage modifier",
+      "Apply": "Apply",
+      "Cancel": "Cancel",
+      "Invalid": "Invalid value while applying damage"
     }
   }
 }
