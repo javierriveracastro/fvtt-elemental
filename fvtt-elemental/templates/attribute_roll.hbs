@@ -19,8 +19,11 @@
     </div>
     <div class="mt-2 flex justify-between">
         {{# if is_damage_roll }}
-            <button class="elemental-roll-damage {{theme.roll_button}}">
+            <button class="elemental-roll-damage {{theme.roll_button_left}}">
                 <i class="fas fa-bolt"></i> {{localize "Elemental.ApplyDamage"}}
+            </button>
+            <button class="elemental-roll-damage {{theme.roll_button_right}}">
+                <i class="fas fa-plus"></i>
             </button>
         {{else}}
             {{#unless originating_roll }}
