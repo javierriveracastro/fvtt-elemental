@@ -40,6 +40,7 @@ export class AttributeRoll extends Roll {
       badges: this.badges,
       is_difficulty_roll: this.is_difficulty_roll,
       is_damage_roll: this.is_damage_roll,
+      exploded: this.exploded,
       originating_roll: this.originating_roll,
       result_div: this.result_div,
     };
@@ -93,6 +94,23 @@ export class AttributeRoll extends Roll {
       }
     }
     return is_critical;
+  }
+
+  get exploded() {
+    if (!this._evaluated) {
+      return false;
+    }
+    let exploded = false;
+    for (let term of this.terms) {
+      if (term.hasOwnProperty("results")) {
+        for (let result of term.results) {
+          if (result.exploded) {
+            exploded = true;
+          }
+        }
+      }
+    }
+    return exploded;
   }
 }
 

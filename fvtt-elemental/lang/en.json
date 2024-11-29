@@ -60,7 +60,8 @@
       "Success": "Success",
       "Tie": "Tie",
       "Failure": "Failure",
-      "Critical": "Critical"
+      "Critical": "Critical",
+      "MassiveDamage": "Massive Damage"
     },
     "Errors": {
       "NoTokenSelected": "You need to select a token first!"

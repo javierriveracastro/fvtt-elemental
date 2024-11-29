@@ -7,6 +7,11 @@
             <span class="{{../theme.modifier_badge}}">{{this}}</span>
         {{/each}}
     </div>
+    {{# if exploded }}
+        {{# if is_damage_roll }}
+            <div class="{{theme.warning_badge}}">{{localize "Elemental.Rolls.MassiveDamage"}}</div>
+        {{/if}}
+    {{/if}}
     <div class="dice-roll">
         {{#if flavor}}
         <div class="dice-flavor">{{flavor}}</div>

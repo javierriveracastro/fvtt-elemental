@@ -375,6 +375,11 @@
   background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1))
 }
 
+.elemental-css .bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity, 1))
+}
+
 .elemental-css .bg-red-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 242 242 / var(--tw-bg-opacity, 1))
