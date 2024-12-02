@@ -1,3 +1,8 @@
+# Version 0.0.12 aka More damage
+* Add tooltips to the damage log Chat Card to try to make it easier to understand
+* Added a button to modify damage before applying it.
+* Added a warning when Massive Damage is done.
+
 # Version 0.0.11 aka Applying damage.
 * Add a button to apply damage and a log chat message to undo it.
 
