@@ -49,6 +49,15 @@
             <input type="text" name="system.lbs" value="{{item.system.lbs}}"
                 class="{{theme.small_input}}">
         </div>{{/unless}}
+        {{# if item.system.is_weapon }}
+            <div class="flex">
+                <label class="w-1/4 {{theme.text_attribute}}">
+                    {{localize "Elemental.EquipmentSheet.Range"}}
+                </label>
+                <input type="text" name="system.range" value="{{item.system.range}}"
+                    class="{{theme.three_quarters_input}}">
+            </div>
+        {{/if}}
         <div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Notes"}}

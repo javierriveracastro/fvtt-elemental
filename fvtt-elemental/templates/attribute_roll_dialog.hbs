@@ -6,7 +6,11 @@
             {{# if damage_roll }}
                 {{ localize "Elemental.DamageRoll" }} - {{actor.name}}
             {{else }}
-                {{ localize "Elemental.AttributeRoll" }} - {{actor.name}}
+                {{# if weapond_data }}
+                    {{ localize "Elemental.AttackRoll" }} - {{actor.name}}
+                {{else}}
+                    {{ localize "Elemental.AttributeRoll" }} - {{actor.name}}
+                {{/if}}
             {{/if}}
         {{/if}}
     </div>
@@ -78,6 +82,19 @@
                     <span class="{{../theme.roll_option_selected}}
                             elemental-conditional-selection" data-value="{{this.value}}" data-name="{{this.name}}">
                         {{this.name}}
+                    </span>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+    {{# if weapon_data.ranges }}
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.RangeMod" }}</span>
+            <div>
+                {{#each weapon_data.ranges}}
+                    <span class="{{../theme.roll_option_unselected}}
+                            elemental-conditional-selection" data-value="{{this.mod}}" data-name="{{this.name}}">
+                        {{ this.range }} ({{ this.mod }})
                     </span>
                 {{/each}}
             </div>

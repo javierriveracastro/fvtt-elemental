@@ -25,6 +25,8 @@
     "Flaws": "Flaws",
     "Conditions": "Conditions",
     "DamageTargetNotAllowed": "You don't have permission to damage this target",
+    "AttackRoll": "Attack Roll",
+    "RangeMod": "Range modifier",
     "Attributes": {
       "Agility": "AGILITY",
       "Toughness": "TOUGHNESS",
@@ -92,7 +94,8 @@
       "AGI": "AGI",
       "Move": "Move",
       "Health": "Health",
-      "Passengers": "Passengers"
+      "Passengers": "Passengers",
+      "Range": "Range"
     },
     "DamageLog": {
       "Initial": "Health before applying damage",

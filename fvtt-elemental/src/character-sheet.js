@@ -72,9 +72,10 @@ export class ElementaCharacterSheet extends ActorSheet {
       );
       skill_roll_dialog.render(true);
     });
-    jquery.find(".elemental-roll-attack").on("click", () => {
+    jquery.find(".elemental-roll-attack").on("click", (ev) => {
+      const weapon = this.actor.items.get(ev.currentTarget.dataset.itemId);
       const attack_roll_dialog = new AttributeRollDialog(
-          this.actor, "agility"
+          this.actor, "agility", {weapon: weapon}
       );
       attack_roll_dialog.render(true);
     });
