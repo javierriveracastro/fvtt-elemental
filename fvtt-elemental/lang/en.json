@@ -27,6 +27,7 @@
     "DamageTargetNotAllowed": "You don't have permission to damage this target",
     "AttackRoll": "Attack Roll",
     "RangeMod": "Range modifier",
+    "Range": "Range",
     "Attributes": {
       "Agility": "AGILITY",
       "Toughness": "TOUGHNESS",

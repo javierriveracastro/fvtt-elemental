@@ -192,6 +192,10 @@ function generate_roll_formula(options, badges) {
     base_formula += ` + ${options.damage}`;
     badges.push(`+${options.damage} ${game.i18n.localize("Elemental.Damage")}`);
   }
+  if (options.range_modifier) {
+    base_formula += `${options.range_modifier}`;
+    badges.push(`${options.range_modifier} ${game.i18n.localize("Elemental.Range")}`);
+  }
   for (let modifier of options.modifiers) {
     const sign = modifier > 0 ? "+" : "";
     base_formula += `${sign}${modifier}`;

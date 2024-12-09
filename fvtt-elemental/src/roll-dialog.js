@@ -69,6 +69,7 @@ export class AttributeRollDialog extends FormApplication {
         this.flaws_active = {};
         this.damage_mod = options.damage_mod ? options.damage_mod : 0;
         this.weapon = options.weapon;
+        this.selected_range = 0;
     }
 
     static get defaultOptions() {
@@ -188,6 +189,7 @@ export class AttributeRollDialog extends FormApplication {
         }
         options.flaws_active = this.flaws_active;
         options.conditional_modifiers_active = this.conditional_modifiers_active;
+        options.range_modifier = this.selected_range;
         const roll = new AttributeRoll("", {}, options);
         await roll.evaluate();
         roll.toMessage().catch((err) => {
@@ -215,6 +217,9 @@ export class AttributeRollDialog extends FormApplication {
         html.find(".elemental-add-modifier").click((ev) => {
             this.modfiers.push(ev.currentTarget.dataset.value);
             this.add_modifier_toast(ev.currentTarget.dataset.value, html);
+        });
+        html.find(".elemental-range-selection").click((ev) => {
+            this.select_range(ev.currentTarget, html);
         });
     }
 
@@ -276,6 +281,15 @@ export class AttributeRollDialog extends FormApplication {
             element,
             "elemental-difficulty-selection",
             "selected_difficulty",
+        );
+    }
+
+    select_range(element, html) {
+        this.select_one(
+            html,
+            element,
+            "elemental-range-selection",
+            "selected_range",
         );
     }
 
