@@ -1,5 +1,5 @@
 // Classes for all the roll dialogs
-/* globals foundry, game, FormApplication, console */
+/* globals foundry, game, FormApplication, console, canvas */
 
 import {StatCheck} from "./stat-check.js";
 import {AttributeRoll} from "./attribute-check.js";
@@ -110,7 +110,6 @@ export class AttributeRollDialog extends FormApplication {
         }
         if (this.weapon) {
             data = this.add_weapon_data(data);
-            console.log(data);
         }
         return {
             ...data,
@@ -132,10 +131,25 @@ export class AttributeRollDialog extends FormApplication {
         const new_data = {weapon_data: {}};
         if (this.weapon.system.range) {
             new_data.weapon_data.ranges = [
-                {mod: -1, range: this.weapon.system.range * 2},
-                {mod: -2, range: this.weapon.system.range * 3},
-                {mod: -3, range: this.weapon.system.range * 4}
+                {mod: -1, range: this.weapon.system.range * 2, selected: false},
+                {mod: -2, range: this.weapon.system.range * 3, selected: false},
+                {mod: -3, range: this.weapon.system.range * 4, selected: false}
             ];
+            if (game.user.targets.size > 0) {
+                const distance = canvas.grid.measurePath([
+                    this.actor.getActiveTokens()[0].center,
+                    game.user.targets.first().center]);
+                if (distance.distance > this.weapon.system.range * 3) {
+                    new_data.weapon_data.ranges[2].selected = true;
+                    this.selected_range = -3;
+                } else if (distance.distance > this.weapon.system.range * 2) {
+                    new_data.weapon_data.ranges[1].selected = true;
+                    this.selected_range = -2;
+                } else if (distance.distance >= this.weapon.system.range) {
+                    new_data.weapon_data.ranges[0].selected = true;
+                    this.selected_range = -1;
+                }
+            }
         }
         return {...data, ...new_data};
     }

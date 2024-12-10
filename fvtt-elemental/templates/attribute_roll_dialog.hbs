@@ -92,7 +92,8 @@
             <span class="{{theme.roll_options_title}}">{{ localize "Elemental.RangeMod" }}</span>
             <div>
                 {{#each weapon_data.ranges}}
-                    <span class="{{../theme.roll_option_unselected}}
+                    <span class="{{# if this.selected}}{{../theme.roll_option_selected}}
+                            {{else}}{{../theme.roll_option_unselected}}{{/if}}
                             elemental-range-selection" data-value="{{this.mod}}" data-name="{{this.name}}">
                         {{ this.range }} ({{ this.mod }})
                     </span>
