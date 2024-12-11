@@ -57,6 +57,13 @@
                 <input type="text" name="system.range" value="{{item.system.range}}"
                     class="{{theme.three_quarters_input}}">
             </div>
+            <div class="flex">
+                <label class="w-1/4 {{theme.text_attribute}}">
+                    {{localize "Elemental.EquipmentSheet.IsHeavy"}}
+                </label>
+                <input type="checkbox" name="system.heavy_weapon"
+                       {{#if item.system.heavy_weapon}}checked="checked"{{/if}} class="{{theme.checkbox}}">
+            </div>
         {{/if}}
         <div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">

@@ -96,7 +96,8 @@
       "Move": "Move",
       "Health": "Health",
       "Passengers": "Passengers",
-      "Range": "Range"
+      "Range": "Range",
+      "IsHeavy": "Heavy Weapon"
     },
     "DamageLog": {
       "Initial": "Health before applying damage",
