@@ -1,6 +1,6 @@
 # FoundryVTT - Elemental (Unofficial) system
 
-This is an unofficial foundry system for the Elemental RPG from Gildor Games.
+This is an unofficial foundry system for the Elemental RPG from [Gildor Games.](https://www.gildorgames.com/)
 
 # Features
 
