@@ -74,8 +74,9 @@ export class ElementaCharacterSheet extends ActorSheet {
     });
     jquery.find(".elemental-roll-attack").on("click", (ev) => {
       const weapon = this.actor.items.get(ev.currentTarget.dataset.itemId);
+      const attribute = weapon.system.heavy_weapon ? "awareness" : "agility";
       const attack_roll_dialog = new AttributeRollDialog(
-          this.actor, "agility", {weapon: weapon}
+          this.actor, attribute, {weapon: weapon}
       );
       attack_roll_dialog.render(true);
     });
