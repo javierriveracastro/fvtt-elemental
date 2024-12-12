@@ -4,16 +4,26 @@ This is an unofficial foundry system for the Elemental RPG from Gildor Games.
 
 # Features
 
-This is still a work in progress and far from complete, but it can be playable.
-You can make characters with skills and attributes, make rolls, give your characters conditions, ...
+This is still a work in progress, but it is probably at a playable state
 
-Lots of things are missing, mainly:
-- Items (of any kind)
-- Damage (you must manually add and subtract it)
+Features:
+- Character sheets with XP control
+- Compendiums with skills, flaws that you can drag and dop into characters (no descriptions)
+- Compendiums with most items from the Complete Guide (no descriptions)
+- Derived stats, maximum auto-calculated from attributes
+- Stat checks
+- Attribute rolls, not only from attributes themselves but also from skills and weapons
+- Initiative
+- Difficulty and opposed rolls, with results.
+- Attack rolls from weapons, with opposed defense rolls.
+- Damage rolls, with the ability for the gm (not players yet) to apply it accounting for armor.
+- Character status, with most modifiers auto applied to rolls.
+
+Missing things:
 - Powers (although you can approximate then with skills)
-- Flaws
 - Archetypes
 - Superpowers
+- Setting rules.
 
 # Contributing
 
