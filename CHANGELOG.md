@@ -1,3 +1,11 @@
+# Version 0.0.13 aka Attack!!!
+* Add a button in the character sheet next to a weapon to make an attack roll with it
+* In the attack roll dialog, add range modifiers
+* If there is a token targeted, automatically select the correct range
+* Add a field to mark a weapon as Heavy
+* When attacking with Heavy Weapons, use awareness instead of agility
+* Mark some weapons as Heavy in the compendiums
+
 # Version 0.0.12 aka More damage
 * Add tooltips to the damage log Chat Card to try to make it easier to understand
 * Added a button to modify damage before applying it.
