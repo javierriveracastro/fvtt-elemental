@@ -9,3 +9,4 @@ system:
     lbs: 0
     range: 100
     notes: "Solid Shot / Shrapnel * If less than 4 crew, Rel: 2"
+    heavy_weapon: true

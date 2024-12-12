@@ -10,3 +10,4 @@ system:
       aoe: 4
       lbs: 0
       notes: ""
+      heavy_weapon: true

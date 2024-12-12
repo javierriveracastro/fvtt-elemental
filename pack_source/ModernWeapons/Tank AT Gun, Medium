@@ -9,3 +9,4 @@ system:
       damage: "16"
       lbs: 0
       notes: ""
+      heavy_weapon: true

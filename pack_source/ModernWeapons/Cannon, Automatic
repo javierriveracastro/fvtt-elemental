@@ -7,3 +7,4 @@ system:
       lbs: 0
       range: 100
       aoe: 4
+      heavy_weapon: true

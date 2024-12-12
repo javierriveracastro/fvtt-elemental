@@ -10,3 +10,4 @@ system:
       range: 100
       notes: "Crew 6"
       aoe: 4
+      heavy_weapon: true
