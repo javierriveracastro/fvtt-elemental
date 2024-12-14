@@ -68,6 +68,10 @@
   margin-bottom: 1rem
 }
 
+.elemental-css .me-1 {
+  margin-inline-end: 0.25rem
+}
+
 .elemental-css .me-2 {
   margin-inline-end: 0.5rem
 }
@@ -262,6 +266,10 @@
 
 .elemental-css .self-center {
   align-self: center
+}
+
+.elemental-css .whitespace-nowrap {
+  white-space: nowrap
 }
 
 .elemental-css .rounded {
@@ -469,6 +477,10 @@
 
 .elemental-css .font-medium {
   font-weight: 500
+}
+
+.elemental-css .leading-loose {
+  line-height: 2
 }
 
 .elemental-css .tracking-tight {
