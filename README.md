@@ -34,6 +34,16 @@ As a result there are 3 css files, please add your own styles to `elemental.css`
 
 This projects also uses github actions for release. Any change to CHANGELOG.MD will trigger a release. So no need to add your changes to that file, just use clear, descriptive commit messages.
 
+# Screenshots
+
+![Character Sheet](imgs/Character%20Sheet.png)
+
+![Weapons Shhet](imgs/Weapon%20sheet.png)
+
+![Roll window](imgs/Roll%20window.png)
+
+![Roll in chat](imgs/Chat%20roll.png)
+
 # Licenses
 
 Content from Elemental RPG game is property of Gildor Games and used with permission. **All rights reserved by Gildor Games**
