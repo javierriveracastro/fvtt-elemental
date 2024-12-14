@@ -47,15 +47,15 @@ export const BASE_THEME = {
   roll_options_card: "p-2 bg-white border border-gray-200 rounded-lg shadow",
   roll_options_title: "mb-4 text-lg font-bold tracking-tight text-gray-900",
   roll_option_unselected:
-    "bg-gray-100 text-gray-800 text-xs me-2 px-2.5 py-0.5 rounded border border-gray-500 border-solid",
+    "bg-gray-100 text-gray-800 text-xs me-1 px-2.5 py-0.5 rounded border border-gray-500 border-solid whitespace-nowrap leading-loose",
   roll_option_selected:
-    "bg-blue-100 text-blue-800 text-xs me-2 px-2.5 py-0.5 rounded border border-blue-500 border-solid",
+    "bg-blue-100 text-blue-800 text-xs me-1 px-2.5 py-0.5 rounded border border-blue-500 border-solid whitespace-nowrap leading-loose",
   modifier_toast:
     "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
   close_icon:
     "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 w-4 h-4 flex p-0",
   modifier_badge:
-    "justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
+    "justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2 whitespace-nowrap leading-loose",
   checkbox:
     "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2",
   item_picture: "w-7 h-7 rounded",

@@ -55,9 +55,7 @@
             <div>
                 {{#each skills}}
                     <span class="{{#if (eq this.id ../selected_skill) }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }}
-                            elemental-skill-selection" data-value="{{this.id}}">
-                        {{this.name}}
-                    </span>
+                            elemental-skill-selection" data-value="{{this.id}}">{{this.name}}</span>
                 {{/each}}
             </div>
         </div>
