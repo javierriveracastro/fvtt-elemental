@@ -23,6 +23,17 @@
                 </span>
             </div>
         </div>
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.TargetModifiers" }}</span>
+            <div>
+                {{#each target_mods}}
+                    <span class="{{#if this.checked}}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if}}
+                        elemental-target-modifier-selection" data-value="{{this.value}}">
+                        {{this.name}}
+                    </span>
+                {{/each}}
+            </div>
+        </div>
     {{/if}}
     {{#unless dif_roll }}
         <div class="{{theme.roll_options_card}} mt-2">

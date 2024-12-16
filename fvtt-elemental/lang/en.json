@@ -28,6 +28,7 @@
     "AttackRoll": "Attack Roll",
     "RangeMod": "Range modifier",
     "Range": "Range",
+    "TargetModifiers": "Modifiers from target",
     "Attributes": {
       "Agility": "AGILITY",
       "Toughness": "TOUGHNESS",
