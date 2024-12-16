@@ -16,7 +16,7 @@ export class AttributeRoll extends Roll {
       });
     }
     this.is_difficulty_roll = is_difficulty_roll;
-    this.is_damage_roll = !!options.damage;
+    this.is_damage_roll = options.damage !== null;
     this.actor_name = options.actor_name;
     this.badges = badges;
   }

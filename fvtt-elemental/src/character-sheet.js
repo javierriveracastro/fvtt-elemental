@@ -76,7 +76,9 @@ export class ElementaCharacterSheet extends ActorSheet {
       const weapon = this.actor.items.get(ev.currentTarget.dataset.itemId);
       const attribute = weapon.system.heavy_weapon ? "awareness" : "agility";
       const attack_roll_dialog = new AttributeRollDialog(
-          this.actor, attribute, {weapon: weapon}
+        this.actor,
+        attribute,
+        { weapon: weapon },
       );
       attack_roll_dialog.render(true);
     });
@@ -84,9 +86,12 @@ export class ElementaCharacterSheet extends ActorSheet {
       const item = this.actor.items.get(ev.currentTarget.dataset.itemId);
       const attribute_id =
         item.system.damage.indexOf("TOU") > 0 ? "toughness" : null;
-      const damage_mod = parseInt(
+      let damage_mod = parseInt(
         item.system.damage.replace("@TOU", "").replace("+", ""),
       );
+      if (isNaN(damage_mod)) {
+        damage_mod = 0;
+      }
       const damage_roll_dialog = new AttributeRollDialog(
         this.actor,
         attribute_id,

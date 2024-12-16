@@ -67,7 +67,9 @@ export class AttributeRollDialog extends FormApplication {
     this.modfiers = [];
     this.conditional_modifiers_active = {};
     this.flaws_active = {};
-    this.damage_mod = options.damage_mod ? options.damage_mod : null;
+    this.damage_mod = options.hasOwnProperty("damage_mod")
+      ? options.damage_mod
+      : null;
     this.weapon = options.weapon;
     this.selected_range = 0;
   }
@@ -115,7 +117,6 @@ export class AttributeRollDialog extends FormApplication {
     if (this.damage_mod !== null) {
       target_mods = this.damage_modifiers_from_target();
     }
-    console.log(target_mods);
     return {
       ...data,
       theme: game.elemental.current_theme,
