@@ -166,7 +166,7 @@ export class AttributeRollDialog extends FormApplication {
     if (this.dif_roll) {
       return [];
     }
-    if (this.damage_mod !== 0) {
+    if (this.damage_mod !== null) {
       return this.actor.skills().filter((skill) => {
         return skill.system.modify_damage;
       });
