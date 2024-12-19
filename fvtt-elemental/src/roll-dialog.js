@@ -68,7 +68,7 @@ export class AttributeRollDialog extends FormApplication {
     this.conditional_modifiers_active = {};
     this.flaws_active = {};
     this.damage_mod = options.hasOwnProperty("damage_mod")
-      ? options.damage_mod
+      ? options.damage_mod // jshint ignore:line
       : null;
     this.weapon = options.weapon;
     this.selected_range = 0;
