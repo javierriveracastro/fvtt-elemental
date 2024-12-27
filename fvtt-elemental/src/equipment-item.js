@@ -22,7 +22,8 @@ export class EquipmentDataModel extends foundry.abstract.TypeDataModel {
       agi: new fields.NumberField({ integer: true, initial: 0 }),
       move: new fields.StringField({ initial: "" }),
       health: new fields.NumberField({ integer: true, initial: 0 }),
-      heavy_weapon: new fields.BooleanField({initial: false}),
+      heavy_weapon: new fields.BooleanField({ initial: false }),
+      default_skill: new fields.StringField({ initial: "" }),
     };
   }
 

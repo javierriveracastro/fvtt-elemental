@@ -86,6 +86,13 @@
             <input type="text" name="system.quantity" value="{{item.system.quantity}}"
                 class="{{theme.small_input}}">
         </div>
+        <div class="flex">
+            <label class="w-1/4 {{theme.text_attribute}}">
+                {{localize "Elemental.EquipmentSheet.DefaultSkill"}}
+            </label>
+            <input type="text" name="system.default_skill" value="{{item.system.default_skill}}"
+                class="{{theme.three_quarters_input}}">
+        </div>
         {{# if item.system.is_vehicle}}<div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Crew"}}

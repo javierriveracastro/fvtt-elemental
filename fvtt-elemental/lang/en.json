@@ -98,7 +98,8 @@
       "Health": "Health",
       "Passengers": "Passengers",
       "Range": "Range",
-      "IsHeavy": "Heavy Weapon"
+      "IsHeavy": "Heavy Weapon",
+      "DefaultSkill": "Def. Skill"
     },
     "DamageLog": {
       "Initial": "Health before applying damage",
