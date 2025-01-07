@@ -52,9 +52,17 @@ export class ElementalEquipmentSheet extends ItemSheet {
         "Elemental.EquipmentTypes.Miscellaneous",
       ),
     };
+    let skill_list = null;
+    if (data.item.parent) {
+      const parent_skills = data.item.parent.skills();
+      skill_list = parent_skills.map((skill) => {
+        return skill.name;
+      });
+    }
     return {
       ...data,
       equipment_types_select,
+      skill_list: skill_list,
       theme: game.elemental.current_theme,
     };
   }

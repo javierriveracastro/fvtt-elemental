@@ -91,7 +91,14 @@
                 {{localize "Elemental.EquipmentSheet.DefaultSkill"}}
             </label>
             <input type="text" name="system.default_skill" value="{{item.system.default_skill}}"
-                class="{{theme.three_quarters_input}}">
+                class="{{theme.three_quarters_input}}" autocomplete="off" list="skill-list">
+            {{# if skill_list}}
+                <datalist id="skill-list">
+                    {{#each skill_list}}
+                        <option value="{{this}}"/>
+                    {{/each}}
+                </datalist>
+            {{/if}}
         </div>
         {{# if item.system.is_vehicle}}<div class="flex">
             <label class="w-1/4 {{theme.text_attribute}}">
