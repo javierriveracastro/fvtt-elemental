@@ -119,7 +119,9 @@ export class ElementalActor extends Actor {
           equipment.system.elemental_type.charAt(0).toUpperCase() +
           equipment.system.elemental_type.slice(1).toLowerCase();
         equipment_groups[equipment.system.elemental_type] = {
-          Name: game.i18n.localize(`Elemental.EquipmentTypes.${formated_mane}`) + extra_name,
+          Name:
+            game.i18n.localize(`Elemental.EquipmentTypes.${formated_mane}`) +
+            extra_name,
           Equipment: [],
         };
       }
@@ -138,6 +140,12 @@ export class ElementalActor extends Actor {
     }
     return this.items.filter((item) => {
       return item.type === "skill";
+    });
+  }
+
+  skills_by_name(name) {
+    return this.items.filter((item) => {
+      return item.name === name && item.type === "skill";
     });
   }
 

@@ -72,6 +72,16 @@ export class AttributeRollDialog extends FormApplication {
       : null;
     this.weapon = options.weapon;
     this.selected_range = 0;
+    this.selected_skill = null;
+    if (options.skill_id) {
+      this.selected_skill = options.skill_id;
+    } else if (options.weapon) {
+      const skills = actor.skills_by_name(options.weapon.system.default_skill);
+      console.log(skills);
+      if (skills.length > 0) {
+        this.selected_skill = skills[0].id;
+      }
+    }
   }
 
   static get defaultOptions() {
