@@ -1,3 +1,11 @@
+# Version 0.0.14 aka
+* Updated README
+* Added links back to Gilder in README
+* Added screenshots in README
+* Various fixes to damage rolls
+* Add target modifiers to damage
+* Add a default skill for items (so when you roll the item it is marked by default)
+
 # Version 0.0.13 aka Attack!!!
 * Add a button in the character sheet next to a weapon to make an attack roll with it
 * In the attack roll dialog, add range modifiers
