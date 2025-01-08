@@ -1,0 +1,29 @@
+_id: SPVAUenofS7PCwuy
+_source_id: buxJDYChQyPFBHsA
+flags: {}
+image: {}
+name: Defender Critical Successes
+ownership:
+  default: 0
+sort: 200000
+src: null
+system: {}
+text:
+  content: "<ul><li><p>The attacker\u2019s weapon jams or breaks.</p></li><li><p>The
+    attacker is struck off balance, suffering -3 to their next defense roll.</p></li><li><p>The
+    attacker causes harm to self.</p></li><li><p>One of the attacker\u2019s allies
+    must roll against the attack or be hit instead.</p></li><li><p>The attack inadvertently
+    hits an important object nearby \u2013 to the attacker\u2019s detriment.</p></li><li><p>The
+    attacker impales self on the defender\u2019s weapon, which scores an automatic
+    hit (ignore the defender\u2019s skill modifiers when rolling damage).</p></li><li><p>The
+    attacker is struck off balance and the defender gains a free attack immediately.</p></li><li><p>The
+    defender enrages the attacker by making them look ridiculous. The attacker must
+    make a 2d Spirit check or suffer \u20131 to subsequent defense rolls.<br /></p></li></ul>"
+  format: 1
+title:
+  level: 1
+  show: true
+type: text
+video:
+  controls: true
+  volume: 0.5

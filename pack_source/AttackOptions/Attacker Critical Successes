@@ -1,0 +1,30 @@
+_id: wA8KZqiXQGXhwfsG
+_source_id: buxJDYChQyPFBHsA
+flags: {}
+image: {}
+name: Attacker Critical Successes
+ownership:
+  default: 0
+sort: 100000
+src: null
+system: {}
+text:
+  content: "<ul><li><p>The attacker finds a gap in the defender\u2019s armor. The
+    defender does not deduct its ARM from the damage suffered.</p></li><li><p>The
+    attacker knocks down the defender, who is prone (Impaired; must spend one action
+    getting up, or suffer -2 to rolls and Move reduced 50%).</p></li><li><p>A second
+    adversary must also make a defense roll against the attack or be hit as well.</p></li><li><p>The
+    defender is struck off-balance and the attacker gets a second attack immediately.</p></li><li><p>The
+    blow shatters the weapon, shield or another item on the defender\u2019s person.</p></li><li><p>The
+    blow causes the defender to drop their weapon.</p></li><li><p>The attack maims
+    the defender and the damage roll affects both Health and Move. Move is<br />regained
+    at the same rate as Health.</p></li><li><p>The defender must make a Spirit check
+    or else retreat, surrender or seek to escape.<br /></p></li></ul>"
+  format: 1
+title:
+  level: 1
+  show: true
+type: text
+video:
+  controls: true
+  volume: 0.5

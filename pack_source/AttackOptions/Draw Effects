@@ -1,0 +1,32 @@
+_id: H4Inh1tYk6HX8vZk
+_source_id: buxJDYChQyPFBHsA
+flags: {}
+image: {}
+name: Draw Effects
+ownership:
+  default: 0
+sort: 300000
+src: null
+system: {}
+text:
+  content: "<ul><li><p>The attack is partially deflected at the last second, resulting
+    in a glancing blow: apply -3 to the damage roll.</p></li><li><p>The defender dodges
+    the attack but leaves themselves open or knocked off-balance, suffering -2 to
+    their next defense roll.</p></li><li><p>The attack hits and deals damage but leaves
+    the attacker exposed, suffering -2 to their next defense roll.</p></li><li><p>The
+    attack misses the opponent but dislodges something in the area, causing an impediment
+    or distraction. The defender suffers -2 to their next attack roll</p></li><li><p>An
+    ally suddenly blocks the attacker\u2019s line of sight. The attacker can choose
+    to hold the attack or go through with it. If they go through with it, the ally
+    must make a defense roll against the attack or be hit instead of the intended
+    target.</p></li><li><p>You succeed on the attack or defense roll, but see or hear
+    enemy reinforcements approaching.</p></li><li><p>You fail the attack or defense
+    roll, but your allies show up at that moment.<br /></p></li></ul>"
+  format: 1
+title:
+  level: 1
+  show: true
+type: text
+video:
+  controls: true
+  volume: 0.5

@@ -23,6 +23,16 @@ def clean(foundry_object):
         del foundry_object["_stats"]
     foundry_object["ownership"] = {"default": 0}
 
+def guess_type(entry):
+    """
+    Guess the type of the entry
+    """
+    if "pages" in entry:
+        return "journal"
+    if "text" in entry:
+        return "journal.pages"
+    return "items"
+
 
 def unpack():
     for possible_db in os.listdir(PACK_DIST):
@@ -57,8 +67,13 @@ def pack():
                     if current_object:
                         print(current_object)
                         clean(current_object)
+                        object_type = guess_type(current_object)
+                        store_id = current_object["_id"]
+                        if "_source_id" in current_object:
+                            store_id = f"{current_object['_source_id']}.{current_object['_id']}"
+                            del current_object["_source_id"]
                         db.put(
-                            f"!items!{current_object['_id']}".encode(),
+                            f"!{object_type}!{store_id}".encode(),
                             json.dumps(current_object).encode()
                         )
 
