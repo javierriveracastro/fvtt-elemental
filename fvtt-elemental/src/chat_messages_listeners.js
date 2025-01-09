@@ -1,11 +1,12 @@
 // Add listeners to tab messages.
-/* global canvas, ui, game */
+/* global canvas, ui, game, console */
 
 import {
   start_new_diff_roll,
   start_new_opposite_roll,
 } from "./attribute-check.js";
 import { apply_damage, modify_damage_dialog } from "./damage_application.js";
+import { show_journal } from "./journals.js";
 
 export function addChatMessageListeners(message, html) {
   html.find(".elemental-roll-difficulty").on("click", () => {
@@ -27,5 +28,11 @@ export function addChatMessageListeners(message, html) {
   });
   html.find(".elemental-roll-damage-mod").on("click", () => {
     modify_damage_dialog(message.rolls[0].total);
+  });
+  html.find(".elemental-show-journal").on("click", (ev) => {
+    const journal = ev.currentTarget.dataset.journal;
+    show_journal(journal).catch(() => {
+      console.error("Can't show journal");
+    });
   });
 }

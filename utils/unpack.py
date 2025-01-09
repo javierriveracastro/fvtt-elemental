@@ -11,8 +11,8 @@ import yaml
 import json
 from yaml import CDumper as Dumper
 
-PACK_DIST = "../fvtt-elemental/packs"
-PACK_SRC = "../pack_source"
+PACK_DIST = "/home/javier/Descargas/foundry-10/Data/worlds/probaelemental/packs"
+PACK_SRC = "/home/javier"
 
 
 def clean(foundry_object):

@@ -68,15 +68,18 @@ export class AttributeRoll extends Roll {
       positive_total = this.total;
       oposing_total = this.originating_roll.total;
     }
-    const critical = this.is_critical
-      ? game.i18n.localize("Elemental.Rolls.Critical")
-      : "";
-    if (positive_total > oposing_total) {
-      return `<div class="${game.elemental.current_theme.result_success}">${critical} ${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
-    } else if (positive_total < oposing_total) {
-      return `<div class="${game.elemental.current_theme.result_failure}">${critical} ${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
+    let critical = "";
+    let critical_class_changes = "";
+    if (this.is_critical) {
+      critical = game.i18n.localize("Elemental.Rolls.Critical");
+      critical_class_changes = " elemental-show-journal cursor-pointer";
     }
-    return `<div class="${game.elemental.current_theme.result_draw}">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
+    if (positive_total > oposing_total) {
+      return `<div class="${game.elemental.current_theme.result_success}${critical_class_changes}" data-journal="wA8KZqiXQGXhwfsG">${critical} ${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
+    } else if (positive_total < oposing_total) {
+      return `<div class="${game.elemental.current_theme.result_failure}${critical_class_changes}" data-journal="SPVAUenofS7PCwuy">${critical} ${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
+    }
+    return `<div class="${game.elemental.current_theme.result_draw} elemental-show-journal cursor-pointer" data-journal="H4Inh1tYk6HX8vZk">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
   }
 
   get is_critical() {
@@ -194,7 +197,9 @@ function generate_roll_formula(options, badges) {
   }
   if (options.range_modifier) {
     base_formula += `${options.range_modifier}`;
-    badges.push(`${options.range_modifier} ${game.i18n.localize("Elemental.Range")}`);
+    badges.push(
+      `${options.range_modifier} ${game.i18n.localize("Elemental.Range")}`,
+    );
   }
   for (let modifier of options.modifiers) {
     const sign = modifier > 0 ? "+" : "";
