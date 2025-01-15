@@ -1,3 +1,7 @@
+# Version 0.0.15 aka not many changes
+* Added journals with the recommended Critical sucess and failure and tie results.
+* The result banner is clickable when applicable to show the above journals.
+
 # Version 0.0.14 aka
 * Updated README
 * Added links back to Gilder in README
