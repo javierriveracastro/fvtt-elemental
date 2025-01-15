@@ -1,4 +1,4 @@
-# Version 0.0.15 aka not many changes
+# Version 0.0.15 aka few changes
 * Added journals with the recommended Critical sucess and failure and tie results.
 * The result banner is clickable when applicable to show the above journals.
 
