@@ -67,3 +67,12 @@ export class ElementalEquipmentSheet extends ItemSheet {
     };
   }
 }
+
+export class ElementalPowerSheet extends ItemSheet {
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      width: 600,
+      height: 300,
+    });
+  }
+}
