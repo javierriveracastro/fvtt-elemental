@@ -60,6 +60,14 @@
       "FixedModifier": "Fixed modifier",
       "IsFlaw": "This is a flaw"
     },
+    "PowerSheet": {
+      "Difficulty": "Difficulty",
+      "CastingTime": "Cast Time",
+      "Range": "Range",
+      "Duration": "Duration",
+      "Concentration": "Concentration",
+      "Innate": "Innate"
+    },
     "Rolls": {
       "Success": "Success",
       "Tie": "Tie",

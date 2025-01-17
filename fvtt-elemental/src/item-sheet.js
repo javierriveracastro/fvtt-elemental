@@ -72,7 +72,19 @@ export class ElementalPowerSheet extends ItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 600,
-      height: 300,
+      height: 350,
     });
+  }
+
+  get template() {
+    return "/systems/fvtt-elemental/templates/power.hbs";
+  }
+
+  async getData(options) {
+    const data = super.getData(options);
+    return {
+      ...data,
+      theme: game.elemental.current_theme,
+    };
   }
 }

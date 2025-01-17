@@ -28,6 +28,10 @@ export class ElementalItem extends Item {
       this.updateSource({
         img: "/icons/svg/explosion.svg",
       });
+    } else if (this.type === "power") {
+      this.updateSource({
+        img: "/icons/svg/daze.svg",
+      });
     }
   }
 }
