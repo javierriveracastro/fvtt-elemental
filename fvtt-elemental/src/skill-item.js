@@ -19,6 +19,12 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
   get roll_modifier() {
     return this.fixed_modifier ? this.fixed_modifier : this.score;
   }
+
+  get theme_name() {
+    return this.is_flaw
+      ? game.elemental.current_theme.flaw_name
+      : game.elemental.current_theme.skill_name;
+  }
 }
 
 export class ElementalItem extends Item {

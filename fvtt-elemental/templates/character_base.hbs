@@ -82,7 +82,7 @@
         <label class="{{theme.info_label}}"> / {{actor.max_initiative}}</label>
     </div>
     <div class="{{theme.skill_box}}">
-        {{#each actor.awareness_skills as |skill index|}}
+        {{#each actor.awareness_skills_powers as |skill index|}}
             {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme skill=skill}}
         {{/each}}
     </div>

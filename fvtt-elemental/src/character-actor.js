@@ -96,8 +96,13 @@ export class ElementalActor extends Actor {
     return this.skills("toughness");
   }
 
-  get awareness_skills() {
-    return this.skills("awareness");
+  get awareness_skills_powers() {
+    return this.items.filter((item) => {
+      return (
+        item.type === "power" ||
+        (item.type === "skill" && item.system.attribute === "awareness")
+      );
+    });
   }
 
   get will_skills() {

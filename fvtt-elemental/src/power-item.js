@@ -15,4 +15,8 @@ export class PowerDataModel extends foundry.abstract.TypeDataModel {
       innate: new fields.BooleanField({ initial: false }),
     };
   }
+
+  get theme_name() {
+    return game.elemental.current_theme.power_name;
+  }
 }

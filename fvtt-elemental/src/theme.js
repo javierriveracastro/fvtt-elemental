@@ -29,6 +29,7 @@ export const BASE_THEME = {
     "w-6 h-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm self-center",
   skill_name: "border-solid border-0 border-b-2 border-stone-200",
   flaw_name: "border-solid border-0 border-b-2 border-stone-200 text-red-700",
+  power_name: "border-solid border-0 border-b-2 border-stone-200 text-blue-700",
   roll_button:
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-2 m-2",
   roll_button_left:
@@ -37,8 +38,7 @@ export const BASE_THEME = {
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-e-lg text-sm p-2 m-2 ml-0 border-s-0 w-8",
   result_success:
     "text-green-800 bg-green-50 font-medium rounded-lg text-center mt-2 p-1",
-  warning_badge:
-    "bg-red-300 font-medium rounded-lg text-center m-2 p-1",
+  warning_badge: "bg-red-300 font-medium rounded-lg text-center m-2 p-1",
   result_failure:
     "text-red-800 bg-red-50 font-medium rounded-lg text-center mt-2 p-1",
   result_draw:
