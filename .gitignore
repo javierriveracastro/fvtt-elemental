@@ -1,6 +1,7 @@
 .vscode/**
 .vscode
 .idea/**
+.zed/**
 notas.txt
 node_modules/**
 package-lock.json
