@@ -1,5 +1,5 @@
 // Class that represents an attribute check
-/* global Roll, game, CONST, CONFIG, ChatMessage, renderTemplate, fromUuid */
+/* global Roll, game, renderTemplate, fromUuid */
 
 import { AttributeRollDialog } from "./roll-dialog.js";
 
@@ -85,13 +85,19 @@ export class AttributeRoll extends Roll {
   get is_critical() {
     let is_critical = true;
     for (const term of this.terms) {
-      if (term.hasOwnProperty("_faces") && term.results.length === 1) {
+      if (
+        Object.prototype.hasOwnProperty.call(term, "_faces") &&
+        term.results.length === 1
+      ) {
         is_critical = false;
         break;
       }
     }
     for (const term of this.originating_roll.terms) {
-      if (term.hasOwnProperty("_faces") && term.results.length === 1) {
+      if (
+        Object.prototype.hasOwnProperty.call(term, "_faces") &&
+        term.results.length === 1
+      ) {
         is_critical = false;
         break;
       }
@@ -105,7 +111,7 @@ export class AttributeRoll extends Roll {
     }
     let exploded = false;
     for (let term of this.terms) {
-      if (term.hasOwnProperty("results")) {
+      if (Object.prototype.hasOwnProperty.call(term, "results")) {
         for (let result of term.results) {
           if (result.exploded) {
             exploded = true;
@@ -134,7 +140,12 @@ export function start_new_opposite_roll(actor, origin = "") {
 
 function get_conditional_options(options, base_formula, badges) {
   for (const key in options.conditional_modifiers_active) {
-    if (!options.conditional_modifiers_active.hasOwnProperty(key)) {
+    if (
+      !Object.prototype.hasOwnProperty.call(
+        options.conditional_modifiers_active,
+        key,
+      )
+    ) {
       continue;
     }
     const modifier = options.conditional_modifiers_active[key];
@@ -159,7 +170,7 @@ function get_status_modifiers(options, base_formula, badges) {
 function get_flaw_modifiers(options, base_formula, badges) {
   if (options.flaws_active) {
     for (const flaw in options.flaws_active) {
-      if (!options.flaws_active.hasOwnProperty(flaw)) {
+      if (!Object.prototype.hasOwnProperty.call(options.flaws_active, flaw)) {
         continue;
       }
       base_formula += `-${options.flaws_active[flaw].value}`;
@@ -173,7 +184,10 @@ function get_flaw_modifiers(options, base_formula, badges) {
 
 function generate_roll_formula(options, badges) {
   let base_formula = "1d6";
-  if (!options.hasOwnProperty("attribute") || options.attribute !== 0) {
+  if (
+    !Object.prototype.hasOwnProperty.call(options, "attribute") ||
+    options.attribute !== 0
+  ) {
     base_formula += "xo";
   }
   if (options.attribute) {

@@ -1,5 +1,5 @@
 // Classes for all the roll dialogs
-/* globals foundry, game, FormApplication, console, canvas */
+/* globals foundry, game, FormApplication, canvas */
 
 import { StatCheck } from "./stat-check.js";
 import { AttributeRoll } from "./attribute-check.js";
@@ -37,6 +37,7 @@ export class StatCheckDialog extends FormApplication {
     };
   }
 
+  // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
     const roll_string = ev.submitter.value === "2d" ? "d6*d6" : "d6*d6*d6";
     const difficulty_number = this.actor.system[`current_${this.derived_stat}`];
@@ -67,6 +68,7 @@ export class AttributeRollDialog extends FormApplication {
     this.modfiers = [];
     this.conditional_modifiers_active = {};
     this.flaws_active = {};
+    // eslint-disable-next-line no-prototype-builtins
     this.damage_mod = options.hasOwnProperty("damage_mod")
       ? options.damage_mod // jshint ignore:line
       : null;
@@ -109,7 +111,10 @@ export class AttributeRollDialog extends FormApplication {
       for (const effect of this.actor.effects) {
         if (
           effect.flags.elemental &&
-          effect.flags.elemental.hasOwnProperty("conditional_mod")
+          Object.prototype.hasOwnProperty.call(
+            effect.flags.elemental,
+            "conditional_mod",
+          )
         ) {
           const conditional_mod = {
             name: effect.name,
@@ -221,6 +226,7 @@ export class AttributeRollDialog extends FormApplication {
     return target_mods;
   }
 
+  // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
     const options = {
       actor_name: this.actor ? this.actor.name : "",
@@ -334,6 +340,191 @@ export class AttributeRollDialog extends FormApplication {
       element,
       "elemental-difficulty-selection",
       "selected_difficulty",
+    );
+  }
+
+  select_range(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-range-selection",
+      "selected_range",
+    );
+  }
+
+  select_one(html, element, class_name, property) {
+    for (let current_element of html.find(`.${class_name}`)) {
+      if (current_element === element) {
+        current_element.className =
+          game.elemental.current_theme.roll_option_selected;
+        this[property] = current_element.dataset.value;
+      } else {
+        current_element.className =
+          game.elemental.current_theme.roll_option_unselected;
+      }
+      current_element.classList.add(class_name);
+    }
+  }
+
+  add_modifier_toast(value, html) {
+    const id = window.crypto.getRandomValues(new Uint32Array(1))[0];
+    const sign = value > 0 ? "+" : "";
+    const new_modifier_toast = `<div class="${game.elemental.current_theme.modifier_toast} id${id}" data-value="${value}">
+      <span>${sign}${value}</span>
+      <button id="id${id}" type="button" class="${game.elemental.current_theme.close_icon}" >
+        <i class="fas fa-xmark" style="margin-top: -1px; margin-left: 0.5px;"></i>
+      </button>
+    </div>`;
+    html.find("#elemental-active-modifiers").append(new_modifier_toast);
+    html.find("#id" + id).click((ev) => {
+      const value = ev.currentTarget.parentElement.dataset.value;
+      const index = this.modfiers.indexOf(value);
+      this.modfiers.splice(index, 1);
+      ev.currentTarget.parentElement.remove();
+    });
+  }
+}
+
+/**
+ * Class for commom Attribute Rolls that is also the base case for other rolls.
+ */
+export class BaseAttributeRollDialog extends FormApplication {
+  constructor(actor, attribute, options = {}) {
+    super();
+    this.actor = actor;
+    this.selected_attribute = attribute;
+    this.selected_skill = options.skill_id ? options.skill_id : null;
+    this.resist_roll = false;
+    this.originating_roll = "";
+    this.modfiers = [];
+    this.conditional_modifiers_active = {};
+    this.flaws_active = {};
+    this.selected_skill = null;
+    if (options.skill_id) {
+      this.selected_skill = options.skill_id;
+    } else if (options.weapon) {
+      const skills = actor.skills_by_name(options.weapon.system.default_skill);
+      if (skills.length > 0) {
+        this.selected_skill = skills[0].id;
+      }
+    }
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
+    });
+  }
+
+  async getData(options) {
+    let data = super.getData(options);
+    const attribute_names = [];
+    const conditionals = [];
+    for (let attribute of game.elemental.attributes) {
+      attribute_names.push({
+        english_name: attribute,
+        name: game.i18n.localize(`Elemental.Attributes.${attribute}`),
+        selected: attribute.toLowerCase() === this.selected_attribute,
+      });
+    }
+    if (this.actor) {
+      for (const effect of this.actor.effects) {
+        if (
+          effect.flags.elemental &&
+          Object.prototype.hasOwnProperty.call(
+            effect.flags.elemental,
+            "conditional_mod",
+          )
+        ) {
+          const conditional_mod = {
+            name: effect.name,
+            value: effect.flags.elemental.conditional_mod,
+          };
+          conditionals.push(conditional_mod);
+          this.conditional_modifiers_active[effect.name] = conditional_mod;
+        }
+      }
+    }
+    return {
+      ...data,
+      theme: game.elemental.current_theme,
+      actor: this.actor,
+      attribute_names: attribute_names,
+      resist_roll: this.resist_roll,
+      skills: this.skills,
+      flaws: this.flaws,
+      selected_skill: this.selected_skill,
+      conditionals: conditionals,
+    };
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-attribute-selection").click((ev) => {
+      this.select_attribute(ev.currentTarget, html);
+    });
+    html.find(".elemental-skill-selection").click((ev) => {
+      this.select_skill(ev.currentTarget, html);
+    });
+    html.find(".elemental-conditional-selection").click((ev) => {
+      this.select_conditional(ev.currentTarget);
+    });
+    html.find(".elemental-flaw-selection").click((ev) => {
+      this.select_flaw(ev.currentTarget);
+    });
+    html.find(".elemental-add-modifier").click((ev) => {
+      this.modfiers.push(ev.currentTarget.dataset.value);
+      this.add_modifier_toast(ev.currentTarget.dataset.value, html);
+    });
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  async _updateObject(ev, form_data) {
+    const options = {
+      actor_name: this.actor ? this.actor.name : "",
+      modifiers: this.modfiers,
+      originating_roll: this.originating_roll,
+    };
+    if (this.actor && this.selected_attribute) {
+      options.attribute = this.actor.attribute_value_from_string(
+        this.selected_attribute,
+      );
+      options.attribute_name = this.selected_attribute;
+    }
+    if (this.selected_skill) {
+      const skill = this.actor.items.get(this.selected_skill);
+      options.skill = skill.system.roll_modifier;
+      options.skill_name = skill.name;
+    }
+    options.flaws_active = this.flaws_active;
+    options.conditional_modifiers_active = this.conditional_modifiers_active;
+    options.damage = null; // Should be removed after refactoring
+    const roll = new AttributeRoll("", {}, options);
+    await roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
+  }
+
+  select_attribute(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-attribute-selection",
+      "selected_attribute",
+    );
+  }
+
+  select_skill(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-skill-selection",
+      "selected_skill",
     );
   }
 
