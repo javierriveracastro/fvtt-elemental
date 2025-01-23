@@ -412,7 +412,7 @@ export class BaseAttributeRollDialog extends FormApplication {
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      template: "systems/fvtt-elemental/templates/attribute_roll_basic.hbs",
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,

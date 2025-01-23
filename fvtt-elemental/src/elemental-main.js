@@ -1,11 +1,15 @@
 // Entry point for Elemental
-/* globals Actors, ActorSheet, CONFIG, Hooks, game, console, loadTemplates, Items, ItemSheet */
+/* globals Actors, ActorSheet, CONFIG, Hooks, game, loadTemplates, Items, ItemSheet */
 
 import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
-import {ElementaItemSheet, ElementalEquipmentSheet, ElementalPowerSheet} from "./item-sheet.js";
+import {
+  ElementaItemSheet,
+  ElementalEquipmentSheet,
+  ElementalPowerSheet,
+} from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
 import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
@@ -87,9 +91,10 @@ Hooks.on("init", () => {
     "systems/fvtt-elemental/templates/skill_row.hbs",
     "systems/fvtt-elemental/templates/equipment_row.hbs",
     "systems/fvtt-elemental/templates/damage_log.hbs",
+    "systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
-    console.info("Better Rolls templates preloaded");
+    console.info("Elemental templates preloaded");
   });
 
   game.elemental = {};

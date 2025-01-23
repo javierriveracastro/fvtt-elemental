@@ -1,0 +1,14 @@
+{{#> "systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs"}}
+    {{#*inline "attributes"}}
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Attribute" }}</span>
+            <div>
+                {{#each attribute_names}}
+                    <span class="{{# if
+                            this.selected }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }} elemental-attribute-selection"
+                            data-value="{{this.english_name}}">{{this.name}}</span>
+                {{/each}}
+            </div>
+        </div>
+    {{/inline}}
+{{/"systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs"}}
