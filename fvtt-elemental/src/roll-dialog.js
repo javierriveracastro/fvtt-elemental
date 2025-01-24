@@ -60,7 +60,6 @@ export class AttributeRollDialog extends FormApplication {
     super();
     this.actor = actor;
     this.selected_attribute = attribute;
-    this.selected_skill = options.skill_id ? options.skill_id : null;
     this.selected_difficulty = 0;
     this.resist_roll = false;
     this.dif_roll = false;
@@ -471,9 +470,6 @@ export class BaseAttributeRollDialog extends FormApplication {
     html.find(".elemental-attribute-selection").click((ev) => {
       this.select_attribute(ev.currentTarget, html);
     });
-    html.find(".elemental-skill-selection").click((ev) => {
-      this.select_skill(ev.currentTarget, html);
-    });
     html.find(".elemental-conditional-selection").click((ev) => {
       this.select_conditional(ev.currentTarget);
     });
@@ -488,6 +484,15 @@ export class BaseAttributeRollDialog extends FormApplication {
 
   // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
+    const options = this.collect_roll_options();
+    const roll = new AttributeBaseRoll("", {}, options);
+    await roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
+  }
+
+  collect_roll_options() {
     const options = {
       actor_name: this.actor ? this.actor.name : "",
       modifiers: this.modfiers,
@@ -502,11 +507,7 @@ export class BaseAttributeRollDialog extends FormApplication {
     options.flaws_active = this.flaws_active;
     options.conditional_modifiers_active = this.conditional_modifiers_active;
     options.damage = null; // Should be removed after refactoring
-    const roll = new AttributeBaseRoll("", {}, options);
-    await roll.evaluate();
-    roll.toMessage().catch((err) => {
-      console.error("Error while rolling: ", err);
-    });
+    return options;
   }
 
   select_attribute(element, html) {
@@ -523,6 +524,14 @@ export class BaseAttributeRollDialog extends FormApplication {
       element,
       "elemental-flaw-selection",
       this.flaws_active,
+    );
+  }
+
+  select_conditional(element) {
+    this.multiple_select(
+      element,
+      "elemental-conditional-selection",
+      this.conditional_modifiers_active,
     );
   }
 
@@ -574,5 +583,73 @@ export class BaseAttributeRollDialog extends FormApplication {
       this.modfiers.splice(index, 1);
       ev.currentTarget.parentElement.remove();
     });
+  }
+}
+
+export class SkillRollDialog extends BaseAttributeRollDialog {
+  constructor(actor, attribute, options = {}) {
+    super(actor, attribute, options);
+    this.selected_skill = options.skill_id ? options.skill_id : null;
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
+    });
+  }
+
+  get skills() {
+    return this.actor.skills().filter((skill) => {
+      return !(skill.system.dont_modify_rolls || skill.system.is_flaw);
+    });
+  }
+
+  async getData(options) {
+    let data = await super.getData(options);
+    return {
+      ...data,
+      skills: this.skills,
+      selected_skill: this.selected_skill,
+    };
+  }
+
+  collect_roll_options() {
+    const options = super.collect_roll_options();
+    if (this.selected_skill) {
+      const skill = this.actor.items.get(this.selected_skill);
+      options.skill = skill.system.roll_modifier;
+      options.skill_name = skill.name;
+    }
+    return options;
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  async _updateObject(ev, form_data) {
+    const options = this.collect_roll_options();
+    const roll = new AttributeRoll("", {}, options);
+    await roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-skill-selection").click((ev) => {
+      this.select_skill(ev.currentTarget, html);
+    });
+  }
+
+  select_skill(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-skill-selection",
+      "selected_skill",
+    );
   }
 }

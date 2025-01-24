@@ -5,10 +5,11 @@ import {
   AttributeRollDialog,
   StatCheckDialog,
   BaseAttributeRollDialog,
+  SkillRollDialog,
 } from "./roll-dialog.js";
 import { BASE_THEME as current_theme } from "./theme.js";
 
-export class ElementaCharacterSheet extends ActorSheet {
+export class ElementalCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 800,
@@ -69,7 +70,7 @@ export class ElementaCharacterSheet extends ActorSheet {
     });
     jquery.find(".elemental-roll-skill").on("click", (ev) => {
       const skill = this.actor.items.get(ev.currentTarget.dataset.itemId);
-      const skill_roll_dialog = new AttributeRollDialog(
+      const skill_roll_dialog = new SkillRollDialog(
         this.actor,
         skill.system.attribute,
         { skill_id: skill.id },

@@ -1,5 +1,6 @@
 dictionaries = ["en_us"]
 words = [
+    "builtins",
     "dialogs",
     "dif",
     "eslint",
