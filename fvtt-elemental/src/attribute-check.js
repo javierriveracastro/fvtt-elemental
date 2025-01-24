@@ -3,6 +3,9 @@
 
 import { AttributeRollDialog } from "./roll-dialog.js";
 
+/*
+ * Old class used for all Attribute Rolls, this should be removed
+ */
 export class AttributeRoll extends Roll {
   constructor(formula, data = {}, options = {}) {
     let is_difficulty_roll = !!options.difficulty;
@@ -123,6 +126,117 @@ export class AttributeRoll extends Roll {
   }
 }
 
+/**
+ * Class for simple Attribute rolls that is also the base for more complex rolls
+ */
+export class AttributeBaseRoll extends Roll {
+  constructor(formula, data = {}, options = {}) {
+    let badges = [];
+    let base_formula = generate_roll_formula(options, badges);
+    super(base_formula, data, options);
+    this.originating_roll = undefined;
+    if (options.originating_roll) {
+      fromUuid(options.originating_roll).then((message) => {
+        this.originating_roll = message.rolls[0];
+      });
+    }
+    this.actor_name = options.actor_name;
+    this.badges = badges;
+  }
+
+  async render({
+    flavor,
+    template = "systems/fvtt-elemental/templates/attribute_roll.hbs",
+    isPrivate = false,
+  } = {}) {
+    if (!this._evaluated) {
+      await this.evaluate({ async: true });
+    }
+    const chatData = {
+      formula: isPrivate ? "???" : this._formula,
+      flavor: isPrivate ? null : flavor,
+      user: game.user.id,
+      tooltip: isPrivate ? "" : await this.getTooltip(),
+      total: isPrivate ? "?" : Math.round(this.total * 100) / 100,
+      title: this.title,
+      theme: game.elemental.current_theme,
+      badges: this.badges,
+      exploded: this.exploded,
+      originating_roll: this.originating_roll,
+      result_div: this.result_div,
+    };
+    return renderTemplate(template, chatData);
+  }
+
+  get title() {
+    return `${this.actor_name} ${game.i18n.localize("Elemental.AttributeRoll")}`;
+  }
+
+  get result_div() {
+    if (!this.originating_roll) {
+      return "";
+    }
+    let positive_total = this.originating_roll.total;
+    let oposing_total = this.total;
+    if (this.originating_roll.is_difficulty_roll) {
+      positive_total = this.total;
+      oposing_total = this.originating_roll.total;
+    }
+    let critical = "";
+    let critical_class_changes = "";
+    if (this.is_critical) {
+      critical = game.i18n.localize("Elemental.Rolls.Critical");
+      critical_class_changes = " elemental-show-journal cursor-pointer";
+    }
+    if (positive_total > oposing_total) {
+      return `<div class="${game.elemental.current_theme.result_success}${critical_class_changes}" data-journal="wA8KZqiXQGXhwfsG">${critical} ${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
+    } else if (positive_total < oposing_total) {
+      return `<div class="${game.elemental.current_theme.result_failure}${critical_class_changes}" data-journal="SPVAUenofS7PCwuy">${critical} ${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
+    }
+    return `<div class="${game.elemental.current_theme.result_draw} elemental-show-journal cursor-pointer" data-journal="H4Inh1tYk6HX8vZk">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
+  }
+
+  get is_critical() {
+    let is_critical = true;
+    for (const term of this.terms) {
+      if (
+        Object.prototype.hasOwnProperty.call(term, "_faces") &&
+        term.results.length === 1
+      ) {
+        is_critical = false;
+        break;
+      }
+    }
+    for (const term of this.originating_roll.terms) {
+      if (
+        Object.prototype.hasOwnProperty.call(term, "_faces") &&
+        term.results.length === 1
+      ) {
+        is_critical = false;
+        break;
+      }
+    }
+    return is_critical;
+  }
+
+  get exploded() {
+    if (!this._evaluated) {
+      return false;
+    }
+    let exploded = false;
+    for (let term of this.terms) {
+      if (Object.prototype.hasOwnProperty.call(term, "results")) {
+        for (let result of term.results) {
+          if (result.exploded) {
+            exploded = true;
+          }
+        }
+      }
+    }
+    return exploded;
+  }
+}
+
 export function start_new_diff_roll(origin = "") {
   const dif_roll = new AttributeRollDialog();
   dif_roll.dif_roll = true;
@@ -132,10 +246,10 @@ export function start_new_diff_roll(origin = "") {
 }
 
 export function start_new_opposite_roll(actor, origin = "") {
-  const oppositing_roll = new AttributeRollDialog(actor);
-  oppositing_roll.originating_roll = origin;
-  oppositing_roll.resist_roll = true;
-  oppositing_roll.render(true);
+  const opposing_roll = new AttributeRollDialog(actor);
+  opposing_roll.originating_roll = origin;
+  opposing_roll.resist_roll = true;
+  opposing_roll.render(true);
 }
 
 function get_conditional_options(options, base_formula, badges) {

@@ -1,8 +1,8 @@
 // Classes for all the roll dialogs
-/* globals foundry, game, FormApplication, canvas */
+/* global foundry, game, FormApplication, canvas */
 
 import { StatCheck } from "./stat-check.js";
-import { AttributeRoll } from "./attribute-check.js";
+import { AttributeRoll, AttributeBaseRoll } from "./attribute-check.js";
 
 export class StatCheckDialog extends FormApplication {
   constructor(actor, derived_stat) {
@@ -386,7 +386,7 @@ export class AttributeRollDialog extends FormApplication {
 }
 
 /**
- * Class for commom Attribute Rolls that is also the base case for other rolls.
+ * Class for common Attribute Rolls that is also the base case for other rolls.
  */
 export class BaseAttributeRollDialog extends FormApplication {
   constructor(actor, attribute, options = {}) {
@@ -431,22 +431,20 @@ export class BaseAttributeRollDialog extends FormApplication {
         selected: attribute.toLowerCase() === this.selected_attribute,
       });
     }
-    if (this.actor) {
-      for (const effect of this.actor.effects) {
-        if (
-          effect.flags.elemental &&
-          Object.prototype.hasOwnProperty.call(
-            effect.flags.elemental,
-            "conditional_mod",
-          )
-        ) {
-          const conditional_mod = {
-            name: effect.name,
-            value: effect.flags.elemental.conditional_mod,
-          };
-          conditionals.push(conditional_mod);
-          this.conditional_modifiers_active[effect.name] = conditional_mod;
-        }
+    for (const effect of this.actor.effects) {
+      if (
+        effect.flags.elemental &&
+        Object.prototype.hasOwnProperty.call(
+          effect.flags.elemental,
+          "conditional_mod",
+        )
+      ) {
+        const conditional_mod = {
+          name: effect.name,
+          value: effect.flags.elemental.conditional_mod,
+        };
+        conditionals.push(conditional_mod);
+        this.conditional_modifiers_active[effect.name] = conditional_mod;
       }
     }
     return {
@@ -460,6 +458,12 @@ export class BaseAttributeRollDialog extends FormApplication {
       selected_skill: this.selected_skill,
       conditionals: conditionals,
     };
+  }
+
+  get flaws() {
+    return this.actor.skills().filter((skill) => {
+      return skill.system.is_flaw;
+    });
   }
 
   activateListeners(html) {
@@ -495,15 +499,10 @@ export class BaseAttributeRollDialog extends FormApplication {
       );
       options.attribute_name = this.selected_attribute;
     }
-    if (this.selected_skill) {
-      const skill = this.actor.items.get(this.selected_skill);
-      options.skill = skill.system.roll_modifier;
-      options.skill_name = skill.name;
-    }
     options.flaws_active = this.flaws_active;
     options.conditional_modifiers_active = this.conditional_modifiers_active;
     options.damage = null; // Should be removed after refactoring
-    const roll = new AttributeRoll("", {}, options);
+    const roll = new AttributeBaseRoll("", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
@@ -519,21 +518,11 @@ export class BaseAttributeRollDialog extends FormApplication {
     );
   }
 
-  select_skill(element, html) {
-    this.select_one(
-      html,
+  select_flaw(element) {
+    this.multiple_select(
       element,
-      "elemental-skill-selection",
-      "selected_skill",
-    );
-  }
-
-  select_range(element, html) {
-    this.select_one(
-      html,
-      element,
-      "elemental-range-selection",
-      "selected_range",
+      "elemental-flaw-selection",
+      this.flaws_active,
     );
   }
 
@@ -549,6 +538,24 @@ export class BaseAttributeRollDialog extends FormApplication {
       }
       current_element.classList.add(class_name);
     }
+  }
+
+  multiple_select(element, className, modifier_array) {
+    if (
+      element.className.indexOf(
+        game.elemental.current_theme.roll_option_selected,
+      ) !== -1
+    ) {
+      element.className = game.elemental.current_theme.roll_option_unselected;
+      delete modifier_array[element.dataset.name];
+    } else {
+      element.className = game.elemental.current_theme.roll_option_selected;
+      modifier_array[element.dataset.name] = {
+        name: element.dataset.name,
+        value: element.dataset.value,
+      };
+    }
+    element.className += ` ${className}`;
   }
 
   add_modifier_toast(value, html) {

@@ -1,5 +1,5 @@
 // Entry point for Elemental
-/* globals Actors, ActorSheet, CONFIG, Hooks, game, loadTemplates, Items, ItemSheet */
+/* global Actors, ActorSheet, CONFIG, Hooks, game, loadTemplates, Items, ItemSheet */
 
 import { ElementaCharacterSheet } from "./character-sheet.js";
 import { CharacterDataModel, ElementalActor } from "./character-actor.js";
@@ -11,7 +11,11 @@ import {
   ElementalPowerSheet,
 } from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
-import { AttributeRoll, start_new_diff_roll } from "./attribute-check.js";
+import {
+  AttributeRoll,
+  AttributeBaseRoll,
+  start_new_diff_roll,
+} from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
 import { change_condition_menu } from "./tokenHud.js";
 import { EquipmentDataModel } from "./equipment-item.js";
@@ -27,6 +31,7 @@ Hooks.on("init", () => {
   CONFIG.Item.documentClass = ElementalItem;
   CONFIG.Dice.rolls.push(StatCheck);
   CONFIG.Dice.rolls.push(AttributeRoll);
+  CONFIG.Dice.rolls.push(AttributeBaseRoll);
 
   CONFIG.statusEffects = [
     {
