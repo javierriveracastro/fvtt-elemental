@@ -1,0 +1,12 @@
+dictionaries = ["en_us"]
+words = [
+    "dialogs",
+    "dif",
+    "eslint",
+    "fas",
+    "fvtt",
+    "hbs",
+    "xmark",
+]
+flag_words = []
+ignore_paths = []
