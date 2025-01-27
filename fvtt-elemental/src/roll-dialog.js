@@ -594,7 +594,7 @@ export class SkillRollDialog extends BaseAttributeRollDialog {
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      template: "systems/fvtt-elemental/templates/attribute_roll_skills.hbs",
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,

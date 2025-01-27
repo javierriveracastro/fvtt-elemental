@@ -1,0 +1,16 @@
+{{#> "systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs"}}
+    {{#*inline "attributes"}}
+        {{>"systems/fvtt-elemental/templates/attribute_roll_section.hbs"}}
+    {{/inline}}
+    {{#*inline "skills"}}
+        <div class="{{theme.roll_options_card}} mt-2">
+            <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Skills" }}</span>
+            <div>
+                {{#each skills}}
+                    <span class="{{#if (eq this.id ../selected_skill) }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }}
+                            elemental-skill-selection" data-value="{{this.id}}">{{this.name}}</span>
+                {{/each}}
+            </div>
+        </div>
+    {{/inline}}
+{{/"systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs"}}

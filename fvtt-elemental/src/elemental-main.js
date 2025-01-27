@@ -97,6 +97,7 @@ Hooks.on("init", () => {
     "systems/fvtt-elemental/templates/equipment_row.hbs",
     "systems/fvtt-elemental/templates/damage_log.hbs",
     "systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs",
+    "systems/fvtt-elemental/templates/attribute_roll_section.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
     console.info("Elemental templates preloaded");
