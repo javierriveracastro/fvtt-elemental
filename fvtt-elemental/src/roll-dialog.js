@@ -388,25 +388,17 @@ export class AttributeRollDialog extends FormApplication {
  * Class for common Attribute Rolls that is also the base case for other rolls.
  */
 export class BaseAttributeRollDialog extends FormApplication {
+  // eslint-disable-next-line no-unused-vars
   constructor(actor, attribute, options = {}) {
+    // options used in sub-classes
     super();
     this.actor = actor;
     this.selected_attribute = attribute;
-    this.selected_skill = options.skill_id ? options.skill_id : null;
     this.resist_roll = false;
     this.originating_roll = "";
     this.modfiers = [];
     this.conditional_modifiers_active = {};
     this.flaws_active = {};
-    this.selected_skill = null;
-    if (options.skill_id) {
-      this.selected_skill = options.skill_id;
-    } else if (options.weapon) {
-      const skills = actor.skills_by_name(options.weapon.system.default_skill);
-      if (skills.length > 0) {
-        this.selected_skill = skills[0].id;
-      }
-    }
   }
 
   static get defaultOptions() {
@@ -452,7 +444,6 @@ export class BaseAttributeRollDialog extends FormApplication {
       actor: this.actor,
       attribute_names: attribute_names,
       resist_roll: this.resist_roll,
-      skills: this.skills,
       flaws: this.flaws,
       selected_skill: this.selected_skill,
       conditionals: conditionals,
