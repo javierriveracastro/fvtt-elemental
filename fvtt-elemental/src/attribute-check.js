@@ -1,7 +1,7 @@
 // Class that represents an attribute check
 /* global Roll, game, renderTemplate, fromUuid */
 
-import { AttributeRollDialog } from "./roll-dialog.js";
+import { AttributeRollDialog, DifficultyRollDialog } from "./roll-dialog.js";
 
 /*
  * Old class used for all Attribute Rolls, this should be removed
@@ -13,6 +13,7 @@ export class AttributeRoll extends Roll {
     let base_formula = generate_roll_formula(options, badges);
     super(base_formula, data, options);
     this.originating_roll = undefined;
+    console.log(options);
     if (options.originating_roll) {
       fromUuid(options.originating_roll).then((message) => {
         this.originating_roll = message.rolls[0];
@@ -238,9 +239,7 @@ export class AttributeBaseRoll extends Roll {
 }
 
 export function start_new_diff_roll(origin = "") {
-  const dif_roll = new AttributeRollDialog();
-  dif_roll.dif_roll = true;
-  dif_roll.selected_difficulty = 2;
+  const dif_roll = new DifficultyRollDialog();
   dif_roll.originating_roll = origin;
   dif_roll.render(true);
 }

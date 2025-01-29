@@ -644,3 +644,60 @@ export class SkillRollDialog extends BaseAttributeRollDialog {
     );
   }
 }
+
+export class DifficultyRollDialog extends BaseAttributeRollDialog {
+  constructor(actor, attribute, options = {}) {
+    super(actor, attribute, options);
+    this.dif_roll = true;
+    this.selected_difficulty = 2;
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs", // Change for dedicated template
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
+    });
+  }
+
+  get flaws() {
+    return [];
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  async _updateObject(ev, form_data) {
+    const options = this.collect_roll_options();
+    options.difficulty = this.selected_difficulty;
+    const roll = new AttributeRoll("", {}, options);
+    await roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-difficulty-selection").click((ev) => {
+      this.select_difficulty(ev.currentTarget, html);
+    });
+  }
+
+  select_difficulty(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-difficulty-selection",
+      "selected_difficulty",
+    );
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  async getData(options) {
+    return {
+      theme: game.elemental.current_theme,
+      dif_roll: true,
+    };
+  }
+}

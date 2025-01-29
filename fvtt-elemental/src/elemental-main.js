@@ -113,7 +113,9 @@ Hooks.on("ready", () => {
   const container = document.createElement("a");
   container.innerHTML =
     "<a id='elemental-dif-roll' role='button' data-tooltip='Dif Roll'><i class='fa-solid fa-dice'></i></a>";
-  container.firstChild.addEventListener("click", start_new_diff_roll);
+  container.firstChild.addEventListener("click", () => {
+    start_new_diff_roll();
+  });
   chat_control[0].appendChild(container.firstChild);
 });
 
