@@ -654,7 +654,8 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs", // Change for dedicated template
+      template:
+        "systems/fvtt-elemental/templates/attribute_roll_difficulty.hbs",
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,
@@ -698,6 +699,7 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
     return {
       theme: game.elemental.current_theme,
       dif_roll: true,
+      title: game.i18n.localize("Elemental.DIFRoll"),
     };
   }
 }

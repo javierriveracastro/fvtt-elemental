@@ -1,0 +1,17 @@
+<form class="elemental-css">
+    <div class="{{theme.text_attribute}}">
+        {{title}}
+    </div>
+    <div class="{{theme.roll_options_card}} mt-2">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Difficulty" }}</span>
+        <div>
+            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="1">1</span>
+            <span class="{{theme.roll_option_selected}} elemental-difficulty-selection" data-value="2">2</span>
+            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="3">3</span>
+            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="4">4</span>
+            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="5">5</span>
+            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="6">6</span>
+        </div>
+    </div>
+    {{>"systems/fvtt-elemental/templates/roll_dialog_modifiers_foot.hbs"}}
+</form>
