@@ -2,7 +2,11 @@
 /* global foundry, game, FormApplication, canvas */
 
 import { StatCheck } from "./stat-check.js";
-import { AttributeRoll, AttributeBaseRoll } from "./attribute-check.js";
+import {
+  AttributeRoll,
+  AttributeBaseRoll,
+  DifficultyRoll,
+} from "./attribute-check.js";
 
 export class StatCheckDialog extends FormApplication {
   constructor(actor, derived_stat) {
@@ -671,7 +675,7 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
   async _updateObject(ev, form_data) {
     const options = this.collect_roll_options();
     options.difficulty = this.selected_difficulty;
-    const roll = new AttributeRoll("", {}, options);
+    const roll = new DifficultyRoll("", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);

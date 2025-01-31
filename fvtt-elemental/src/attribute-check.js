@@ -13,7 +13,6 @@ export class AttributeRoll extends Roll {
     let base_formula = generate_roll_formula(options, badges);
     super(base_formula, data, options);
     this.originating_roll = undefined;
-    console.log(options);
     if (options.originating_roll) {
       fromUuid(options.originating_roll).then((message) => {
         this.originating_roll = message.rolls[0];
@@ -154,19 +153,25 @@ export class AttributeBaseRoll extends Roll {
       await this.evaluate({ async: true });
     }
     const chatData = {
+      ...this.render_data,
       formula: isPrivate ? "???" : this._formula,
       flavor: isPrivate ? null : flavor,
-      user: game.user.id,
       tooltip: isPrivate ? "" : await this.getTooltip(),
       total: isPrivate ? "?" : Math.round(this.total * 100) / 100,
+      user: game.user.id,
       title: this.title,
       theme: game.elemental.current_theme,
+    };
+    return renderTemplate(template, chatData);
+  }
+
+  get render_data() {
+    return {
       badges: this.badges,
       exploded: this.exploded,
       originating_roll: this.originating_roll,
       result_div: this.result_div,
     };
-    return renderTemplate(template, chatData);
   }
 
   get title() {
@@ -178,10 +183,10 @@ export class AttributeBaseRoll extends Roll {
       return "";
     }
     let positive_total = this.originating_roll.total;
-    let oposing_total = this.total;
+    let opposing_total = this.total;
     if (this.originating_roll.is_difficulty_roll) {
       positive_total = this.total;
-      oposing_total = this.originating_roll.total;
+      opposing_total = this.originating_roll.total;
     }
     let critical = "";
     let critical_class_changes = "";
@@ -189,9 +194,9 @@ export class AttributeBaseRoll extends Roll {
       critical = game.i18n.localize("Elemental.Rolls.Critical");
       critical_class_changes = " elemental-show-journal cursor-pointer";
     }
-    if (positive_total > oposing_total) {
+    if (positive_total > opposing_total) {
       return `<div class="${game.elemental.current_theme.result_success}${critical_class_changes}" data-journal="wA8KZqiXQGXhwfsG">${critical} ${game.i18n.localize("Elemental.Rolls.Success")}</div>`;
-    } else if (positive_total < oposing_total) {
+    } else if (positive_total < opposing_total) {
       return `<div class="${game.elemental.current_theme.result_failure}${critical_class_changes}" data-journal="SPVAUenofS7PCwuy">${critical} ${game.i18n.localize("Elemental.Rolls.Failure")}</div>`;
     }
     return `<div class="${game.elemental.current_theme.result_draw} elemental-show-journal cursor-pointer" data-journal="H4Inh1tYk6HX8vZk">${game.i18n.localize("Elemental.Rolls.Tie")}</div>`;
@@ -235,6 +240,25 @@ export class AttributeBaseRoll extends Roll {
       }
     }
     return exploded;
+  }
+}
+
+export class DifficultyRoll extends AttributeBaseRoll {
+  get render_data() {
+    return {
+      badges: this.badges,
+      exploded: this.exploded,
+      originating_roll: this.originating_roll,
+      result_div: this.result_div,
+      is_difficulty_roll: true,
+    };
+  }
+  get title() {
+    let title = game.i18n.localize("Elemental.Difficulty");
+    if (this.originating_roll) {
+      title += ` vs (${this.originating_roll.total})`;
+    }
+    return title;
   }
 }
 

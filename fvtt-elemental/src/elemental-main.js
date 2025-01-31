@@ -15,6 +15,7 @@ import {
   AttributeRoll,
   AttributeBaseRoll,
   start_new_diff_roll,
+  DifficultyRoll,
 } from "./attribute-check.js";
 import { addChatMessageListeners } from "./chat_messages_listeners.js";
 import { change_condition_menu } from "./tokenHud.js";
@@ -32,6 +33,7 @@ Hooks.on("init", () => {
   CONFIG.Dice.rolls.push(StatCheck);
   CONFIG.Dice.rolls.push(AttributeRoll);
   CONFIG.Dice.rolls.push(AttributeBaseRoll);
+  CONFIG.Dice.rolls.push(DifficultyRoll);
 
   CONFIG.statusEffects = [
     {
