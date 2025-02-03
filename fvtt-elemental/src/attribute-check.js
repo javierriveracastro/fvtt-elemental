@@ -1,7 +1,11 @@
 // Class that represents an attribute check
 /* global Roll, game, renderTemplate, fromUuid */
 
-import { AttributeRollDialog, DifficultyRollDialog } from "./roll-dialog.js";
+import {
+  AttributeRollDialog,
+  DifficultyRollDialog,
+  SkillRollDialog,
+} from "./roll-dialog.js";
 
 /*
  * Old class used for all Attribute Rolls, this should be removed
@@ -269,7 +273,7 @@ export function start_new_diff_roll(origin = "") {
 }
 
 export function start_new_opposite_roll(actor, origin = "") {
-  const opposing_roll = new AttributeRollDialog(actor);
+  const opposing_roll = new SkillRollDialog(actor);
   opposing_roll.originating_roll = origin;
   opposing_roll.resist_roll = true;
   opposing_roll.render(true);
