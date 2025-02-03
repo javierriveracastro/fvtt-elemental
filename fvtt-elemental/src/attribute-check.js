@@ -2,7 +2,6 @@
 /* global Roll, game, renderTemplate, fromUuid */
 
 import {
-  AttributeRollDialog,
   DifficultyRollDialog,
   SkillRollDialog,
 } from "./roll-dialog.js";
