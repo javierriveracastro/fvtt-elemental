@@ -1,8 +1,7 @@
 // Skill document and DataModel classes
-/* globals foundry, Item */
+/* global foundry, Item, game */
 
 export class SkillDataModel extends foundry.abstract.TypeDataModel {
-  // noinspection JSUnusedGlobalSymbols
   static defineSchema() {
     const { fields } = foundry.data;
     return {
