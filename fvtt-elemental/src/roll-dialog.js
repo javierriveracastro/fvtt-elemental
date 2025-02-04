@@ -622,16 +622,6 @@ export class SkillRollDialog extends BaseAttributeRollDialog {
     return options;
   }
 
-  // eslint-disable-next-line no-unused-vars
-  async _updateObject(ev, form_data) {
-    const options = this.collect_roll_options();
-    const roll = new AttributeRoll("", {}, options);
-    await roll.evaluate();
-    roll.toMessage().catch((err) => {
-      console.error("Error while rolling: ", err);
-    });
-  }
-
   activateListeners(html) {
     super.activateListeners(html);
     html.find(".elemental-skill-selection").click((ev) => {
@@ -705,5 +695,49 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
       dif_roll: true,
       title: game.i18n.localize("Elemental.DIFRoll"),
     };
+  }
+}
+
+export class DamageRoll extends SkillRollDialog {
+  constructor(actor, attribute, options = {}) {
+    super(actor, attribute, options);
+    this.damage_mod = options.damage_mod;
+  }
+
+  get skills() {
+    return this.actor.skills().filter((skill) => {
+      return skill.system.modify_damage && !skill.system.is_flaw;
+    });
+  }
+
+  static get defaultOptions() {
+    // Replace template when ready
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
+    });
+  }
+
+  async getData(options) {
+    let data = await super.getData(options);
+    return {
+      ...data,
+      damage_roll: true, // Probably should be removed after a dedicated template is done
+      damage_mod: this.damage_mod,
+    };
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  async _updateObject(ev, form_data) {
+    const options = this.collect_roll_options();
+    options.damage = this.damage_mod;
+    const roll = new AttributeRoll("", {}, options);
+    await roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
   }
 }
