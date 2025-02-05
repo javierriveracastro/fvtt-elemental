@@ -1,0 +1,28 @@
+<form class="elemental-css">
+    <div class="{{theme.text_attribute}}">
+        {{ localize "Elemental.DamageRoll" }} - {{actor.name}}
+    </div>
+    <div class="{{theme.roll_options_card}} mt-2">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.DamageValue" }}</span>
+        <div>
+            <span class="{{theme.roll_option_selected}} elemental-damage-selection" data-value="{{damage_mod}}">
+                {{damage_mod}}
+            </span>
+        </div>
+    </div>
+    <div class="{{theme.roll_options_card}} mt-2">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.TargetModifiers" }}</span>
+        <div>
+            {{#each target_mods}}
+                <span class="{{#if this.checked}}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if}}
+                    elemental-target-modifier-selection" data-value="{{this.value}}">
+                    {{this.name}}
+                </span>
+            {{/each}}
+        </div>
+    </div>
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/attribute.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/flaws_conditions.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/skills.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs" }}
+</form>

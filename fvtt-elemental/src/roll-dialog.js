@@ -713,7 +713,7 @@ export class DamageRoll extends SkillRollDialog {
   static get defaultOptions() {
     // Replace template when ready
     return foundry.utils.mergeObject(super.defaultOptions, {
-      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs",
+      template: "systems/fvtt-elemental/templates/attribute_roll_damage.hbs",
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,

@@ -1,6 +1,8 @@
-{{#> "systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs"}}
-    {{#*inline "attributes"}}
-        {{>"systems/fvtt-elemental/templates/attribute_roll_section.hbs"}}
-    {{/inline}}
-    {{#*inline "skills"}}{{/inline}}
-{{/"systems/fvtt-elemental/templates/attribute_roll_dialog_layout.hbs"}}
+<form class="elemental-css">
+    <div class="{{theme.text_attribute}}">
+        {{ localize "Elemental.AttributeRoll" }} - {{actor.name}}
+    </div>
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/attribute.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/flaws_conditions.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs" }}
+</form>

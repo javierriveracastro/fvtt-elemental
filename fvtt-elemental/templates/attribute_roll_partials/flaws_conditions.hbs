@@ -1,0 +1,25 @@
+{{#if flaws}}
+    <div class="{{theme.roll_options_card}} mt-2">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Flaws"}}</span>
+        <div>
+            {{#each flaws}}
+                <span class="{{../theme.roll_option_unselected}} elemental-flaw-selection" data-name="{{this.name}}" data-value="{{this.system.roll_modifier}}">
+                    {{this.name}}
+                </span>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+{{# if conditionals }}
+    <div class="{{theme.roll_options_card}} mt-2">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Conditions" }}</span>
+        <div>
+            {{#each conditionals}}
+                <span class="{{../theme.roll_option_selected}}
+                        elemental-conditional-selection" data-value="{{this.value}}" data-name="{{this.name}}">
+                    {{this.name}}
+                </span>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
