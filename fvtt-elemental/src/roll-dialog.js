@@ -6,6 +6,7 @@ import {
   AttributeRoll,
   AttributeBaseRoll,
   DifficultyRoll,
+  DamageRoll,
 } from "./attribute-check.js";
 
 export class StatCheckDialog extends FormApplication {
@@ -698,7 +699,7 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
   }
 }
 
-export class DamageRoll extends SkillRollDialog {
+export class DamageRollDialog extends SkillRollDialog {
   constructor(actor, attribute, options = {}) {
     super(actor, attribute, options);
     this.damage_mod = options.damage_mod;
@@ -725,7 +726,6 @@ export class DamageRoll extends SkillRollDialog {
     let data = await super.getData(options);
     return {
       ...data,
-      damage_roll: true, // Probably should be removed after a dedicated template is done
       damage_mod: this.damage_mod,
     };
   }
@@ -734,7 +734,7 @@ export class DamageRoll extends SkillRollDialog {
   async _updateObject(ev, form_data) {
     const options = this.collect_roll_options();
     options.damage = this.damage_mod;
-    const roll = new AttributeRoll("", {}, options);
+    const roll = new DamageRoll("", {}, options);
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);

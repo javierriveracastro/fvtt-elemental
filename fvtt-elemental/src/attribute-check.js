@@ -1,10 +1,7 @@
 // Class that represents an attribute check
 /* global Roll, game, renderTemplate, fromUuid */
 
-import {
-  DifficultyRollDialog,
-  SkillRollDialog,
-} from "./roll-dialog.js";
+import { DifficultyRollDialog, SkillRollDialog } from "./roll-dialog.js";
 
 /*
  * Old class used for all Attribute Rolls, this should be removed
@@ -262,6 +259,19 @@ export class DifficultyRoll extends AttributeBaseRoll {
       title += ` vs (${this.originating_roll.total})`;
     }
     return title;
+  }
+}
+
+export class DamageRoll extends AttributeBaseRoll {
+  get title() {
+    return `${this.actor_name} ${game.i18n.localize("Elemental.DamageRoll")}`;
+  }
+
+  get render_data() {
+    return {
+      ...super.render_data,
+      is_damage_roll: true,
+    };
   }
 }
 

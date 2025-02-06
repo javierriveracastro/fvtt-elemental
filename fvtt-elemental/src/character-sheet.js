@@ -6,7 +6,7 @@ import {
   StatCheckDialog,
   BaseAttributeRollDialog,
   SkillRollDialog,
-  DamageRoll,
+  DamageRollDialog
 } from "./roll-dialog.js";
 import { BASE_THEME as current_theme } from "./theme.js";
 
@@ -98,7 +98,7 @@ export class ElementalCharacterSheet extends ActorSheet {
       if (isNaN(damage_mod)) {
         damage_mod = 0;
       }
-      const damage_roll_dialog = new DamageRoll(this.actor, attribute_id, {
+      const damage_roll_dialog = new DamageRollDialog(this.actor, attribute_id, {
         damage_mod: damage_mod,
       });
       damage_roll_dialog.render(true);
