@@ -22,7 +22,7 @@ export const BASE_THEME = {
     "text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
   info_label: "p-1",
   skill_box:
-    "mt-2 block p-2 bg-stone-300 border border-stone-400 rounded-lg shadow min-h-40",
+    "mt-2 block p-2 bg-stone-300 border border-stone-400 rounded-lg shadow-sm min-h-40",
   refresh_button:
     "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 me-2 mb-2",
   skill_button:
@@ -44,21 +44,21 @@ export const BASE_THEME = {
   result_draw:
     "text-gray-800 bg-gray-50 font-medium rounded-lg text-center mt-2 p-1",
   roll_title: "mb-2 text-gray-900 text-lg font-bold",
-  roll_options_card: "p-2 bg-white border border-gray-200 rounded-lg shadow",
+  roll_options_card: "p-2 bg-white border border-gray-200 rounded-lg shadow-sm",
   roll_options_title: "mb-4 text-lg font-bold tracking-tight text-gray-900",
   roll_option_unselected:
-    "bg-gray-100 text-gray-800 text-xs me-1 px-2.5 py-0.5 rounded border border-gray-500 border-solid whitespace-nowrap leading-loose",
+    "bg-gray-100 text-gray-800 text-xs me-1 px-2.5 py-0.5 rounded-sm border border-gray-500 border-solid whitespace-nowrap leading-loose",
   roll_option_selected:
-    "bg-blue-100 text-blue-800 text-xs me-1 px-2.5 py-0.5 rounded border border-blue-500 border-solid whitespace-nowrap leading-loose",
+    "bg-blue-100 text-blue-800 text-xs me-1 px-2.5 py-0.5 rounded-sm border border-blue-500 border-solid whitespace-nowrap leading-loose",
   modifier_toast:
-    "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2",
+    "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow-sm py--0.5 px-2",
   close_icon:
     "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 w-4 h-4 flex p-0",
   modifier_badge:
-    "justify-center text-blue-500 bg-blue-100 rounded-lg shadow py--0.5 px-2 whitespace-nowrap leading-loose",
+    "justify-center text-blue-500 bg-blue-100 rounded-lg shadow-sm py--0.5 px-2 whitespace-nowrap leading-loose",
   checkbox:
-    "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2",
-  item_picture: "w-7 h-7 rounded",
+    "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2",
+  item_picture: "w-7 h-7 rounded-sm",
   item_name:
     "self-center border-solid border-0 border-b-2 border-stone-200 grow",
   quantity_name: "self-center",
