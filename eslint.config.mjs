@@ -1,10 +1,16 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-
-/** @type {import('eslint').Linter.Config[]} */
+// eslint.config.js
 export default [
   {
-    languageOptions: { globals: globals.browser },
+    rules: {
+      "no-duplicate-imports": "error",
+      "prefer-const": "warn",
+      "no-useless-assignment": "warn",
+      complexity: ["warn", 20],
+      "consistent-return": "warn",
+      eqeqeq: "warn",
+      "no-console": ["error", { allow: ["warn", "error", "info"] }],
+      "require-await": "warn",
+      "no-else-return": "warn",
+    },
   },
-  pluginJs.configs.recommended,
 ];
