@@ -9,7 +9,9 @@ words = [
     "hbs",
     "xhwfs",
     "xmark",
-    "unselected"
+    "unselected",
+    "globals",
+    "tailwindcss"
 ]
 flag_words = []
 ignore_paths = []
