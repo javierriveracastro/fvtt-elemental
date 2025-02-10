@@ -2,11 +2,11 @@
 /* globals ActorSheet, game, foundry */
 
 import {
-  AttributeRollDialog,
   StatCheckDialog,
   BaseAttributeRollDialog,
   SkillRollDialog,
-  DamageRollDialog
+  DamageRollDialog,
+  WeaponRollDialog,
 } from "./roll-dialog.js";
 import { BASE_THEME as current_theme } from "./theme.js";
 
@@ -81,11 +81,9 @@ export class ElementalCharacterSheet extends ActorSheet {
     jquery.find(".elemental-roll-attack").on("click", (ev) => {
       const weapon = this.actor.items.get(ev.currentTarget.dataset.itemId);
       const attribute = weapon.system.heavy_weapon ? "awareness" : "agility";
-      const attack_roll_dialog = new AttributeRollDialog(
-        this.actor,
-        attribute,
-        { weapon: weapon },
-      );
+      const attack_roll_dialog = new WeaponRollDialog(this.actor, attribute, {
+        weapon: weapon,
+      });
       attack_roll_dialog.render(true);
     });
     jquery.find(".elemental-roll-damage").on("click", (ev) => {
@@ -98,9 +96,13 @@ export class ElementalCharacterSheet extends ActorSheet {
       if (isNaN(damage_mod)) {
         damage_mod = 0;
       }
-      const damage_roll_dialog = new DamageRollDialog(this.actor, attribute_id, {
-        damage_mod: damage_mod,
-      });
+      const damage_roll_dialog = new DamageRollDialog(
+        this.actor,
+        attribute_id,
+        {
+          damage_mod: damage_mod,
+        },
+      );
       damage_roll_dialog.render(true);
     });
   }

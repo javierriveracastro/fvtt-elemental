@@ -33,7 +33,7 @@ export class StatCheckDialog extends FormApplication {
    * @return {object} Data including theme information
    */
   async getData(options) {
-    const data = super.getData(options);
+    const data = await super.getData(options);
     return {
       ...data,
       theme: game.elemental.current_theme,
@@ -42,7 +42,6 @@ export class StatCheckDialog extends FormApplication {
     };
   }
 
-  // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
     const roll_string = ev.submitter.value === "2d" ? "d6*d6" : "d6*d6*d6";
     const difficulty_number = this.actor.system[`current_${this.derived_stat}`];
@@ -72,7 +71,6 @@ export class AttributeRollDialog extends FormApplication {
     this.modfiers = [];
     this.conditional_modifiers_active = {};
     this.flaws_active = {};
-    // eslint-disable-next-line no-prototype-builtins
     this.damage_mod = options.hasOwnProperty("damage_mod")
       ? options.damage_mod // jshint ignore:line
       : null;
@@ -83,7 +81,6 @@ export class AttributeRollDialog extends FormApplication {
       this.selected_skill = options.skill_id;
     } else if (options.weapon) {
       const skills = actor.skills_by_name(options.weapon.system.default_skill);
-      console.log(skills);
       if (skills.length > 0) {
         this.selected_skill = skills[0].id;
       }
@@ -101,10 +98,10 @@ export class AttributeRollDialog extends FormApplication {
   }
 
   async getData(options) {
-    let data = super.getData(options);
+    let data = await getData(options);
     const attribute_names = [];
     const conditionals = [];
-    for (let attribute of game.elemental.attributes) {
+    for (const attribute of game.elemental.attributes) {
       attribute_names.push({
         english_name: attribute,
         name: game.i18n.localize(`Elemental.Attributes.${attribute}`),
@@ -230,7 +227,6 @@ export class AttributeRollDialog extends FormApplication {
     return target_mods;
   }
 
-  // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
     const options = {
       actor_name: this.actor ? this.actor.name : "",
@@ -357,7 +353,7 @@ export class AttributeRollDialog extends FormApplication {
   }
 
   select_one(html, element, class_name, property) {
-    for (let current_element of html.find(`.${class_name}`)) {
+    for (const current_element of html.find(`.${class_name}`)) {
       if (current_element === element) {
         current_element.className =
           game.elemental.current_theme.roll_option_selected;
@@ -393,7 +389,6 @@ export class AttributeRollDialog extends FormApplication {
  * Class for common Attribute Rolls that is also the base case for other rolls.
  */
 export class BaseAttributeRollDialog extends FormApplication {
-  // eslint-disable-next-line no-unused-vars
   constructor(actor, attribute, options = {}) {
     // options used in sub-classes
     super();
@@ -417,10 +412,10 @@ export class BaseAttributeRollDialog extends FormApplication {
   }
 
   async getData(options) {
-    let data = super.getData(options);
+    const data = await super.getData(options);
     const attribute_names = [];
     const conditionals = [];
-    for (let attribute of game.elemental.attributes) {
+    for (const attribute of game.elemental.attributes) {
       attribute_names.push({
         english_name: attribute,
         name: game.i18n.localize(`Elemental.Attributes.${attribute}`),
@@ -478,7 +473,6 @@ export class BaseAttributeRollDialog extends FormApplication {
     });
   }
 
-  // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
     const options = this.collect_roll_options();
     const roll = new AttributeBaseRoll("", {}, options);
@@ -532,7 +526,7 @@ export class BaseAttributeRollDialog extends FormApplication {
   }
 
   select_one(html, element, class_name, property) {
-    for (let current_element of html.find(`.${class_name}`)) {
+    for (const current_element of html.find(`.${class_name}`)) {
       if (current_element === element) {
         current_element.className =
           game.elemental.current_theme.roll_option_selected;
@@ -605,7 +599,7 @@ export class SkillRollDialog extends BaseAttributeRollDialog {
   }
 
   async getData(options) {
-    let data = await super.getData(options);
+    const data = await super.getData(options);
     return {
       ...data,
       skills: this.skills,
@@ -662,7 +656,6 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
     return [];
   }
 
-  // eslint-disable-next-line no-unused-vars
   async _updateObject(ev, form_data) {
     const options = this.collect_roll_options();
     options.difficulty = this.selected_difficulty;
@@ -689,8 +682,7 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
     );
   }
 
-  // eslint-disable-next-line no-unused-vars
-  async getData(options) {
+  getData(options) {
     return {
       theme: game.elemental.current_theme,
       dif_roll: true,
@@ -723,14 +715,19 @@ export class DamageRollDialog extends SkillRollDialog {
   }
 
   async getData(options) {
-    let data = await super.getData(options);
+    const data = await super.getData(options);
     return {
       ...data,
       damage_mod: this.damage_mod,
     };
   }
 
-  // eslint-disable-next-line no-unused-vars
+  collect_roll_options() {
+    const options = super.collect_roll_options();
+    options.range_modifier = this.selected_range;
+    return options;
+  }
+
   async _updateObject(ev, form_data) {
     const options = this.collect_roll_options();
     options.damage = this.damage_mod;
@@ -738,6 +735,86 @@ export class DamageRollDialog extends SkillRollDialog {
     await roll.evaluate();
     roll.toMessage().catch((err) => {
       console.error("Error while rolling: ", err);
+    });
+  }
+}
+
+export class WeaponRollDialog extends SkillRollDialog {
+  constructor(actor, attribute, options = {}) {
+    super(actor, attribute, options);
+    this.weapon = options.weapon;
+    this.selected_range = 0;
+    this.selected_skill = null;
+    if (options.weapon) {
+      const skills = actor.skills_by_name(options.weapon.system.default_skill);
+      if (skills.length > 0) {
+        this.selected_skill = skills[0].id;
+      }
+    }
+  }
+
+  async getData() {
+    const data = await super.getData();
+    return this.add_weapon_data(data);
+  }
+
+  collect_roll_options() {
+    const options = super.collect_roll_options();
+    options.range_modifier = this.selected_range;
+    return options;
+  }
+
+  add_weapon_data(data) {
+    const new_data = { weapon_data: {} };
+    if (this.weapon.system.range) {
+      new_data.weapon_data.ranges = [
+        { mod: -1, range: this.weapon.system.range * 2, selected: false },
+        { mod: -2, range: this.weapon.system.range * 3, selected: false },
+        { mod: -3, range: this.weapon.system.range * 4, selected: false },
+      ];
+      if (game.user.targets.size > 0) {
+        const distance = canvas.grid.measurePath([
+          this.actor.getActiveTokens()[0].center,
+          game.user.targets.first().center,
+        ]);
+        if (distance.distance > this.weapon.system.range * 3) {
+          new_data.weapon_data.ranges[2].selected = true;
+          this.selected_range = -3;
+        } else if (distance.distance > this.weapon.system.range * 2) {
+          new_data.weapon_data.ranges[1].selected = true;
+          this.selected_range = -2;
+        } else if (distance.distance >= this.weapon.system.range) {
+          new_data.weapon_data.ranges[0].selected = true;
+          this.selected_range = -1;
+        }
+      }
+    }
+    return { ...data, ...new_data };
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-range-selection").click((ev) => {
+      this.select_range(ev.currentTarget, html);
+    });
+  }
+
+  select_range(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-range-selection",
+      "selected_range",
+    );
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs", // Change when template is done
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
     });
   }
 }
