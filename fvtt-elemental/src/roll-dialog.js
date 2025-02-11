@@ -484,11 +484,15 @@ export class WeaponRollDialog extends SkillRollDialog {
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs", // Change when template is done
+      template: "systems/fvtt-elemental/templates/attribute_roll_weapon.hbs", // Change when template is done
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,
       width: 500,
     });
+  }
+
+  get title() {
+    return `${game.i18n.localize("Elemental.AttributeRoll")} - ${this.weapon.name}, ${this.actor.name}`;
   }
 }

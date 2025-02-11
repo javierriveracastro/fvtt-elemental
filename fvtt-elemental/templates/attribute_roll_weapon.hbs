@@ -1,0 +1,12 @@
+<form class="elemental-css">
+    <div class="{{theme.text_attribute}}">
+        {{ title }}
+    </div>
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/attribute.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/flaws_conditions.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/skills.hbs" }}
+    {{# if weapon_data.ranges }}
+        {{> "systems/fvtt-elemental/templates/attribute_roll_partials/range.hbs" }}
+    {{/if}}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs" }}
+</form>

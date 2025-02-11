@@ -103,6 +103,7 @@ Hooks.on("init", () => {
     "systems/fvtt-elemental/templates/attribute_roll_partials/flaws_conditions.hbs",
     "systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs",
     "systems/fvtt-elemental/templates/attribute_roll_partials/skills.hbs",
+    "systems/fvtt-elemental/templates/attribute_roll_partials/range.hbs"
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
     console.info("Elemental templates preloaded");
