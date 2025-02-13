@@ -23,7 +23,7 @@ export class ElementalCharacterSheet extends ActorSheet {
     return "/systems/fvtt-elemental/templates/character.hbs";
   }
 
-  async getData(options) {
+  getData(options) {
     const data = super.getData(options);
     return {
       ...data,
