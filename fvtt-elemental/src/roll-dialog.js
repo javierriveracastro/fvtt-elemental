@@ -495,3 +495,43 @@ export class WeaponRollDialog extends SkillRollDialog {
     return `${game.i18n.localize("Elemental.AttributeRoll")} - ${this.weapon.name}, ${this.actor.name}`;
   }
 }
+
+export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
+  constructor(actor, attribute, options = {}) {
+    super(actor, attribute, options);
+    this.selected_power = options.power_id ? options.power_id : null;
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_power.hbs",
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
+    });
+  }
+
+  get powers() {
+    return this.actor.powers;
+  }
+
+  async getData(options) {
+    const data = await super.getData(options);
+    return {
+      ...data,
+      powers: this.powers,
+      selected_power: this.selected_power,
+    };
+  }
+
+  collect_roll_options() {
+    const options = super.collect_roll_options();
+    if (this.selected_power) {
+      const power = this.actor.items.get(this.selected_power);
+      options.power = power.system.roll_modifier;
+      options.power_name = power.name;
+    }
+    return options;
+  }
+}
