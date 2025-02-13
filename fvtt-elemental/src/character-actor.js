@@ -70,7 +70,7 @@ export class ElementalActor extends Actor {
 
   get skill_xp() {
     let skill_xp = 0;
-    for (let skill of this.skills()) {
+    for (const skill of this.skills()) {
       if (skill.system.is_flaw) {
         skill_xp -= skill.system.score;
       } else {
@@ -104,6 +104,12 @@ export class ElementalActor extends Actor {
       );
     });
   }
+  
+  get powers() {
+    return this.items.filter((item) => {
+      return item.type === "power";
+    });
+  }
 
   get will_skills() {
     return this.skills("will");
@@ -114,13 +120,13 @@ export class ElementalActor extends Actor {
     const equipment_list = this.items.filter((item) => {
       return item.type === "equipment";
     });
-    for (let equipment of equipment_list) {
+    for (const equipment of equipment_list) {
       if (!equipment_groups.hasOwnProperty(equipment.system.elemental_type)) {
         const extra_name =
           equipment.system.elemental_type === "armor"
             ? `  (${this.armor})`
             : "";
-        let formated_mane =
+        const formated_mane =
           equipment.system.elemental_type.charAt(0).toUpperCase() +
           equipment.system.elemental_type.slice(1).toLowerCase();
         equipment_groups[equipment.system.elemental_type] = {
@@ -161,7 +167,7 @@ export class ElementalActor extends Actor {
 
   get armor() {
     let armor = 0;
-    for (let item of this.items.filter((item) => {
+    for (const item of this.items.filter((item) => {
       return item.type === "equipment";
     })) {
       armor += item.system.armor;
