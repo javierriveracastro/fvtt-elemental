@@ -7,30 +7,37 @@
             <span class="w-full grid grid-cols-2 gap-2">
                 <span class="flex">
                     <label class="w-1/2 {{theme.text_attribute}}">
+                        {{localize "Elemental.ItemSheet.Value"}}
+                    </label>
+                    <input type="text" name="system.score" value="{{item.system.score}}"
+                        class="{{theme.small_input}}">
+                </span>
+                <span class="flex">
+                    <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.PowerSheet.Difficulty"}}
                     </label>
-                    <input type="text" name="system.score" value="{{item.system.difficulty}}"
+                    <input type="text" name="system.difficulty" value="{{item.system.difficulty}}"
                         class="{{theme.small_input}}">
                 </span>
                 <span class="flex">
                     <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.PowerSheet.CastingTime"}}
                     </label>
-                    <input type="text" name="system.score" value="{{item.system.casting_time}}"
+                    <input type="text" name="system.casting_time" value="{{item.system.casting_time}}"
                         class="{{theme.three_quarters_input}}">
                 </span>
                 <span class="flex">
                     <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.PowerSheet.Range"}}
                     </label>
-                    <input type="text" name="system.score" value="{{item.system.range}}"
+                    <input type="text" name="system.range" value="{{item.system.range}}"
                         class="{{theme.small_input}}">
                 </span>
                 <span class="flex">
                     <label class="w-1/2 {{theme.text_attribute}}">
                         {{localize "Elemental.PowerSheet.Duration"}}
                     </label>
-                    <input type="text" name="system.score" value="{{item.system.duration}}"
+                    <input type="text" name="system.duration" value="{{item.system.duration}}"
                         class="{{theme.three_quarters_input}}">
                 </span>
                 <span class="flex">

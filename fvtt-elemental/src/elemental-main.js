@@ -6,7 +6,7 @@ import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
 import {
-  ElementaItemSheet,
+  ElementalItemSheet,
   ElementalEquipmentSheet,
   ElementalPowerSheet,
 } from "./item-sheet.js";
@@ -74,7 +74,7 @@ Hooks.on("init", () => {
   });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("elemental", ElementaItemSheet, {
+  Items.registerSheet("elemental", ElementalItemSheet, {
     types: ["skill"],
     makeDefault: true,
     label: "Elemental.ItemElementalSheet",

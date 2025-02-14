@@ -1,7 +1,7 @@
 // Item sheet
 /* globals ItemSheet, game, foundry */
 
-export class ElementaItemSheet extends ItemSheet {
+export class ElementalItemSheet extends ItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 600,
