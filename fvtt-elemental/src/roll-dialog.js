@@ -529,7 +529,7 @@ export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
     const options = super.collect_roll_options();
     if (this.selected_power) {
       const power = this.actor.items.get(this.selected_power);
-      options.power = power.system.roll_modifier;
+      options.power = power.system.score;
       options.power_name = power.name;
     }
     return options;
