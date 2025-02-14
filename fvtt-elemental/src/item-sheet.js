@@ -2,7 +2,6 @@
 /* globals ItemSheet, game, foundry */
 
 export class ElementaItemSheet extends ItemSheet {
-  // noinspection JSUnusedGlobalSymbols
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 600,
@@ -14,7 +13,7 @@ export class ElementaItemSheet extends ItemSheet {
     return "/systems/fvtt-elemental/templates/item.hbs";
   }
 
-  async getData(options) {
+  getData(options) {
     const data = super.getData(options);
     const attributes_select = {
       agility: game.i18n.localize("Elemental.Attributes.Agility"),
@@ -42,7 +41,7 @@ export class ElementalEquipmentSheet extends ItemSheet {
     return "/systems/fvtt-elemental/templates/equipment.hbs";
   }
 
-  async getData(options) {
+  getData(options) {
     const data = super.getData(options);
     const equipment_types_select = {
       weapon: game.i18n.localize("Elemental.EquipmentTypes.Weapon"),
@@ -80,7 +79,7 @@ export class ElementalPowerSheet extends ItemSheet {
     return "/systems/fvtt-elemental/templates/power.hbs";
   }
 
-  async getData(options) {
+  getData(options) {
     const data = super.getData(options);
     return {
       ...data,
