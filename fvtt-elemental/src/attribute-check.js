@@ -226,6 +226,11 @@ function generate_roll_formula(options, badges) {
     const sign = options.skill > 0 ? "+" : "";
     badges.push(`${sign}${options.skill} ${options.skill_name}`);
   }
+  if (options.power) {
+    base_formula += ` + ${options.power}`;
+    const sign = options.power > 0 ? "+" : "";
+    badges.push(`${sign}${options.power} ${options.power_name}`);
+  }
   if (options.difficulty) {
     base_formula += ` + ${options.difficulty}`;
     badges.push(

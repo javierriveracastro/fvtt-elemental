@@ -534,4 +534,20 @@ export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
     }
     return options;
   }
+  
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-power-selection").click((ev) => {
+      this.select_power(ev.currentTarget, html);
+    });
+  }
+
+  select_power(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-power-selection",
+      "selected_power",
+    );
+  }
 }
