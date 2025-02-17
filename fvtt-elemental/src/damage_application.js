@@ -4,7 +4,7 @@
 export function apply_damage(damage) {
   const targets = get_damage_target();
   const damage_log = [];
-  for (let actor of targets) {
+  for (const actor of targets) {
     damage_log.push(damage_actor(damage, actor));
   }
   show_damage_log(damage_log).catch((err) =>
@@ -13,8 +13,8 @@ export function apply_damage(damage) {
 }
 
 function get_targets_from_array(array) {
-  let targets = [];
-  for (let target of array) {
+  const targets = [];
+  for (const target of array) {
     if (target.document.actor.testUserPermission(game.user, "OWNER")) {
       targets.push(target.document.actor);
     } else {
@@ -47,13 +47,6 @@ function damage_actor(damage, actor) {
         console.error(`Error while toggling status: ${err}`);
       });
   }
-  actor.update(
-    {
-      "data.attributes.hp.value": new_health,
-      "data.attributes.hp.max": new_health,
-    },
-    { diff: false },
-  );
   actor.update({ "system.current_health": new_health });
   return {
     name: actor.name,
