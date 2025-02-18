@@ -115,7 +115,9 @@
       "Damage": "Raw damage applied, before armor",
       "Armor": "Armor value subtracted",
       "Final": "Health after damage application",
-      "Undo": "Undo"
+      "Undo": "Undo",
+      "DamageTitle": "Damage/Health",
+      "SpiritTitle": "Spirit"
     },
     "DamageDialog": {
       "Title": "Modify damage",

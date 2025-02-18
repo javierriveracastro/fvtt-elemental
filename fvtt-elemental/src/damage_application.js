@@ -5,7 +5,7 @@ export function apply_damage(damage, target, damage_stat) {
   const adjusted_damage_stat = damage_stat || "current_health";
   let targets;
   if (target) {
-    target;
+    targets = [target];
   } else {
     targets = get_damage_target();
   }
@@ -13,7 +13,13 @@ export function apply_damage(damage, target, damage_stat) {
   for (const actor of targets) {
     damage_log.push(damage_actor(damage, actor, adjusted_damage_stat));
   }
-  show_damage_log(damage_log).catch((err) =>
+  let title = game.i18n.localize("ElementalL.DamageLog.DamageTitle");
+  let hide_armor = false;
+  if (damage_stat === "current_spirit") {
+    title = game.i18n.localize("Elemental.DamageLog.SpiritTitle");
+    hide_armor = true;
+  }
+  show_damage_log(damage_log, title, hide_armor).catch((err) =>
     console.error(`Unable to show damage log: ${err}`),
   );
 }
@@ -73,10 +79,15 @@ function damage_actor(damage, actor, adjusted_damage_stat) {
 /** Shows the damage log
  ** @param damage:log: Array of damages
  **/
-async function show_damage_log(damage_log) {
+async function show_damage_log(damage_log, title, hide_armor) {
   const html = await renderTemplate(
     "systems/fvtt-elemental/templates/damage_log.hbs",
-    { log: damage_log, theme: game.elemental.current_theme },
+    {
+      log: damage_log,
+      theme: game.elemental.current_theme,
+      title: title,
+      hide_armor: hide_armor,
+    },
   );
   ChatMessage.create({
     content: html,

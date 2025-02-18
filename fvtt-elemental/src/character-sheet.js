@@ -76,7 +76,7 @@ export class ElementalCharacterSheet extends ActorSheet {
         const power_roll_dialog = new ArcanePowerRollDialog(
           this.actor,
           "awareness",
-          { power_id: skill.id },
+          { power_id: skill.id, power_difficulty: skill.system.difficulty },
         );
         power_roll_dialog.render(true);
       } else {

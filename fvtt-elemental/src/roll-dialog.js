@@ -7,6 +7,7 @@ import {
   DifficultyRoll,
   DamageRoll,
 } from "./attribute-check.js";
+import { apply_damage } from "./damage_application.js";
 
 export class StatCheckDialog extends FormApplication {
   constructor(actor, derived_stat) {
@@ -500,6 +501,9 @@ export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
   constructor(actor, attribute, options = {}) {
     super(actor, attribute, options);
     this.selected_power = options.power_id ? options.power_id : null;
+    this.power_difficulty = options.power_difficulty
+      ? options.power_difficulty
+      : 1;
   }
 
   static get defaultOptions() {
@@ -534,7 +538,7 @@ export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
     }
     return options;
   }
-  
+
   activateListeners(html) {
     super.activateListeners(html);
     html.find(".elemental-power-selection").click((ev) => {
@@ -549,5 +553,10 @@ export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
       "elemental-power-selection",
       "selected_power",
     );
+  }
+
+  _updateObject(ev, form_data) {
+    super._updateObject(ev, form_data);
+    apply_damage(this.power_difficulty, this.actor, "current_spirit");
   }
 }
