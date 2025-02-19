@@ -6,12 +6,14 @@ words = [
     "eslint",
     "fas",
     "fvtt",
+    "globals",
     "hbs",
+    "tailwindcss",
+    "twel",
+    "unselected",
     "xhwfs",
     "xmark",
-    "unselected",
-    "globals",
-    "tailwindcss"
 ]
 flag_words = []
 ignore_paths = []
+ignore_patterns = []

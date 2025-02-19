@@ -1,15 +1,15 @@
 <div class="elemental-css">
-    <p class="text-center font-bold">{{ title }} log</p>
+    <p class="twel:text-center twel:font-bold">{{ title }} log</p>
     <table>
         <thead>
             <tr>
                 <th>Character</th>
-                <th title="{{ localize "Elemental.DamageLog.Initial" }}" class="text-end">Init</th>
-                <th title="{{ localize "Elemental.DamageLog.Damage" }}" class="text-end">Dmg</th>
+                <th title="{{ localize "Elemental.DamageLog.Initial" }}" class="twel:text-end">Init</th>
+                <th title="{{ localize "Elemental.DamageLog.Damage" }}" class="twel:text-end">Dmg</th>
                 {{# unless hide_armor }}
-                    <th title="{{ localize "Elemental.DamageLog.Armor" }}"class="text-end">Arm</th>
+                    <th title="{{ localize "Elemental.DamageLog.Armor" }}"class="twel:text-end">Arm</th>
                 {{/unless }}
-                <th title="{{ localize "Elemental.DamageLog.Final" }}" class="text-end">Final</th>
+                <th title="{{ localize "Elemental.DamageLog.Final" }}" class="twel:text-end">Final</th>
                 <th></th>
             </tr>
         </thead>
@@ -17,12 +17,12 @@
             {{# each log }}
                 <tr>
                     <td>{{ this.name }}</td>
-                    <td title="{{ localize "Elemental.DamageLog.Initial" }}" class="text-end">{{ this.initial }}</td>
-                    <td title="{{ localize "Elemental.DamageLog.Damage" }}" class="text-end">{{ this.damage }}</td>
+                    <td title="{{ localize "Elemental.DamageLog.Initial" }}" class="twel:text-end">{{ this.initial }}</td>
+                    <td title="{{ localize "Elemental.DamageLog.Damage" }}" class="twel:text-end">{{ this.damage }}</td>
                     {{# unless ../hide_armor }}
-                        <td title="{{ localize "Elemental.DamageLog.Armor" }}" class="text-end">{{ this.armor }}</td>
+                        <td title="{{ localize "Elemental.DamageLog.Armor" }}" class="twel:text-end">{{ this.armor }}</td>
                     {{/unless }}
-                    <td title="{{ localize "Elemental.DamageLog.Final" }}" class="text-end">
+                    <td title="{{ localize "Elemental.DamageLog.Final" }}" class="twel:text-end">
                         {{ this.final }}
                     </td>
                     <td>

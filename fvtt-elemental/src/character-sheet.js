@@ -130,13 +130,13 @@ export class ElementalCharacterSheet extends ActorSheet {
           `elemental-tab-control ${current_theme.tab_inactive}`.split();
       }
     }
-    jquery.find(".tab-content").addClass("hidden");
-    jquery.find(`#${visible_content_id}`).removeClass("hidden");
+    jquery.find(".tab-content").addClass("twel:hidden");
+    jquery.find(`#${visible_content_id}`).removeClass("twel:hidden");
     this.options.current_tab = visible_content_id;
   }
 
   render_active_tab(jquery) {
-    jquery.find(`#${this.options.current_tab}`).removeClass("hidden");
+    jquery.find(`#${this.options.current_tab}`).removeClass("twel:hidden");
     for (const tab of jquery.find(".elemental-tab-control")) {
       if (tab.dataset.tab === this.options.current_tab) {
         tab.classList =

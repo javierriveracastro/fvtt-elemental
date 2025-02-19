@@ -112,7 +112,7 @@ async function undo_damage(ev, message) {
     actor.toggleStatusEffect("dead", { active: false });
   }
   ev.currentTarget.disabled = true;
-  ev.currentTarget.classList.add("hidden");
+  ev.currentTarget.classList.add("twel:hidden");
   ev.currentTarget.parentElement.parentElement.classList.add("line-through");
   await message.update({
     id: message.id,

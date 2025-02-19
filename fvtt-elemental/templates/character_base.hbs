@@ -1,6 +1,6 @@
-<div class="flex flex-col">
-    <div class="grid grid-cols-9 gap-2">
-        <span class="{{theme.text_attribute}} col-span-6">
+<div class="twel:flex twel:flex-col">
+    <div class="twel:grid twel:grid-cols-9 twel:gap-2">
+        <span class="{{theme.text_attribute}} twel:col-span-6">
             {{localize 'Elemental.Attributes.Agility'}}
         </span>
         <button class="elemental-roll-attribute {{theme.refresh_button}}" data-attribute="agility">
@@ -9,7 +9,7 @@
         <input type="text" name="system.agility" value="{{actor.system.agility}}"
                class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.agility_xp}} XP</label>
-        <span class="{{theme.text_derived}} col-span-5">
+        <span class="{{theme.text_derived}} twel:col-span-5">
             {{localize "Elemental.Derived.Move"}}
         </span>
         <button class="elemental-roll-derived {{theme.refresh_button}}" data-derived="move">
@@ -28,9 +28,9 @@
         {{/each}}
     </div>
 </div>
-<div class="flex flex-col">
-    <div class="grid grid-cols-9 gap-2">
-        <span class="{{theme.text_attribute}} col-span-6">
+<div class="twel:flex twel:flex-col">
+    <div class="twel:grid twel:grid-cols-9 twel:gap-2">
+        <span class="{{theme.text_attribute}} twel:col-span-6">
             {{localize 'Elemental.Attributes.Toughness'}}
         </span>
         <button class="elemental-roll-attribute {{theme.refresh_button}}" data-attribute="toughness">
@@ -39,7 +39,7 @@
         <input type="text" name="system.toughness" value="{{actor.system.toughness}}"
                class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.toughness_xp}} XP</label>
-        <span class="{{theme.text_derived}} col-span-5">
+        <span class="{{theme.text_derived}} twel:col-span-5">
             {{localize "Elemental.Derived.Health"}}
         </span>
         <button class="elemental-roll-derived {{theme.refresh_button}}" data-derived="health">
@@ -57,9 +57,9 @@
             {{>"systems/fvtt-elemental/templates/skill_row.hbs" theme=../theme skill=skill}}
         {{/each}}
     </div></div>
-<div class="flex flex-col">
-    <div class="grid grid-cols-9 gap-2">
-        <span class="{{theme.text_attribute}}  col-span-6">
+<div class="twel:flex twel:flex-col">
+    <div class="twel:grid twel:grid-cols-9 twel:gap-2">
+        <span class="{{theme.text_attribute}} twel:col-span-6">
             {{localize 'Elemental.Attributes.Awareness'}}
         </span>
         <button class="elemental-roll-attribute {{theme.refresh_button}}" data-attribute="awareness">
@@ -68,7 +68,7 @@
         <input type="text" name="system.awareness" value="{{actor.system.awareness}}"
                class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.awareness_xp}} XP</label>
-        <span class="{{theme.text_derived}} col-span-5">
+        <span class="{{theme.text_derived}} twel:col-span-5">
             {{localize "Elemental.Derived.Initiative"}}
         </span>
         <button class="elemental-roll-derived {{theme.refresh_button}}" data-derived="initiative">
@@ -87,9 +87,9 @@
         {{/each}}
     </div>
 </div>
-<div class="flex flex-col">
-    <div class="grid grid-cols-9 gap-2">
-        <span class="{{theme.text_attribute}} col-span-6">
+<div class="twel:flex twel:flex-col">
+    <div class="twel:grid twel:grid-cols-9 twel:gap-2">
+        <span class="{{theme.text_attribute}} twel:col-span-6">
             {{localize 'Elemental.Attributes.Will'}}
         </span>
         <button class="elemental-roll-attribute {{theme.refresh_button}}" data-attribute="will">
@@ -97,7 +97,7 @@
         </button>
         <input type="text" name="system.will" value="{{actor.system.will}}" class="{{theme.small_input}}">
         <label class="{{theme.info_label}}">{{actor.will_xp}} XP</label>
-                        <span class="{{theme.text_derived}} col-span-5">
+                        <span class="{{theme.text_derived}} twel:col-span-5">
             {{localize "Elemental.Derived.Spirit"}}
         </span>
         <button class="elemental-roll-derived {{theme.refresh_button}}" data-derived="spirit">

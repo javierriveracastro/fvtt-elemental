@@ -2,66 +2,93 @@
 
 export const BASE_THEME = {
   big_input:
-    "w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
+    `twel:w-full twel:p-4 twel:text-gray-900 twel:border twel:border-gray-300 twel:rounded-lg 
+    twel:bg-gray-50 twel:text-base twel:focus:ring-blue-500 twel:focus:border-blue-500`,
   small_input:
-    "w-10 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
+    `twel:w-10 twel:p-2 twel:text-gray-900 twel:border twel:border-gray-300 
+    twel:rounded-lg twel:bg-gray-50 twel:text-base twel:focus:ring-blue-500 twel:focus:border-blue-500`,
   three_quarters_input:
-    "w-3/4 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
+    `twel:w-3/4 twel:p-2 twel:text-gray-900 twel:border twel:border-gray-300 twel:rounded-lg 
+    twel:bg-gray-50 twel:text-base twel:focus:ring-blue-500 twel:focus:border-blue-500`,
   medium_select:
-    "w-1/3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base text-sm focus:ring-blue-500 focus:border-blue-500",
+    `twel:w-1/3 twel:text-gray-900 twel:border twel:border-gray-300 twel:rounded-lg 
+    twel:bg-gray-50 twel:text-base twel:text-sm twel:focus:ring-blue-500 twel:focus:border-blue-500`,
   tab_background:
-    "flex flex-wrap text-sm font-medium text-center border-0 border-b border-gray-200 border-solid",
+    `twel:flex twel:flex-wrap twel:text-sm twel:font-medium twel:text-center twel:border-0
+    twel:border-b twel:border-gray-200 twel:border-solid`,
   tab_active:
-    "no-underline inline-block text-blue-600 border-blue-600 p-2 border-0 border-b-2 border-solid rounded-t-lg hover:text-blue-700 hover:border-blue-600",
+    `twel:no-underline twel:inline-twel:block twel:text-blue-600 twel:border-blue-600
+     twel:p-2 twel:border-0 twel:border-b-2 twel:border-solid twel:rounded-t-lg twel:hover:text-blue-700 
+     twel:hover:border-blue-600`,
   tab_inactive:
-    "no-underline inline-block text-gray-500 p-2  rounded-t-lg hover:text-gray-600 hover:border-gray-500",
-  text_attribute: "text-lg font-bold",
-  text_derived: "p-1 mr-2 text-right text-lg",
-  text_description_label: "block text-lg font-medium",
+    `twel:no-underline twel:inline-twel:block twel:text-gray-500 twel:p-2
+    twel:rounded-t-lg twel:hover:text-gray-600 twel:hover:border-gray-500`,
+  text_attribute: `twel:text-lg twel:font-bold`,
+  text_derived: `twel:p-1 twel:mr-2 twel:text-right twel:text-lg`,
+  text_description_label: `twel:block twel:text-lg twel:font-medium`,
   text_description:
-    "text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500",
-  info_label: "p-1",
+    `twel:text-gray-900 twel:border twel:border-gray-300 twel:rounded-lg twel:bg-gray-50
+    twel:text-base twel:focus:ring-blue-500 twel:focus:border-blue-500`,
+  info_label: `twel:p-1`,
   skill_box:
-    "mt-2 block p-2 bg-stone-300 border border-stone-400 rounded-lg shadow-sm min-h-40",
+    `twel:mt-2 twel:block twel:p-2 twel:bg-stone-300 twel:border twel:border-stone-400
+     twel:rounded-lg twel:shadow-sm twel:min-h-40`,
   refresh_button:
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 me-2 mb-2",
+    `twel:text-white twel:bg-blue-700 twel:hover:bg-blue-800 twel:focus:ring-4
+     twel:focus:ring-blue-300 twel:font-medium twel:rounded-lg twel:text-sm twel:px-2
+     twel:me-2 twel:mb-2`,
   skill_button:
-    "w-6 h-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm self-center",
-  skill_name: "border-solid border-0 border-b-2 border-stone-200",
-  flaw_name: "border-solid border-0 border-b-2 border-stone-200 text-red-700",
-  power_name: "border-solid border-0 border-b-2 border-stone-200 text-blue-700",
+    `twel:w-6 twel:h-6 twel:text-white twel:bg-blue-700 twel:hover:bg-blue-800
+    twel:focus:ring-4 twel:focus:ring-blue-300 twel:font-medium twel:rounded-lg 
+    twel:text-sm twel:self-center`,
+  skill_name: `twel:border-solid twel:border-0 twel:border-b-2 twel:border-stone-200`,
+  flaw_name: `twel:border-solid twel:border-0 twel:border-b-2 twel:border-stone-200 twel:text-red-700`,
+  power_name: `twel:border-solid twel:border-0 twel:border-b-2 twel:border-stone-200 twel:text-blue-700`,
   roll_button:
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-2 m-2",
+    `twel:text-white twel:bg-blue-700 twel:hover:bg-blue-800 twel:focus:ring-4 twel:focus:ring-blue-300
+    twel:font-medium twel:rounded-lg twel:text-sm twel:p-2 twel:m-2`,
   roll_button_left:
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-s-lg text-sm p-2 m-2 mr-0",
+    `twel:text-white twel:bg-blue-700 twel:hover:bg-blue-800 twel:focus:ring-4
+    twel:focus:ring-blue-300 twel:font-medium twel:rounded-s-lg twel:text-sm
+    twel:p-2 twel:m-2 twel:mr-0`,
   roll_button_right:
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-e-lg text-sm p-2 m-2 ml-0 border-s-0 w-8",
+    `twel:text-white twel:bg-blue-700 twel:hover:bg-blue-800 twel:focus:ring-4
+    twel:focus:ring-blue-300 twel:font-medium twel:rounded-e-lg twel:text-sm twel:p-2
+    twel:m-2 twel:ml-0 twel:border-s-0 twel:w-8`,
   result_success:
-    "text-green-800 bg-green-50 font-medium rounded-lg text-center mt-2 p-1",
-  warning_badge: "bg-red-300 font-medium rounded-lg text-center m-2 p-1",
+    `twel:text-green-800 twel:bg-green-50 twel:font-medium twel:rounded-lg twel:text-center twel:mt-2 twel:p-1`,
+  warning_badge: `twel:bg-red-300 twel:font-medium twel:rounded-lg twel:text-center twel:m-2 twel:p-1`,
   result_failure:
-    "text-red-800 bg-red-50 font-medium rounded-lg text-center mt-2 p-1",
+    `twel:text-red-800 twel:bg-red-50 twel:font-medium twel:rounded-lg twel:text-center twel:mt-2 twel:p-1`,
   result_draw:
-    "text-gray-800 bg-gray-50 font-medium rounded-lg text-center mt-2 p-1",
-  roll_title: "mb-2 text-gray-900 text-lg font-bold",
-  roll_options_card: "p-2 bg-white border border-gray-200 rounded-lg shadow-sm",
-  roll_options_title: "mb-4 text-lg font-bold tracking-tight text-gray-900",
+    `twel:text-gray-800 twel:bg-gray-50 twel:font-medium twel:rounded-lg twel:text-center twel:mt-2 twel:p-1`,
+  roll_title: `twel:mb-2 twel:text-gray-900 twel:text-lg twel:font-bold`,
+  roll_options_card: `twel:p-2 twel:bg-white twel:border twel:border-gray-200 twel:rounded-lg twel:shadow-sm`,
+  roll_options_title: `twel:mb-4 twel:text-lg twel:font-bold twel:tracking-tight twel:text-gray-900`,
   roll_option_unselected:
-    "bg-gray-100 text-gray-800 text-xs me-1 px-2.5 py-0.5 rounded-sm border border-gray-500 border-solid whitespace-nowrap leading-loose",
+    `twel:bg-gray-100 twel:text-gray-800 twel:text-xs twel:me-1 twel:px-2.5 twel:py-0.5
+    twel:rounded-sm twel:border twel:border-gray-500 twel:border-solid twel:whitespace-nowrap
+    twel:leading-loose`,
   roll_option_selected:
-    "bg-blue-100 text-blue-800 text-xs me-1 px-2.5 py-0.5 rounded-sm border border-blue-500 border-solid whitespace-nowrap leading-loose",
+    `twel:bg-blue-100 twel:text-blue-800 twel:text-xs twel:me-1 twel:px-2.5 twel:py-0.5
+    twel:rounded-sm twel:border twel:border-blue-500 twel:border-solid twel:whitespace-nowrap twel:leading-loose`,
   modifier_toast:
-    "flex items-center justify-center text-blue-500 bg-blue-100 rounded-lg shadow-sm py--0.5 px-2",
+    `twel:flex twel:items-center twel:justify-center twel:text-blue-500 twel:bg-blue-100
+    twel:rounded-lg twel:shadow-sm twel:py--0.5 twel:px-2`,
   close_icon:
-    "ml-1 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 w-4 h-4 flex p-0",
+    `twel:ml-1 twel:bg-white twel:text-gray-400 twel:hover:twel:text-gray-900 twel:rounded-lg
+    twel:focus:ring-2 twel:w-4 twel:h-4 twel:flex twel:p-0`,
   modifier_badge:
-    "justify-center text-blue-500 bg-blue-100 rounded-lg shadow-sm py--0.5 px-2 whitespace-nowrap leading-loose",
+    `twel:justify-center twel:text-blue-500 twel:bg-blue-100 twel:rounded-lg twel:shadow-sm
+     twel:py--0.5 twel:px-2 twel:whitespace-nowrap twel:leading-loose`,
   checkbox:
-    "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2",
-  item_picture: "w-7 h-7 rounded-sm",
+    `twel:w-4 twel:h-4 twel:text-blue-600 twel:bg-gray-100 twel:border-gray-300 
+    twel:rounded-sm twel:focus:ring-blue-500 twel:focus:ring-2`,
+  item_picture: `twel:w-7 twel:h-7 twel:rounded-sm`,
   item_name:
-    "self-center border-solid border-0 border-b-2 border-stone-200 grow",
-  quantity_name: "self-center",
+    `twel:self-center twel:border-solid twel:border-0 twel:border-b-2 twel:border-stone-200 twel:grow`,
+    quantity_name: `twel:self-center`,
   undo_chat_button:
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded-lg text-sm w-6 ml-2",
+    `twel:text-white twel:bg-blue-700 twel:hover:bg-blue-800 twel:focus:ring-4
+    twel:focus:ring-blue-300 twel:font-small twel:rounded-lg twel:text-sm twel:w-6 twel:ml-2`,
 };

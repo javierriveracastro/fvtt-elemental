@@ -2,7 +2,7 @@
     {{#if title}}<div class="{{theme.roll_title}}">
         {{title}}
     </div>{{/if}}
-    <div class="mb-2">
+    <div class="twel:mb-2">
         {{#each badges }}
             <span class="{{../theme.modifier_badge}}">{{this}}</span>
         {{/each}}
@@ -22,7 +22,7 @@
             <h4 class="dice-total">{{total}}</h4>
         </div>
     </div>
-    <div class="mt-2 flex justify-between">
+    <div class="twel:mt-2 twel:flex twel:justify-between">
         {{# if is_damage_roll }}
             <button class="elemental-roll-damage {{theme.roll_button_left}}">
                 <i class="fas fa-bolt"></i> {{localize "Elemental.ApplyDamage"}}

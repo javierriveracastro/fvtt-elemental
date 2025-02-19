@@ -19,7 +19,7 @@ export function addChatMessageListeners(message, html) {
       );
       return;
     }
-    for (let controlled_token of canvas.tokens.controlled) {
+    for (const controlled_token of canvas.tokens.controlled) {
       start_new_opposite_roll(controlled_token.actor, message.uuid);
     }
   });

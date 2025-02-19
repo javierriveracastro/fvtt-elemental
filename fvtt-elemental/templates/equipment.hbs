@@ -1,93 +1,93 @@
 <form class="elemental-css">
-    <div class="flex flex-row justify-between gap-2">
+    <div class="twel:flex twel:flex-row twel:justify-between twel:gap-2">
         <img class="w-10 h-10 rounded-sm" src="{{item.img}}" data-edit="img" alt="Equipment picture">
         <input type="text" name="name" value="{{item.name}}"
-           class="{{theme.big_input}} mb-4 self-center"
+           class="{{theme.big_input}} twel:mb-4 twel:self-center"
            placeholder="{{localize 'Elemental.ItemName'}}">
     </div>
-    <div class="flex m-2 w-1/2">
-        <label class="w-1/4 {{theme.text_attribute}}">
+    <div class="twel:flex m-2 w-1/2">
+        <label class="twel:w-1/4 {{theme.text_attribute}}">
             {{localize "Elemental.EquipmentSheet.Type"}}
         </label>
         <select name="system.elemental_type" class="{{theme.medium_select}}">
             {{selectOptions equipment_types_select selected=item.system.elemental_type}}
         </select>
     </div>
-    <div class="grid grid-cols-2 gap-2 m-2">
-        {{#if item.system.is_weapon }}<div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+    <div class="grid grid-cols-2 twel:gap-2 twel:m-2">
+        {{#if item.system.is_weapon }}<div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Ammo"}}
             </label>
             <input type="text" name="system.ammo" value="{{item.system.ammo}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Reload"}}
             </label>
             <input type="text" name="system.reload" value="{{item.system.reload}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Damage"}}
             </label>
             <input type="text" name="system.damage" value="{{item.system.damage}}"
                 class="{{theme.three_quarters_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.AOE"}}
             </label>
             <input type="text" name="system.aoe" value="{{item.system.aoe}}"
                 class="{{theme.small_input}}">
         </div>{{/if}}
-        {{# unless item.system.is_vehicle}}<div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        {{# unless item.system.is_vehicle}}<div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Lbs"}}
             </label>
             <input type="text" name="system.lbs" value="{{item.system.lbs}}"
                 class="{{theme.small_input}}">
         </div>{{/unless}}
         {{# if item.system.is_weapon }}
-            <div class="flex">
-                <label class="w-1/4 {{theme.text_attribute}}">
+            <div class="twel:flex">
+                <label class="twel:w-1/4 {{theme.text_attribute}}">
                     {{localize "Elemental.EquipmentSheet.Range"}}
                 </label>
                 <input type="text" name="system.range" value="{{item.system.range}}"
                     class="{{theme.three_quarters_input}}">
             </div>
-            <div class="flex">
-                <label class="w-1/4 {{theme.text_attribute}}">
+            <div class="twel:flex">
+                <label class="twel:w-1/4 {{theme.text_attribute}}">
                     {{localize "Elemental.EquipmentSheet.IsHeavy"}}
                 </label>
                 <input type="checkbox" name="system.heavy_weapon"
                        {{#if item.system.heavy_weapon}}checked="checked"{{/if}} class="{{theme.checkbox}}">
             </div>
         {{/if}}
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Notes"}}
             </label>
             <input type="text" name="system.notes" value="{{item.system.notes}}"
                 class="{{theme.three_quarters_input}}">
         </div>
-        {{#if item.system.has_armor}}<div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        {{#if item.system.has_armor}}<div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Armor"}}
             </label>
             <input type="text" name="system.armor" value="{{item.system.armor}}"
                 class="{{theme.small_input}}">
         </div>{{/if}}
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Quantity"}}
             </label>
             <input type="text" name="system.quantity" value="{{item.system.quantity}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.DefaultSkill"}}
             </label>
             <input type="text" name="system.default_skill" value="{{item.system.default_skill}}"
@@ -100,43 +100,43 @@
                 </datalist>
             {{/if}}
         </div>
-        {{# if item.system.is_vehicle}}<div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        {{# if item.system.is_vehicle}}<div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Crew"}}
             </label>
             <input type="text" name="system.crew" value="{{item.system.crew}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Passengers"}}
             </label>
             <input type="text" name="system.passengers" value="{{item.system.passengers}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.AGI"}}
             </label>
             <input type="text" name="system.agi" value="{{item.system.agi}}"
                 class="{{theme.small_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Move"}}
             </label>
             <input type="text" name="system.move" value="{{item.system.move}}"
                 class="{{theme.three_quarters_input}}">
         </div>
-        <div class="flex">
-            <label class="w-1/4 {{theme.text_attribute}}">
+        <div class="twel:flex">
+            <label class="twel:w-1/4 {{theme.text_attribute}}">
                 {{localize "Elemental.EquipmentSheet.Health"}}
             </label>
             <input type="text" name="system.health" value="{{item.system.health}}"
                 class="{{theme.small_input}}">
         </div>{{/if}}
     </div>
-    <div class="elemental-editor {{theme.text_description}} mt-2">
+    <div class="elemental-editor {{theme.text_description}} twel:mt-2">
     {{editor
         item.system.description
         target='system.description'

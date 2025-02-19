@@ -1,7 +1,7 @@
-<div class="flex m-2 gap-2">
+<div class="twel:flex twel:m-2 twel:gap-2">
     <img class="{{theme.item_picture}}" src="{{this.img}}" alt="item image">
     <div class="{{theme.item_name}}">{{ item.name }}</div>
-    <div class="flex justify-end gap-0">
+    <div class="twel:flex twel:justify-end twel:gap-0">
         {{# if item.system.is_weapon}}
             <button class="elemental-roll-attack {{theme.skill_button}}" data-item-id="{{item.id}}">
                 <i class="fa-solid fa-dice-four"></i>

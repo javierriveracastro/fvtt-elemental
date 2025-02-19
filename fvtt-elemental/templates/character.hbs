@@ -1,6 +1,6 @@
 <form class="elemental-css">
     <!-- Header -->
-    <div class="flex flex-row">
+    <div class="twel:flex twel:flex-row">
         <div>
             <input type="text" name="name" value="{{actor.name}}"
                    class="{{theme.big_input}}"
@@ -12,11 +12,11 @@
                    class="{{theme.big_input}} mt-1"
                    placeholder="{{localize 'Elemental.Title'}}">
         </div>
-        <div class="max-w-32">
-            <img src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" class="m-1 rounded-sm border-none">
+        <div class="twel:max-w-32">
+            <img src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" class="twel:m-1 twel:rounded-sm twel:border-none">
         </div>
     </div>
-    <div class="flex flex-row justify-end gap-3">
+    <div class="twel:flex twel:flex-row twel:justify-end twel:gap-3">
         <span class="{{theme.text_attribute}}">
             {{localize 'Elemental.CharacterSheet.ExperiencePoints'}}
         </span>
@@ -47,16 +47,16 @@
             {{localize 'Elemental.CharacterSheet.Rules'}}
         </a>
     </nav>
-    <div id="base-tab" class="tab-content grid grid-cols-2 gap-4 mb-2 hidden">
+    <div id="base-tab" class="tab-content twel:grid twel:grid-cols-2 twel:gap-4 twel:mb-2 twel:mt-2 twel:hidden">
         {{>"systems/fvtt-elemental/templates/character_base.hbs"}}
     </div>
-    <div id="equipment-tab" class="tab-content hidden">
+    <div id="equipment-tab" class="tab-content twel:hidden twel:mt-2">
         {{>"systems/fvtt-elemental/templates/character_equipment.hbs"}}
     </div>
-    <div id="description-tab" class="tab-content hidden">
+    <div id="description-tab" class="tab-content twel:hidden">
         {{>"systems/fvtt-elemental/templates/character_description.hbs"}}
     </div>
-    <div id="rules-tab" class="tab-content hidden">
+    <div id="rules-tab" class="tab-content twel:hidden">
         Rules
     </div>
 </form>
