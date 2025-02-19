@@ -1,3 +1,13 @@
+# Version 0.0.16 aka Feeling powerful
+* Created a new item type for powers
+* Added a sheet to edit powers
+* See powers in the skill section of the character sheet, but in blue.
+* Update TailwindCSS to version 4.
+* Moved from jshint to eslint
+* Refactor each type of roll and roll dialog into its own class
+* Add support for codebook to enable shared codebase spellchecking
+
+
 # Version 0.0.15 aka few changes
 * Added journals with the recommended Critical sucess and failure and tie results.
 * The result banner is clickable when applicable to show the above journals.
