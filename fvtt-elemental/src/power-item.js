@@ -13,6 +13,7 @@ export class PowerDataModel extends foundry.abstract.TypeDataModel {
       duration: new fields.StringField({ initial: "" }),
       concentration: new fields.BooleanField({ initial: false }),
       innate: new fields.BooleanField({ initial: false }),
+      score: new fields.NumberField({ integer: true, initial: 1 }),
     };
   }
 

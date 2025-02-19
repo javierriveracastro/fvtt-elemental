@@ -1,0 +1,17 @@
+<form class="elemental-css">
+    <div class="{{theme.text_attribute}}">
+        {{ localize "Elemental.AttributeRoll" }} - {{actor.name}}
+    </div>
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/attribute.hbs" }}
+    <div class="{{theme.roll_options_card}} mt-2">
+        <span class="{{theme.roll_options_title}}">{{ localize "Elemental.ArcanePowers" }}</span>
+        <div>
+            {{#each powers}}
+                <span class="{{#if (eq this.id ../selected_power) }}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/if }}
+                        elemental-power-selection" data-value="{{this.id}}">{{this.name}}</span>
+            {{/each}}
+        </div>
+    </div>
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/flaws_conditions.hbs" }}
+    {{> "systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs" }}
+</form>

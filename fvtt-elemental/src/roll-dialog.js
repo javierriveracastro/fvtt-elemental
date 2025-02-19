@@ -3,11 +3,11 @@
 
 import { StatCheck } from "./stat-check.js";
 import {
-  AttributeRoll,
   AttributeBaseRoll,
   DifficultyRoll,
   DamageRoll,
 } from "./attribute-check.js";
+import { apply_damage } from "./damage_application.js";
 
 export class StatCheckDialog extends FormApplication {
   constructor(actor, derived_stat) {
@@ -484,11 +484,79 @@ export class WeaponRollDialog extends SkillRollDialog {
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      template: "systems/fvtt-elemental/templates/attribute_roll_dialog.hbs", // Change when template is done
+      template: "systems/fvtt-elemental/templates/attribute_roll_weapon.hbs", // Change when template is done
       closeOnSubmit: true,
       submitOnClose: false,
       submitOnChange: false,
       width: 500,
     });
+  }
+
+  get title() {
+    return `${game.i18n.localize("Elemental.AttributeRoll")} - ${this.weapon.name}, ${this.actor.name}`;
+  }
+}
+
+export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
+  constructor(actor, attribute, options = {}) {
+    super(actor, attribute, options);
+    this.selected_power = options.power_id ? options.power_id : null;
+    this.power_difficulty = options.power_difficulty
+      ? options.power_difficulty
+      : 1;
+  }
+
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      template: "systems/fvtt-elemental/templates/attribute_roll_power.hbs",
+      closeOnSubmit: true,
+      submitOnClose: false,
+      submitOnChange: false,
+      width: 500,
+    });
+  }
+
+  get powers() {
+    return this.actor.powers;
+  }
+
+  async getData(options) {
+    const data = await super.getData(options);
+    return {
+      ...data,
+      powers: this.powers,
+      selected_power: this.selected_power,
+    };
+  }
+
+  collect_roll_options() {
+    const options = super.collect_roll_options();
+    if (this.selected_power) {
+      const power = this.actor.items.get(this.selected_power);
+      options.power = power.system.score;
+      options.power_name = power.name;
+    }
+    return options;
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find(".elemental-power-selection").click((ev) => {
+      this.select_power(ev.currentTarget, html);
+    });
+  }
+
+  select_power(element, html) {
+    this.select_one(
+      html,
+      element,
+      "elemental-power-selection",
+      "selected_power",
+    );
+  }
+
+  _updateObject(ev, form_data) {
+    super._updateObject(ev, form_data);
+    apply_damage(this.power_difficulty, this.actor, "current_spirit");
   }
 }

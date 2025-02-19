@@ -6,13 +6,12 @@ import { CharacterDataModel, ElementalActor } from "./character-actor.js";
 import { BASE_THEME } from "./theme.js";
 import { ElementalItem, SkillDataModel } from "./skill-item.js";
 import {
-  ElementaItemSheet,
+  ElementalItemSheet,
   ElementalEquipmentSheet,
   ElementalPowerSheet,
 } from "./item-sheet.js";
 import { StatCheck } from "./stat-check.js";
 import {
-  AttributeRoll,
   AttributeBaseRoll,
   start_new_diff_roll,
   DifficultyRoll,
@@ -32,7 +31,6 @@ Hooks.on("init", () => {
   CONFIG.Item.dataModels.power = PowerDataModel;
   CONFIG.Item.documentClass = ElementalItem;
   CONFIG.Dice.rolls.push(StatCheck);
-  CONFIG.Dice.rolls.push(AttributeRoll);
   CONFIG.Dice.rolls.push(AttributeBaseRoll);
   CONFIG.Dice.rolls.push(DifficultyRoll);
   CONFIG.Dice.rolls.push(DamageRoll);
@@ -76,7 +74,7 @@ Hooks.on("init", () => {
   });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("elemental", ElementaItemSheet, {
+  Items.registerSheet("elemental", ElementalItemSheet, {
     types: ["skill"],
     makeDefault: true,
     label: "Elemental.ItemElementalSheet",
@@ -103,6 +101,7 @@ Hooks.on("init", () => {
     "systems/fvtt-elemental/templates/attribute_roll_partials/flaws_conditions.hbs",
     "systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs",
     "systems/fvtt-elemental/templates/attribute_roll_partials/skills.hbs",
+    "systems/fvtt-elemental/templates/attribute_roll_partials/range.hbs",
   ];
   loadTemplates(handlebars_templatePaths).then(() => {
     console.info("Elemental templates preloaded");

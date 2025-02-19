@@ -7,6 +7,7 @@ import {
   SkillRollDialog,
   DamageRollDialog,
   WeaponRollDialog,
+  ArcanePowerRollDialog,
 } from "./roll-dialog.js";
 import { BASE_THEME as current_theme } from "./theme.js";
 
@@ -23,7 +24,7 @@ export class ElementalCharacterSheet extends ActorSheet {
     return "/systems/fvtt-elemental/templates/character.hbs";
   }
 
-  async getData(options) {
+  getData(options) {
     const data = super.getData(options);
     return {
       ...data,
@@ -71,12 +72,21 @@ export class ElementalCharacterSheet extends ActorSheet {
     });
     jquery.find(".elemental-roll-skill").on("click", (ev) => {
       const skill = this.actor.items.get(ev.currentTarget.dataset.itemId);
-      const skill_roll_dialog = new SkillRollDialog(
-        this.actor,
-        skill.system.attribute,
-        { skill_id: skill.id },
-      );
-      skill_roll_dialog.render(true);
+      if (skill.type === "power") {
+        const power_roll_dialog = new ArcanePowerRollDialog(
+          this.actor,
+          "awareness",
+          { power_id: skill.id, power_difficulty: skill.system.difficulty },
+        );
+        power_roll_dialog.render(true);
+      } else {
+        const skill_roll_dialog = new SkillRollDialog(
+          this.actor,
+          skill.system.attribute,
+          { skill_id: skill.id },
+        );
+        skill_roll_dialog.render(true);
+      }
     });
     jquery.find(".elemental-roll-attack").on("click", (ev) => {
       const weapon = this.actor.items.get(ev.currentTarget.dataset.itemId);
@@ -110,7 +120,7 @@ export class ElementalCharacterSheet extends ActorSheet {
   manageTabs(ev, jquery) {
     const { current_theme } = game.elemental;
     let visible_content_id = "";
-    for (let tab of jquery.find(".elemental-tab-control")) {
+    for (const tab of jquery.find(".elemental-tab-control")) {
       if (tab === ev.currentTarget) {
         tab.classList =
           `elemental-tab-control ${current_theme.tab_active}`.split();
@@ -127,7 +137,7 @@ export class ElementalCharacterSheet extends ActorSheet {
 
   render_active_tab(jquery) {
     jquery.find(`#${this.options.current_tab}`).removeClass("hidden");
-    for (let tab of jquery.find(".elemental-tab-control")) {
+    for (const tab of jquery.find(".elemental-tab-control")) {
       if (tab.dataset.tab === this.options.current_tab) {
         tab.classList =
           `elemental-tab-control ${current_theme.tab_active}`.split();

@@ -1,20 +1,32 @@
 // Damage application to actors.
 /* global game, ui, canvas, renderTemplate, ChatMessage, console, fromUuid, Dialog */
 
-export function apply_damage(damage) {
-  const targets = get_damage_target();
-  const damage_log = [];
-  for (let actor of targets) {
-    damage_log.push(damage_actor(damage, actor));
+export function apply_damage(damage, target, damage_stat) {
+  const adjusted_damage_stat = damage_stat || "current_health";
+  let targets;
+  if (target) {
+    targets = [target];
+  } else {
+    targets = get_damage_target();
   }
-  show_damage_log(damage_log).catch((err) =>
+  const damage_log = [];
+  for (const actor of targets) {
+    damage_log.push(damage_actor(damage, actor, adjusted_damage_stat));
+  }
+  let title = game.i18n.localize("ElementalL.DamageLog.DamageTitle");
+  let hide_armor = false;
+  if (damage_stat === "current_spirit") {
+    title = game.i18n.localize("Elemental.DamageLog.SpiritTitle");
+    hide_armor = true;
+  }
+  show_damage_log(damage_log, title, hide_armor).catch((err) =>
     console.error(`Unable to show damage log: ${err}`),
   );
 }
 
 function get_targets_from_array(array) {
-  let targets = [];
-  for (let target of array) {
+  const targets = [];
+  for (const target of array) {
     if (target.document.actor.testUserPermission(game.user, "OWNER")) {
       targets.push(target.document.actor);
     } else {
@@ -36,9 +48,13 @@ function get_damage_target() {
   return [];
 }
 
-function damage_actor(damage, actor) {
-  const previous_health = actor.system.current_health;
-  const final_damage = Math.max(damage - actor.armor, 0);
+function damage_actor(damage, actor, adjusted_damage_stat) {
+  const previous_health = actor.system[adjusted_damage_stat];
+  let final_damage = damage;
+  if (adjusted_damage_stat === "current_health") {
+    final_damage -= actor.armor;
+  }
+  final_damage = Math.max(final_damage, 0);
   const new_health = Math.max(previous_health - final_damage, 0);
   if (new_health <= 0) {
     actor
@@ -47,14 +63,8 @@ function damage_actor(damage, actor) {
         console.error(`Error while toggling status: ${err}`);
       });
   }
-  actor.update(
-    {
-      "data.attributes.hp.value": new_health,
-      "data.attributes.hp.max": new_health,
-    },
-    { diff: false },
-  );
-  actor.update({ "system.current_health": new_health });
+  const key = `system.${adjusted_damage_stat}`;
+  actor.update({ [key]: new_health });
   return {
     name: actor.name,
     initial: previous_health,
@@ -62,16 +72,22 @@ function damage_actor(damage, actor) {
     armor: actor.armor,
     final: new_health,
     actor_uuid: actor.uuid,
+    damage_stat: adjusted_damage_stat,
   };
 }
 
 /** Shows the damage log
  ** @param damage:log: Array of damages
  **/
-async function show_damage_log(damage_log) {
+async function show_damage_log(damage_log, title, hide_armor) {
   const html = await renderTemplate(
     "systems/fvtt-elemental/templates/damage_log.hbs",
-    { log: damage_log, theme: game.elemental.current_theme },
+    {
+      log: damage_log,
+      theme: game.elemental.current_theme,
+      title: title,
+      hide_armor: hide_armor,
+    },
   );
   ChatMessage.create({
     content: html,
@@ -90,7 +106,8 @@ export function add_damage_log_listeners(html, message) {
 async function undo_damage(ev, message) {
   const actor = await fromUuid(ev.currentTarget.dataset.actor);
   const initial_health = ev.currentTarget.dataset.initial;
-  actor.update({ "system.current_health": initial_health });
+  const key = `system.${ev.currentTarget.dataset.damageStat}`;
+  actor.update({ [key]: initial_health });
   if (initial_health > 0) {
     actor.toggleStatusEffect("dead", { active: false });
   }

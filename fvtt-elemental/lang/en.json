@@ -24,6 +24,7 @@
     "Skills": "Skills",
     "Flaws": "Flaws",
     "Conditions": "Conditions",
+    "ArcanePowers": "Arcane Powers",
     "DamageTargetNotAllowed": "You don't have permission to damage this target",
     "AttackRoll": "Attack Roll",
     "RangeMod": "Range modifier",
@@ -114,7 +115,9 @@
       "Damage": "Raw damage applied, before armor",
       "Armor": "Armor value subtracted",
       "Final": "Health after damage application",
-      "Undo": "Undo"
+      "Undo": "Undo",
+      "DamageTitle": "Damage/Health",
+      "SpiritTitle": "Spirit"
     },
     "DamageDialog": {
       "Title": "Modify damage",
