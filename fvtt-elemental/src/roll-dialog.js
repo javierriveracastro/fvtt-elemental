@@ -6,6 +6,7 @@ import {
   AttributeBaseRoll,
   DifficultyRoll,
   DamageRoll,
+  PowerRoll,
 } from "./attribute-check.js";
 import { apply_damage } from "./damage_application.js";
 
@@ -555,8 +556,13 @@ export class ArcanePowerRollDialog extends BaseAttributeRollDialog {
     );
   }
 
-  _updateObject(ev, form_data) {
-    super._updateObject(ev, form_data);
+  async _updateObject(ev, form_data) {
+    const options = this.collect_roll_options();
+    const roll = new PowerRoll("", {}, options);
+    await roll.evaluate();
+    roll.toMessage().catch((err) => {
+      console.error("Error while rolling: ", err);
+    });
     apply_damage(this.power_difficulty, this.actor, "current_spirit");
   }
 }

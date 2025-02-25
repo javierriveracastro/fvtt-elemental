@@ -37,9 +37,11 @@
                         <i class="fas fa-dice"></i> {{localize "Elemental.DIFRoll"}}
                     </button>
                 {{/unless}}
-                <button class="elemental-roll-opposed {{theme.roll_button}}">
-                    <i class="fas fa-dice"></i> {{localize "Elemental.OpposingRoll"}}
-                </button>
+                {{#unless is_power_roll}}
+                    <button class="elemental-roll-opposed {{theme.roll_button}}">
+                        <i class="fas fa-dice"></i> {{localize "Elemental.OpposingRoll"}}
+                    </button>
+                {{/unless}}
             {{/unless}}
         {{/if}}
     </div>

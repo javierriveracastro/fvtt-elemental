@@ -152,6 +152,19 @@ export class DamageRoll extends AttributeBaseRoll {
   }
 }
 
+export class PowerRoll extends AttributeBaseRoll {
+  get title() {
+    return `${this.actor_name} ${game.i18n.localize("Elemental.PowerRoll")}`;
+  }
+
+  get render_data() {
+    return {
+      ...super.render_data,
+      is_power_roll: true,
+    };
+  }
+}
+
 export function start_new_diff_roll(origin = "") {
   const dif_roll = new DifficultyRollDialog();
   dif_roll.originating_roll = origin;
