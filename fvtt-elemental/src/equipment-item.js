@@ -50,4 +50,8 @@ export class EquipmentDataModel extends foundry.abstract.TypeDataModel {
   get has_damage() {
     return Boolean(this.damage);
   }
+
+  get extra_name() {
+    return "";
+  }
 }

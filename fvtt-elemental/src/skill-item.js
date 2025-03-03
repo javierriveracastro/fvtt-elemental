@@ -24,6 +24,10 @@ export class SkillDataModel extends foundry.abstract.TypeDataModel {
       ? game.elemental.current_theme.flaw_name
       : game.elemental.current_theme.skill_name;
   }
+
+  get extra_name() {
+    return "";
+  }
 }
 
 export class ElementalItem extends Item {

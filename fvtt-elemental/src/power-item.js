@@ -20,4 +20,8 @@ export class PowerDataModel extends foundry.abstract.TypeDataModel {
   get theme_name() {
     return game.elemental.current_theme.power_name;
   }
+
+  get extra_name() {
+    return ` (${this.difficulty})`;
+  }
 }

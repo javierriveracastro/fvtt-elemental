@@ -1,6 +1,6 @@
 <div class="twel:grid twel:grid-cols-8">
     <span class="twel:col-span-5 {{skill.system.theme_name}}">
-        {{skill.name}}
+        {{skill.name}}{{ skill.system.extra_name }}
     </span>
     <div class="twel:col-span-2 twel:flex twel:justify-end twel:gap-0">
         {{# unless skill.system.dont_modify_rolls }}
