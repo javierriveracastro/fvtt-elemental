@@ -5,12 +5,10 @@
     <div class="{{theme.roll_options_card}} twel:mt-2">
         <span class="{{theme.roll_options_title}}">{{ localize "Elemental.Difficulty" }}</span>
         <div>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="1">1</span>
-            <span class="{{theme.roll_option_selected}} elemental-difficulty-selection" data-value="2">2</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="3">3</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="4">4</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="5">5</span>
-            <span class="{{theme.roll_option_unselected}} elemental-difficulty-selection" data-value="6">6</span>
+            {{# each difficulties}}
+                <span class="{{# compare this "===" ../selected_difficulty}}{{../theme.roll_option_selected}}{{else}}{{../theme.roll_option_unselected}}{{/compare}} elemental-difficulty-selection"
+                    data-value="{{ this }}">{{ this }}</span>
+            {{/each}}
         </div>
     </div>
     {{>"systems/fvtt-elemental/templates/attribute_roll_partials/footer.hbs"}}

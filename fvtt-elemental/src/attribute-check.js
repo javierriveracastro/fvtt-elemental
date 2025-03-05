@@ -165,8 +165,8 @@ export class PowerRoll extends AttributeBaseRoll {
   }
 }
 
-export function start_new_diff_roll(origin = "") {
-  const dif_roll = new DifficultyRollDialog();
+export function start_new_diff_roll(origin = "", options = {}) {
+  const dif_roll = new DifficultyRollDialog(undefined, undefined, options);
   dif_roll.originating_roll = origin;
   dif_roll.render(true);
 }

@@ -92,6 +92,37 @@ Hooks.on("init", () => {
     label: "Elemental.EquipmentElementalSheet",
   });
 
+  Handlebars.registerHelper(
+    "compare",
+    function (lvalue, operator, rvalue, options) {
+      const operators = {
+        "===": function (l, r) {
+          return l === r;
+        },
+        "!==": function (l, r) {
+          return l !== r;
+        },
+        "<": function (l, r) {
+          return l < r;
+        },
+        ">": function (l, r) {
+          return l > r;
+        },
+        "<=": function (l, r) {
+          return l <= r;
+        },
+        ">=": function (l, r) {
+          return l >= r;
+        },
+      };
+      if (!operators[operator]) {
+        throw new Error(`Operator "${operator}" not supported`);
+      }
+      const result = operators[operator](lvalue, rvalue);
+      return result ? options.fn(this) : options.inverse(this);
+    },
+  );
+
   const handlebars_templatePaths = [
     "systems/fvtt-elemental/templates/character_base.hbs",
     "systems/fvtt-elemental/templates/character_description.hbs",

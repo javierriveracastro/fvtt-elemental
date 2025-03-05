@@ -9,8 +9,11 @@ import { apply_damage, modify_damage_dialog } from "./damage_application.js";
 import { show_journal } from "./journals.js";
 
 export function addChatMessageListeners(message, html) {
-  html.find(".elemental-roll-difficulty").on("click", () => {
-    start_new_diff_roll(message.uuid);
+  html.find(".elemental-roll-difficulty").on("click", (ev) => {
+    const default_difficulty = ev.currentTarget.dataset.defaultDifficulty;
+    start_new_diff_roll(message.uuid, {
+      selected_difficulty: default_difficulty,
+    });
   });
   html.find(".elemental-roll-opposed").on("click", () => {
     if (canvas.tokens.controlled.length === 0) {

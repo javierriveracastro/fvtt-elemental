@@ -313,7 +313,7 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
   constructor(actor, attribute, options = {}) {
     super(actor, attribute, options);
     this.dif_roll = true;
-    this.selected_difficulty = 2;
+    this.selected_difficulty = parseInt(options.selected_difficulty) || 2;
   }
 
   static get defaultOptions() {
@@ -361,6 +361,8 @@ export class DifficultyRollDialog extends BaseAttributeRollDialog {
     return {
       theme: game.elemental.current_theme,
       dif_roll: true,
+      difficulties: [1, 2, 3, 4, 5, 6],
+      selected_difficulty: this.selected_difficulty,
       title: game.i18n.localize("Elemental.DIFRoll"),
     };
   }
