@@ -1,3 +1,6 @@
+# Version 0.0.17 aka v13 compatibility
+* Make the system work with Foundry VTT v13
+
 # Version 0.0.16 aka Feeling powerful
 * Created a new item type for powers
 * Added a sheet to edit powers

@@ -2,11 +2,11 @@
   "id": "fvtt-elemental",
   "title": "Elemental RPG (Unofficial)",
   "description": "<p>An unofficial implementation of the Elemental RPG system from Gildor Games</p>",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12.330",
-    "maximum": "12"
+    "minimum": "13",
+    "verified": "13.345",
+    "maximum": "13"
   },
   "authors": [
     {

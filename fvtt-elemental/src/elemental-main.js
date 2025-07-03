@@ -146,14 +146,14 @@ Hooks.on("init", () => {
 });
 
 Hooks.on("ready", () => {
-  const chat_control = document.getElementsByClassName("control-buttons");
-  const container = document.createElement("a");
+  const chat_control = document.getElementById("roll-privacy");
+  const container = document.createElement("span");
   container.innerHTML =
-    "<a id='elemental-dif-roll' role='button' data-tooltip='Dif Roll'><i class='fa-solid fa-dice'></i></a>";
+    "<button id='elemental-dif-roll' class='ui-control icon fa-solid fa-dice' type='button' data-tooltip='' aria-label='Dif Roll'></button>";
   container.firstChild.addEventListener("click", () => {
     start_new_diff_roll();
   });
-  chat_control[0].appendChild(container.firstChild);
+  chat_control.appendChild(container.firstChild);
 });
 
 Hooks.on("renderChatMessage", (message, html) => {
